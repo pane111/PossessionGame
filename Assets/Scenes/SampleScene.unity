@@ -25036,7 +25036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a30e94111d90f4f89df791b9b1baae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1859569631}
+  playerChar: {fileID: 1859569631}
   curTarget: {fileID: 0}
   targeting: 0
   rb: {fileID: 2079086545}
@@ -25089,7 +25089,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.25
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
