@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
     public float curHealth;
     public ParticleSystem blood;
 
+    public LineRenderer leash;
+    public Transform sword;
+
     void Start()
     {
         stepTimer = maxStepTimer;
@@ -66,9 +69,15 @@ public class Player : MonoBehaviour
             }
 
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            StartCoroutine(pullEffect());
+        }
+
+        Vector3 v = sword.position - transform.position;
         
-
-
+        leash.SetPosition(1,v);
 
 
         if (!isDashing )
@@ -115,6 +124,14 @@ public class Player : MonoBehaviour
                 blood.Play();
             sr.color = Color.red;
         }
+    }
+
+    IEnumerator pullEffect()
+    {
+        leash.enabled = true;
+        yield return new WaitForSeconds(0.8f);
+        leash.enabled = false;
+        yield return null;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
