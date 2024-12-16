@@ -127,6 +127,8 @@ public class Player : MonoBehaviour
         }
     }
 
+
+
     IEnumerator pullEffect()
     {
         leash.enabled = true;

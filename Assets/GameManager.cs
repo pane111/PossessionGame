@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Gradient colorGradient;
+    public GameObject bSplatter;
     public static GameManager Instance { get; private set; }
     private void Awake()
     {

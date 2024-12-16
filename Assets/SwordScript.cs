@@ -30,8 +30,13 @@ public class SwordScript : MonoBehaviour
     [SerializeField]
     float maxVelPossMod;
     public float pullSpeed;
+    public float maxVelocity; //Maximum velocity the sword can go at
     private Vector2 pullPos;
 
+    public ParticleSystem slashes;
+    public float slashAttackTimer = 2;
+    private float curSAT = 2;
+    public bool isSlashing=false;
     public ContactFilter2D cf;
     List<Collider2D> enemyColls = new List<Collider2D>();
     void Start()
@@ -48,6 +53,15 @@ public class SwordScript : MonoBehaviour
 
         //TARGETING
         if (Idling) { FindEnemy(); }
+        else
+        {
+            curSAT -= Time.deltaTime;
+            if (curSAT < 0)
+            {
+                StartCoroutine(SlashAttack());
+                curSAT = 9999;
+            }
+        }
 
         //MOVING
         if (moveFreely)
@@ -59,9 +73,33 @@ public class SwordScript : MonoBehaviour
                 rb.velocity = Vector2.Lerp(rb.velocity, Vector3.zero, Time.deltaTime * 5);
             }
         }
+        if (rb.velocity.magnitude > maxVelocity)
+            rb.velocity = rb.velocity.normalized * maxVelocity;
 
         //PULL CHECK
         if (!moveFreely && Vector2.Distance(pullPos, transform.position) < 0.5f) { moveFreely = true; FindEnemy(); playerChar.gameObject.GetComponent<Player>().leash.enabled = false; }
+    }
+
+    IEnumerator SlashAttack()
+    {
+        moveFreely = false;
+        Vector2 dir = curTarget.position - transform.position;
+        rb.velocity = -dir.normalized * 15;
+        yield return new WaitForSeconds(0.2f);
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(0.3f);
+        dir = curTarget.position - transform.position;
+        rb.AddForce(dir.normalized * 250, ForceMode2D.Impulse);
+        isSlashing = true;
+        slashes.Play();
+        yield return new WaitForSeconds(0.25f);
+        rb.velocity = Vector2.zero;
+        isSlashing = false;
+        slashes.Stop();
+        yield return new WaitForSeconds(0.2f);
+        moveFreely = true;
+        curSAT = slashAttackTimer;
+        yield return null;
     }
 
     void FindEnemy()
@@ -87,7 +125,7 @@ public class SwordScript : MonoBehaviour
         curTarget = playerChar.transform;
         moveFreely = false;
         rb.velocity = Vector2.zero;
-        rb.AddForce((playerChar.position - transform.position).normalized * pullSpeed, ForceMode2D.Force);
+        rb.AddForce((playerChar.position - transform.position) * pullSpeed, ForceMode2D.Force);
         pullPos = playerChar.position;
     }
 }
