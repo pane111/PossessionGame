@@ -11788,7 +11788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a885aa3b2b2f746a5ccb4fb41bebaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   rb: {fileID: 1859569633}
   sr: {fileID: 1859569630}
   isMoving: 0
@@ -18037,7 +18037,11 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
+<<<<<<< HEAD
   m_Color: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+=======
+  m_Color: {r: 0.6289307, g: 0.6289307, b: 0.6289307, a: 1}
+>>>>>>> 81892d15abc8b4ece9b25e29269452238d66cda5
   m_Origin: {x: -62, y: -20, z: 0}
   m_Size: {x: 62, y: 37, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
