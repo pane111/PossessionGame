@@ -17087,10 +17087,10 @@ MonoBehaviour:
   maxStepTimer: 0.1
   stepTimer: 0.2
   dashForce: 30
-  maxDashTimer: 0.15
-  dashCooldown: 0.2
+  maxDashTimer: 0.2
+  dashCooldown: 0
   isDashing: 0
-  maxDashCooldown: 0.2
+  maxDashCooldown: 1
   corruption: 0
   corruptionImage: {fileID: 757563294}
   corruptionText: {fileID: 113603435}
@@ -30445,12 +30445,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerChar: {fileID: 1859569631}
   curTarget: {fileID: 0}
-  targeting: 0
   rb: {fileID: 2079086545}
   maxVel: 35
-  curRange: 0
-  rangeMod: 0
-  maxVelMod: 0
+  speedModIdle: 2
+  speedModAttack: 3
+  curRange: 5
+  rangePossMod: 1
+  maxVelPossMod: 1
+  pullSpeed: 2
+  cf:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!58 &2079086544
 CircleCollider2D:
   m_ObjectHideFlags: 0
