@@ -13,24 +13,16 @@ public class Player : MonoBehaviour
     public float maxStepTimer = 0.2f;
     public float stepTimer = 0.2f;
     public float dashForce;
-<<<<<<< Updated upstream
     public float maxDashTimer = 0.2f;
     float dashTimer = 0.2f;
     public float dashCooldown = 0;
     public bool isDashing;
     public float maxDashCooldown = 1;
-=======
-    public float dashTimer = 0.2f;
-    float dashCooldown = 0;
-    public float maxDashCooldown = 1;
-    bool isDashing;
->>>>>>> Stashed changes
     public float corruption = 0;
     public Image corruptionImage;
     public TextMeshProUGUI corruptionText;
     public Image swordGlow;
     public Image overlay;
-    public Image swordGlow;
     public ParticleSystem afterimage;
 
     void Start()
