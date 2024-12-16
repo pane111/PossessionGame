@@ -30452,7 +30452,7 @@ MonoBehaviour:
   curRange: 5
   rangePossMod: 1
   maxVelPossMod: 1
-  pullSpeed: 2
+  pullSpeed: 1000
   cf:
     useTriggers: 0
     useLayerMask: 1

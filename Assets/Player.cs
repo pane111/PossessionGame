@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             StartCoroutine(pullEffect());
+            sword.GetComponent<SwordScript>().Pull();
         }
 
         Vector3 v = sword.position - transform.position;

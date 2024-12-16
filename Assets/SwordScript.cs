@@ -30,6 +30,7 @@ public class SwordScript : MonoBehaviour
     [SerializeField]
     float maxVelPossMod;
     public float pullSpeed;
+    private Vector2 pullPos;
 
     public ContactFilter2D cf;
     List<Collider2D> enemyColls = new List<Collider2D>();
@@ -58,6 +59,9 @@ public class SwordScript : MonoBehaviour
                 rb.velocity = Vector2.Lerp(rb.velocity, Vector3.zero, Time.deltaTime * 5);
             }
         }
+
+        //PULL CHECK
+        if (!moveFreely && Vector2.Distance(pullPos, transform.position) < 0.5f) { moveFreely = true; FindEnemy(); playerChar.gameObject.GetComponent<Player>().leash.enabled = false; }
     }
 
     void FindEnemy()
@@ -75,13 +79,15 @@ public class SwordScript : MonoBehaviour
             Idling = false;
             curTarget = enemyColls[closestEnemy].transform;
         }
+        else { Idling = true; }
     }
 
     public void Pull()
     {
+        curTarget = playerChar.transform;
         moveFreely = false;
         rb.velocity = Vector2.zero;
-        rb.AddForce((playerChar.position - transform.position).normalized * pullSpeed);
-        //am ende FindEnemy and moveFreely
+        rb.AddForce((playerChar.position - transform.position).normalized * pullSpeed, ForceMode2D.Force);
+        pullPos = playerChar.position;
     }
 }
