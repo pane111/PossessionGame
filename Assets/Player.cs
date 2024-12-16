@@ -25,6 +25,11 @@ public class Player : MonoBehaviour
     public Image overlay;
     public ParticleSystem afterimage;
 
+    public Image healthBar;
+    public float maxHealth;
+    public float curHealth;
+    public ParticleSystem blood;
+
     void Start()
     {
         stepTimer = maxStepTimer;
@@ -94,5 +99,30 @@ public class Player : MonoBehaviour
         corruptionText.transform.localScale = Vector3.one * (0.45f + corruption / 100);
             overlay.color = new Color(1, 1, 1, corruption / 100);
 
+    }
+    public void TakeDamage()
+    {
+        curHealth-=0.5f;
+        healthBar.fillAmount = curHealth / maxHealth;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            TakeDamage();
+            if (!blood.isPlaying)
+                blood.Play();
+            sr.color = Color.red;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            blood.Stop();
+            sr.color = Color.white;
+        }
     }
 }
