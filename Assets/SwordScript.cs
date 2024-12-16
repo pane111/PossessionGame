@@ -8,13 +8,23 @@ public class SwordScript : MonoBehaviour
     public Transform curTarget;
     public bool targeting;
     public Rigidbody2D rb;
+    [Header("Values")]
     public float maxVel;
+    public float curRange;
+    [SerializeField]
+    float rangeMod;
+    [SerializeField]
+    float maxVelMod;
+
+    ContactFilter2D cf;
+    Collider2D[] enemyColls;
     void Start()
     {
+        cf.layerMask = 6;
+
         curTarget = playerChar;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         Vector2 dir = curTarget.position - transform.position;
@@ -31,8 +41,18 @@ public class SwordScript : MonoBehaviour
         }
     }
 
+    void FindEnemy()
+    {
+        Physics2D.OverlapCircle(transform.position, curRange, cf, enemyColls);
+        for (int i = 0; i < enemyColls.Length; i++)
+        {
+
+        }
+    }
+
     public void Pull()
     {
+
 
     }
 }
