@@ -167,3 +167,4 @@ MonoBehaviour:
   detectRange: 30
   playerFound: 0
   rb: {fileID: 7718155269484473883}
+  player: {fileID: 0}
