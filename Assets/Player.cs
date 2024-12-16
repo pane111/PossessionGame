@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public bool isMoving;
     public float maxStepTimer = 0.2f;
     public float stepTimer = 0.2f;
+    public float dashForce;
+    public float dashTimer = 0.2f;
 
     public float corruption = 0;
     public Image corruptionImage;
