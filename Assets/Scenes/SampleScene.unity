@@ -16778,6 +16778,80 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1574376433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574376435}
+  - component: {fileID: 1574376434}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1574376434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574376433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee66f3caacbb8e4b9a738cd66f79b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0.7531938, b: 0, a: 1}
+    key2: {r: 1, g: 0.9864793, b: 0, a: 0}
+    key3: {r: 0.19723403, g: 1, b: 0, a: 0}
+    key4: {r: 0, g: 1, b: 0.71847177, a: 0}
+    key5: {r: 0, g: 0.18266296, b: 1, a: 0}
+    key6: {r: 0.6251559, g: 0, b: 1, a: 0}
+    key7: {r: 1, g: 0, b: 0.8520417, a: 0}
+    ctime0: 8481
+    ctime1: 16384
+    ctime2: 24672
+    ctime3: 31611
+    ctime4: 38357
+    ctime5: 46646
+    ctime6: 57054
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 8
+    m_NumAlphaKeys: 2
+--- !u!4 &1574376435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574376433}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27.944014, y: 4.7120395, z: -1.0435833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1607841707
 GameObject:
   m_ObjectHideFlags: 0
@@ -23597,7 +23671,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30606,3 +30680,4 @@ SceneRoots:
   - {fileID: 649357139}
   - {fileID: 734010214984438102}
   - {fileID: 223316750}
+  - {fileID: 1574376435}

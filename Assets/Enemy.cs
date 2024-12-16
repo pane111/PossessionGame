@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").transform;
+        GetComponent<SpriteRenderer>().color = GameManager.Instance.randomColor();
     }
 
     // Update is called once per frame
