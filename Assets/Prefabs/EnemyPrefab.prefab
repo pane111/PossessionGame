@@ -262,6 +262,9 @@ MonoBehaviour:
   bloodSpray: {fileID: 8675482905188897201}
   player: {fileID: 0}
   bloodstain: {fileID: 3148423645784464570}
+  lm:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!95 &5800526422586770189
 Animator:
   serializedVersion: 5

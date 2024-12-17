@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     public Transform player;
     SwordScript sword;
     public SpriteRenderer bloodstain;
+    public LayerMask lm;
     void Start()
     {
         
@@ -38,7 +39,7 @@ public class Enemy : MonoBehaviour
             Vector2 pDir = player.position - transform.position;
             pDir.Normalize();
             RaycastHit2D hit;
-            hit = Physics2D.Raycast(transform.position, pDir, detectRange);
+            hit = Physics2D.Raycast(transform.position, pDir, detectRange,lm);
             if (hit)
             {
                 if (hit.transform == player)
@@ -105,7 +106,8 @@ public class Enemy : MonoBehaviour
             bloodstain.enabled = true;
             rb.velocity = Vector3.zero;
             rb.isKinematic = true;
-            
+            player.GetComponent<Player>().StopBleeding();
+            gameObject.layer = 0;
         }
         ParticleSystem.MainModule ma = blood.main;
         ma.startColor = GameManager.Instance.randomColor();

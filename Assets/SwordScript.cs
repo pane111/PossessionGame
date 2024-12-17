@@ -86,10 +86,12 @@ public class SwordScript : MonoBehaviour
         Vector2 dir = curTarget.position - transform.position;
         rb.velocity = -dir.normalized * 15;
         yield return new WaitForSeconds(0.2f);
+        rb.AddTorque(100, ForceMode2D.Impulse);
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(0.3f);
         dir = curTarget.position - transform.position;
         rb.AddForce(dir.normalized * 250, ForceMode2D.Impulse);
+        
         isSlashing = true;
         slashes.Play();
         yield return new WaitForSeconds(0.25f);
@@ -97,6 +99,7 @@ public class SwordScript : MonoBehaviour
         isSlashing = false;
         slashes.Stop();
         yield return new WaitForSeconds(0.2f);
+        rb.AddTorque(-80, ForceMode2D.Impulse);
         moveFreely = true;
         curSAT = slashAttackTimer;
         yield return null;
@@ -133,7 +136,7 @@ public class SwordScript : MonoBehaviour
 
     void Untarget()
     {
-        curTarget.gameObject.layer = 0;
+        
         curTarget=playerChar.transform;
         FindEnemy();
 

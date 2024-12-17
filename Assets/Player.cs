@@ -137,12 +137,17 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
+    public void StopBleeding()
+    {
+        blood.Stop();
+        sr.color = Color.white;
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
-            blood.Stop();
-            sr.color = Color.white;
+            StopBleeding();
         }
     }
 }
