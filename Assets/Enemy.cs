@@ -15,11 +15,14 @@ public class Enemy : MonoBehaviour
     public GameObject hitEffect;
     public ParticleSystem blood;
     public ParticleSystem bloodSpray;
+    public ParticleSystem sparkles;
     bool dead = false;
     public Transform player;
     SwordScript sword;
     public SpriteRenderer bloodstain;
     public LayerMask lm;
+
+    public bool purified;
     void Start()
     {
         
@@ -34,7 +37,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dead)
+        if (!dead && !purified)
         {
             Vector2 pDir = player.position - transform.position;
             pDir.Normalize();
@@ -69,7 +72,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "PlayerSword")
+        if (other.gameObject.name == "PlayerSword" && !purified)
         {
             if (other.gameObject.GetComponent<SwordScript>().isSlashing)
             {
@@ -87,6 +90,12 @@ public class Enemy : MonoBehaviour
 
             bs.transform.position = (Vector2)transform.position + dir.normalized;
         }
+    }
+    public void Purify()
+    {
+        purified = true;
+        gameObject.layer = 0;
+        sparkles.Play();
     }
 
     IEnumerator TakeDamage(float amount)

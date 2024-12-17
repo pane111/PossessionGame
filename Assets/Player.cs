@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
                 
                 isDashing = true;
                 rb.AddForce(moveDirection.normalized * dashForce, ForceMode2D.Impulse);
+                StartCoroutine(Invincibility(dashTimer));
                 afterimage.Play();
                 dashTimer = maxDashTimer;
                 dashCooldown = maxDashCooldown;
@@ -112,9 +113,16 @@ public class Player : MonoBehaviour
     }
     public void TakeDamage()
     {
+
+        
+
+
         if (!invincible)
         {
-            
+            if (!blood.isPlaying)
+                blood.Play();
+            sr.color = Color.red;
+            Invoke("StopBleeding", 0.2f);
             curHealth -= 0.5f;
             healthBar.fillAmount = curHealth / maxHealth;
             if (curHealth <= 0)
@@ -127,6 +135,23 @@ public class Player : MonoBehaviour
             }
         }
         
+    }
+    public void TakeCustomDamage(float amount)
+    {
+        if (!blood.isPlaying)
+            blood.Play();
+        sr.color = Color.red;
+        Invoke("StopBleeding", 0.2f);
+        curHealth -= amount;
+        healthBar.fillAmount = curHealth / maxHealth;
+        if (curHealth <= 0)
+        {
+            curHealth = maxHealth;
+            healthBar.fillAmount = curHealth / maxHealth;
+            corruption += 35;
+            GameManager.Instance.OnDeath();
+            StartCoroutine(Invincibility(5));
+        }
     }
     IEnumerator Invincibility(float dur)
     {
@@ -162,6 +187,14 @@ public class Player : MonoBehaviour
     {
         blood.Stop();
         sr.color = Color.white;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+
+            TakeCustomDamage(15);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
