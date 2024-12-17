@@ -19,25 +19,35 @@ public class SwordScript : MonoBehaviour
     }
     bool moveFreely;
     public Rigidbody2D rb;
-    [Header("Values")]
+    [Header("Basic Movement")]
     public float maxVel;
     public float speedModIdle;
     public float speedModAttack;
     private float speedMod;
+    [SerializeField]
+    float maxVelPossMod;
+    [Header("Pull")]
+    public float pullSpeed;
+    public float maxVelocity; //Maximum velocity the sword can go at
+    public float pullCooldown;
+    private Vector2 pullPos;
+    [Header("Repell")]
+    public float repellForce;
+    public float repellRange;
+    public float repellCooldown;
+    public float repellDuration;
+    public float callbackTime;
+    [Header("Attack")]
     public float curRange;
     [SerializeField]
     float rangePossMod;
-    [SerializeField]
-    float maxVelPossMod;
-    public float pullSpeed;
-    public float maxVelocity; //Maximum velocity the sword can go at
-    private Vector2 pullPos;
-    public GameObject reticle;
     public ParticleSystem slashes;
     public float slashAttackTimer = 2;
     private float curSAT = 2;
-    public bool isSlashing=false;
+    public bool isSlashing = false;
     public ContactFilter2D cf;
+    [Header("Other")]
+    public GameObject reticle;
     List<Collider2D> enemyColls = new List<Collider2D>();
     void Start()
     {
@@ -149,5 +159,22 @@ public class SwordScript : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.AddForce((playerChar.position - transform.position) * pullSpeed, ForceMode2D.Force);
         pullPos = playerChar.position;
+    }
+
+    public void RepellFunction()
+    {
+        StartCoroutine(Repell());
+    }
+
+    IEnumerator Repell()
+    {
+        moveFreely = false;
+        rb.velocity = Vector2.zero;
+        rb.AddForce((transform.position - playerChar.position).normalized * repellForce, ForceMode2D.Force);
+        yield return new WaitForSeconds(repellDuration);
+        rb.velocity /= 10;
+        yield return new WaitForSeconds(callbackTime);
+        moveFreely=true;
+        yield return null;
     }
 }

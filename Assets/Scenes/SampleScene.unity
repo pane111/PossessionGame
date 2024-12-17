@@ -42404,12 +42404,17 @@ MonoBehaviour:
   maxVel: 35
   speedModIdle: 2
   speedModAttack: 3
-  curRange: 5
-  rangePossMod: 1
   maxVelPossMod: 1
   pullSpeed: 500
   maxVelocity: 40
-  reticle: {fileID: 223316748}
+  pullCooldown: 0.8
+  repellForce: 2000
+  repellRange: 3
+  repellCooldown: 0.5
+  repellDuration: 0.25
+  callbackTime: 2.5
+  curRange: 5
+  rangePossMod: 1
   slashes: {fileID: 585844331}
   slashAttackTimer: 2
   isSlashing: 0
@@ -42427,6 +42432,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  reticle: {fileID: 223316748}
 --- !u!58 &2079086544
 CircleCollider2D:
   m_ObjectHideFlags: 0
