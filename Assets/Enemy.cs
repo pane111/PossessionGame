@@ -11,46 +11,58 @@ public class Enemy : MonoBehaviour
     public float detectRange;
     public bool playerFound;
     public Rigidbody2D rb;
-
+    public Sprite corpseSprite;
     public GameObject hitEffect;
     public ParticleSystem blood;
-
+    public ParticleSystem bloodSpray;
+    bool dead = false;
     public Transform player;
+    SwordScript sword;
+    public SpriteRenderer bloodstain;
     void Start()
     {
+        
+        sword = FindObjectOfType<SwordScript>();
         player = GameObject.Find("Player").transform;
-        GetComponent<SpriteRenderer>().color = GameManager.Instance.randomColor();
+        Color c = GameManager.Instance.randomColor();
+        GetComponent<SpriteRenderer>().color = c;
+        bloodstain.color = c;
+        bloodstain.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 pDir = player.position - transform.position;
-        pDir.Normalize();
-        RaycastHit2D hit;
-        hit = Physics2D.Raycast(transform.position, pDir, detectRange);
-        if (hit)
+        if (!dead)
         {
-            if (hit.transform == player)
+            Vector2 pDir = player.position - transform.position;
+            pDir.Normalize();
+            RaycastHit2D hit;
+            hit = Physics2D.Raycast(transform.position, pDir, detectRange);
+            if (hit)
             {
-                playerFound = true;
-                GetComponent<Animator>().enabled = true;
+                if (hit.transform == player)
+                {
+                    playerFound = true;
+                    GetComponent<Animator>().enabled = true;
+                }
+                else
+                {
+                    playerFound = false;
+                    GetComponent<Animator>().enabled = false;
+                }
+            }
+
+            if (playerFound)
+            {
+                rb.velocity = pDir * speed;
             }
             else
             {
-                playerFound = false;
-                GetComponent<Animator>().enabled = false;
+                rb.velocity = Vector2.zero;
             }
         }
-
-        if (playerFound)
-        {
-            rb.velocity = pDir * speed;
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
-        }
+        
     }
     
 
@@ -79,11 +91,27 @@ public class Enemy : MonoBehaviour
     IEnumerator TakeDamage(float amount)
     {
         curHealth -= amount;
+        if (curHealth <= 0)
+        {
+            ParticleSystem.MainModule sma = bloodSpray.main;
+            sma.startColor = GameManager.Instance.randomColor();
+            if (!dead)
+                bloodSpray.Play();
+            GetComponent<Animator>().enabled = false;
+            dead = true;
+            GetComponent<Collider2D>().isTrigger = true;
+            GetComponent<SpriteRenderer>().sprite = corpseSprite;
+            sword.OnEnemyDeath();
+            bloodstain.enabled = true;
+            rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
+            
+        }
         ParticleSystem.MainModule ma = blood.main;
         ma.startColor = GameManager.Instance.randomColor();
         blood.Play();
         hitEffect.SetActive(true);
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.05f);
         hitEffect.SetActive(false);
         yield return null;
     }

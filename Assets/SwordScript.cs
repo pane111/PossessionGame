@@ -32,7 +32,7 @@ public class SwordScript : MonoBehaviour
     public float pullSpeed;
     public float maxVelocity; //Maximum velocity the sword can go at
     private Vector2 pullPos;
-
+    public GameObject reticle;
     public ParticleSystem slashes;
     public float slashAttackTimer = 2;
     private float curSAT = 2;
@@ -116,8 +116,27 @@ public class SwordScript : MonoBehaviour
             }
             Idling = false;
             curTarget = enemyColls[closestEnemy].transform;
+            reticle.SetActive(true);
+            reticle.transform.position = curTarget.position - Vector3.forward;
+            reticle.transform.parent = curTarget;
         }
         else { Idling = true; }
+    }
+    public void OnEnemyDeath()
+    {
+        reticle.transform.parent = null;
+        reticle.SetActive(false);
+
+        float randTime = Random.Range(1f, 4f);
+        Invoke("Untarget", randTime);
+    }
+
+    void Untarget()
+    {
+        curTarget.gameObject.layer = 0;
+        curTarget=playerChar.transform;
+        FindEnemy();
+
     }
 
     public void Pull()
