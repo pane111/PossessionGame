@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     SwordScript sword;
     public SpriteRenderer bloodstain;
     public LayerMask lm;
-
+    public GameObject lightBeam;
     public bool purified;
     void Start()
     {
@@ -96,6 +96,14 @@ public class Enemy : MonoBehaviour
         purified = true;
         gameObject.layer = 0;
         sparkles.Play();
+        rb.isKinematic = true;
+        GetComponent<Collider2D>().isTrigger = true;
+    }
+    public void Rescue()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        lightBeam.SetActive(true);
+        Destroy(gameObject,1);
     }
 
     IEnumerator TakeDamage(float amount)

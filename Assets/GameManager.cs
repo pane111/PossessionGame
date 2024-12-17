@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviour
     public Animator deathAnim;
     public Animator heartAnim;
     public float bpm = 1;
-
+    public Player player;
     public int kills = 0;
-
+    public int saved = 0;
     public TextMeshProUGUI statsText;
     public static GameManager Instance { get; private set; }
     private void Awake()
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame

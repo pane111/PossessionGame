@@ -11,6 +11,7 @@ public class CursedWeapon : MonoBehaviour
 
     public float detectRange;
     public bool playerFound;
+    public ParticleSystem damageEffect;
 
     private void Start()
     {
@@ -19,6 +20,8 @@ public class CursedWeapon : MonoBehaviour
 
     public virtual void TakeDamage(float amount)
     {
+        
+        damageEffect.Play();
         curHealth -= amount;
         if (curHealth <= 0) {
             OnDeath();
@@ -33,8 +36,8 @@ public class CursedWeapon : MonoBehaviour
 
     public virtual void OnDeath()
     {
+        GameManager.Instance.player.OnPurify();
         enemy.GetComponent<Enemy>().Purify();
-        Destroy(gameObject);
     }
 
     // Update is called once per frame
@@ -42,6 +45,13 @@ public class CursedWeapon : MonoBehaviour
     {
         if (collision.GetComponent<SwordScript>() != null)
         {
+            Vector2 dir = transform.position - collision.transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Quaternion lDir = Quaternion.AngleAxis(angle, Vector3.forward);
+            GameObject bs = Instantiate(GameManager.Instance.bSplatter, transform.position, lDir);
+
+
+            bs.transform.position = (Vector2)transform.position + dir.normalized;
             if (collision.GetComponent<SwordScript>().isSlashing)
             {
                 TakeDamage(3);

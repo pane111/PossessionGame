@@ -61,6 +61,22 @@ public class CursedStaff : CursedWeapon
             
             playerFound = true; }
     }
+    public override void OnDeath()
+    {
+        base.OnDeath();
+        GetComponent<Collider2D>().enabled = false;
+        beamCooldown = 9999;
+        beamStart.gameObject.SetActive(false);
+        beamEnd.gameObject.SetActive(false);
+        beam.enabled = false;
+        beamStarted = false;
+        GetComponent<Animator>().SetTrigger("Death");
+
+    }
+    public void DestroyStaff()
+    {
+        Destroy(gameObject);
+    }
     IEnumerator beamAttack()
     {
         beamStart.gameObject.SetActive(true);

@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     public LineRenderer leash;
     public Transform sword;
     bool invincible = false;
+    public float corruptionLossOnPurify = 40;
     void Start()
     {
         stepTimer = maxStepTimer;
@@ -111,6 +112,11 @@ public class Player : MonoBehaviour
             overlay.color = new Color(1, 1, 1, corruption / 100);
 
     }
+    public void OnPurify()
+    {
+        corruption -= corruptionLossOnPurify;
+        if (corruption < 0) { corruption = 0; }
+    }
     public void TakeDamage()
     {
 
@@ -138,20 +144,24 @@ public class Player : MonoBehaviour
     }
     public void TakeCustomDamage(float amount)
     {
-        if (!blood.isPlaying)
-            blood.Play();
-        sr.color = Color.red;
-        Invoke("StopBleeding", 0.2f);
-        curHealth -= amount;
-        healthBar.fillAmount = curHealth / maxHealth;
-        if (curHealth <= 0)
+        if (!invincible)
         {
-            curHealth = maxHealth;
+            if (!blood.isPlaying)
+                blood.Play();
+            sr.color = Color.red;
+            Invoke("StopBleeding", 0.2f);
+            curHealth -= amount;
             healthBar.fillAmount = curHealth / maxHealth;
-            corruption += 35;
-            GameManager.Instance.OnDeath();
-            StartCoroutine(Invincibility(5));
+            if (curHealth <= 0)
+            {
+                curHealth = maxHealth;
+                healthBar.fillAmount = curHealth / maxHealth;
+                corruption += 35;
+                GameManager.Instance.OnDeath();
+                StartCoroutine(Invincibility(5));
+            }
         }
+        
     }
     IEnumerator Invincibility(float dur)
     {
@@ -194,6 +204,16 @@ public class Player : MonoBehaviour
         {
 
             TakeCustomDamage(15);
+        }
+
+        if (collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            if (collision.gameObject.GetComponent<Enemy>().purified)
+            {
+                
+                GameManager.Instance.saved++;
+                collision.gameObject.GetComponent<Enemy>().Rescue();
+            }
         }
     }
 
