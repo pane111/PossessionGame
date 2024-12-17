@@ -5588,7 +5588,7 @@ GameObject:
   - component: {fileID: 407729415}
   - component: {fileID: 407729414}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5635,7 +5635,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'TIME 99:99
 
-    KILLS 9999
+    KILLS
+
+    0
 
 
 
@@ -5741,7 +5743,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464057347}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5750,7 +5752,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 830.21, y: -337}
+  m_AnchoredPosition: {x: 830.20996, y: -337.00003}
   m_SizeDelta: {x: 217.87, y: 211.6038}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &464057349
@@ -20877,7 +20879,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782762723}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20886,7 +20888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 589.43, y: -99}
+  m_AnchoredPosition: {x: 589.4302, y: -99.00001}
   m_SizeDelta: {x: 185.7452, y: 211.6038}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &782762725
@@ -22036,6 +22038,7 @@ GameObject:
   - component: {fileID: 1496285515}
   - component: {fileID: 1496285517}
   - component: {fileID: 1496285516}
+  - component: {fileID: 1496285518}
   m_Layer: 5
   m_Name: DashPic
   m_TagString: Untagged
@@ -22100,6 +22103,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496285514}
   m_CullTransparentMesh: 1
+--- !u!95 &1496285518
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496285514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dee7961eb2ea3374db24378cb4a0f9bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1567054889
 GameObject:
   m_ObjectHideFlags: 0
@@ -22259,6 +22283,10 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   bSplatter: {fileID: 4466453010552009775, guid: 8bb751120721767438a6efc474ed82d7, type: 3}
   deathAnim: {fileID: 1980829943}
+  heartAnim: {fileID: 963369594}
+  bpm: 1
+  kills: 0
+  statsText: {fileID: 407729414}
 --- !u!4 &1574376435
 Transform:
   m_ObjectHideFlags: 0
@@ -28973,6 +29001,7 @@ GameObject:
   - component: {fileID: 1913390091}
   - component: {fileID: 1913390093}
   - component: {fileID: 1913390092}
+  - component: {fileID: 1913390094}
   m_Layer: 5
   m_Name: PullPic
   m_TagString: Untagged
@@ -29037,6 +29066,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913390090}
   m_CullTransparentMesh: 1
+--- !u!95 &1913390094
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913390090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 474912c7673f819479d9d24034af428e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1926306137
 GameObject:
   m_ObjectHideFlags: 0

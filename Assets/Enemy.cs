@@ -96,8 +96,8 @@ public class Enemy : MonoBehaviour
         {
             ParticleSystem.MainModule sma = bloodSpray.main;
             sma.startColor = GameManager.Instance.randomColor();
-            if (!dead)
-                bloodSpray.Play();
+            if (!dead) { bloodSpray.Play(); GameManager.Instance.AddKill(); }
+                
             GetComponent<Animator>().enabled = false;
             dead = true;
             GetComponent<Collider2D>().isTrigger = true;
