@@ -32,10 +32,14 @@ public class Player : MonoBehaviour
 
     public LineRenderer leash;
     public Transform sword;
+    private SwordScript swordScript;
     bool invincible = false;
+    bool canRepell = true;
+
     void Start()
     {
         stepTimer = maxStepTimer;
+        swordScript = sword.GetComponent<SwordScript>();
     }
 
     // Update is called once per frame
@@ -71,10 +75,16 @@ public class Player : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.E) && canRepell && Vector2.Distance(transform.position, sword.position) < swordScript.repellRange)
+        {
+            StartCoroutine(Repell());
+            swordScript.RepellFunction();
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             StartCoroutine(pullEffect());
-            sword.GetComponent<SwordScript>().Pull();
+            swordScript.Pull();
         }
 
         Vector3 v = sword.position - transform.position;
@@ -98,9 +108,6 @@ public class Player : MonoBehaviour
                 isDashing = false;
             }
         }
-        
-
-        
 
         corruptionText.text = corruption.ToString() +"%";
         corruptionText.color = Color.Lerp(Color.white, Color.red, corruption / 100);
@@ -173,12 +180,18 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    IEnumerator Repell()
+    {
+        canRepell = false;
+        yield return new WaitForSeconds(swordScript.repellCooldown);
+        canRepell = true;
+        yield return null;
+    }
 
     IEnumerator pullEffect()
     {
         leash.enabled = true;
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(swordScript.pullCooldown);
         leash.enabled = false;
         yield return null;
     }
