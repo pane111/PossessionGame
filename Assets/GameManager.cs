@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public Gradient colorGradient;
     public GameObject bSplatter;
+    public Animator deathAnim;
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -35,5 +36,10 @@ public class GameManager : MonoBehaviour
         Color c = colorGradient.Evaluate(rnd);
 
         return c;
+    }
+
+    public void OnDeath()
+    {
+        deathAnim.SetTrigger("Death");
     }
 }

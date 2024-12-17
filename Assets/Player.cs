@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
 
     public LineRenderer leash;
     public Transform sword;
-
+    bool invincible = false;
     void Start()
     {
         stepTimer = maxStepTimer;
@@ -112,8 +112,29 @@ public class Player : MonoBehaviour
     }
     public void TakeDamage()
     {
-        curHealth-=0.5f;
-        healthBar.fillAmount = curHealth / maxHealth;
+        if (!invincible)
+        {
+            
+            curHealth -= 0.5f;
+            healthBar.fillAmount = curHealth / maxHealth;
+            if (curHealth <= 0)
+            {
+                curHealth = maxHealth;
+                healthBar.fillAmount = curHealth / maxHealth;
+                corruption += 35;
+                GameManager.Instance.OnDeath();
+                StartCoroutine(Invincibility(5));
+            }
+        }
+        
+    }
+    IEnumerator Invincibility(float dur)
+    {
+        invincible = true;
+        yield return new WaitForSeconds(dur);
+        invincible = false;
+
+        yield return null;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
