@@ -64,6 +64,7 @@ public class CursedStaff : CursedWeapon
     public override void OnDeath()
     {
         base.OnDeath();
+        spreadShot.enabled = false;
         GetComponent<Collider2D>().enabled = false;
         beamCooldown = 9999;
         beamStart.gameObject.SetActive(false);
