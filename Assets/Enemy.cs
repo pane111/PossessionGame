@@ -85,7 +85,7 @@ public class Enemy : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
         GetComponent<Animator>().enabled = false;
         rb.isKinematic = true;
-        GetComponent<Collider2D>().isTrigger = true;
+        GetComponent<Collider2D>().enabled = false;
         StartCoroutine(flipSprite());
     }
 
@@ -96,7 +96,7 @@ public class Enemy : MonoBehaviour
         GetComponent<SpriteRenderer>().color = initColor;
         GetComponent<Animator>().enabled = true;
         rb.isKinematic = false;
-        GetComponent<Collider2D>().isTrigger = false;
+        GetComponent<Collider2D>().enabled =true;
     }
 
     IEnumerator flipSprite()

@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
     public Transform orbiter;
     void Start()
     {
+        _curHealth = maxHealth;
         stepTimer = maxStepTimer;
         swordScript = sword.GetComponent<SwordScript>();
         AudioManager.Instance.GS_NormalMode.SetValue();
@@ -303,8 +304,9 @@ public class Player : MonoBehaviour
 
     public void Revive()
     {
-        CurHealth = maxHealth;
+        _curHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
         Corruption += 35;
+        SetInvincible(5);
     }
 }
