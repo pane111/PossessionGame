@@ -37,6 +37,7 @@ public class SwordScript : MonoBehaviour
     public float repellCooldown;
     public float repellDuration;
     public float callbackTime;
+    public ParticleSystem repel;
     [Header("Attack")]
     public float curRange;
     [SerializeField]
@@ -49,6 +50,7 @@ public class SwordScript : MonoBehaviour
     [Header("Other")]
     public GameObject reticle;
     List<Collider2D> enemyColls = new List<Collider2D>();
+    
     void Start()
     {
         curTarget = playerChar;
@@ -59,10 +61,10 @@ public class SwordScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 dir = curTarget.position - transform.position;
+        
 
         //TARGETING
-        if (Idling) { FindEnemy(); }
+        if (Idling) { curTarget = playerChar.gameObject.GetComponent<Player>().orbiter; FindEnemy();  }
         else
         {
             curSAT -= Time.deltaTime;
@@ -72,7 +74,7 @@ public class SwordScript : MonoBehaviour
                 curSAT = 9999;
             }
         }
-
+        Vector2 dir = curTarget.position - transform.position;
         //MOVING
         if (moveFreely)
         {
@@ -168,6 +170,7 @@ public class SwordScript : MonoBehaviour
 
     IEnumerator Repell()
     {
+        repel.Play();
         moveFreely = false;
         rb.velocity = Vector2.zero;
         rb.AddForce((transform.position - playerChar.position).normalized * repellForce, ForceMode2D.Force);

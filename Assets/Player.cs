@@ -40,6 +40,10 @@ public class Player : MonoBehaviour
     public Sprite demonSprite;
     public float demonModeDuration;
     public bool demonModeActive;
+    public float orbitSpeed;
+    float curDeg=0;
+    public Transform rotator;
+    public Transform orbiter;
     void Start()
     {
         stepTimer = maxStepTimer;
@@ -52,8 +56,12 @@ public class Player : MonoBehaviour
 
         var vertical = Input.GetAxisRaw("Vertical");
         var horizontal = Input.GetAxisRaw("Horizontal");
-
-
+        curDeg += Time.deltaTime * orbitSpeed;
+        rotator.rotation = Quaternion.Euler(0,0,curDeg);
+        if (curDeg >= 360)
+        {
+            curDeg = 0;
+        }
         moveDirection.x = horizontal;
         moveDirection.y = vertical;
         
