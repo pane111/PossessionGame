@@ -6,7 +6,7 @@ using Event = AK.Wwise.Event;
 
 public class AudioManager : MonoBehaviour
 {
-    public int masterVolume;
+    [Range(0, 15f)] public int masterVolume;
     public float bpmMod = 1;
 
     [Header("States")] //game over not connected, paused doesnt exist
@@ -35,7 +35,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Event DemonModeOn;
     [SerializeField] private Event DemonModeOff;
     public Event StartMusic;
-    public Event PauseToggle;
+    public Event Pause;
+    public Event Resume;
 
     private void Start()
     {
