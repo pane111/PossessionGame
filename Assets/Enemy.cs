@@ -28,6 +28,12 @@ public class Enemy : MonoBehaviour
     Sprite initSprite;
     Color initColor;
     public float flipTime;
+    public GameObject crystal;
+    public GameObject heart;
+    bool heartExposed;
+    public ParticleSystem crystalHit;
+
+    public CursedWeapon weapon;
     void Start()
     {
         initSprite = GetComponent<SpriteRenderer>().sprite;
@@ -77,26 +83,44 @@ public class Enemy : MonoBehaviour
         }
         
     }
+    public void ExposeHeart()
+    {
+        heartExposed = true;
+        crystal.SetActive(false);
+        heart.SetActive(true);
+    }
 
     void EnterDM()
     {
-        demon = true;
-        GetComponent<SpriteRenderer>().sprite = demonSprite;
-        GetComponent<SpriteRenderer>().color = Color.white;
-        GetComponent<Animator>().enabled = false;
-        rb.isKinematic = true;
-        GetComponent<Collider2D>().enabled = false;
-        StartCoroutine(flipSprite());
+        if (curHealth > 0)
+        {
+            demon = true;
+            crystal.SetActive(!heartExposed);
+            heart.SetActive(heartExposed);
+            GetComponent<SpriteRenderer>().sprite = demonSprite;
+            GetComponent<SpriteRenderer>().color = Color.white;
+            GetComponent<Animator>().enabled = false;
+            rb.isKinematic = true;
+            GetComponent<Collider2D>().enabled = false;
+            StartCoroutine(flipSprite());
+        }
+        
     }
 
     void ExitDM()
     {
-        demon = false;
-        GetComponent<SpriteRenderer>().sprite = initSprite;
-        GetComponent<SpriteRenderer>().color = initColor;
-        GetComponent<Animator>().enabled = true;
-        rb.isKinematic = false;
-        GetComponent<Collider2D>().enabled =true;
+        if (curHealth > 0)
+        {
+            playerFound = false;
+            demon = false;
+            crystal.SetActive(false);
+            heart.SetActive(false);
+            GetComponent<SpriteRenderer>().sprite = initSprite;
+            GetComponent<SpriteRenderer>().color = initColor;
+            GetComponent<Animator>().enabled = true;
+            rb.isKinematic = false;
+            GetComponent<Collider2D>().enabled = true;
+        }
     }
 
     IEnumerator flipSprite()
@@ -129,23 +153,40 @@ public class Enemy : MonoBehaviour
             Quaternion lDir = Quaternion.AngleAxis(angle, Vector3.forward);
             GameObject bs = Instantiate(GameManager.Instance.bSplatter,transform.position, lDir);
             
-
+            if (heartExposed && demon)
+            {
+                StartCoroutine(TakeDamage(0));
+                heart.GetComponent<Collider2D>().enabled = false;
+                heart.SetActive(false);
+                player.GetComponent<Player>().OnPurify();
+                Purify();
+            }
             bs.transform.position = (Vector2)transform.position + dir.normalized;
         }
     }
     public void Purify()
     {
-        purified = true;
-        gameObject.layer = 0;
-        sparkles.Play();
-        rb.isKinematic = true;
-        GetComponent<Collider2D>().isTrigger = true;
+        if (curHealth > 0)
+        {
+            weapon.OnDeath();
+            purified = true;
+            gameObject.layer = 0;
+            sparkles.Play();
+            rb.isKinematic = true;
+            GetComponent<Collider2D>().isTrigger = true;
+        }
+        
     }
     public void Rescue()
     {
         GetComponent<SpriteRenderer>().enabled = false;
         lightBeam.SetActive(true);
-        Destroy(gameObject,1);
+        Invoke("DisableThis", 1);
+    }
+
+    void DisableThis()
+    {
+        gameObject.SetActive(false);
     }
 
     IEnumerator TakeDamage(float amount)

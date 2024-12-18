@@ -44,6 +44,13 @@ public class CursedStaff : CursedWeapon
             }
         }
 
+        if (curHealth <= 0)
+        {
+            lr.enabled = true;
+            lr.SetPosition(0, Vector3.zero);
+            lr.SetPosition(1, enemy.transform.position - transform.position);
+        }
+
     }
 
     public override void FindPlayer()

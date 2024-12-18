@@ -16,9 +16,12 @@ public class StatueScript : MonoBehaviour
     {
         if (collision.gameObject.name=="Player")
         {
-            effect.SetActive(false);
-            GetComponent<Collider2D>().enabled = false;
-            Invoke("Reactivate", cooldown);
+            if (!collision.gameObject.GetComponent<Player>().demonModeActive) {
+                effect.SetActive(false);
+                GetComponent<Collider2D>().enabled = false;
+                Invoke("Reactivate", cooldown);
+            }
+            
         }
     }
 }

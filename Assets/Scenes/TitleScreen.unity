@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -448, y: -74.383}
-  m_SizeDelta: {x: 960, y: 931.24}
+  m_AnchoredPosition: {x: -370.55676, y: -74.383}
+  m_SizeDelta: {x: 1114.8865, y: 931.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &47939360
 MonoBehaviour:
@@ -1340,12 +1340,13 @@ MonoBehaviour:
     purge the afflicted of their curse by using your own cursed weapon. Only a demon
     can slay another demon, after all.
   - However, you must take care... Your weapon seeks the blood of innocents, and
-    it is your responsibity to save them, while preserving your own sanity. Possessed
-    as they are, they will attempt to take your life - but you must not retaliate.
-    Exorcise their demons and save them!
+    it is your mission to save them. Possessed as they are, they will attempt to
+    take your life - but you must not retaliate. Exorcise their demons and save them!
   - Touch a <color=red>Statue of the Abyss</color> to enter <color=red>Demon Mode</color>.
-    In this state, you will move faster, and the demons' true form will be revealed.
-    <color=red>Demon Mode</color> is only temporary - you must slay the demons urgently.
+    In this state, you will move faster, and the demons will be revealed. Find and
+    attack the demons to shatter the crystals that protect their heart, then strike
+    at their heart to fully exorcise them. Statues will replenish their power after
+    some time.
   - Your sword will attempt to attack humans automatically. You can press the Shift
     key to <color=red>Pull</color> the sword towards you, interrupting whatever it
     was doing. When facing a demon, try pressing the E key to <color=red>Repel</color>
@@ -1357,7 +1358,7 @@ MonoBehaviour:
     your weapon to slay humans, will grant it more power and raise your corruption.
     Exorcising a demon will lower your corruption. You must keep it as low as possible,
     no matter the cost.
-  - We have high hopes for you. Do not fail your mission.
+  - We have high hopes for you. Do not fail your mission. The curse must be broken.
   curTutorial: 0
   tWindow: {fileID: 265964277}
   tutorialPic: {fileID: 1847995580}

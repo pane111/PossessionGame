@@ -12,6 +12,8 @@ public class CursedWeapon : MonoBehaviour
     public float detectRange;
     public bool playerFound;
     public ParticleSystem damageEffect;
+    bool dead;
+    public LineRenderer lr;
 
     private void Start()
     {
@@ -26,21 +28,35 @@ public class CursedWeapon : MonoBehaviour
         damageEffect.Play();
         curHealth -= amount;
         if (curHealth <= 0) {
-            OnDeath();
+            //OnDeath();
+            FreeNPC();
         }
+        else
+        {
+            StartCoroutine(CrystalVisual());
+        }
+    }
+
+    public void FreeNPC() //Allows player to finish the NPC
+    {
+        enemy.GetComponent<Enemy>().ExposeHeart();
     }
 
     public void OnDM()
     {
-        if (curHealth>0)
+        if (!dead)
         {
+            if (enemy.GetComponent<Enemy>().curHealth <= 0)
+            {
+                lr.gameObject.SetActive(false);
+            }
             gameObject.SetActive(true);
         }
             
     }
     public void OnExitDM()
     {
-        if (curHealth > 0)
+        if (!dead)
             gameObject.SetActive(false);
         
         
@@ -54,9 +70,21 @@ public class CursedWeapon : MonoBehaviour
 
     public virtual void OnDeath()
     {
-        
+        dead = true;
+        lr.gameObject.SetActive(false);
         GameManager.Instance.player.OnPurify();
-        enemy.GetComponent<Enemy>().Purify();
+        //enemy.GetComponent<Enemy>().Purify();
+    }
+
+    IEnumerator CrystalVisual()
+    {
+        enemy.GetComponent<Enemy>().crystalHit.Play();
+        lr.enabled = true;
+        lr.SetPosition(0, Vector3.zero);
+        lr.SetPosition(1,enemy.transform.position-transform.position);
+        
+        yield return new WaitForSeconds(0.2f);
+        lr.enabled = false;
     }
 
     // Update is called once per frame
