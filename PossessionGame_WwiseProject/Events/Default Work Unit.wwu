@@ -9,10 +9,245 @@
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ChildrenList>
-						<Folder Name="Sword" ID="{3A46BC9D-4B59-4A73-BF7A-AD6ABAE0197C}" ShortID="982455623"/>
-						<Folder Name="Enemies" ID="{6EA31857-0EBD-4A1E-8F37-1D2582AEE8F9}" ShortID="220521386"/>
+						<Folder Name="Sword" ID="{3A46BC9D-4B59-4A73-BF7A-AD6ABAE0197C}" ShortID="982455623">
+							<ChildrenList>
+								<Event Name="SwordSlash" ID="{6F4388BC-85BB-447F-8038-72F756E2DEF4}">
+									<ChildrenList>
+										<Action Name="" ID="{0CDACD77-6863-4E4A-8D05-AA260D8E7A2A}" ShortID="1032472266">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="QuickSlash" ID="{A59279D5-E322-45DC-9E1F-944AE2997155}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="SwordSlash_BIG" ID="{BB286FF0-C49C-417A-969C-BDB635C16BC8}">
+									<ChildrenList>
+										<Action Name="" ID="{758E7040-5682-43FD-A03D-B2E1CD6EA3A6}" ShortID="888208839">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigSlash" ID="{56CC5DC0-C2AC-4BB9-A330-D19620FB7C32}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="SwordDeflect" ID="{29E79F97-784D-49B4-B4D7-17DACF4FF4A9}">
+									<ChildrenList>
+										<Action Name="" ID="{3DA52912-D449-4CB6-9CF2-7DF867D43CB1}" ShortID="423714795">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Deflect" ID="{73F86DBD-34EB-4662-83ED-E0A25675C6C5}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{7381DFDF-F254-492B-90AD-F65BDD5BD9CC}" ShortID="269266357">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.5">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{09B707CB-82A8-4B80-A4CF-BE315D799767}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.25"/>
+																	<Property Name="Min" Type="Real64" Value="-0.1"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Probability" Type="Real64" Value="80"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Growl" ID="{CDCAA847-FE08-4DB1-9EE8-5FF1480C0E13}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="NPC" ID="{6EA31857-0EBD-4A1E-8F37-1D2582AEE8F9}" ShortID="220521386">
+							<ChildrenList>
+								<Event Name="NPCDeath" ID="{C397DCEA-5037-4AFC-8896-0DA273EF1C50}">
+									<ChildrenList>
+										<Action Name="" ID="{692D7D3E-C801-4431-AB68-449DCCDA5862}" ShortID="291371452">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Death" ID="{EB777290-87F0-47AE-B13D-BD3DB5CC86D5}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="NPCTakeDmg" ID="{F80FE745-ED79-4A0B-AA0F-45077BFD8BD1}">
+									<ChildrenList>
+										<Action Name="" ID="{F9795F2A-C22D-4801-BBA9-8503CD3412CC}" ShortID="58446232">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DmgTaken-NPC" ID="{AE35DD21-F02C-4DDA-9242-327AE2ADED67}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Player" ID="{07B5BD21-499A-42BC-B78A-FF30B8D56FFE}" ShortID="878290952">
+							<ChildrenList>
+								<Event Name="Dash" ID="{CAD6C48D-F41B-4C73-88AD-E82FEB37A6E3}">
+									<ChildrenList>
+										<Action Name="" ID="{3D45D92B-5CEC-46B8-9EB4-21204A05085F}" ShortID="605746627">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Dash" ID="{79FF6DCC-F82E-4656-B254-9E13C48D6DBB}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Repell" ID="{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}">
+									<ChildrenList>
+										<Action Name="" ID="{3A08635B-F21B-4EDA-8210-15BA8F0B2A8F}" ShortID="333984212">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Repell" ID="{944D2AF7-3B23-4B70-97E9-0CA7AFE8913F}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Pull" ID="{E10D2661-0E07-43A7-B9CB-DB5427902EB9}">
+									<ChildrenList>
+										<Action Name="" ID="{5423FD9E-39A3-4DC6-BB6F-9E8554069D70}" ShortID="888566583">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Pull" ID="{5C597CB6-6B42-4B52-84ED-62F514F2834B}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="TakeDMG" ID="{8E20AB0B-1904-406D-825C-DA8E374541F1}">
+									<ChildrenList>
+										<Action Name="" ID="{97068B56-6FA7-40D4-8D30-543272FC24F4}" ShortID="413899736">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DmgTaken-Player" ID="{D893129C-4AA8-457F-A8A3-68FB77CCC960}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Event Name="Death" ID="{2CD70137-CF50-4DFC-9521-ACB5D98CB7EC}">
+							<ChildrenList>
+								<Action Name="" ID="{7953EBCE-5DAF-41B8-84CF-7043F9D6EB7C}" ShortID="421999836">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PlayerDeath" ID="{FB12EE3E-7638-47E8-85AC-8B35D4B6A7DD}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="GameOver" ID="{8FB86B8C-38A2-43BF-9160-53FF16B3564A}">
+							<ChildrenList>
+								<Action Name="" ID="{91567E8E-D63F-452B-84CE-539B0B6BE015}" ShortID="282326656">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GameOver" ID="{DEAF0657-AFB2-42D6-8BB9-12D0A02B9D65}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Revive" ID="{DAC6B62D-BBAB-45B1-B999-0A666DC03071}">
+							<ChildrenList>
+								<Action Name="" ID="{0997F760-D4D7-4E72-A679-7039ACCCEADA}" ShortID="599424517">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Revive" ID="{2DC21CD9-42BA-49D3-B00A-2E10F7013CD6}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="DemonModeOn" ID="{39818C53-6D8D-4811-AC46-CD76BBC341FF}">
+							<ChildrenList>
+								<Action Name="" ID="{18E7E49C-4CBB-4920-9E22-72A6A7885822}" ShortID="901371171">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DMOn" ID="{26571F7A-159B-4C04-B515-A172FB2DF051}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="DemonModeOff" ID="{E6EB68B9-BA8D-402D-A9A0-56B42DA4086C}">
+							<ChildrenList>
+								<Action Name="" ID="{367FA748-D4D4-4C49-8974-10D6A5EE5145}" ShortID="73120275">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DMOff" ID="{958C4FEE-0C75-4CA4-8A33-EBD86EA8633F}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Music" ID="{DCEDC028-7C25-46F3-801E-740481FA2698}" ShortID="1006593058">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="26"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="StartMusic" ID="{C4DC9C5C-E95B-4280-AACA-353DC1E57E68}">
+							<ChildrenList>
+								<Action Name="" ID="{3BE10427-ECD8-44CF-B2FB-71EEFED5125A}" ShortID="135877441">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music" ID="{230F61EE-BBAD-44DC-961E-064266359991}" WorkUnitID="{BD1301FD-2A3C-45C0-B448-3915E92BF266}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Event Name="Pause" ID="{1680FA7A-7B54-4691-8F0E-5B726F915214}">
+					<ChildrenList>
+						<Action Name="" ID="{D4A1AAFC-1AA3-4C6D-BF72-17F6216A7491}" ShortID="613426130">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="8"/>
+							</PropertyList>
+							<ReferenceList/>
+							<ChildrenList>
+								<EventActionException Name="" ID="{521E7C54-1981-4037-83A2-524ECC70382D}">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music" ID="{230F61EE-BBAD-44DC-961E-064266359991}" WorkUnitID="{BD1301FD-2A3C-45C0-B448-3915E92BF266}"/>
+										</Reference>
+									</ReferenceList>
+								</EventActionException>
+							</ChildrenList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Resume" ID="{169EF05E-8094-4288-9798-BE0282832AFE}">
+					<ChildrenList>
+						<Action Name="" ID="{1EDC5A25-245B-4CFD-9D45-EE62F765D272}" ShortID="636681702">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="10"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
