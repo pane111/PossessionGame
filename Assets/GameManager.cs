@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public int saved = 0;
     public TextMeshProUGUI statsText;
 
+    [Header("Sprites")]
+    public float usedAbilityOpacity; //not connected rn
     public Image character;
     public Image armor;
     public Sprite cSprite;

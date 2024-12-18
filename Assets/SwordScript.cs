@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwordScript : MonoBehaviour
 {
@@ -27,11 +28,13 @@ public class SwordScript : MonoBehaviour
     [SerializeField]
     float maxVelPossMod;
     [Header("Pull")]
+    public Image pullImg;
     public float pullSpeed;
     public float maxVelocity; //Maximum velocity the sword can go at
     public float pullCooldown;
     private Vector2 pullPos;
     [Header("Repell")]
+    public Image repellImg;
     public float repellForce;
     public float repellRange;
     public float repellCooldown;
@@ -158,6 +161,7 @@ public class SwordScript : MonoBehaviour
     {
         curTarget = playerChar.transform;
         moveFreely = false;
+        pullImg.color = new Color(pullImg.color.r, pullImg.color.g, pullImg.color.b, 0.2f);
         rb.velocity = Vector2.zero;
         rb.AddForce((playerChar.position - transform.position) * pullSpeed, ForceMode2D.Force);
         pullPos = playerChar.position;
@@ -171,6 +175,7 @@ public class SwordScript : MonoBehaviour
     IEnumerator Repell()
     {
         repel.Play();
+        repellImg.color = new Color(repellImg.color.r, repellImg.color.g, repellImg.color.b, 0.2f);
         moveFreely = false;
         rb.velocity = Vector2.zero;
         rb.AddForce((transform.position - playerChar.position).normalized * repellForce, ForceMode2D.Force);
@@ -178,7 +183,6 @@ public class SwordScript : MonoBehaviour
         isSlashing = true;
         slashes.Play();
         yield return new WaitForSeconds(repellDuration);
-
         rb.AddTorque(-100, ForceMode2D.Impulse);
         isSlashing = false;
         slashes.Stop();

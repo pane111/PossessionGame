@@ -12,12 +12,15 @@ public class Player : MonoBehaviour
     public SpriteRenderer sr;
     public float maxStepTimer = 0.2f;
     public float stepTimer = 0.2f;
+    [Header("Dash")]
+    public Image dashImg;
     public float dashForce;
     public float maxDashTimer = 0.2f;
     float dashTimer = 0.2f;
     public float dashCooldown = 0;
     public bool isDashing;
     public float maxDashCooldown = 1;
+    [Header("Corruption")]
     public float corruption = 0;
     public Image corruptionImage;
     public TextMeshProUGUI corruptionText;
@@ -75,10 +78,10 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space) && dashCooldown <= 0)
             {
-                
+                dashImg.color = new Color(dashImg.color.r, dashImg.color.g, dashImg.color.b, 0.2f);
                 isDashing = true;
                 rb.AddForce(moveDirection.normalized * dashForce, ForceMode2D.Impulse);
-                StartCoroutine(Invincibility(dashTimer));
+                StartCoroutine(SetInvincible(dashTimer));
                 afterimage.Play();
                 dashTimer = maxDashTimer;
                 dashCooldown = maxDashCooldown;
@@ -104,7 +107,7 @@ public class Player : MonoBehaviour
         leash.SetPosition(1,v);
 
 
-        if (!isDashing )
+        if (!isDashing)
         {
             if (!demonModeActive)
             {
@@ -112,15 +115,15 @@ public class Player : MonoBehaviour
             }
             else
             {
-                rb.velocity = moveDirection.normalized * speed*1.3f;
+                rb.velocity = moveDirection.normalized * speed * 1.3f;
             }
-            
-
-
 
             dashCooldown -= Time.deltaTime;
             if (dashCooldown < 0)
+            { 
                 dashCooldown = 0;
+                dashImg.color = new Color(dashImg.color.r, dashImg.color.g, dashImg.color.b, 1f);
+            }
         }
         else
         {
@@ -166,7 +169,7 @@ public class Player : MonoBehaviour
                 healthBar.fillAmount = curHealth / maxHealth;
                 corruption += 35;
                 GameManager.Instance.OnDeath();
-                StartCoroutine(Invincibility(5));
+                StartCoroutine(SetInvincible(5));
             }
         }
         
@@ -187,17 +190,16 @@ public class Player : MonoBehaviour
                 healthBar.fillAmount = curHealth / maxHealth;
                 corruption += 35;
                 GameManager.Instance.OnDeath();
-                StartCoroutine(Invincibility(5));
+                StartCoroutine(SetInvincible(5));
             }
         }
         
     }
-    IEnumerator Invincibility(float dur)
+    IEnumerator SetInvincible(float dur)
     {
         invincible = true;
         yield return new WaitForSeconds(dur);
         invincible = false;
-
         yield return null;
     }
 
@@ -217,6 +219,7 @@ public class Player : MonoBehaviour
         canRepell = false;
         yield return new WaitForSeconds(swordScript.repellCooldown);
         canRepell = true;
+        swordScript.repellImg.color = new Color(swordScript.repellImg.color.r, swordScript.repellImg.color.g, swordScript.repellImg.color.b, 1f);
         yield return null;
     }
 
@@ -225,6 +228,7 @@ public class Player : MonoBehaviour
         leash.enabled = true;
         yield return new WaitForSeconds(swordScript.pullCooldown);
         leash.enabled = false;
+        swordScript.pullImg.color = new Color(swordScript.pullImg.color.r, swordScript.pullImg.color.g, swordScript.pullImg.color.b, 1f);
         yield return null;
     }
 

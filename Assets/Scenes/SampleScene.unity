@@ -27708,6 +27708,7 @@ MonoBehaviour:
   kills: 0
   saved: 0
   statsText: {fileID: 407729414}
+  usedAbilityOpacity: 0
   character: {fileID: 1567054891}
   armor: {fileID: 815316490}
   cSprite: {fileID: 21300000, guid: cc10def27d165bc4a9ed6b7a35877d1e, type: 3}
@@ -27939,7 +27940,7 @@ GameObject:
   - component: {fileID: 1757024799}
   - component: {fileID: 1757024798}
   m_Layer: 5
-  m_Name: PullPic (1)
+  m_Name: PushPic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28235,6 +28236,7 @@ MonoBehaviour:
   sr: {fileID: 1859569630}
   maxStepTimer: 0.1
   stepTimer: 0.2
+  dashImg: {fileID: 1496285516}
   dashForce: 30
   maxDashTimer: 0.2
   dashCooldown: 0
@@ -41923,9 +41925,11 @@ MonoBehaviour:
   speedModIdle: 2
   speedModAttack: 3
   maxVelPossMod: 1
+  pullImg: {fileID: 1913390092}
   pullSpeed: 500
   maxVelocity: 40
   pullCooldown: 0.8
+  repellImg: {fileID: 1757024799}
   repellForce: 2000
   repellRange: 6
   repellCooldown: 0.5
