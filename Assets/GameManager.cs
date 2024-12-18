@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class GameManager : MonoBehaviour
     public int kills = 0;
     public int saved = 0;
     public TextMeshProUGUI statsText;
+
+    public Image character;
+    public Image armor;
+    public Sprite cSprite;
+    public Sprite cDSprite;
+    public Image dArmor;
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -62,5 +69,19 @@ public class GameManager : MonoBehaviour
     public void OnDeath()
     {
         deathAnim.SetTrigger("Death");
+    }
+
+    public void OnDemonModeEnter()
+    {
+        character.sprite = cDSprite;
+        armor.enabled = false;
+        dArmor.enabled = true;
+        
+    }
+    public void OnDemonModeExit()
+    {
+        character.sprite = cSprite;
+        armor.enabled = true;
+        dArmor.enabled = false;
     }
 }

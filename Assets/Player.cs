@@ -37,6 +37,9 @@ public class Player : MonoBehaviour
     public float corruptionLossOnPurify = 40;
     bool canRepell = true;
 
+    public Sprite demonSprite;
+    public float demonModeDuration;
+    public bool demonModeActive;
     void Start()
     {
         stepTimer = maxStepTimer;
@@ -95,7 +98,18 @@ public class Player : MonoBehaviour
 
         if (!isDashing )
         {
-            rb.velocity = moveDirection.normalized * speed;
+            if (!demonModeActive)
+            {
+                rb.velocity = moveDirection.normalized * speed;
+            }
+            else
+            {
+                rb.velocity = moveDirection.normalized * speed*1.3f;
+            }
+            
+
+
+
             dashCooldown -= Time.deltaTime;
             if (dashCooldown < 0)
                 dashCooldown = 0;
@@ -206,6 +220,20 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
+    IEnumerator DemonMode()
+    {
+        demonModeActive = true;
+        
+        Sprite s = sr.sprite;
+        sr.sprite = demonSprite;
+        GameManager.Instance.OnDemonModeEnter();
+        yield return new WaitForSeconds(demonModeDuration);
+        GameManager.Instance.OnDemonModeExit();
+        demonModeActive = false;
+        sr.sprite = s;
+        yield return null;
+    }
+
     public void StopBleeding()
     {
         blood.Stop();
@@ -217,6 +245,11 @@ public class Player : MonoBehaviour
         {
 
             TakeCustomDamage(15);
+        }
+        if (collision.gameObject.CompareTag("DemonTrigger"))
+        {
+
+            StartCoroutine(DemonMode());
         }
 
         if (collision.gameObject.GetComponent<Enemy>() != null)
