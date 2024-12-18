@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Tilemaps;
+using Unity.Mathematics;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +25,10 @@ public class GameManager : MonoBehaviour
     public Sprite cSprite;
     public Sprite cDSprite;
     public Image dArmor;
+
+    [Header("Tiles")]
+    public Tilemap floor;
+    public Tilemap wall;
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -63,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     public Color randomColor()
     {
-        float rnd = Random.Range(0f, 1f);
+        float rnd = UnityEngine.Random.Range(0f, 1f);
         Color c = colorGradient.Evaluate(rnd);
 
         return c;
@@ -79,12 +85,24 @@ public class GameManager : MonoBehaviour
         character.sprite = cDSprite;
         armor.enabled = false;
         dArmor.enabled = true;
-        
+        InvertColor();
     }
     public void OnDemonModeExit()
     {
         character.sprite = cSprite;
         armor.enabled = true;
         dArmor.enabled = false;
+        InvertColor();
+    }
+
+    public void InvertColor()
+    {
+        Vector3 hsvFloor = Vector3.zero;
+        Color.RGBToHSV(floor.color, out hsvFloor.x, out hsvFloor.y, out hsvFloor.z);
+        floor.color = Color.HSVToRGB(0,0,100 - hsvFloor.z);
+
+        Vector3 hsvWall = Vector3.zero;
+        Color.RGBToHSV(floor.color, out hsvWall.x, out hsvWall.y, out hsvWall.z);
+        wall.color = Color.HSVToRGB(0, 0, 100 - hsvWall.z);
     }
 }

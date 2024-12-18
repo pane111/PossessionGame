@@ -6,10 +6,11 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    public float speed;
-    Vector2 moveDirection = Vector2.zero;
     public Rigidbody2D rb;
     public SpriteRenderer sr;
+    [Header("Movement")]
+    public float speed;
+    Vector2 moveDirection = Vector2.zero;
     public float maxStepTimer = 0.2f;
     public float stepTimer = 0.2f;
     [Header("Dash")]
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
     public Sprite demonSprite;
     public float demonModeDuration;
     public bool demonModeActive;
+
     public float orbitSpeed;
     float curDeg=0;
     public Transform rotator;
