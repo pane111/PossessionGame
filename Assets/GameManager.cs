@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     public int kills = 0;
     public int saved = 0;
     public TextMeshProUGUI statsText;
-
+    Color bgColor;
+    public Color demonModeColor;
     [Header("Sprites")]
     public float usedAbilityOpacity; //not connected rn
     public Image character;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        bgColor = Camera.main.backgroundColor;
         player = FindObjectOfType<Player>();
     }
 
@@ -85,6 +87,7 @@ public class GameManager : MonoBehaviour
         character.sprite = cDSprite;
         armor.enabled = false;
         dArmor.enabled = true;
+        Camera.main.backgroundColor = demonModeColor;
         InvertColor();
     }
     public void OnDemonModeExit()
@@ -92,6 +95,7 @@ public class GameManager : MonoBehaviour
         character.sprite = cSprite;
         armor.enabled = true;
         dArmor.enabled = false;
+        Camera.main.backgroundColor = bgColor;
         InvertColor();
     }
 
