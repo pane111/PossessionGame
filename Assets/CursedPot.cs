@@ -78,6 +78,7 @@ public class CursedPot : CursedWeapon
 
     public void ShootOrb()
     {
+        anim.ResetTrigger("Shock");
         shotCd = maxShotCd;
         GameObject o = Instantiate(orb,shotPoint.position,Quaternion.identity);
         Vector2 dir = player.position - o.transform.position;

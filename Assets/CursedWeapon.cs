@@ -40,7 +40,7 @@ public class CursedWeapon : MonoBehaviour
     }
     public void OnExitDM()
     {
-        
+        if (curHealth > 0)
             gameObject.SetActive(false);
         
         

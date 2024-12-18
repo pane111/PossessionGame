@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
     public ParticleSystem blood;
     [Header("Movement")]
     public float speed;
+    public float demonSpeed;
+    float initSpeed;
     Vector2 moveDirection = Vector2.zero;
     public float maxStepTimer = 0.2f;
     public float stepTimer = 0.2f;
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour
         stepTimer = maxStepTimer;
         swordScript = sword.GetComponent<SwordScript>();
         AudioManager.Instance.GS_NormalMode.SetValue();
+        initSpeed = speed;
     }
 
     // Update is called once per frame
@@ -254,12 +257,13 @@ public class Player : MonoBehaviour
     IEnumerator DemonMode()
     {
         demonModeActive = true;
-        
+        speed = demonSpeed;
         Sprite s = sr.sprite;
         sr.sprite = demonSprite;
         GameManager.Instance.OnDemonModeEnter();
         yield return new WaitForSeconds(demonModeDuration);
         GameManager.Instance.OnDemonModeExit();
+        speed = initSpeed;
         demonModeActive = false;
         sr.sprite = s;
         yield return null;
