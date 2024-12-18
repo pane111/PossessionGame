@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using Unity.Mathematics;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class GameManager : MonoBehaviour
     [Header("Tiles")]
     public Tilemap floor;
     public Tilemap wall;
+
+    
+    public Action startDM;
+    public Action stopDM;
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -48,6 +53,7 @@ public class GameManager : MonoBehaviour
     {
         bgColor = Camera.main.backgroundColor;
         player = FindObjectOfType<Player>();
+        OnDemonModeExit();
     }
 
     // Update is called once per frame
@@ -88,14 +94,17 @@ public class GameManager : MonoBehaviour
 
     public void OnDemonModeEnter()
     {
+        startDM.Invoke();
         character.sprite = cDSprite;
         armor.enabled = false;
         dArmor.enabled = true;
         Camera.main.backgroundColor = demonModeColor;
         InvertColor();
+        
     }
     public void OnDemonModeExit()
     {
+        stopDM.Invoke();
         character.sprite = cSprite;
         armor.enabled = true;
         dArmor.enabled = false;

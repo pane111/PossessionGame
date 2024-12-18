@@ -15,7 +15,9 @@ public class CursedPot : CursedWeapon
     void Start()
     {
         player = GameObject.Find("Player").transform;
-        shotCd =maxShotCd; 
+        shotCd =maxShotCd;
+        GameManager.Instance.startDM += this.OnDM;
+        GameManager.Instance.stopDM += this.OnExitDM;
     }
 
     // Update is called once per frame
@@ -66,7 +68,7 @@ public class CursedPot : CursedWeapon
     }
     public void DestroyPot()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
     public override void OnDeath()
     {

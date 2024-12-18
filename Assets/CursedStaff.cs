@@ -76,7 +76,8 @@ public class CursedStaff : CursedWeapon
     }
     public void DestroyStaff()
     {
-        Destroy(gameObject);
+        spreadShot.enabled = false;
+        gameObject.SetActive(false);
     }
     IEnumerator beamAttack()
     {
@@ -96,7 +97,12 @@ public class CursedStaff : CursedWeapon
 
     void ShootBullets()
     {
-        spreadShot.OnShoot();
-        Invoke("ShootBullets", fireDelay);
+        
+        if (curHealth > 0 && gameObject.activeInHierarchy)
+        {
+            spreadShot.OnShoot();
+            Invoke("ShootBullets", fireDelay);
+        }
+        
     }
 }

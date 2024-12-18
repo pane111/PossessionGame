@@ -23,21 +23,30 @@ public class Enemy : MonoBehaviour
     public LayerMask lm;
     public GameObject lightBeam;
     public bool purified;
+    bool demon;
+    public Sprite demonSprite;
+    Sprite initSprite;
+    Color initColor;
+    public float flipTime;
     void Start()
     {
-        
+        initSprite = GetComponent<SpriteRenderer>().sprite;
         sword = FindObjectOfType<SwordScript>();
         player = GameObject.Find("Player").transform;
         Color c = GameManager.Instance.randomColor();
         GetComponent<SpriteRenderer>().color = c;
+        initColor = c;
         bloodstain.color = c;
         bloodstain.enabled = false;
+
+        GameManager.Instance.startDM += EnterDM;
+        GameManager.Instance.stopDM += ExitDM;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!dead && !purified)
+        if (!dead && !purified && !demon)
         {
             Vector2 pDir = player.position - transform.position;
             pDir.Normalize();
@@ -67,6 +76,39 @@ public class Enemy : MonoBehaviour
             }
         }
         
+    }
+
+    void EnterDM()
+    {
+        demon = true;
+        GetComponent<SpriteRenderer>().sprite = demonSprite;
+        GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponent<Animator>().enabled = false;
+        rb.isKinematic = true;
+        GetComponent<Collider2D>().isTrigger = true;
+        StartCoroutine(flipSprite());
+    }
+
+    void ExitDM()
+    {
+        demon = false;
+        GetComponent<SpriteRenderer>().sprite = initSprite;
+        GetComponent<SpriteRenderer>().color = initColor;
+        GetComponent<Animator>().enabled = true;
+        rb.isKinematic = false;
+        GetComponent<Collider2D>().isTrigger = false;
+    }
+
+    IEnumerator flipSprite()
+    {
+        if (demon)
+        {
+            GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+            yield return new WaitForSeconds(flipTime);
+            StartCoroutine(flipSprite());
+        }
+        
+        yield return null;
     }
     
 

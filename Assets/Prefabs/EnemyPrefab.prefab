@@ -376,6 +376,8 @@ MonoBehaviour:
     m_Bits: 1
   lightBeam: {fileID: 1486286827095364145}
   purified: 0
+  demonSprite: {fileID: 21300000, guid: ca304e4871f286d47858dcd5cb93c27e, type: 3}
+  flipTime: 0.1
 --- !u!95 &5800526422586770189
 Animator:
   serializedVersion: 5

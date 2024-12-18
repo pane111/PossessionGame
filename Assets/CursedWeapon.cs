@@ -16,6 +16,8 @@ public class CursedWeapon : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player").transform;
+        GameManager.Instance.startDM += this.OnDM;
+        GameManager.Instance.stopDM += this.OnExitDM;
     }
 
     public virtual void TakeDamage(float amount)
@@ -28,6 +30,22 @@ public class CursedWeapon : MonoBehaviour
         }
     }
 
+    public void OnDM()
+    {
+        if (curHealth>0)
+        {
+            gameObject.SetActive(true);
+        }
+            
+    }
+    public void OnExitDM()
+    {
+        
+            gameObject.SetActive(false);
+        
+        
+    }
+
     public virtual void FindPlayer()
     {
         float pDist = (player.position - transform.position).magnitude;
@@ -36,6 +54,7 @@ public class CursedWeapon : MonoBehaviour
 
     public virtual void OnDeath()
     {
+        
         GameManager.Instance.player.OnPurify();
         enemy.GetComponent<Enemy>().Purify();
     }
