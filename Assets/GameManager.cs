@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
         OnDemonModeExit();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F6))
@@ -68,7 +67,7 @@ public class GameManager : MonoBehaviour
     public void AddKill()
     {
         kills++;
-        player.corruption += 10;
+        player.Corruption += 10;
         statsText.text="time\n99:99\nkills\n"+kills.ToString();
     }
     public void SetBPM(float _bpm)
@@ -95,6 +94,7 @@ public class GameManager : MonoBehaviour
     public void OnDemonModeEnter()
     {
         startDM.Invoke();
+        AudioManager.Instance.EnterDemonMode();
         character.sprite = cDSprite;
         armor.enabled = false;
         dArmor.enabled = true;
@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
     public void OnDemonModeExit()
     {
         stopDM.Invoke();
+        AudioManager.Instance.ExitDemonMode();
         character.sprite = cSprite;
         armor.enabled = true;
         dArmor.enabled = false;
@@ -116,7 +117,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         deathMenu.SetActive(false);
-        player.corruption += 35;
+        player.Revive();
     }
     public void GiveUp()
     {
