@@ -9,6 +9,7 @@ public class TitleScreenManager : MonoBehaviour
 {
     public List<Sprite> tutorialSprites = new List<Sprite>();
     public List<string> tutorialNames = new List<string>();
+    [TextArea(6, 10)]
     public List<string> descriptions = new List<string>();
     public int curTutorial = 0;
 
