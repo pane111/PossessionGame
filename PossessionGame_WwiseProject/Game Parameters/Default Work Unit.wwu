@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3991B70A-525E-4066-B528-5031D7854D6E}" SchemaVersion="123">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{3991B70A-525E-4066-B528-5031D7854D6E}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Possession" ID="{460F872A-1866-4F40-A119-5160329725AA}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="200"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="HP" ID="{FA783F1A-7D73-4DD3-91A0-3C84A292843E}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

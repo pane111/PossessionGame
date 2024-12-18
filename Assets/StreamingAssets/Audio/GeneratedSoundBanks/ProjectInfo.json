@@ -1,0 +1,36 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "PossessionGame_WwiseProject",
+   "GUID": "{069303C3-9DFA-4A87-9661-9F73E4BFFE0D}",
+   "Generator": "2024.1.1.8691"
+  },
+  "CacheRoot": "../../../../PossessionGame_WwiseProject/.cache",
+  "Platforms": [
+   {
+    "Name": "Mac",
+    "GUID": "{73846C42-CBBA-4CF1-9C00-EC9189EE496F}",
+    "BasePlatform": "Mac",
+    "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
+    "Path": "../../../../PossessionGame_WwiseProject/GeneratedSoundBanks/Mac"
+   },
+   {
+    "Name": "Windows",
+    "GUID": "{58D4FCA1-C414-463F-A93A-651D7688F6EA}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "../../../../PossessionGame_WwiseProject/GeneratedSoundBanks/Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{5469D818-C32E-48F2-A0CB-53D6BC1E60E9}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{94381A09-25E8-0AA0-6881-1F2EF84E6A8B}"
+ }
+}

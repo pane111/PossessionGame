@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E0314801-00F8-4CF3-AE48-794B90C7A264}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{E0314801-00F8-4CF3-AE48-794B90C7A264}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="SFX" ID="{F403F8E3-EE31-4498-9CFA-853ECB99859D}" ShortID="302432339">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="17"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Folder Name="Sword" ID="{3A46BC9D-4B59-4A73-BF7A-AD6ABAE0197C}" ShortID="982455623"/>
+						<Folder Name="Enemies" ID="{6EA31857-0EBD-4A1E-8F37-1D2582AEE8F9}" ShortID="220521386"/>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
