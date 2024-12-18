@@ -89,6 +89,7 @@ public class CursedStaff : CursedWeapon
         beamCooldown = 8;
         beamStart.gameObject.SetActive(false);
         beamEnd.gameObject.SetActive(false);
+        beamEnd.transform.position=beamStart.transform.position;
         beam.enabled = false;
         yield return null;
     }

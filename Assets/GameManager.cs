@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using Unity.Mathematics;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI statsText;
     Color bgColor;
     public Color demonModeColor;
+    public GameObject deathMenu;
     [Header("Sprites")]
     public float usedAbilityOpacity; //not connected rn
     public Image character;
@@ -80,6 +82,8 @@ public class GameManager : MonoBehaviour
     public void OnDeath()
     {
         deathAnim.SetTrigger("Death");
+        Time.timeScale = 0;
+        deathMenu.SetActive(true);
     }
 
     public void OnDemonModeEnter()
@@ -97,6 +101,17 @@ public class GameManager : MonoBehaviour
         dArmor.enabled = false;
         Camera.main.backgroundColor = bgColor;
         InvertColor();
+    }
+
+    public void Continue()
+    {
+        Time.timeScale = 1;
+        deathMenu.SetActive(false);
+    }
+    public void GiveUp()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("GameOver");
     }
 
     public void InvertColor()
