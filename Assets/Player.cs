@@ -11,7 +11,22 @@ public class Player : MonoBehaviour
     [Header("Health")]
     public Image healthBar;
     public float maxHealth;
-    public float curHealth;
+    private float _curHealth;
+    public float CurHealth
+    {
+        get => _curHealth;
+        set
+        {
+            if (CurHealth <= 0)
+            {
+                value = 0;
+                GameManager.Instance.OnDeath();
+                StartCoroutine(SetInvincible(5));
+            }
+            AudioManager.Instance.healthRTPC.SetGlobalValue(value);
+            _curHealth = value;
+        }
+    }
     public ParticleSystem blood;
     [Header("Movement")]
     public float speed;
@@ -27,7 +42,17 @@ public class Player : MonoBehaviour
     public bool isDashing;
     public float maxDashCooldown = 1;
     [Header("Corruption")]
-    public float corruption = 0;
+    public float _corruption = 0;
+    public float Corruption
+    {
+        get => _corruption;
+        set
+        {
+            if (value < 0) { value = 0; }
+            AudioManager.Instance.possessionRTPC.SetGlobalValue(value);
+            _corruption = value;
+        }
+    }
     public float corruptionLossOnPurify = 40;
     public Image corruptionImage;
     public TextMeshProUGUI corruptionText;
@@ -53,6 +78,7 @@ public class Player : MonoBehaviour
     {
         stepTimer = maxStepTimer;
         swordScript = sword.GetComponent<SwordScript>();
+        AudioManager.Instance.GS_NormalMode.SetValue();
     }
 
     // Update is called once per frame
@@ -137,19 +163,18 @@ public class Player : MonoBehaviour
             }
         }
 
-        corruptionText.text = corruption.ToString() +"%";
-        corruptionText.color = Color.Lerp(Color.white, Color.red, corruption / 100);
-        corruptionImage.color = new Color(1, 1, 1, corruption / 100);
-        swordGlow.color = new Color(1, 1, 1, corruption / 100);
+        corruptionText.text = Corruption.ToString() +"%";
+        corruptionText.color = Color.Lerp(Color.white, Color.red, Corruption / 100);
+        corruptionImage.color = new Color(1, 1, 1, Corruption / 100);
+        swordGlow.color = new Color(1, 1, 1, Corruption / 100);
 
-        corruptionText.transform.localScale = Vector3.one * (0.45f + corruption / 100);
-            overlay.color = new Color(1, 1, 1, corruption / 100);
+        corruptionText.transform.localScale = Vector3.one * (0.45f + Corruption / 100);
+            overlay.color = new Color(1, 1, 1, Corruption / 100);
 
     }
     public void OnPurify()
     {
-        corruption -= corruptionLossOnPurify;
-        if (corruption < 0) { corruption = 0; }
+        Corruption -= corruptionLossOnPurify;
     }
     public void TakeDamage()
     {
@@ -163,16 +188,8 @@ public class Player : MonoBehaviour
                 blood.Play();
             sr.color = Color.red;
             Invoke("StopBleeding", 0.2f);
-            curHealth -= 0.5f;
-            healthBar.fillAmount = curHealth / maxHealth;
-            if (curHealth <= 0)
-            {
-                curHealth = maxHealth;
-                healthBar.fillAmount = curHealth / maxHealth;
-                corruption += 35;
-                GameManager.Instance.OnDeath();
-                StartCoroutine(SetInvincible(5));
-            }
+            CurHealth -= 0.5f;
+            healthBar.fillAmount = CurHealth / maxHealth;
         }
         
     }
@@ -184,12 +201,12 @@ public class Player : MonoBehaviour
                 blood.Play();
             sr.color = Color.red;
             Invoke("StopBleeding", 0.2f);
-            curHealth -= amount;
-            healthBar.fillAmount = curHealth / maxHealth;
-            if (curHealth <= 0)
+            CurHealth -= amount;
+            healthBar.fillAmount = CurHealth / maxHealth;
+            if (CurHealth <= 0)
             {
-                curHealth = maxHealth;
-                healthBar.fillAmount = curHealth / maxHealth;
+                CurHealth = maxHealth;
+                healthBar.fillAmount = CurHealth / maxHealth;
                 GameManager.Instance.OnDeath();
                 StartCoroutine(SetInvincible(5));
             }
@@ -282,5 +299,12 @@ public class Player : MonoBehaviour
         {
             StopBleeding();
         }
+    }
+
+    public void Revive()
+    {
+        CurHealth = maxHealth;
+        healthBar.fillAmount = CurHealth / maxHealth;
+        Corruption += 35;
     }
 }

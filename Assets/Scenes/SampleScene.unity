@@ -28132,6 +28132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1574376435}
   - component: {fileID: 1574376434}
+  - component: {fileID: 1574376437}
   - component: {fileID: 1574376436}
   m_Layer: 0
   m_Name: GameManager
@@ -28240,6 +28241,35 @@ MonoBehaviour:
   unloadTriggerList: 
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &1574376437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574376433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562b9e391694e0c44955eb6a58d5df61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 10
+  bpmMod: 1
+  SwordSlash: {fileID: 0}
+  SwordBigSlash: {fileID: 0}
+  SwordDeflect: {fileID: 0}
+  Pull: {fileID: 0}
+  Repell: {fileID: 0}
+  PlayerDmgTaken: {fileID: 0}
+  Dash: {fileID: 0}
+  Death: {fileID: 0}
+  GameOver: {fileID: 0}
+  Revive: {fileID: 0}
+  NPCDeath: {fileID: 0}
+  DemonModeOn: {fileID: 0}
+  DemonModeOff: {fileID: 0}
+  StartMusic: {fileID: 0}
+  PauseToggle: {fileID: 0}
 --- !u!1 &1578108333
 GameObject:
   m_ObjectHideFlags: 0
