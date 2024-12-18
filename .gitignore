@@ -75,6 +75,15 @@ crashlytics-build.properties
 ##   WWise stuff    ##
 ## ---------------- ##
 
+.backup*
+.cache*
+*.akd
+*.prof
+*.validationcache
+*.wsettings
+AkWwiseProjectData.asset
+IncrementalSoundBankData.xml
+
 # project stuff
 PossessionGame_WwiseProject/.cache/
 PossessionGame_WwiseProject/*.prof
