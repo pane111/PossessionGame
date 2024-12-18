@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     public void AddKill()
     {
         kills++;
+        player.corruption += 10;
         statsText.text="time\n99:99\nkills\n"+kills.ToString();
     }
     public void SetBPM(float _bpm)

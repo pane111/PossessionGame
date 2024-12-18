@@ -45,6 +45,7 @@ public class CursedWeapon : MonoBehaviour
     {
         if (collision.GetComponent<SwordScript>() != null)
         {
+            playerFound = true;
             Vector2 dir = transform.position - collision.transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             Quaternion lDir = Quaternion.AngleAxis(angle, Vector3.forward);

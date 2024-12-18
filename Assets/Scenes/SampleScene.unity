@@ -41811,7 +41811,7 @@ MonoBehaviour:
   maxVelocity: 40
   pullCooldown: 0.8
   repellForce: 2000
-  repellRange: 3
+  repellRange: 6
   repellCooldown: 0.5
   repellDuration: 0.25
   callbackTime: 2.5

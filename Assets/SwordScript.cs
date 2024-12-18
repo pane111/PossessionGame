@@ -174,7 +174,14 @@ public class SwordScript : MonoBehaviour
         moveFreely = false;
         rb.velocity = Vector2.zero;
         rb.AddForce((transform.position - playerChar.position).normalized * repellForce, ForceMode2D.Force);
+        rb.AddTorque(100, ForceMode2D.Impulse);
+        isSlashing = true;
+        slashes.Play();
         yield return new WaitForSeconds(repellDuration);
+
+        rb.AddTorque(-100, ForceMode2D.Impulse);
+        isSlashing = false;
+        slashes.Stop();
         rb.velocity /= 10;
         yield return new WaitForSeconds(callbackTime);
         moveFreely=true;

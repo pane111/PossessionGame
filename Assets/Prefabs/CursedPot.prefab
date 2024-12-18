@@ -454,7 +454,7 @@ MonoBehaviour:
   curHealth: 14
   enemy: {fileID: 0}
   player: {fileID: 0}
-  detectRange: 12
+  detectRange: 10
   playerFound: 0
   damageEffect: {fileID: 5883552925422385163}
   orb: {fileID: 3467425950754920455, guid: 53f1fbd647b0815418a8a8491ec3d9e2, type: 3}
