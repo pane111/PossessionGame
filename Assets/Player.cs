@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
     public SpriteRenderer sr;
+    [Header("Health")]
+    public Image healthBar;
+    public float maxHealth;
+    public float curHealth;
+    public ParticleSystem blood;
     [Header("Movement")]
     public float speed;
     Vector2 moveDirection = Vector2.zero;
@@ -23,22 +28,17 @@ public class Player : MonoBehaviour
     public float maxDashCooldown = 1;
     [Header("Corruption")]
     public float corruption = 0;
+    public float corruptionLossOnPurify = 40;
     public Image corruptionImage;
     public TextMeshProUGUI corruptionText;
     public Image swordGlow;
     public Image overlay;
     public ParticleSystem afterimage;
 
-    public Image healthBar;
-    public float maxHealth;
-    public float curHealth;
-    public ParticleSystem blood;
-
     public LineRenderer leash;
     public Transform sword;
     private SwordScript swordScript;
     bool invincible = false;
-    public float corruptionLossOnPurify = 40;
     bool canRepell = true;
 
     public Sprite demonSprite;
@@ -190,7 +190,6 @@ public class Player : MonoBehaviour
             {
                 curHealth = maxHealth;
                 healthBar.fillAmount = curHealth / maxHealth;
-                corruption += 35;
                 GameManager.Instance.OnDeath();
                 StartCoroutine(SetInvincible(5));
             }

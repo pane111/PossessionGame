@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         deathMenu.SetActive(false);
+        player.corruption += 35;
     }
     public void GiveUp()
     {

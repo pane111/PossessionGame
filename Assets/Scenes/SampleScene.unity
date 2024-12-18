@@ -10293,7 +10293,7 @@ GameObject:
   - component: {fileID: 285792824}
   - component: {fileID: 285792823}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Give Up Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10852,7 +10852,7 @@ GameObject:
   - component: {fileID: 464057350}
   - component: {fileID: 464057349}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Controls3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26272,7 +26272,7 @@ GameObject:
   - component: {fileID: 782762726}
   - component: {fileID: 782762725}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Controls1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26556,7 +26556,7 @@ GameObject:
   - component: {fileID: 853972798}
   - component: {fileID: 853972797}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: Controls2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26766,7 +26766,7 @@ GameObject:
   - component: {fileID: 916087069}
   - component: {fileID: 916087068}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Continue Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28297,7 +28297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DIE
+  m_text: FIGHT BACK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7bb106efb1fd544db842a8318c26a7e, type: 2}
   m_sharedMaterial: {fileID: 4186326442822114195, guid: d7bb106efb1fd544db842a8318c26a7e, type: 2}
@@ -28855,6 +28855,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1859569633}
   sr: {fileID: 1859569630}
+  healthBar: {fileID: 1607841709}
+  maxHealth: 100
+  curHealth: 100
+  blood: {fileID: 266861914}
   speed: 5
   maxStepTimer: 0.1
   stepTimer: 0.2
@@ -28865,18 +28869,14 @@ MonoBehaviour:
   isDashing: 0
   maxDashCooldown: 1
   corruption: 0
+  corruptionLossOnPurify: 40
   corruptionImage: {fileID: 757563294}
   corruptionText: {fileID: 113603435}
   swordGlow: {fileID: 178238023}
   overlay: {fileID: 1201364260}
   afterimage: {fileID: 758453470}
-  healthBar: {fileID: 1607841709}
-  maxHealth: 100
-  curHealth: 100
-  blood: {fileID: 266861914}
   leash: {fileID: 1051627746}
   sword: {fileID: 2079086542}
-  corruptionLossOnPurify: 40
   demonSprite: {fileID: 21300000, guid: cc57f05bfb06ab84a9915d91b741b945, type: 3}
   demonModeDuration: 30
   demonModeActive: 0
@@ -45435,7 +45435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SUBMIT
+  m_text: SLEEP
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7bb106efb1fd544db842a8318c26a7e, type: 2}
   m_sharedMaterial: {fileID: 4186326442822114195, guid: d7bb106efb1fd544db842a8318c26a7e, type: 2}
