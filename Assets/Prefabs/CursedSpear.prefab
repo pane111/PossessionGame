@@ -5232,7 +5232,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.35
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -5304,7 +5304,7 @@ MonoBehaviour:
   attackTime: 0.4
   attackCooldown: 3
   attackWindup: 0.3
-  moveSpeed: 8
+  moveSpeed: 4
   fire: {fileID: 5919325062353436186}
 --- !u!1 &6824912136148269629
 GameObject:

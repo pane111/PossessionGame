@@ -17,23 +17,28 @@ public class CursedSpear : CursedWeapon
     // Update is called once per frame
     void Update()
     {
-        lr.transform.parent = null;
-        lr.transform.position = lr.transform.position - Vector3.forward * 6;
-        lr.SetPosition(0, transform.position);
-        lr.SetPosition(1, enemy.transform.position);
-        pDir = player.transform.position-transform.position;
-        float pDist = pDir.magnitude;
-        if (!attacking)
+
+        if (playerFound)
         {
-            GetComponent<Rigidbody2D>().MovePosition(Vector3.Lerp(transform.position,player.GetComponent<Player>().orbiter.position,Time.deltaTime*moveSpeed));
-            GetComponent<Rigidbody2D>().AddTorque(pDir.magnitude);
-            if (ccd <= 0)
+            lr.transform.parent = null;
+            lr.transform.position = lr.transform.position - Vector3.forward * 6;
+            lr.SetPosition(0, transform.position);
+            lr.SetPosition(1, enemy.transform.position);
+            pDir = player.transform.position - transform.position;
+            float pDist = pDir.magnitude;
+            if (!attacking)
             {
-                ccd = 9999;
-                StartCoroutine(Attack());
+                GetComponent<Rigidbody2D>().MovePosition(Vector3.Lerp(transform.position, player.GetComponent<Player>().orbiter.position, Time.deltaTime * moveSpeed));
+                GetComponent<Rigidbody2D>().AddTorque(pDir.magnitude);
+                if (ccd <= 0)
+                {
+                    ccd = 9999;
+                    StartCoroutine(Attack());
+                }
+                ccd -= Time.deltaTime;
             }
-            ccd-=Time.deltaTime;
         }
+        
     }
 
     public override void OnDeath()

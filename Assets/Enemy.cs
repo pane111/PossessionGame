@@ -100,6 +100,7 @@ public class Enemy : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = demonSprite;
             GetComponent<SpriteRenderer>().color = Color.white;
             GetComponent<Animator>().enabled = false;
+            rb.velocity= Vector2.zero;
             rb.isKinematic = true;
             GetComponent<Collider2D>().enabled = false;
             StartCoroutine(flipSprite());
@@ -196,6 +197,7 @@ public class Enemy : MonoBehaviour
         curHealth -= amount;
         if (curHealth <= 0)
         {
+            GameManager.Instance.gameObject.GetComponent<AudioManager>().NPCDeath.Post(gameObject);
             ParticleSystem.MainModule sma = bloodSpray.main;
             sma.startColor = GameManager.Instance.randomColor();
             if (!dead) { bloodSpray.Play(); GameManager.Instance.AddKill(); }

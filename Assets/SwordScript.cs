@@ -175,6 +175,20 @@ public class SwordScript : MonoBehaviour
     {
         StartCoroutine(Repell());
     }
+    public void Deflected()
+    {
+        StartCoroutine(OnDeflected());
+    }
+    IEnumerator OnDeflected()
+    {
+        GameManager.Instance.gameObject.GetComponent<AudioManager>().SwordDeflect.Post(gameObject);
+        moveFreely = false;
+        yield return new WaitForSeconds(0.2f);
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(1);
+        moveFreely = true;
+        yield return null;
+    }
 
     IEnumerator Repell()
     {

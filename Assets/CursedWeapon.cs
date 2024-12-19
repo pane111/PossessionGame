@@ -12,7 +12,7 @@ public class CursedWeapon : MonoBehaviour
     public float detectRange;
     public bool playerFound;
     public ParticleSystem damageEffect;
-    bool dead;
+    bool dead=false;
     public LineRenderer lr;
 
     private void Start()
