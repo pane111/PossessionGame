@@ -43,6 +43,13 @@ public class CursedPot : CursedWeapon
         {
             FindPlayer();
         }
+
+        if (curHealth <= 0)
+        {
+            lr.enabled = true;
+            lr.SetPosition(0, Vector3.zero);
+            lr.SetPosition(1, enemy.transform.position - transform.position);
+        }
     }
     public override void FindPlayer()
     {
@@ -61,6 +68,7 @@ public class CursedPot : CursedWeapon
         p.enabled = false;
         p.GetComponent<Rigidbody2D>().velocity = (player.transform.position - transform.position).normalized * 50;
         p.TakeCustomDamage(10);
+        p.knockbackFailsafe(0.5f);
         yield return new WaitForSeconds(0.4f);
         p.enabled = true;
         anim.ResetTrigger("Shock");

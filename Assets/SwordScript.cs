@@ -134,9 +134,11 @@ public class SwordScript : MonoBehaviour
             }
             Idling = false;
             curTarget = enemyColls[closestEnemy].transform;
+            /*
             reticle.SetActive(true);
             reticle.transform.position = curTarget.position - Vector3.forward;
             reticle.transform.parent = curTarget;
+            */
         }
         else { Idling = true; }
     }

@@ -283,8 +283,11 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("DemonTrigger"))
         {
-
-            StartCoroutine(DemonMode());
+            if (!demonModeActive)
+            {
+                StartCoroutine(DemonMode());
+            }
+            
         }
 
         if (collision.gameObject.GetComponent<Enemy>() != null)
@@ -296,6 +299,14 @@ public class Player : MonoBehaviour
                 collision.gameObject.GetComponent<Enemy>().Rescue();
             }
         }
+    }
+    public void knockbackFailsafe(float d)
+    {
+        Invoke("failsafe", d);
+    }
+    void failsafe()
+    {
+        this.enabled = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
