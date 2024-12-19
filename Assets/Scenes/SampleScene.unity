@@ -28430,6 +28430,10 @@ MonoBehaviour:
   NPCDeath:
     idInternal: 0
     valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9c41cdc3455658d43a69a942c72a113d, type: 2}
+  NPCDeathHEART:
+    idInternal: 0
+    valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 81b0ec37cf416ae44bc4225bbf475013, type: 2}
   NPCTakeDmg:
     idInternal: 0
