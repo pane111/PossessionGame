@@ -85,7 +85,11 @@
 								<Event Name="HeartHit" ID="{C397DCEA-5037-4AFC-8896-0DA273EF1C50}">
 									<ChildrenList>
 										<Action Name="" ID="{692D7D3E-C801-4431-AB68-449DCCDA5862}" ShortID="291371452">
-											<ReferenceList/>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DmgTaken-Heart" ID="{F4D3F4A9-9A8A-45D1-A512-71F5E4CFA8B4}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
@@ -130,6 +134,41 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="LaserStart" ID="{65959539-C025-4803-8CED-5712AE589DE9}"/>
+								<Event Name="OrbShot" ID="{C472FEB7-05B8-4D94-89CB-EBF6D46B7E92}">
+									<ChildrenList>
+										<Action Name="" ID="{93E49707-D353-4A4C-898A-722424FF26EF}" ShortID="665313414">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="ShotOrb" ID="{EFF53352-0CD9-4814-B367-C594353D53F9}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="LaserEnd" ID="{D61BD85F-1834-4461-9312-7148FA11DCCD}"/>
+								<Event Name="SmallShot" ID="{678A295F-1A62-405E-BEA7-06BBD689CE82}">
+									<ChildrenList>
+										<Action Name="" ID="{27A02AAB-1680-478D-9DA4-B9EE5AFC415A}" ShortID="761963165">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="ShotSmall" ID="{E4D5B52F-AD91-4AD4-9110-11BDEFACB169}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Purify" ID="{DE1B1726-8B20-463D-B240-924769DA718A}">
+									<ChildrenList>
+										<Action Name="" ID="{DE157BAC-9CE4-4516-9A0A-1B0CD0347C78}" ShortID="369958957">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Purify" ID="{944D2AF7-3B23-4B70-97E9-0CA7AFE8913F}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Player" ID="{07B5BD21-499A-42BC-B78A-FF30B8D56FFE}" ShortID="878290952">
@@ -145,17 +184,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Repell" ID="{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}">
-									<ChildrenList>
-										<Action Name="" ID="{3A08635B-F21B-4EDA-8210-15BA8F0B2A8F}" ShortID="333984212">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="RepellChoir" ID="{944D2AF7-3B23-4B70-97E9-0CA7AFE8913F}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
+								<Event Name="Repell" ID="{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}"/>
 								<Event Name="Pull" ID="{E10D2661-0E07-43A7-B9CB-DB5427902EB9}">
 									<ChildrenList>
 										<Action Name="" ID="{5423FD9E-39A3-4DC6-BB6F-9E8554069D70}" ShortID="888566583">

@@ -125,6 +125,7 @@ public class CursedStaff : CursedWeapon
         
         if (curHealth > 0 && gameObject.activeInHierarchy)
         {
+            AudioManager.Instance.OrbShotSmall.Post(gameObject);
             spreadShot.OnShoot();
             Invoke("ShootBullets", fireDelay);
         }

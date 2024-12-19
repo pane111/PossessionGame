@@ -86,6 +86,7 @@ public class CursedPot : CursedWeapon
 
     public void ShootOrb()
     {
+        AudioManager.Instance.OrbShotBig.Post(gameObject);
         anim.ResetTrigger("Shock");
         shotCd = maxShotCd;
         GameObject o = Instantiate(orb,shotPoint.position,Quaternion.identity);

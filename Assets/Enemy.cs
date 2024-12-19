@@ -155,6 +155,7 @@ public class Enemy : MonoBehaviour
             
             if (heartExposed && demon)
             {
+                AudioManager.Instance.NPCHeartHit.Post(gameObject);
                 StartCoroutine(TakeDamage(0));
                 heart.GetComponent<Collider2D>().enabled = false;
                 heart.SetActive(false);
@@ -191,7 +192,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator TakeDamage(float amount)
     {
-        AudioManager.Instance.SwordSlash.Post(gameObject);
+        AudioManager.Instance.NPCTakeDmg.Post(gameObject);
         curHealth -= amount;
         if (curHealth <= 0)
         {

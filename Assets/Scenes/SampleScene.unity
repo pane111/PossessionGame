@@ -28438,6 +28438,22 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 81b0ec37cf416ae44bc4225bbf475013, type: 2}
+  NPCTakeDmg:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a0d658e40155a554c8aab58a17ea33c3, type: 2}
+  OrbShotBig:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f5fdd182caee08641ad55c36e7bb2494, type: 2}
+  OrbShotSmall:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8b5a747dbfd5e3048ae5ce8758630bb4, type: 2}
+  NPCHeartHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 81b0ec37cf416ae44bc4225bbf475013, type: 2}
   DemonModeOn:
     idInternal: 0
     valueGuidInternal: 

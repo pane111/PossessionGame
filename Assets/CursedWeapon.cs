@@ -24,7 +24,7 @@ public class CursedWeapon : MonoBehaviour
 
     public virtual void TakeDamage(float amount)
     {
-        
+        AudioManager.Instance.SwordSlash.Post(gameObject);
         damageEffect.Play();
         curHealth -= amount;
         if (curHealth <= 0) {

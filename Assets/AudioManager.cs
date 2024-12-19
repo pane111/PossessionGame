@@ -34,6 +34,10 @@ public class AudioManager : MonoBehaviour
     public Event GameOver;
     public Event Revive;
     public Event NPCDeath;
+    public Event NPCTakeDmg;
+    public Event OrbShotBig;
+    public Event OrbShotSmall;
+    public Event NPCHeartHit;
     [SerializeField] private Event DemonModeOn;
     [SerializeField] private Event DemonModeOff;
     public Event StartMusic;
