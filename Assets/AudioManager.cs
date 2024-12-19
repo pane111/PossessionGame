@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
     public Event SwordSlash;
     public Event SwordBigSlash;
     public Event SwordDeflect;
+    public Event SwordDetect;
     public Event Pull;
     public Event Repell;
     public Event PlayerDmgTaken;

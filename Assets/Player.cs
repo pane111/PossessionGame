@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space) && dashCooldown <= 0)
             {
+                AudioManager.Instance.Dash.Post(gameObject);
                 dashImg.color = new Color(dashImg.color.r, dashImg.color.g, dashImg.color.b, 0.2f);
                 isDashing = true;
                 rb.AddForce(moveDirection.normalized * dashForce, ForceMode2D.Impulse);
@@ -201,6 +202,7 @@ public class Player : MonoBehaviour
     {
         if (!invincible)
         {
+            AudioManager.Instance.PlayerDmgTaken.Post(gameObject);
             if (!blood.isPlaying)
                 blood.Play();
             sr.color = Color.red;
@@ -238,6 +240,7 @@ public class Player : MonoBehaviour
 
     IEnumerator Repell()
     {
+        AudioManager.Instance.Repell.Post(gameObject);
         canRepell = false;
         yield return new WaitForSeconds(swordScript.repellCooldown);
         canRepell = true;

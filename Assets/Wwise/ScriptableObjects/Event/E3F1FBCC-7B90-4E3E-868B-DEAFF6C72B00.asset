@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a39999aea814fb4a91f766311803092, type: 3}
-  m_Name: C397DCEA-5037-4AFC-8896-0DA273EF1C50
+  m_Name: E3F1FBCC-7B90-4E3E-868B-DEAFF6C72B00
   m_EditorClassIdentifier: 
-  objectName: HeartHit
-  id: 2637412766
-  guid: C397DCEA-5037-4AFC-8896-0DA273EF1C50
+  objectName: DetectEnemy
+  id: 1172357180
+  guid: E3F1FBCC-7B90-4E3E-868B-DEAFF6C72B00
   IsInUserDefinedSoundBank: 1
   IsAutoBankLoaded: 0

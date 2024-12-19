@@ -13,11 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CHRYSTALHIT = 3587433844U;
         static const AkUniqueID DASH = 1942692385U;
         static const AkUniqueID DEATH = 779278001U;
         static const AkUniqueID DEMONMODEOFF = 3483015646U;
         static const AkUniqueID DEMONMODEON = 2274357856U;
+        static const AkUniqueID DETECTENEMY = 1172357180U;
         static const AkUniqueID GAMEOVER = 4158285989U;
+        static const AkUniqueID HEARTHIT = 2637412766U;
         static const AkUniqueID NPCDEATH = 539785156U;
         static const AkUniqueID NPCTAKEDMG = 1715677421U;
         static const AkUniqueID PAUSE = 3092587493U;

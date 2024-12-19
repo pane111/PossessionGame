@@ -67,18 +67,25 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="DetectEnemy" ID="{E3F1FBCC-7B90-4E3E-868B-DEAFF6C72B00}">
+									<ChildrenList>
+										<Action Name="" ID="{BEC48920-FFD8-48D0-8211-8D5C31406A06}" ShortID="425435952">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Woof" ID="{6F9923C2-D9F8-48BE-96CB-5A3B4574D423}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="NPC" ID="{6EA31857-0EBD-4A1E-8F37-1D2582AEE8F9}" ShortID="220521386">
 							<ChildrenList>
-								<Event Name="NPCDeath" ID="{C397DCEA-5037-4AFC-8896-0DA273EF1C50}">
+								<Event Name="HeartHit" ID="{C397DCEA-5037-4AFC-8896-0DA273EF1C50}">
 									<ChildrenList>
 										<Action Name="" ID="{692D7D3E-C801-4431-AB68-449DCCDA5862}" ShortID="291371452">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Death" ID="{EB777290-87F0-47AE-B13D-BD3DB5CC86D5}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
-												</Reference>
-											</ReferenceList>
+											<ReferenceList/>
 										</Action>
 									</ChildrenList>
 								</Event>
@@ -88,6 +95,36 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="DmgTaken-NPC" ID="{AE35DD21-F02C-4DDA-9242-327AE2ADED67}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="ChrystalHit" ID="{AA1B9688-6220-4BF4-9E42-93B75DA7885B}">
+									<ChildrenList>
+										<Action Name="" ID="{319B31FB-E34E-4CBE-98E0-DB532ACB927B}" ShortID="489035373"/>
+									</ChildrenList>
+								</Event>
+								<Event Name="NPCDeath" ID="{DB293F34-6D79-47FC-9950-6EDDD876F118}">
+									<ChildrenList>
+										<Action Name="" ID="{1EB4B264-E71C-40B4-93E5-09AA234DDEBE}" ShortID="741104787">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PossessionCounter" ID="{7DE8EF70-D35D-4292-BDFC-65878F8767B6}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{79A7FC28-EB6D-4905-BDA0-DEDE017D973D}" ShortID="709716558">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.6"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PossessionCounter" ID="{7DE8EF70-D35D-4292-BDFC-65878F8767B6}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -241,13 +278,6 @@
 						</Event>
 						<Event Name="DemonModeOff" ID="{E6EB68B9-BA8D-402D-A9A0-56B42DA4086C}">
 							<ChildrenList>
-								<Action Name="" ID="{367FA748-D4D4-4C49-8974-10D6A5EE5145}" ShortID="73120275">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="DMOff" ID="{958C4FEE-0C75-4CA4-8A33-EBD86EA8633F}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{892C0491-E307-41C9-8699-9792F0B95D0E}" ShortID="618002360">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>

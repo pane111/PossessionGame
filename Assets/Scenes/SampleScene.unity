@@ -11100,6 +11100,8 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420035}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11231,6 +11233,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1859569631}
   followSpeed: 3
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8554584f5a5be3841a8e6129f1bc0fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  bOverrideScalingFactor: 0
+  scalingFactor: -1
+  listenerId: 0
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da74d8e6d2e8b24eafeb0b75a3a73f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &528568719
 GameObject:
   m_ObjectHideFlags: 0
@@ -28360,6 +28402,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 527b6a53e76354248b651f882961cc08, type: 2}
+  SwordDetect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e8463fdc0fb76f548b7840429d426dbe, type: 2}
   Pull:
     idInternal: 0
     valueGuidInternal: 
@@ -45800,6 +45846,7 @@ GameObject:
   - component: {fileID: 2079086545}
   - component: {fileID: 2079086544}
   - component: {fileID: 2079086543}
+  - component: {fileID: 2079086546}
   m_Layer: 2
   m_Name: PlayerSword
   m_TagString: Untagged
@@ -45989,6 +46036,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2079086546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079086540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da74d8e6d2e8b24eafeb0b75a3a73f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1001 &734010214984438102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46241,6 +46312,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1574376435}
   - {fileID: 619394802}
   - {fileID: 323091876}
   - {fileID: 1412731012}
@@ -46252,7 +46324,6 @@ SceneRoots:
   - {fileID: 2052130970}
   - {fileID: 257882975}
   - {fileID: 223316750}
-  - {fileID: 1574376435}
   - {fileID: 758806112}
   - {fileID: 330627928}
   - {fileID: 2363730702483702217}

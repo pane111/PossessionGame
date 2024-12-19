@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{CC4F4D89-2D63-C1F0-DD16-D35B87D6F5A7}",
+    "Hash": "{D48C7342-9B59-EBF6-A03A-5294C913E91D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
     "Media": [
+     {
+      "Id": "130485424",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_Dash.wav",
+      "CachePath": "0D/{0DD99B4E-1CDA-2AA3-4A18-86EB691985A5}.wem"
+     },
      {
       "Id": "262197951",
       "Language": "SFX",
@@ -29,7 +37,23 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_ClockTickingLoop.wav",
-      "CachePath": "C8/{C8750BBB-3B47-9F22-8E35-913863337AFC}.wem"
+      "CachePath": "79/{79A675C5-BB2D-8673-B3D9-1171E077209E}.wem"
+     },
+     {
+      "Id": "538465745",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "76405__dsp9000__old-church-bell.wav",
+      "CachePath": "7C/{7C841DFE-A122-2156-373A-DD3F0899E33E}.wem"
+     },
+     {
+      "Id": "589670513",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_Woof.wav",
+      "CachePath": "53/{53028254-2862-A9FA-987D-10A08A0C004E}.wem"
      }
     ],
     "Plugins": {
@@ -47,14 +71,30 @@
     },
     "Events": [
      {
+      "Id": "3587433844",
+      "Name": "ChrystalHit",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\ChrystalHit",
+      "GUID": "{AA1B9688-6220-4BF4-9E42-93B75DA7885B}",
+      "Color": "17",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "1942692385",
       "Name": "Dash",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Player\\Dash",
       "GUID": "{CAD6C48D-F41B-4C73-88AD-E82FEB37A6E3}",
       "Color": "17",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.43750566",
+      "DurationMax": "0.43750566",
+      "MediaRefs": [
+       {
+        "Id": "130485424"
+       }
+      ]
      },
      {
       "Id": "779278001",
@@ -72,6 +112,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\DemonModeOff",
       "GUID": "{E6EB68B9-BA8D-402D-A9A0-56B42DA4086C}",
       "Color": "17",
+      "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
@@ -86,6 +127,25 @@
       "MediaRefs": [
        {
         "Id": "452811761"
+       },
+       {
+        "Id": "538465745"
+       }
+      ]
+     },
+     {
+      "Id": "1172357180",
+      "Name": "DetectEnemy",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\DetectEnemy",
+      "GUID": "{E3F1FBCC-7B90-4E3E-868B-DEAFF6C72B00}",
+      "Color": "17",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.20843537",
+      "DurationMax": "0.20843537",
+      "MediaRefs": [
+       {
+        "Id": "589670513"
        }
       ]
      },
@@ -100,14 +160,35 @@
       "DurationMax": "0"
      },
      {
-      "Id": "539785156",
-      "Name": "NPCDeath",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\NPCDeath",
+      "Id": "2637412766",
+      "Name": "HeartHit",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\HeartHit",
       "GUID": "{C397DCEA-5037-4AFC-8896-0DA273EF1C50}",
       "Color": "17",
+      "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
+     },
+     {
+      "Id": "539785156",
+      "Name": "NPCDeath",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\NPCDeath",
+      "GUID": "{DB293F34-6D79-47FC-9950-6EDDD876F118}",
+      "Color": "17",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "262197951"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "926990374"
+        }
+       ]
+      }
      },
      {
       "Id": "1715677421",
@@ -115,6 +196,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\NPCTakeDmg",
       "GUID": "{F80FE745-ED79-4A0B-AA0F-45077BFD8BD1}",
       "Color": "17",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
@@ -194,6 +276,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\SwordDeflect",
       "GUID": "{29E79F97-784D-49B4-B4D7-17DACF4FF4A9}",
       "Color": "17",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
@@ -204,6 +287,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\SwordSlash",
       "GUID": "{6F4388BC-85BB-447F-8038-72F756E2DEF4}",
       "Color": "17",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
@@ -214,6 +298,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\SwordSlash_BIG",
       "GUID": "{BB286FF0-C49C-417A-969C-BDB635C16BC8}",
       "Color": "17",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
@@ -277,6 +362,6 @@
     ]
    }
   ],
-  "FileHash": "{378D2491-598B-C799-B1F2-CE0E23BD4E39}"
+  "FileHash": "{ED0A1628-C306-7063-3B3F-78D4C18F3D4A}"
  }
 }

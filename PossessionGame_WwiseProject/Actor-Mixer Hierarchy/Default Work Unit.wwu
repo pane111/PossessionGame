@@ -13,6 +13,11 @@
 							<ChildrenList>
 								<ActorMixer Name="Player" ID="{EEBBDEE5-2824-4D65-BB46-6CFEC2AE7EDA}" ShortID="283413548">
 									<PropertyList>
+										<Property Name="CenterPercentage" Type="int32">
+											<ValueList>
+												<Value>100</Value>
+											</ValueList>
+										</Property>
 										<Property Name="EnableAttenuation" Type="bool" Value="False"/>
 									</PropertyList>
 									<ReferenceList>
@@ -55,6 +60,13 @@
 											</ReferenceList>
 										</RandomSequenceContainer>
 										<Sound Name="Dash" ID="{79FF6DCC-F82E-4656-B254-9E13C48D6DBB}" ShortID="834797522">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -63,6 +75,18 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_Dash" ID="{509B4BC3-10D4-4F73-BA86-D7C468851597}">
+													<Language>SFX</Language>
+													<AudioFile>BB_Dash.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="130485424"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_Dash" ID="{509B4BC3-10D4-4F73-BA86-D7C468851597}" Platform="Linked"/>
+											</ActiveSourceList>
 										</Sound>
 										<Sound Name="PlayerDeath" ID="{FB12EE3E-7638-47E8-85AC-8B35D4B6A7DD}" ShortID="969949675">
 											<ReferenceList>
@@ -74,17 +98,14 @@
 												</Reference>
 											</ReferenceList>
 										</Sound>
-										<Sound Name="DMOff" ID="{958C4FEE-0C75-4CA4-8A33-EBD86EA8633F}" ShortID="747772406">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
-												</Reference>
-											</ReferenceList>
-										</Sound>
 										<Sound Name="DMOn" ID="{26571F7A-159B-4C04-B515-A172FB2DF051}" ShortID="935762385">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -93,10 +114,32 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="76405__dsp9000__old-church-bell" ID="{95B714F7-B417-45B3-9593-1E24A8A5A0FC}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.706100917231349"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.87460403047982"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>76405__dsp9000__old-church-bell.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="538465745"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="76405__dsp9000__old-church-bell" ID="{95B714F7-B417-45B3-9593-1E24A8A5A0FC}" Platform="Linked"/>
+											</ActiveSourceList>
 										</Sound>
 										<Sound Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" ShortID="808221240">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -108,6 +151,13 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="BB_ClockTickingLoop" ID="{BDE88C66-BB28-465E-B386-A2FC44DEFCF8}">
+													<PropertyList>
+														<Property Name="VolumeOffset" Type="Real64">
+															<ValueList>
+																<Value>-2</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>BB_ClockTickingLoop.wav</AudioFile>
 													<MediaIDList>
@@ -208,6 +258,9 @@
 								</ActorMixer>
 								<ActorMixer Name="NPC" ID="{E2E815A5-8BEF-418A-B8C9-AC05327DBBE5}" ShortID="891129276">
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Basic" ID="{4432FB45-89E2-4DFB-B160-BD1634C4FE66}" WorkUnitID="{66D1794F-14F8-4093-923F-898809682E41}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
 										</Reference>
@@ -236,10 +289,33 @@
 												</Reference>
 											</ReferenceList>
 										</RandomSequenceContainer>
+										<Sound Name="DmgTaken-Heart" ID="{F4D3F4A9-9A8A-45D1-A512-71F5E4CFA8B4}" ShortID="631931873">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+										</Sound>
+										<RandomSequenceContainer Name="DmgTaken-Chrystal" ID="{09EE1379-AA2B-442A-A712-20C11C8D7797}" ShortID="735345652">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="Sword" ID="{8DA52AD1-B9E0-4C2E-94BF-A4612B185E50}" ShortID="131608258">
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Basic" ID="{4432FB45-89E2-4DFB-B160-BD1634C4FE66}" WorkUnitID="{66D1794F-14F8-4093-923F-898809682E41}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
 										</Reference>
@@ -278,16 +354,6 @@
 												</Reference>
 											</ReferenceList>
 										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="Woof" ID="{B360268A-BF72-4878-9BCF-127F3BB06276}" ShortID="994217610">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
-												</Reference>
-											</ReferenceList>
-										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Deflect" ID="{73F86DBD-34EB-4662-83ED-E0A25675C6C5}" ShortID="996863945">
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -298,6 +364,28 @@
 												</Reference>
 											</ReferenceList>
 										</RandomSequenceContainer>
+										<Sound Name="Woof" ID="{6F9923C2-D9F8-48BE-96CB-5A3B4574D423}" ShortID="749123547">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_Woof" ID="{0CC636F9-9AFB-4716-A8D6-4FED1B4FCF40}">
+													<Language>SFX</Language>
+													<AudioFile>BB_Woof.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="589670513"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_Woof" ID="{0CC636F9-9AFB-4716-A8D6-4FED1B4FCF40}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</ActorMixer>
 								<BlendContainer Name="GameOver" ID="{DEAF0657-AFB2-42D6-8BB9-12D0A02B9D65}" ShortID="950197830">

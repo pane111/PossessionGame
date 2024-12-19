@@ -124,6 +124,7 @@ public class SwordScript : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(transform.position, curRange * rangePossMod, cf, enemyColls) != 0)
         {
+            AudioManager.Instance.SwordDetect.Post(gameObject);
             float smallestTargetDist = curRange * rangePossMod;
             int closestEnemy = 0;
             for (int i = 0; i < enemyColls.Count; i++)
@@ -161,6 +162,7 @@ public class SwordScript : MonoBehaviour
 
     public void Pull()
     {
+        AudioManager.Instance.Pull.Post(gameObject);
         curTarget = playerChar.transform;
         moveFreely = false;
         pullImg.color = new Color(pullImg.color.r, pullImg.color.g, pullImg.color.b, 0.2f);

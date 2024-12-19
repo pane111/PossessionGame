@@ -86,6 +86,8 @@ public class GameManager : MonoBehaviour
 
     public void OnDeath()
     {
+        AudioManager.Instance.GS_GameOver.SetValue();
+        AudioManager.Instance.Death.Post(gameObject);
         deathAnim.SetTrigger("Death");
         Time.timeScale = 0;
         deathMenu.SetActive(true);
@@ -121,6 +123,7 @@ public class GameManager : MonoBehaviour
     }
     public void GiveUp()
     {
+        AudioManager.Instance.GameOver.Post(gameObject);
         Time.timeScale = 1;
         SceneManager.LoadScene("GameOver");
     }
