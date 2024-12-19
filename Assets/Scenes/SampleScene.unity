@@ -28393,7 +28393,7 @@ MonoBehaviour:
   SwordSlash:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d3484cf6fd1f6b442974e5d5bb8884a2, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 6727eab7a3651fc4b8287cc682bb6e88, type: 2}
   SwordBigSlash:
     idInternal: 0
     valueGuidInternal: 

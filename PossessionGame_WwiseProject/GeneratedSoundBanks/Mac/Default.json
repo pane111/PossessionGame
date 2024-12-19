@@ -10,11 +10,51 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{D48C7342-9B59-EBF6-A03A-5294C913E91D}",
+    "Hash": "{D8C38B41-61A6-566E-EF3C-D4D553281605}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
     "Media": [
+     {
+      "Id": "9813012",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-004.wav",
+      "CachePath": "E6/{E6C6DB45-A2ED-5451-E6EC-6604D89BA500}.wem"
+     },
+     {
+      "Id": "49518134",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-007.wav",
+      "CachePath": "62/{62C1641B-4F64-7A3D-83BA-4BA3B2773FCD}.wem"
+     },
+     {
+      "Id": "68445072",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-014.wav",
+      "CachePath": "79/{791BEBD8-9DAA-AD8A-7A54-BAC1CD33E2B4}.wem"
+     },
+     {
+      "Id": "80499998",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-003.wav",
+      "CachePath": "E0/{E06DE3F7-E90F-E33D-E51F-1BA108EF43F8}.wem"
+     },
+     {
+      "Id": "101874823",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-013.wav",
+      "CachePath": "FD/{FD7FA225-6561-DA94-D6A0-FD1094980110}.wem"
+     },
      {
       "Id": "130485424",
       "Language": "SFX",
@@ -22,6 +62,22 @@
       "Location": "Memory",
       "ShortName": "BB_Dash.wav",
       "CachePath": "0D/{0DD99B4E-1CDA-2AA3-4A18-86EB691985A5}.wem"
+     },
+     {
+      "Id": "201209299",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-018.wav",
+      "CachePath": "19/{19D0D2F1-E228-7AE6-5089-0908F7F5AB71}.wem"
+     },
+     {
+      "Id": "211586496",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-006.wav",
+      "CachePath": "BA/{BAA1370B-A6F3-C849-CF39-2FAE731033C2}.wem"
      },
      {
       "Id": "262197951",
@@ -32,12 +88,44 @@
       "CachePath": "F2/{F2AEF067-9F04-F9C3-F8B8-47AA42D74152}.wem"
      },
      {
+      "Id": "301928930",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-016.wav",
+      "CachePath": "F6/{F6105B20-56B7-E4FD-5ABE-3B2C717C452C}.wem"
+     },
+     {
+      "Id": "401123077",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-002.wav",
+      "CachePath": "B9/{B9D361F0-927B-2355-AC84-69634FB3E3BA}.wem"
+     },
+     {
       "Id": "452811761",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_ClockTickingLoop.wav",
       "CachePath": "79/{79A675C5-BB2D-8673-B3D9-1171E077209E}.wem"
+     },
+     {
+      "Id": "458456398",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_Repell.wav",
+      "CachePath": "FA/{FA90010B-A252-D01B-0998-4FDB80CDCF7D}.wem"
+     },
+     {
+      "Id": "461224180",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-008.wav",
+      "CachePath": "4D/{4D86EC08-5DD9-5578-B61B-D1F813D6EE1F}.wem"
      },
      {
       "Id": "538465745",
@@ -48,12 +136,92 @@
       "CachePath": "7C/{7C841DFE-A122-2156-373A-DD3F0899E33E}.wem"
      },
      {
+      "Id": "562597119",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-010.wav",
+      "CachePath": "ED/{ED3BD625-8C36-96CB-3CCF-E0D53EDE7D8A}.wem"
+     },
+     {
+      "Id": "566947647",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-005.wav",
+      "CachePath": "8A/{8A6602D9-D154-B9FF-86E9-AD44C246E01F}.wem"
+     },
+     {
+      "Id": "579956481",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-015.wav",
+      "CachePath": "BE/{BE1ACA8F-994A-15F9-E8D1-B250DFE482A3}.wem"
+     },
+     {
+      "Id": "584649645",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-019.wav",
+      "CachePath": "39/{39BE05FE-D97C-CCD5-2B3D-AE84758B89E7}.wem"
+     },
+     {
       "Id": "589670513",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_Woof.wav",
       "CachePath": "53/{53028254-2862-A9FA-987D-10A08A0C004E}.wem"
+     },
+     {
+      "Id": "598379007",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_Pull.wav",
+      "CachePath": "75/{752300BE-BED9-B681-193A-2C9304136DCD}.wem"
+     },
+     {
+      "Id": "635287032",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-011.wav",
+      "CachePath": "34/{34D1C60C-6997-F1EE-461E-4FFFBC75F7A9}.wem"
+     },
+     {
+      "Id": "866604450",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-012.wav",
+      "CachePath": "5C/{5C268CB2-2195-3854-DA29-18FF116AE50C}.wem"
+     },
+     {
+      "Id": "870991461",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-009.wav",
+      "CachePath": "EF/{EF7C40B2-858B-E578-B022-28518262A6CD}.wem"
+     },
+     {
+      "Id": "977787549",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-017.wav",
+      "CachePath": "BD/{BD5043CA-66EB-50F6-5C0B-4EEFCFC030D1}.wem"
+     },
+     {
+      "Id": "1063487980",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_SwordSlash-001.wav",
+      "CachePath": "C3/{C3576E08-A4D3-062D-79B3-208F8B6009A7}.wem"
      }
     ],
     "Plugins": {
@@ -218,8 +386,13 @@
       "GUID": "{E10D2661-0E07-43A7-B9CB-DB5427902EB9}",
       "Color": "17",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.6250113",
+      "DurationMax": "0.6250113",
+      "MediaRefs": [
+       {
+        "Id": "598379007"
+       }
+      ]
      },
      {
       "Id": "2723812599",
@@ -228,8 +401,13 @@
       "GUID": "{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}",
       "Color": "17",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.5",
+      "DurationMax": "0.5",
+      "MediaRefs": [
+       {
+        "Id": "458456398"
+       }
+      ]
      },
      {
       "Id": "953277036",
@@ -289,8 +467,67 @@
       "Color": "17",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "1.3749887",
+      "DurationMax": "1.5",
+      "MediaRefs": [
+       {
+        "Id": "9813012"
+       },
+       {
+        "Id": "49518134"
+       },
+       {
+        "Id": "68445072"
+       },
+       {
+        "Id": "80499998"
+       },
+       {
+        "Id": "101874823"
+       },
+       {
+        "Id": "201209299"
+       },
+       {
+        "Id": "211586496"
+       },
+       {
+        "Id": "301928930"
+       },
+       {
+        "Id": "401123077"
+       },
+       {
+        "Id": "461224180"
+       },
+       {
+        "Id": "562597119"
+       },
+       {
+        "Id": "566947647"
+       },
+       {
+        "Id": "579956481"
+       },
+       {
+        "Id": "584649645"
+       },
+       {
+        "Id": "635287032"
+       },
+       {
+        "Id": "866604450"
+       },
+       {
+        "Id": "870991461"
+       },
+       {
+        "Id": "977787549"
+       },
+       {
+        "Id": "1063487980"
+       }
+      ]
      },
      {
       "Id": "2749466912",
@@ -362,6 +599,6 @@
     ]
    }
   ],
-  "FileHash": "{EFE5D71A-5BA7-6895-59B0-3A78DAC8EFD9}"
+  "FileHash": "{E76A6F1B-B738-EA24-578F-9BB2AF86E1FA}"
  }
 }

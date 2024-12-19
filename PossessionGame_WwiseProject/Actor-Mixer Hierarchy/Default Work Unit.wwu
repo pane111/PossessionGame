@@ -30,6 +30,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="RepellChoir" ID="{944D2AF7-3B23-4B70-97E9-0CA7AFE8913F}" ShortID="850005315">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -38,8 +45,31 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_Repell" ID="{27B9DB39-B538-432A-B86B-ECEA6D6C1A80}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.169479606188467"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>BB_Repell.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="458456398"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_Repell" ID="{27B9DB39-B538-432A-B86B-ECEA6D6C1A80}" Platform="Linked"/>
+											</ActiveSourceList>
 										</Sound>
 										<Sound Name="Pull" ID="{5C597CB6-6B42-4B52-84ED-62F514F2834B}" ShortID="400898559">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-7</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -48,6 +78,18 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_Pull" ID="{62CB1425-CD84-42CF-9FD4-05A4298459B0}">
+													<Language>SFX</Language>
+													<AudioFile>BB_Pull.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="598379007"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_Pull" ID="{62CB1425-CD84-42CF-9FD4-05A4298459B0}" Platform="Linked"/>
+											</ActiveSourceList>
 										</Sound>
 										<RandomSequenceContainer Name="DmgTaken-Player" ID="{D893129C-4AA8-457F-A8A3-68FB77CCC960}" ShortID="419383544">
 											<ReferenceList>
@@ -325,6 +367,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<RandomSequenceContainer Name="QuickSlash" ID="{A59279D5-E322-45DC-9E1F-944AE2997155}" ShortID="633077648">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-8</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -333,6 +382,426 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="BB_SwordSlash-001" ID="{5F5719A8-749D-4761-98A2-B75075480538}" ShortID="503348442">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-001" ID="{D72F8A96-FD03-400D-BEE5-7E7184E8BB36}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1063487980"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-001" ID="{D72F8A96-FD03-400D-BEE5-7E7184E8BB36}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-002" ID="{EB5A7EFE-A494-4E41-AC9E-4FD133932A3F}" ShortID="897911936">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-002" ID="{14B8F540-3026-40B6-BDD2-E819B8FF1EDC}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="401123077"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-002" ID="{14B8F540-3026-40B6-BDD2-E819B8FF1EDC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-003" ID="{B8A416B9-1409-42C9-BFF9-B0B1E45E1E88}" ShortID="1037190113">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-003" ID="{614FF218-C8E5-4495-B55F-299E0871EC15}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="80499998"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-003" ID="{614FF218-C8E5-4495-B55F-299E0871EC15}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-004" ID="{BEADD9E8-53E7-4468-AD09-873F954DF8CA}" ShortID="219410442">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-004" ID="{D5C15E0F-F5AD-4337-959F-7BAB442B587C}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="9813012"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-004" ID="{D5C15E0F-F5AD-4337-959F-7BAB442B587C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-005" ID="{9D89B3AE-16FB-42C8-A151-AAC1422B2CCF}" ShortID="685376512">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-005" ID="{17D37F03-D628-4193-912E-1606CA2B349D}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-005.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="566947647"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-005" ID="{17D37F03-D628-4193-912E-1606CA2B349D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-006" ID="{50F3A09D-8DC2-4B89-A568-A499F09ED51B}" ShortID="1055979375">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-006" ID="{97C089E9-DC06-4BEA-9156-973BEE27BEE2}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-006.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="211586496"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-006" ID="{97C089E9-DC06-4BEA-9156-973BEE27BEE2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-007" ID="{A7428451-4660-4761-A795-8921A96926DF}" ShortID="933536254">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-007" ID="{D9B2A34F-554E-4F7A-A5F4-0A863D306565}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-007.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="49518134"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-007" ID="{D9B2A34F-554E-4F7A-A5F4-0A863D306565}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-008" ID="{5B1A27EE-70DF-4501-A7DA-248E276DE916}" ShortID="414933272">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-008" ID="{3FC8D48D-8CC7-4BB8-B9C0-B1FC259B55E5}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-008.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="461224180"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-008" ID="{3FC8D48D-8CC7-4BB8-B9C0-B1FC259B55E5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-009" ID="{21E7AA6F-031D-47E0-B49D-65E217305718}" ShortID="1010807290">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-009" ID="{04BD77FE-5CC2-4635-AA13-F4E4AFE080BA}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-009.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="870991461"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-009" ID="{04BD77FE-5CC2-4635-AA13-F4E4AFE080BA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-010" ID="{D6C24C52-47DB-4601-AAB9-F165B3DDF5B7}" ShortID="369303383">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-010" ID="{8F8FECB4-448D-4F9D-B68B-BC0782CE5FFA}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-010.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="562597119"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-010" ID="{8F8FECB4-448D-4F9D-B68B-BC0782CE5FFA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-011" ID="{902A1DB5-B39F-4E1A-B23B-3B9A73DB7A95}" ShortID="108706059">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-011" ID="{1E521CDF-D08E-4DA2-831A-F9A669E3C3E0}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-011.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="635287032"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-011" ID="{1E521CDF-D08E-4DA2-831A-F9A669E3C3E0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-012" ID="{7F74CD48-F137-438E-A426-0080B7F303CB}" ShortID="547079030">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-012" ID="{1EBF1331-9FF3-49FD-9EB6-87275EF90540}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-012.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="866604450"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-012" ID="{1EBF1331-9FF3-49FD-9EB6-87275EF90540}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-013" ID="{F0D0766E-E64F-405C-87A1-D6035A5E635C}" ShortID="806084988">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-013" ID="{A6D1C1C5-01E9-4DD7-9622-46CC0A592343}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-013.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="101874823"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-013" ID="{A6D1C1C5-01E9-4DD7-9622-46CC0A592343}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-014" ID="{42D7DC23-FAEB-4AFB-B5BB-6408CEF6CDD7}" ShortID="18649529">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-014" ID="{63235AAA-8C9A-462A-BC97-5F979C6592C1}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-014.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="68445072"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-014" ID="{63235AAA-8C9A-462A-BC97-5F979C6592C1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-015" ID="{EAE2203F-6A97-4ECE-AED6-E34CB4D41698}" ShortID="356524307">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-015" ID="{079BD0A4-4B40-4849-AC9B-4B49BEDC519A}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-015.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="579956481"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-015" ID="{079BD0A4-4B40-4849-AC9B-4B49BEDC519A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-016" ID="{E706A886-A08A-4147-9A88-1184E7C13E0A}" ShortID="51618519">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-016" ID="{2AB9588A-B8C3-4728-BD72-99F10FD3D57E}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-016.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="301928930"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-016" ID="{2AB9588A-B8C3-4728-BD72-99F10FD3D57E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-017" ID="{E2D97198-C8F2-4F33-B6B3-8867F32EBA96}" ShortID="897975591">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-017" ID="{99023CB4-062E-403D-A224-FB63A4D57BD4}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-017.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="977787549"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-017" ID="{99023CB4-062E-403D-A224-FB63A4D57BD4}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-018" ID="{62707E53-FCD2-4B03-B12D-755C90D2F9C9}" ShortID="125978796">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-018" ID="{AB876265-7F92-4589-B9B1-5AC816655E33}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-018.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="201209299"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-018" ID="{AB876265-7F92-4589-B9B1-5AC816655E33}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_SwordSlash-019" ID="{CCC2CCC1-F897-4783-8933-4BCE6D615447}" ShortID="28816816">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_SwordSlash-019" ID="{F96251CA-0617-492D-9D27-CB861A176046}">
+															<Language>SFX</Language>
+															<AudioFile>BB_SwordSlash-019.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="584649645"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_SwordSlash-019" ID="{F96251CA-0617-492D-9D27-CB861A176046}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
 										</RandomSequenceContainer>
 										<Sound Name="BigSlash" ID="{56CC5DC0-C2AC-4BB9-A330-D19620FB7C32}" ShortID="682497864">
 											<ReferenceList>

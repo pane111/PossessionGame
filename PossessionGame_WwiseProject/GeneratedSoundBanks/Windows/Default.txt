@@ -35,9 +35,30 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	926990374	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\PossessionCounter\s1\Silence	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	9813012	BB_SwordSlash-004	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\E6\{E6C6DB45-A2ED-5451-E6EC-6604D89BA500}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-004		8432
+	49518134	BB_SwordSlash-007	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\62\{62C1641B-4F64-7A3D-83BA-4BA3B2773FCD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-007		7890
+	68445072	BB_SwordSlash-014	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\79\{791BEBD8-9DAA-AD8A-7A54-BAC1CD33E2B4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-014		7935
+	80499998	BB_SwordSlash-003	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\E0\{E06DE3F7-E90F-E33D-E51F-1BA108EF43F8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-003		8319
+	101874823	BB_SwordSlash-013	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\FD\{FD7FA225-6561-DA94-D6A0-FD1094980110}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-013		8073
 	130485424	Dash	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\0D\{0DD99B4E-1CDA-2AA3-4A18-86EB691985A5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\Dash		4414
+	201209299	BB_SwordSlash-018	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\19\{19D0D2F1-E228-7AE6-5089-0908F7F5AB71}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-018		8262
+	211586496	BB_SwordSlash-006	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\BA\{BAA1370B-A6F3-C849-CF39-2FAE731033C2}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-006		8452
 	262197951	BB_PossessionCounter	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\F2\{F2AEF067-9F04-F9C3-F8B8-47AA42D74152}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\PossessionCounter\BB_PossessionCounter		2356
+	301928930	BB_SwordSlash-016	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\F6\{F6105B20-56B7-E4FD-5ABE-3B2C717C452C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-016		7565
+	401123077	BB_SwordSlash-002	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\B9\{B9D361F0-927B-2355-AC84-69634FB3E3BA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-002		8134
 	452811761	DMTicking	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\79\{79A675C5-BB2D-8673-B3D9-1171E077209E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\DMTicking		50140
+	458456398	RepellChoir	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\FA\{FA90010B-A252-D01B-0998-4FDB80CDCF7D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\RepellChoir		5490
+	461224180	BB_SwordSlash-008	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\4D\{4D86EC08-5DD9-5578-B61B-D1F813D6EE1F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-008		8285
 	538465745	DMOn	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\7C\{7C841DFE-A122-2156-373A-DD3F0899E33E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\DMOn		7850
+	562597119	BB_SwordSlash-010	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\ED\{ED3BD625-8C36-96CB-3CCF-E0D53EDE7D8A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-010		6465
+	566947647	BB_SwordSlash-005	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\8A\{8A6602D9-D154-B9FF-86E9-AD44C246E01F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-005		6593
+	579956481	BB_SwordSlash-015	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\BE\{BE1ACA8F-994A-15F9-E8D1-B250DFE482A3}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-015		8774
+	584649645	BB_SwordSlash-019	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\39\{39BE05FE-D97C-CCD5-2B3D-AE84758B89E7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-019		8399
 	589670513	Woof	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\53\{53028254-2862-A9FA-987D-10A08A0C004E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\Woof		2448
+	598379007	Pull	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\75\{752300BE-BED9-B681-193A-2C9304136DCD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\Pull		12582
+	635287032	BB_SwordSlash-011	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\34\{34D1C60C-6997-F1EE-461E-4FFFBC75F7A9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-011		7759
+	866604450	BB_SwordSlash-012	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\5C\{5C268CB2-2195-3854-DA29-18FF116AE50C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-012		7853
+	870991461	BB_SwordSlash-009	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\EF\{EF7C40B2-858B-E578-B022-28518262A6CD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-009		8588
+	977787549	BB_SwordSlash-017	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\BD\{BD5043CA-66EB-50F6-5C0B-4EEFCFC030D1}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-017		8278
+	1063487980	BB_SwordSlash-001	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\C3\{C3576E08-A4D3-062D-79B3-208F8B6009A7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-001		8264
 

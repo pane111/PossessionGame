@@ -191,6 +191,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator TakeDamage(float amount)
     {
+        AudioManager.Instance.SwordSlash.Post(gameObject);
         curHealth -= amount;
         if (curHealth <= 0)
         {
