@@ -214,7 +214,24 @@
 												</Reference>
 											</ReferenceList>
 										</EventActionException>
+										<EventActionException Name="" ID="{9A2FB4F3-6F28-4E23-9F1C-F7FB73CF53EC}">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</EventActionException>
 									</ChildrenList>
+								</Action>
+								<Action Name="" ID="{3C87C91E-42FE-4F28-B5C0-1F00B6471C51}" ShortID="356035898">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="7"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
 								</Action>
 								<Action Name="" ID="{7953EBCE-5DAF-41B8-84CF-7043F9D6EB7C}" ShortID="421999836">
 									<ReferenceList>
@@ -238,6 +255,16 @@
 						</Event>
 						<Event Name="Revive" ID="{DAC6B62D-BBAB-45B1-B999-0A666DC03071}">
 							<ChildrenList>
+								<Action Name="" ID="{E3F60B7F-407D-4513-82E9-655A1592C6DB}" ShortID="843611877">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="9"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{0997F760-D4D7-4E72-A679-7039ACCCEADA}" ShortID="599424517">
 									<ReferenceList>
 										<Reference Name="Target">
