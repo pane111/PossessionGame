@@ -11100,6 +11100,8 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420035}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11231,6 +11233,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1859569631}
   followSpeed: 3
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8554584f5a5be3841a8e6129f1bc0fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  bOverrideScalingFactor: 0
+  scalingFactor: -1
+  listenerId: 0
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da74d8e6d2e8b24eafeb0b75a3a73f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &528568719
 GameObject:
   m_ObjectHideFlags: 0
@@ -29149,7 +29191,7 @@ MonoBehaviour:
   leash: {fileID: 1051627746}
   sword: {fileID: 2079086542}
   demonSprite: {fileID: 21300000, guid: cc57f05bfb06ab84a9915d91b741b945, type: 3}
-  demonModeDuration: 15
+  demonModeDuration: 30
   demonModeActive: 0
   orbitSpeed: 140
   rotator: {fileID: 563939985}
@@ -46163,14 +46205,6 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 443270883}
-    - target: {fileID: 6885302527300738001, guid: d41e1037da76c33418b4ca500e8e5a22, type: 3}
-      propertyPath: curHealth
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6885302527300738001, guid: d41e1037da76c33418b4ca500e8e5a22, type: 3}
-      propertyPath: maxHealth
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7792550627687160474, guid: d41e1037da76c33418b4ca500e8e5a22, type: 3}
       propertyPath: m_Name
       value: CursedStaff
