@@ -97,6 +97,7 @@ public class SwordScript : MonoBehaviour
 
     IEnumerator SlashAttack()
     {
+        AudioManager.Instance.SwordBigSlash.Post(gameObject);
         moveFreely = false;
         Vector2 dir = curTarget.position - transform.position;
         rb.velocity = -dir.normalized * 15;
@@ -106,7 +107,6 @@ public class SwordScript : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         dir = curTarget.position - transform.position;
         rb.AddForce(dir.normalized * 250, ForceMode2D.Impulse);
-        
         isSlashing = true;
         slashes.Play();
         yield return new WaitForSeconds(0.25f);

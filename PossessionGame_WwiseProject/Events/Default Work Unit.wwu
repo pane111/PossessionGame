@@ -24,10 +24,23 @@
 								</Event>
 								<Event Name="SwordSlash_BIG" ID="{BB286FF0-C49C-417A-969C-BDB635C16BC8}">
 									<ChildrenList>
-										<Action Name="" ID="{758E7040-5682-43FD-A03D-B2E1CD6EA3A6}" ShortID="888208839">
+										<Action Name="" ID="{37AB1CBE-85D4-4DBA-B828-EEA01DFC89F0}" ShortID="717201667">
+											<PropertyList>
+												<Property Name="Probability" Type="Real64" Value="75"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="BigSlash" ID="{56CC5DC0-C2AC-4BB9-A330-D19620FB7C32}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+													<ObjectRef Name="Growl" ID="{CDCAA847-FE08-4DB1-9EE8-5FF1480C0E13}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{758E7040-5682-43FD-A03D-B2E1CD6EA3A6}" ShortID="888208839">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SwordSlashBIG" ID="{63E38003-0E60-4195-8EFD-83870A4D76DA}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -39,29 +52,6 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Deflect" ID="{73F86DBD-34EB-4662-83ED-E0A25675C6C5}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{7381DFDF-F254-492B-90AD-F65BDD5BD9CC}" ShortID="269266357">
-											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.5">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{09B707CB-82A8-4B80-A4CF-BE315D799767}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="0.25"/>
-																	<Property Name="Min" Type="Real64" Value="-0.1"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-												<Property Name="Probability" Type="Real64" Value="80"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Growl" ID="{CDCAA847-FE08-4DB1-9EE8-5FF1480C0E13}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -211,6 +201,21 @@
 						</Folder>
 						<Event Name="Death" ID="{2CD70137-CF50-4DFC-9521-ACB5D98CB7EC}">
 							<ChildrenList>
+								<Action Name="" ID="{805DD85A-8278-48DD-9833-F6DF1EB34129}" ShortID="1012112108">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+									</PropertyList>
+									<ReferenceList/>
+									<ChildrenList>
+										<EventActionException Name="" ID="{3705AB47-F909-421B-B4E8-9C33DFB72FF0}">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music" ID="{230F61EE-BBAD-44DC-961E-064266359991}" WorkUnitID="{BD1301FD-2A3C-45C0-B448-3915E92BF266}"/>
+												</Reference>
+											</ReferenceList>
+										</EventActionException>
+									</ChildrenList>
+								</Action>
 								<Action Name="" ID="{7953EBCE-5DAF-41B8-84CF-7043F9D6EB7C}" ShortID="421999836">
 									<ReferenceList>
 										<Reference Name="Target">

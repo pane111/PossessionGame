@@ -98,6 +98,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="PlayerDeath" ID="{FB12EE3E-7638-47E8-85AC-8B35D4B6A7DD}" ShortID="969949675">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-7</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -106,6 +113,23 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="273918__ianstargem__huge-impact-2" ID="{583A278D-3951-4788-BF58-18C401D456D1}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="2.17698013543926"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.20892511319019"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>273918__ianstargem__huge-impact-2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="544897134"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="273918__ianstargem__huge-impact-2" ID="{583A278D-3951-4788-BF58-18C401D456D1}" Platform="Linked"/>
+											</ActiveSourceList>
 										</Sound>
 										<Sound Name="DMOn" ID="{26571F7A-159B-4C04-B515-A172FB2DF051}" ShortID="935762385">
 											<PropertyList>
@@ -707,9 +731,10 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="QuickSlash" ID="{A59279D5-E322-45DC-9E1F-944AE2997155}" ShortID="633077648">
 											<PropertyList>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-8</Value>
+														<Value>-10</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1142,16 +1167,6 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
-										<Sound Name="BigSlash" ID="{56CC5DC0-C2AC-4BB9-A330-D19620FB7C32}" ShortID="682497864">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
-												</Reference>
-											</ReferenceList>
-										</Sound>
 										<RandomSequenceContainer Name="Growl" ID="{CDCAA847-FE08-4DB1-9EE8-5FF1480C0E13}" ShortID="299382734">
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -1161,6 +1176,95 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="BB_Growl-001" ID="{06124530-4819-4DA1-AE8C-2799B8723143}" ShortID="460473171">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-1</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_Growl-001" ID="{AEF5B25D-C54B-4437-9F55-61C6E3838D4A}">
+															<Language>SFX</Language>
+															<AudioFile>BB_Growl-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="356138506"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_Growl-001" ID="{AEF5B25D-C54B-4437-9F55-61C6E3838D4A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_Growl-002" ID="{A11F1083-9333-4B20-9163-C43FB9BA2D32}" ShortID="963502853">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-6</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_Growl-002" ID="{7558C79D-BF3D-405F-95B7-0A15EECF06B1}">
+															<Language>SFX</Language>
+															<AudioFile>BB_Growl-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="954352770"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_Growl-002" ID="{7558C79D-BF3D-405F-95B7-0A15EECF06B1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_Growl-003" ID="{EC657CAD-017A-4DB7-BEC4-FFF0425B8115}" ShortID="75275180">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-2</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_Growl-003" ID="{E9791DB5-7D9F-4D81-8331-3948855A3DBE}">
+															<Language>SFX</Language>
+															<AudioFile>BB_Growl-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="706095391"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_Growl-003" ID="{E9791DB5-7D9F-4D81-8331-3948855A3DBE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Deflect" ID="{73F86DBD-34EB-4662-83ED-E0A25675C6C5}" ShortID="996863945">
 											<PropertyList>
@@ -1313,6 +1417,135 @@
 												<ActiveSource Name="BB_Woof" ID="{0CC636F9-9AFB-4716-A8D6-4FED1B4FCF40}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<RandomSequenceContainer Name="SwordSlashBIG" ID="{63E38003-0E60-4195-8EFD-83870A4D76DA}" ShortID="922158075">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="BB_BigSlash-001" ID="{2222CA89-6429-4166-973A-CF6846337BD0}" ShortID="584513150">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_BigSlash-001" ID="{CABE955F-9147-45D1-899B-2080555CE74A}">
+															<Language>SFX</Language>
+															<AudioFile>BB_BigSlash-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="336049082"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_BigSlash-001" ID="{CABE955F-9147-45D1-899B-2080555CE74A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_BigSlash-002" ID="{EC6593B0-3DEC-4164-89DE-90DB81D72448}" ShortID="547224557">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_BigSlash-002" ID="{8714A354-026F-4DBF-BEA5-0B755F723E4D}">
+															<Language>SFX</Language>
+															<AudioFile>BB_BigSlash-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="97633555"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_BigSlash-002" ID="{8714A354-026F-4DBF-BEA5-0B755F723E4D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_BigSlash-003" ID="{3E0C7358-FF8F-4AA0-9E48-AB122B538150}" ShortID="480184842">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_BigSlash-003" ID="{11AF5382-857A-4357-B785-DE6E547DE360}">
+															<Language>SFX</Language>
+															<AudioFile>BB_BigSlash-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="892929466"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_BigSlash-003" ID="{11AF5382-857A-4357-B785-DE6E547DE360}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_BigSlash-004" ID="{FD66A4D3-681D-401B-9F71-FE218D9B5FA9}" ShortID="185907568">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_BigSlash-004" ID="{DE56F366-FC58-4B2E-987A-BF589AB5865B}">
+															<Language>SFX</Language>
+															<AudioFile>BB_BigSlash-004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="591849815"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_BigSlash-004" ID="{DE56F366-FC58-4B2E-987A-BF589AB5865B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_BigSlash-005" ID="{1C7BB33D-0487-4E4E-9435-CA30DFE751E9}" ShortID="1049016523">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_BigSlash-005" ID="{2FC67B3A-5882-4517-BF8A-879EC971A23C}">
+															<Language>SFX</Language>
+															<AudioFile>BB_BigSlash-005.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="285942371"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_BigSlash-005" ID="{2FC67B3A-5882-4517-BF8A-879EC971A23C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
 								<BlendContainer Name="GameOver" ID="{DEAF0657-AFB2-42D6-8BB9-12D0A02B9D65}" ShortID="950197830">
