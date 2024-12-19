@@ -10,12 +10,273 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{653B5FBC-7A19-9224-6D67-C4F38FE7B52F}",
+    "Hash": "{CC4F4D89-2D63-C1F0-DD16-D35B87D6F5A7}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
-    "Path": "Default.bnk"
+    "Path": "Default.bnk",
+    "Media": [
+     {
+      "Id": "262197951",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PossessionCounter.wav",
+      "CachePath": "F2/{F2AEF067-9F04-F9C3-F8B8-47AA42D74152}.wem"
+     },
+     {
+      "Id": "452811761",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_ClockTickingLoop.wav",
+      "CachePath": "C8/{C8750BBB-3B47-9F22-8E35-913863337AFC}.wem"
+     }
+    ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "926990374",
+       "Name": "Silence",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\Main\\SFX\\Player\\PossessionCounter\\s1\\Silence",
+       "GUID": "{EF60EB44-0954-4AD7-97BF-13F378ABA154}",
+       "Color": "17",
+       "LibName": "Wwise Silence",
+       "LibId": "6619138"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "1942692385",
+      "Name": "Dash",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Player\\Dash",
+      "GUID": "{CAD6C48D-F41B-4C73-88AD-E82FEB37A6E3}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "779278001",
+      "Name": "Death",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Death",
+      "GUID": "{2CD70137-CF50-4DFC-9521-ACB5D98CB7EC}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3483015646",
+      "Name": "DemonModeOff",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\DemonModeOff",
+      "GUID": "{E6EB68B9-BA8D-402D-A9A0-56B42DA4086C}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2274357856",
+      "Name": "DemonModeOn",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\DemonModeOn",
+      "GUID": "{39818C53-6D8D-4811-AC46-CD76BBC341FF}",
+      "Color": "17",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "452811761"
+       }
+      ]
+     },
+     {
+      "Id": "4158285989",
+      "Name": "GameOver",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\GameOver",
+      "GUID": "{8FB86B8C-38A2-43BF-9160-53FF16B3564A}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "539785156",
+      "Name": "NPCDeath",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\NPCDeath",
+      "GUID": "{C397DCEA-5037-4AFC-8896-0DA273EF1C50}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1715677421",
+      "Name": "NPCTakeDmg",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\NPCTakeDmg",
+      "GUID": "{F80FE745-ED79-4A0B-AA0F-45077BFD8BD1}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3092587493",
+      "Name": "Pause",
+      "ObjectPath": "\\Events\\Default Work Unit\\Pause",
+      "GUID": "{1680FA7A-7B54-4691-8F0E-5B726F915214}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1908999728",
+      "Name": "Pull",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Player\\Pull",
+      "GUID": "{E10D2661-0E07-43A7-B9CB-DB5427902EB9}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2723812599",
+      "Name": "Repell",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Player\\Repell",
+      "GUID": "{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "953277036",
+      "Name": "Resume",
+      "ObjectPath": "\\Events\\Default Work Unit\\Resume",
+      "GUID": "{169EF05E-8094-4288-9798-BE0282832AFE}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "282544866",
+      "Name": "Revive",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Revive",
+      "GUID": "{DAC6B62D-BBAB-45B1-B999-0A666DC03071}",
+      "Color": "17",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "262197951"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "926990374"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3827058668",
+      "Name": "StartMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\StartMusic",
+      "GUID": "{C4DC9C5C-E95B-4280-AACA-353DC1E57E68}",
+      "Color": "26",
+      "DurationType": "Infinite",
+      "SwitchContainers": []
+     },
+     {
+      "Id": "1882597461",
+      "Name": "SwordDeflect",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\SwordDeflect",
+      "GUID": "{29E79F97-784D-49B4-B4D7-17DACF4FF4A9}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3113731383",
+      "Name": "SwordSlash",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\SwordSlash",
+      "GUID": "{6F4388BC-85BB-447F-8038-72F756E2DEF4}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2749466912",
+      "Name": "SwordSlash_BIG",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\SwordSlash_BIG",
+      "GUID": "{BB286FF0-C49C-417A-969C-BDB635C16BC8}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3336527240",
+      "Name": "TakeDMG",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Player\\TakeDMG",
+      "GUID": "{8E20AB0B-1904-406D-825C-DA8E374541F1}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "4091656514",
+      "Name": "GameState",
+      "ObjectPath": "\\States\\Default Work Unit\\GameState",
+      "GUID": "{CDB0E3AE-434D-4E3D-A3F8-D27F420D425C}",
+      "States": [
+       {
+        "Id": "319258907",
+        "Name": "Paused",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\Paused",
+        "GUID": "{4A70BB33-09B5-457F-9ABF-799DA08A8655}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\None",
+        "GUID": "{90B4B4C0-DACE-4C22-B7F2-9CAEEB74B230}"
+       },
+       {
+        "Id": "1002734233",
+        "Name": "NormalMode",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\NormalMode",
+        "GUID": "{30C6C111-1C76-49BB-AD5B-0D74E336A384}"
+       },
+       {
+        "Id": "2525823671",
+        "Name": "DemonMode",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\DemonMode",
+        "GUID": "{D8F3C64E-E7AA-4A31-B38A-65599981D96E}"
+       },
+       {
+        "Id": "3705726509",
+        "Name": "Title",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\Title",
+        "GUID": "{DF653ECE-6186-4448-A736-B213CB9A62B7}"
+       },
+       {
+        "Id": "4158285989",
+        "Name": "GameOver",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\GameOver",
+        "GUID": "{6D3DD528-C1B5-4536-A51C-3D747A3F06E2}"
+       }
+      ]
+     }
+    ]
    }
   ],
-  "FileHash": "{68376168-FFE2-9385-80A2-0FF6DAD6F9E0}"
+  "FileHash": "{A2673081-FEEE-48F0-FE10-CD459E9CF754}"
  }
 }

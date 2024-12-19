@@ -12,6 +12,9 @@
 							</PropertyList>
 							<ChildrenList>
 								<ActorMixer Name="Player" ID="{EEBBDEE5-2824-4D65-BB46-6CFEC2AE7EDA}" ShortID="283413548">
+									<PropertyList>
+										<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -21,7 +24,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="Repell" ID="{944D2AF7-3B23-4B70-97E9-0CA7AFE8913F}" ShortID="850005315">
+										<Sound Name="RepellChoir" ID="{944D2AF7-3B23-4B70-97E9-0CA7AFE8913F}" ShortID="850005315">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -91,6 +94,116 @@
 												</Reference>
 											</ReferenceList>
 										</Sound>
+										<Sound Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" ShortID="808221240">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_ClockTickingLoop" ID="{BDE88C66-BB28-465E-B386-A2FC44DEFCF8}">
+													<Language>SFX</Language>
+													<AudioFile>BB_ClockTickingLoop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="452811761"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_ClockTickingLoop" ID="{BDE88C66-BB28-465E-B386-A2FC44DEFCF8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="PossessionCounter" ID="{7DE8EF70-D35D-4292-BDFC-65878F8767B6}" ShortID="69227181">
+											<PropertyList>
+												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+												<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="BB_PossessionCounter" ID="{95BA8EFC-950D-4955-A10E-9250FEAE22EA}" ShortID="959214102">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_PossessionCounter" ID="{8FF59DE0-CF5F-4886-A29E-C8F85816F944}">
+															<PropertyList>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0189856192733668"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>BB_PossessionCounter.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="262197951"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_PossessionCounter" ID="{8FF59DE0-CF5F-4886-A29E-C8F85816F944}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="s1" ID="{768428EF-7968-4CB5-AD48-506F23E58C14}" ShortID="130072223">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<SourcePlugin Name="Silence" ID="{EF60EB44-0954-4AD7-97BF-13F378ABA154}" ShortID="926990374" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+															<PropertyList>
+																<Property Name="Length" Type="Real32" Value="0.3"/>
+															</PropertyList>
+															<Language>SFX</Language>
+														</SourcePlugin>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Silence" ID="{EF60EB44-0954-4AD7-97BF-13F378ABA154}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<PositioningInfo>
+												<Panner Name="" ID="{DFC1F509-40D9-4D5A-B557-050718C5349E}">
+													<PropertyList>
+														<Property Name="PanX" Type="Real64" Value="-59.2670157068063"/>
+														<Property Name="PanY" Type="Real64" Value="81.5642458100559"/>
+													</PropertyList>
+												</Panner>
+											</PositioningInfo>
+											<ObjectLists>
+												<ObjectList Name="Playlist">
+													<Reference>
+														<ObjectRef Name="BB_PossessionCounter" ID="{95BA8EFC-950D-4955-A10E-9250FEAE22EA}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+													</Reference>
+													<Reference>
+														<ObjectRef Name="s1" ID="{768428EF-7968-4CB5-AD48-506F23E58C14}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="NPC" ID="{E2E815A5-8BEF-418A-B8C9-AC05327DBBE5}" ShortID="891129276">

@@ -308,6 +308,7 @@ public class Player : MonoBehaviour
 
     public void Revive()
     {
+        AudioManager.Instance.Revive.Post(gameObject);
         _curHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
         Corruption += 35;

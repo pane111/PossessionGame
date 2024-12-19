@@ -11,6 +11,27 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID DASH = 1942692385U;
+        static const AkUniqueID DEATH = 779278001U;
+        static const AkUniqueID DEMONMODEOFF = 3483015646U;
+        static const AkUniqueID DEMONMODEON = 2274357856U;
+        static const AkUniqueID GAMEOVER = 4158285989U;
+        static const AkUniqueID NPCDEATH = 539785156U;
+        static const AkUniqueID NPCTAKEDMG = 1715677421U;
+        static const AkUniqueID PAUSE = 3092587493U;
+        static const AkUniqueID PULL = 1908999728U;
+        static const AkUniqueID REPELL = 2723812599U;
+        static const AkUniqueID RESUME = 953277036U;
+        static const AkUniqueID REVIVE = 282544866U;
+        static const AkUniqueID STARTMUSIC = 3827058668U;
+        static const AkUniqueID SWORDDEFLECT = 1882597461U;
+        static const AkUniqueID SWORDSLASH = 3113731383U;
+        static const AkUniqueID SWORDSLASH_BIG = 2749466912U;
+        static const AkUniqueID TAKEDMG = 3336527240U;
+    } // namespace EVENTS
+
     namespace STATES
     {
         namespace GAMESTATE

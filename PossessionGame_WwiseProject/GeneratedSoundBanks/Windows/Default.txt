@@ -1,0 +1,37 @@
+Event	ID	Name			Wwise Object Path	Notes
+	282544866	Revive			\Default Work Unit\SFX\Revive	
+	539785156	NPCDeath			\Default Work Unit\SFX\NPC\NPCDeath	
+	779278001	Death			\Default Work Unit\SFX\Death	
+	953277036	Resume			\Default Work Unit\Resume	
+	1715677421	NPCTakeDmg			\Default Work Unit\SFX\NPC\NPCTakeDmg	
+	1882597461	SwordDeflect			\Default Work Unit\SFX\Sword\SwordDeflect	
+	1908999728	Pull			\Default Work Unit\SFX\Player\Pull	
+	1942692385	Dash			\Default Work Unit\SFX\Player\Dash	
+	2274357856	DemonModeOn			\Default Work Unit\SFX\DemonModeOn	
+	2723812599	Repell			\Default Work Unit\SFX\Player\Repell	
+	2749466912	SwordSlash_BIG			\Default Work Unit\SFX\Sword\SwordSlash_BIG	
+	3092587493	Pause			\Default Work Unit\Pause	
+	3113731383	SwordSlash			\Default Work Unit\SFX\Sword\SwordSlash	
+	3336527240	TakeDMG			\Default Work Unit\SFX\Player\TakeDMG	
+	3483015646	DemonModeOff			\Default Work Unit\SFX\DemonModeOff	
+	3827058668	StartMusic			\Default Work Unit\Music\StartMusic	
+	4158285989	GameOver			\Default Work Unit\SFX\GameOver	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	4091656514	GameState			\Default Work Unit\GameState	
+
+State	ID	Name	State Group			Notes
+	319258907	Paused	GameState			
+	748895195	None	GameState			
+	1002734233	NormalMode	GameState			
+	2525823671	DemonMode	GameState			
+	3705726509	Title	GameState			
+	4158285989	GameOver	GameState			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	926990374	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\PossessionCounter\s1\Silence	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	262197951	BB_PossessionCounter	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\F2\{F2AEF067-9F04-F9C3-F8B8-47AA42D74152}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\PossessionCounter\BB_PossessionCounter		2356
+	452811761	DMTicking	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\C8\{C8750BBB-3B47-9F22-8E35-913863337AFC}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\DMTicking		50445
+

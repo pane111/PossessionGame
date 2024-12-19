@@ -11043,8 +11043,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420035}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11176,46 +11174,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1859569631}
   followSpeed: 3
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8554584f5a5be3841a8e6129f1bc0fe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDefaultListener: 1
-  bOverrideScalingFactor: 0
-  scalingFactor: -1
-  listenerId: 0
---- !u!114 &519420035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da74d8e6d2e8b24eafeb0b75a3a73f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
-  isEnvironmentAware: 0
-  isStaticObject: 0
-  usePositionOffsetData: 0
-  m_positionOffsetData:
-    KeepMe: 0
-    positionOffset: {x: 0, y: 0, z: 0}
-  scalingFactor: 1
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
 --- !u!1 &528568719
 GameObject:
   m_ObjectHideFlags: 0
@@ -28272,7 +28230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterVolume: 10
-  bpmMod: 1
+  bpm: 0
   GS_Titlescreen:
     idInternal: 0
     valueGuidInternal: 
@@ -28318,59 +28276,63 @@ MonoBehaviour:
   SwordBigSlash:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: d3484cf6fd1f6b442974e5d5bb8884a2, type: 2}
   SwordDeflect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 527b6a53e76354248b651f882961cc08, type: 2}
   Pull:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 4bd0fc02ad5a4f145b67cbbd6945848e, type: 2}
   Repell:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 4f23ac81fbed76a40a1dd45e00b93dbe, type: 2}
   PlayerDmgTaken:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 654b8f7a2eef31440a47c023f0310848, type: 2}
   Dash:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 59a3bc7eb103c204e96a97cf84b5bbe2, type: 2}
   Death:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 01258349386234d469b11408c332754f, type: 2}
   GameOver:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: ea5a7476588711c4fab25744cd0c8ecd, type: 2}
   Revive:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: b96660ba74f20df4b979ce75d00371e1, type: 2}
   NPCDeath:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 81b0ec37cf416ae44bc4225bbf475013, type: 2}
   DemonModeOn:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 473c2a82571a66d4c8f8bae3240e4c24, type: 2}
   DemonModeOff:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: ce2fea3820d112b4f851007099b3ddf7, type: 2}
   StartMusic:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  PauseToggle:
+    WwiseObjectReference: {fileID: 11400000, guid: 6cfccdc021518ed4cbd07c4a545cbe4d, type: 2}
+  Pause:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 13d4eecfe3c7f014b8fa9efcd768af89, type: 2}
+  Resume:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c66c0ffbae663c6448f5f8dfd2f5e86d, type: 2}
 --- !u!114 &1574376438
 MonoBehaviour:
   m_ObjectHideFlags: 0

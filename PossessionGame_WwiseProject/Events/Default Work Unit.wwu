@@ -113,7 +113,7 @@
 										<Action Name="" ID="{3A08635B-F21B-4EDA-8210-15BA8F0B2A8F}" ShortID="333984212">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Repell" ID="{944D2AF7-3B23-4B70-97E9-0CA7AFE8913F}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+													<ObjectRef Name="RepellChoir" ID="{944D2AF7-3B23-4B70-97E9-0CA7AFE8913F}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -174,6 +174,51 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{B47D3B02-8BFA-4DAC-B722-11D78F35C3BB}" ShortID="846738592">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PossessionCounter" ID="{7DE8EF70-D35D-4292-BDFC-65878F8767B6}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{434616BF-EC35-49F2-8CBB-130BF5837688}" ShortID="158810231">
+									<PropertyList>
+										<Property Name="AbsoluteOrRelative" Type="int16" Value="1"/>
+										<Property Name="ActionType" Type="int16" Value="12"/>
+										<Property Name="Delay" Type="Real64" Value="0.2"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="Volume" Type="Real64" Value="-3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PossessionCounter" ID="{7DE8EF70-D35D-4292-BDFC-65878F8767B6}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A19EF437-898B-4B53-9BD8-8EFDB72C9AC5}" ShortID="910438348">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Delay" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PossessionCounter" ID="{7DE8EF70-D35D-4292-BDFC-65878F8767B6}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{68F77AD1-7C73-44C3-AE41-D0DFD491A39A}" ShortID="787532130">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="16"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PossessionCounter" ID="{7DE8EF70-D35D-4292-BDFC-65878F8767B6}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="DemonModeOn" ID="{39818C53-6D8D-4811-AC46-CD76BBC341FF}">
@@ -185,6 +230,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{8CB302FA-8AA6-45C7-82BC-FFBCBF182F90}" ShortID="845323222">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="DemonModeOff" ID="{E6EB68B9-BA8D-402D-A9A0-56B42DA4086C}">
@@ -193,6 +245,16 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="DMOff" ID="{958C4FEE-0C75-4CA4-8A33-EBD86EA8633F}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{892C0491-E307-41C9-8699-9792F0B95D0E}" ShortID="618002360">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

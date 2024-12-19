@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a39999aea814fb4a91f766311803092, type: 3}
-  m_Name: BB286FF0-C49C-417A-969C-BDB635C16BC8
+  m_Name: 8E20AB0B-1904-406D-825C-DA8E374541F1
   m_EditorClassIdentifier: 
-  objectName: SwordSlash_BIG
-  id: 2749466912
-  guid: BB286FF0-C49C-417A-969C-BDB635C16BC8
+  objectName: TakeDMG
+  id: 3336527240
+  guid: 8E20AB0B-1904-406D-825C-DA8E374541F1
   IsInUserDefinedSoundBank: 1
   IsAutoBankLoaded: 0

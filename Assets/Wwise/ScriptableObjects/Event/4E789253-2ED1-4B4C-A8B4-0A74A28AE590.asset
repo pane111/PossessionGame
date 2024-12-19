@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a39999aea814fb4a91f766311803092, type: 3}
-  m_Name: BB286FF0-C49C-417A-969C-BDB635C16BC8
+  m_Name: 4E789253-2ED1-4B4C-A8B4-0A74A28AE590
   m_EditorClassIdentifier: 
-  objectName: SwordSlash_BIG
-  id: 2749466912
-  guid: BB286FF0-C49C-417A-969C-BDB635C16BC8
+  objectName: Repell
+  id: 2723812599
+  guid: 4E789253-2ED1-4B4C-A8B4-0A74A28AE590
   IsInUserDefinedSoundBank: 1
   IsAutoBankLoaded: 0

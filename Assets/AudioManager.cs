@@ -7,7 +7,8 @@ using Event = AK.Wwise.Event;
 public class AudioManager : MonoBehaviour
 {
     [Range(0, 15f)] public int masterVolume;
-    public float bpmMod = 1;
+    public float bpm;
+    private float bpmMod;
 
     [Header("States")] //game over not connected, paused doesnt exist
     public State GS_Titlescreen;
@@ -44,6 +45,7 @@ public class AudioManager : MonoBehaviour
         possessionRTPC.SetGlobalValue(0);
         GS_Titlescreen.SetValue();
         StartMusic.Post(gameObject);
+        bpmMod = bpm / 60;
     }
 
     #region Methods

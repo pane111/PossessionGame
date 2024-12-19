@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a39999aea814fb4a91f766311803092, type: 3}
-  m_Name: BB286FF0-C49C-417A-969C-BDB635C16BC8
+  m_Name: C4DC9C5C-E95B-4280-AACA-353DC1E57E68
   m_EditorClassIdentifier: 
-  objectName: SwordSlash_BIG
-  id: 2749466912
-  guid: BB286FF0-C49C-417A-969C-BDB635C16BC8
+  objectName: StartMusic
+  id: 3827058668
+  guid: C4DC9C5C-E95B-4280-AACA-353DC1E57E68
   IsInUserDefinedSoundBank: 1
   IsAutoBankLoaded: 0
