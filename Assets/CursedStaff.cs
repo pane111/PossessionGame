@@ -42,7 +42,7 @@ public class CursedStaff : CursedWeapon
 
             if ((player.position-beamEnd.position).magnitude <= 1)
             {
-                player.GetComponent<Player>().TakeDamage();
+                player.GetComponent<Player>().TakeCustomDamage(0.25f);
             }
         }
 
