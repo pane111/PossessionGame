@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{4DB7D18C-09E6-CEE5-30B9-D65066CB8A0F}",
+    "Hash": "{761DB71B-AC76-521B-EA59-35A3A4AED9C9}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
@@ -197,7 +197,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_Repell.wav",
-      "CachePath": "FA/{FA90010B-A252-D01B-0998-4FDB80CDCF7D}.wem"
+      "CachePath": "F8/{F8FB50C9-6CF1-B3D5-1AD4-69F27C9A6272}.wem"
      },
      {
       "Id": "460084475",
@@ -205,7 +205,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_Shot-001.wav",
-      "CachePath": "2D/{2DE18827-B19D-6564-E709-D941A48BACB4}.wem"
+      "CachePath": "CB/{CB63CCF5-5F2D-AF93-F7DE-A5328BF7CD41}.wem"
      },
      {
       "Id": "461224180",
@@ -221,15 +221,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "76405__dsp9000__old-church-bell.wav",
-      "CachePath": "7C/{7C841DFE-A122-2156-373A-DD3F0899E33E}.wem"
-     },
-     {
-      "Id": "544897134",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "273918__ianstargem__huge-impact-2.wav",
-      "CachePath": "0D/{0DB08D23-682D-77AB-D53A-B3F3E2F7D924}.wem"
+      "CachePath": "44/{44184080-EA70-B695-32F1-934C54BA9789}.wem"
      },
      {
       "Id": "562597119",
@@ -294,6 +286,14 @@
       "Location": "Memory",
       "ShortName": "BB_Pull.wav",
       "CachePath": "75/{752300BE-BED9-B681-193A-2C9304136DCD}.wem"
+     },
+     {
+      "Id": "631153395",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "329516__lpa134__hood-impact.wav",
+      "CachePath": "61/{6106B880-37D1-A958-E73B-8DDAE73AE257}.wem"
      },
      {
       "Id": "635287032",
@@ -405,7 +405,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_Shot-002.wav",
-      "CachePath": "38/{38A716AC-962B-1915-6F0F-653084DA5FE6}.wem"
+      "CachePath": "FE/{FE5E11BA-0773-58F7-2713-BD911C312AE5}.wem"
      },
      {
       "Id": "977787549",
@@ -487,11 +487,11 @@
       "GUID": "{2CD70137-CF50-4DFC-9521-ACB5D98CB7EC}",
       "Color": "17",
       "DurationType": "OneShot",
-      "DurationMin": "3.208925",
-      "DurationMax": "3.208925",
+      "DurationMin": "4.5718575",
+      "DurationMax": "4.5718575",
       "MediaRefs": [
        {
-        "Id": "544897134"
+        "Id": "631153395"
        }
       ]
      },
@@ -966,6 +966,6 @@
     ]
    }
   ],
-  "FileHash": "{40082A3B-0AF8-7E40-3D65-840D399EF0C6}"
+  "FileHash": "{837FB6DE-D68D-DCA9-9084-0B17A0FBA643}"
  }
 }

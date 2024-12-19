@@ -126,9 +126,20 @@
 														<MediaID ID="544897134"/>
 													</MediaIDList>
 												</AudioFileSource>
+												<AudioFileSource Name="329516__lpa134__hood-impact" ID="{FBE62F8C-B81C-4D87-B70B-D32EAD18CD63}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="4.57185756033081"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>329516__lpa134__hood-impact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="631153395"/>
+													</MediaIDList>
+												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="273918__ianstargem__huge-impact-2" ID="{583A278D-3951-4788-BF58-18C401D456D1}" Platform="Linked"/>
+												<ActiveSource Name="329516__lpa134__hood-impact" ID="{FBE62F8C-B81C-4D87-B70B-D32EAD18CD63}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="DMOn" ID="{26571F7A-159B-4C04-B515-A172FB2DF051}" ShortID="935762385">
