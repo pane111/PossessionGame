@@ -29195,7 +29195,7 @@ MonoBehaviour:
   leash: {fileID: 1051627746}
   sword: {fileID: 2079086542}
   demonSprite: {fileID: 21300000, guid: cc57f05bfb06ab84a9915d91b741b945, type: 3}
-  demonModeDuration: 15
+  demonModeDuration: 30
   demonModeActive: 0
   orbitSpeed: 140
   rotator: {fileID: 563939985}
@@ -46234,14 +46234,6 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 443270883}
-    - target: {fileID: 6885302527300738001, guid: d41e1037da76c33418b4ca500e8e5a22, type: 3}
-      propertyPath: curHealth
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6885302527300738001, guid: d41e1037da76c33418b4ca500e8e5a22, type: 3}
-      propertyPath: maxHealth
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7792550627687160474, guid: d41e1037da76c33418b4ca500e8e5a22, type: 3}
       propertyPath: m_Name
       value: CursedStaff

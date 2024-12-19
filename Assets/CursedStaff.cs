@@ -6,8 +6,8 @@ using UnityEngine;
 public class CursedStaff : CursedWeapon
 {
     bool beamStarted;
-    float beamCooldown = 8;
-
+    float beamCooldown = 4;
+    public float maxBeamCd;
     public Transform beamStart;
     public LineRenderer beam;
     public Transform beamEnd;
@@ -15,6 +15,8 @@ public class CursedStaff : CursedWeapon
     public float beamDuration;
     public SpreadShot spreadShot;
     public float fireDelay;
+    public float moveRange;
+    public float moveSpeed;
     void Update()
     {
         FindPlayer();
@@ -78,6 +80,7 @@ public class CursedStaff : CursedWeapon
         beamEnd.gameObject.SetActive(false);
         beam.enabled = false;
         beamStarted = false;
+        GetComponent<Rigidbody2D>().isKinematic = true;
         GetComponent<Animator>().SetTrigger("Death");
 
     }
@@ -88,18 +91,33 @@ public class CursedStaff : CursedWeapon
     }
     IEnumerator beamAttack()
     {
+        Move();
         beamStart.gameObject.SetActive(true);
         beamEnd.gameObject.SetActive(true);
         beam.enabled = true;
         beamStarted = true;
-        yield return new WaitForSeconds(beamDuration);
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        yield return new WaitForSeconds(beamDuration-0.5f);
         beamStarted = false;
-        beamCooldown = 8;
+        beamCooldown = maxBeamCd;
         beamStart.gameObject.SetActive(false);
         beamEnd.gameObject.SetActive(false);
         beamEnd.transform.position=beamStart.transform.position;
         beam.enabled = false;
+        yield return new WaitForSeconds(Random.Range(0,2));
+        Move();
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         yield return null;
+    }
+
+    private void Move()
+    {
+       
+        Vector2 posToMoveTo = (Vector2)player.position + new Vector2(Random.Range(-moveRange, moveRange), Random.Range(-moveRange, moveRange));
+        Vector2 dir = posToMoveTo - (Vector2)transform.position;
+        GetComponent<Rigidbody2D>().velocity = dir.normalized * moveSpeed * (dir.magnitude/10);
     }
 
     void ShootBullets()

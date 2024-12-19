@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour
 
     void EnterDM()
     {
-        if (curHealth > 0)
+        if (curHealth > 0 && gameObject.activeInHierarchy)
         {
             demon = true;
             crystal.SetActive(!heartExposed);
