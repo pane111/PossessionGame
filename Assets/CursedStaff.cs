@@ -92,6 +92,7 @@ public class CursedStaff : CursedWeapon
     IEnumerator beamAttack()
     {
         Move();
+        AudioManager.Instance.LaserStart.Post(gameObject);
         beamStart.gameObject.SetActive(true);
         beamEnd.gameObject.SetActive(true);
         beam.enabled = true;
@@ -99,6 +100,7 @@ public class CursedStaff : CursedWeapon
         yield return new WaitForSeconds(0.5f);
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         yield return new WaitForSeconds(beamDuration-0.5f);
+        AudioManager.Instance.LaserStop.Post(gameObject);
         beamStarted = false;
         beamCooldown = maxBeamCd;
         beamStart.gameObject.SetActive(false);

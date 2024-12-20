@@ -41,6 +41,8 @@ public class AudioManager : MonoBehaviour
     public Event OrbShotBig;
     public Event OrbShotSmall;
     public Event NPCHeartHit;
+    public Event LaserStart;
+    public Event LaserStop;
     [SerializeField] private Event DemonModeOn;
     [SerializeField] private Event DemonModeOff;
     public Event StartMusic;

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{6ECA4799-FAAD-E2BB-3F13-BDA63787CBBC}",
+    "Hash": "{BDBCDBE0-662B-F73C-2E76-BCADC79F0FEA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
@@ -229,7 +229,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_Repell.wav",
-      "CachePath": "F8/{F8FB50C9-6CF1-B3D5-1AD4-69F27C9A6272}.wem"
+      "CachePath": "F9/{F922AB73-4D5C-A32F-28BC-A609CB7351BE}.wem"
      },
      {
       "Id": "460084475",
@@ -406,6 +406,14 @@
       "Location": "Memory",
       "ShortName": "BB_Hit-002.wav",
       "CachePath": "CD/{CD41DE6E-2FA7-07E3-5087-A6CFDEE2C52E}.wem"
+     },
+     {
+      "Id": "857025659",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_Repell.wav",
+      "CachePath": "EE/{EEAA65A5-A302-6CBC-233F-79316FEE885E}.wem"
      },
      {
       "Id": "866604450",
@@ -805,8 +813,8 @@
       "Color": "17",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.5",
-      "DurationMax": "0.5",
+      "DurationMin": "0.56249434",
+      "DurationMax": "0.56249434",
       "MediaRefs": [
        {
         "Id": "458456398"
@@ -819,10 +827,14 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Player\\Repell",
       "GUID": "{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}",
       "Color": "17",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.56249434",
+      "DurationMax": "0.56249434",
+      "MediaRefs": [
+       {
+        "Id": "857025659"
+       }
+      ]
      },
      {
       "Id": "953277036",
@@ -1111,6 +1123,6 @@
     ]
    }
   ],
-  "FileHash": "{3045DD1A-C988-4C2C-9F66-12BB7441BFFF}"
+  "FileHash": "{896C3779-1DFC-F9E4-C4A4-D4EE539FADDB}"
  }
 }

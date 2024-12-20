@@ -33963,6 +33963,14 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 81b0ec37cf416ae44bc4225bbf475013, type: 2}
+  LaserStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 01254819024561d4ba8955eb475a533d, type: 2}
+  LaserStop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8000e5844892c80479bf03f3bceec58a, type: 2}
   DemonModeOn:
     idInternal: 0
     valueGuidInternal: 

@@ -298,35 +298,6 @@
 												</ObjectList>
 											</ObjectLists>
 										</RandomSequenceContainer>
-										<Sound Name="Repell" ID="{6570592A-7F15-49B9-9550-C1294ECAA62E}" ShortID="503088914">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-3</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="BB_Repell" ID="{1E426190-82E2-4CB9-B6C7-E67E915E645E}">
-													<Language>SFX</Language>
-													<AudioFile>BB_Repell.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="857025659"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="BB_Repell" ID="{1E426190-82E2-4CB9-B6C7-E67E915E645E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="NPC" ID="{E2E815A5-8BEF-418A-B8C9-AC05327DBBE5}" ShortID="891129276">
@@ -749,9 +720,16 @@
 														<MediaID ID="458456398"/>
 													</MediaIDList>
 												</AudioFileSource>
+												<AudioFileSource Name="BB_Purify" ID="{AC6F9718-ED86-4C7C-AE8D-A1CC9E6DED34}">
+													<Language>SFX</Language>
+													<AudioFile>BB_Purify.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="20195507"/>
+													</MediaIDList>
+												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="BB_Repell" ID="{27B9DB39-B538-432A-B86B-ECEA6D6C1A80}" Platform="Linked"/>
+												<ActiveSource Name="BB_Purify" ID="{AC6F9718-ED86-4C7C-AE8D-A1CC9E6DED34}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="LaserLoop" ID="{27FDA863-DB0A-41C6-99FB-CFF2FD4C606E}" ShortID="396860609">
@@ -1906,6 +1884,46 @@
 											</ChildrenList>
 											<ActiveSourceList>
 												<ActiveSource Name="BB_Yelp" ID="{E03680F2-35F5-4A59-8D0A-6BFFBF122331}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="DeflectDing" ID="{6570592A-7F15-49B9-9550-C1294ECAA62E}" ShortID="503088914">
+											<PropertyList>
+												<Property Name="CenterPercentage" Type="int32">
+													<ValueList>
+														<Value>100</Value>
+													</ValueList>
+												</Property>
+												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_Repell" ID="{1E426190-82E2-4CB9-B6C7-E67E915E645E}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0490501391401438"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>BB_Repell.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857025659"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_Repell" ID="{1E426190-82E2-4CB9-B6C7-E67E915E645E}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
