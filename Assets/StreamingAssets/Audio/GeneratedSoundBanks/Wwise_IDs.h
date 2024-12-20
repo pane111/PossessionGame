@@ -21,8 +21,8 @@ namespace AK
         static const AkUniqueID DETECTENEMY = 1172357180U;
         static const AkUniqueID GAMEOVER = 4158285989U;
         static const AkUniqueID HEARTHIT = 2637412766U;
-        static const AkUniqueID LASEREND = 630361389U;
         static const AkUniqueID LASERSTART = 3029728422U;
+        static const AkUniqueID LASERSTOP = 2918173670U;
         static const AkUniqueID NPCDEATH = 539785156U;
         static const AkUniqueID NPCTAKEDMG = 1715677421U;
         static const AkUniqueID ORBSHOT = 281493892U;
@@ -38,6 +38,7 @@ namespace AK
         static const AkUniqueID SWORDSLASH = 3113731383U;
         static const AkUniqueID SWORDSLASH_BIG = 2749466912U;
         static const AkUniqueID TAKEDMG = 3336527240U;
+        static const AkUniqueID WEAPONDEATH = 3587473649U;
     } // namespace EVENTS
 
     namespace STATES

@@ -20,6 +20,13 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{DA21BE9F-E30E-4022-8388-AFFA9F87D97B}" ShortID="709712514">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DmgTaken-Gore" ID="{625F78E7-FCDD-4E1D-8E45-56C6C6F9A7DF}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="SwordSlash_BIG" ID="{BB286FF0-C49C-417A-969C-BDB635C16BC8}">
@@ -92,6 +99,13 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{0158B407-890E-4DB8-AD1E-6837775B244E}" ShortID="978452238">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DmgTaken-Gore" ID="{625F78E7-FCDD-4E1D-8E45-56C6C6F9A7DF}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="ChrystalHit" ID="{AA1B9688-6220-4BF4-9E42-93B75DA7885B}">
@@ -124,7 +138,22 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="LaserStart" ID="{65959539-C025-4803-8CED-5712AE589DE9}"/>
+								<Event Name="LaserStop" ID="{65959539-C025-4803-8CED-5712AE589DE9}">
+									<ChildrenList>
+										<Action Name="" ID="{F1125650-5A26-4C93-BC2F-B6881065FBBD}" ShortID="997254087">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.1"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="LaserLoop" ID="{27FDA863-DB0A-41C6-99FB-CFF2FD4C606E}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="OrbShot" ID="{C472FEB7-05B8-4D94-89CB-EBF6D46B7E92}">
 									<ChildrenList>
 										<Action Name="" ID="{93E49707-D353-4A4C-898A-722424FF26EF}" ShortID="665313414">
@@ -136,7 +165,20 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="LaserEnd" ID="{D61BD85F-1834-4461-9312-7148FA11DCCD}"/>
+								<Event Name="LaserStart" ID="{D61BD85F-1834-4461-9312-7148FA11DCCD}">
+									<ChildrenList>
+										<Action Name="" ID="{C4C056C0-6BDC-4FB6-99BA-3846D35F9A7F}" ShortID="369946956">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="LaserLoop" ID="{27FDA863-DB0A-41C6-99FB-CFF2FD4C606E}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="SmallShot" ID="{678A295F-1A62-405E-BEA7-06BBD689CE82}">
 									<ChildrenList>
 										<Action Name="" ID="{27A02AAB-1680-478D-9DA4-B9EE5AFC415A}" ShortID="761963165">
@@ -159,6 +201,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="WeaponDeath" ID="{115D6B63-0B80-4D2C-982D-EF7FADD510E0}"/>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Player" ID="{07B5BD21-499A-42BC-B78A-FF30B8D56FFE}" ShortID="878290952">
@@ -174,13 +217,33 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Repell" ID="{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}"/>
+								<Event Name="Repell" ID="{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}">
+									<ChildrenList>
+										<Action Name="" ID="{BA4F2F07-1DF5-4303-B151-2A9C7E735E11}" ShortID="459213734">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Repell" ID="{6570592A-7F15-49B9-9550-C1294ECAA62E}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Pull" ID="{E10D2661-0E07-43A7-B9CB-DB5427902EB9}">
 									<ChildrenList>
 										<Action Name="" ID="{5423FD9E-39A3-4DC6-BB6F-9E8554069D70}" ShortID="888566583">
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Pull" ID="{5C597CB6-6B42-4B52-84ED-62F514F2834B}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{54D38855-AE9E-4002-96AC-C480F3F7D795}" ShortID="510969115">
+											<PropertyList>
+												<Property Name="Probability" Type="Real64" Value="62"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Yelp" ID="{C63EAFBF-CECA-48B4-B491-8E018251215D}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

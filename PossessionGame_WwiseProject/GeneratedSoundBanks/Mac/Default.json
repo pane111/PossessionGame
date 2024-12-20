@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{7B629E69-BEDF-EB86-0C5E-95D0776BE545}",
+    "Hash": "{6ECA4799-FAAD-E2BB-3F13-BDA63787CBBC}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
@@ -96,12 +96,28 @@
       "CachePath": "FD/{FD7FA225-6561-DA94-D6A0-FD1094980110}.wem"
      },
      {
+      "Id": "122133511",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_GoreHit-007.wav",
+      "CachePath": "EB/{EB76EAF2-0864-32AD-9F1C-7E0E6EE918CB}.wem"
+     },
+     {
       "Id": "130485424",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_Dash.wav",
       "CachePath": "0D/{0DD99B4E-1CDA-2AA3-4A18-86EB691985A5}.wem"
+     },
+     {
+      "Id": "145170808",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_GoreHit-008.wav",
+      "CachePath": "57/{577DEDAD-E930-4C3A-B3B3-1BAFAF1A29B0}.wem"
      },
      {
       "Id": "163708401",
@@ -158,6 +174,22 @@
       "Location": "Memory",
       "ShortName": "BB_SwordSlash-016.wav",
       "CachePath": "F6/{F6105B20-56B7-E4FD-5ABE-3B2C717C452C}.wem"
+     },
+     {
+      "Id": "303353997",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_GoreHit-006.wav",
+      "CachePath": "5C/{5CEAD332-C503-5A24-021E-02B5F3558B80}.wem"
+     },
+     {
+      "Id": "306652734",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_Yelp.wav",
+      "CachePath": "E1/{E13B30F9-C0FE-6404-C7D2-851FEC229EDB}.wem"
      },
      {
       "Id": "336049082",
@@ -256,6 +288,14 @@
       "CachePath": "BE/{BE1ACA8F-994A-15F9-E8D1-B250DFE482A3}.wem"
      },
      {
+      "Id": "581581624",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_GoreHit-005.wav",
+      "CachePath": "DF/{DFD78E11-D64F-FDDC-9871-3C3306B9EFF1}.wem"
+     },
+     {
       "Id": "584649645",
       "Language": "SFX",
       "Streaming": "false",
@@ -285,7 +325,15 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_Pull.wav",
-      "CachePath": "75/{752300BE-BED9-B681-193A-2C9304136DCD}.wem"
+      "CachePath": "0C/{0C8D2722-60B2-C0CA-EBFE-65272576E641}.wem"
+     },
+     {
+      "Id": "610450215",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_GoreHit-003.wav",
+      "CachePath": "D7/{D7A44427-9E50-6399-EE28-453AF18F921D}.wem"
      },
      {
       "Id": "631153395",
@@ -318,6 +366,14 @@
       "Location": "Memory",
       "ShortName": "BB_Deflect-001.wav",
       "CachePath": "B0/{B0698EE1-4946-539F-5E2F-EA7F076CF238}.wem"
+     },
+     {
+      "Id": "690479038",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_Laser.wav",
+      "CachePath": "72/{72B49B16-912E-5C15-B8D1-63DBC8EFC612}.wem"
      },
      {
       "Id": "700998746",
@@ -368,6 +424,14 @@
       "CachePath": "EF/{EF7C40B2-858B-E578-B022-28518262A6CD}.wem"
      },
      {
+      "Id": "876691427",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_GoreHit-001.wav",
+      "CachePath": "8E/{8EDBA9B0-7DB9-7C45-C24A-15DE376A6715}.wem"
+     },
+     {
       "Id": "892929466",
       "Language": "SFX",
       "Streaming": "false",
@@ -392,6 +456,14 @@
       "CachePath": "1B/{1BB8E7C2-EA32-94E2-FF41-6B935FD28FC3}.wem"
      },
      {
+      "Id": "949173328",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_GoreHit-004.wav",
+      "CachePath": "01/{019D8D9E-7C43-40E2-7557-9635029315FB}.wem"
+     },
+     {
       "Id": "954352770",
       "Language": "SFX",
       "Streaming": "false",
@@ -414,6 +486,14 @@
       "Location": "Memory",
       "ShortName": "BB_SwordSlash-017.wav",
       "CachePath": "BD/{BD5043CA-66EB-50F6-5C0B-4EEFCFC030D1}.wem"
+     },
+     {
+      "Id": "1008822290",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_GoreHit-002.wav",
+      "CachePath": "52/{52F6647D-D9AE-FB00-33D9-21C854C3DDBF}.wem"
      },
      {
       "Id": "1046173710",
@@ -565,20 +645,23 @@
       ]
      },
      {
-      "Id": "630361389",
-      "Name": "LaserEnd",
-      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\LaserEnd",
-      "GUID": "{D61BD85F-1834-4461-9312-7148FA11DCCD}",
-      "Color": "17",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
-     },
-     {
       "Id": "3029728422",
       "Name": "LaserStart",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\LaserStart",
+      "GUID": "{D61BD85F-1834-4461-9312-7148FA11DCCD}",
+      "Color": "17",
+      "MaxAttenuation": "100",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "690479038"
+       }
+      ]
+     },
+     {
+      "Id": "2918173670",
+      "Name": "LaserStop",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\LaserStop",
       "GUID": "{65959539-C025-4803-8CED-5712AE589DE9}",
       "Color": "17",
       "MaxAttenuation": "0",
@@ -615,7 +698,7 @@
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "0.12498866",
-      "DurationMax": "0.15625851",
+      "DurationMax": "0.18750566",
       "MediaRefs": [
        {
         "Id": "1910264"
@@ -627,7 +710,22 @@
         "Id": "46996557"
        },
        {
+        "Id": "122133511"
+       },
+       {
+        "Id": "145170808"
+       },
+       {
+        "Id": "303353997"
+       },
+       {
         "Id": "566724735"
+       },
+       {
+        "Id": "581581624"
+       },
+       {
+        "Id": "610450215"
        },
        {
         "Id": "641745021"
@@ -639,7 +737,16 @@
         "Id": "833573005"
        },
        {
+        "Id": "876691427"
+       },
+       {
         "Id": "932953512"
+       },
+       {
+        "Id": "949173328"
+       },
+       {
+        "Id": "1008822290"
        }
       ]
      },
@@ -682,6 +789,9 @@
       "DurationMin": "0.6250113",
       "DurationMax": "0.6250113",
       "MediaRefs": [
+       {
+        "Id": "306652734"
+       },
        {
         "Id": "598379007"
        }
@@ -827,6 +937,12 @@
         "Id": "101874823"
        },
        {
+        "Id": "122133511"
+       },
+       {
+        "Id": "145170808"
+       },
+       {
         "Id": "201209299"
        },
        {
@@ -834,6 +950,9 @@
        },
        {
         "Id": "301928930"
+       },
+       {
+        "Id": "303353997"
        },
        {
         "Id": "401123077"
@@ -851,7 +970,13 @@
         "Id": "579956481"
        },
        {
+        "Id": "581581624"
+       },
+       {
         "Id": "584649645"
+       },
+       {
+        "Id": "610450215"
        },
        {
         "Id": "635287032"
@@ -863,7 +988,16 @@
         "Id": "870991461"
        },
        {
+        "Id": "876691427"
+       },
+       {
+        "Id": "949173328"
+       },
+       {
         "Id": "977787549"
+       },
+       {
+        "Id": "1008822290"
        },
        {
         "Id": "1063487980"
@@ -913,6 +1047,17 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Player\\TakeDMG",
       "GUID": "{8E20AB0B-1904-406D-825C-DA8E374541F1}",
       "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3587473649",
+      "Name": "WeaponDeath",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\WeaponDeath",
+      "GUID": "{115D6B63-0B80-4D2C-982D-EF7FADD510E0}",
+      "Color": "17",
+      "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
@@ -966,6 +1111,6 @@
     ]
    }
   ],
-  "FileHash": "{EB2778AC-3BD9-BB02-DB58-C576EF4721B2}"
+  "FileHash": "{04298CEB-CC55-3881-9CC7-B78DE7F2B84F}"
  }
 }

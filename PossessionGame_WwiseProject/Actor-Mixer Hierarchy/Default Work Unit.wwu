@@ -298,6 +298,35 @@
 												</ObjectList>
 											</ObjectLists>
 										</RandomSequenceContainer>
+										<Sound Name="Repell" ID="{6570592A-7F15-49B9-9550-C1294ECAA62E}" ShortID="503088914">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_Repell" ID="{1E426190-82E2-4CB9-B6C7-E67E915E645E}">
+													<Language>SFX</Language>
+													<AudioFile>BB_Repell.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857025659"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_Repell" ID="{1E426190-82E2-4CB9-B6C7-E67E915E645E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="NPC" ID="{E2E815A5-8BEF-418A-B8C9-AC05327DBBE5}" ShortID="891129276">
@@ -508,7 +537,7 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="Death" ID="{EB777290-87F0-47AE-B13D-BD3DB5CC86D5}" ShortID="962286592">
+										<RandomSequenceContainer Name="NPCDeath" ID="{EB777290-87F0-47AE-B13D-BD3DB5CC86D5}" ShortID="962286592">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -725,6 +754,306 @@
 												<ActiveSource Name="BB_Repell" ID="{27B9DB39-B538-432A-B86B-ECEA6D6C1A80}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Sound Name="LaserLoop" ID="{27FDA863-DB0A-41C6-99FB-CFF2FD4C606E}" ShortID="396860609">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-17</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_Laser" ID="{730F4C6A-80C3-4752-8280-AE7A4D6DC0EA}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.395568201813517"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.38659468541295"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>BB_Laser.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="690479038"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_Laser" ID="{730F4C6A-80C3-4752-8280-AE7A4D6DC0EA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="WeaponDeath" ID="{52DCB32C-1E71-4B8F-9A09-223695AA066B}" ShortID="922542908">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+										</Sound>
+										<RandomSequenceContainer Name="DmgTaken-Gore" ID="{625F78E7-FCDD-4E1D-8E45-56C6C6F9A7DF}" ShortID="197674785">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="BB_GoreHit-001" ID="{EED62903-6B7C-48F0-9BAF-630C967BACB9}" ShortID="912116629">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-10</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_GoreHit-001" ID="{6D4B5176-AB1B-4554-B903-E4CEE4A75182}">
+															<Language>SFX</Language>
+															<AudioFile>BB_GoreHit-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="876691427"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_GoreHit-001" ID="{6D4B5176-AB1B-4554-B903-E4CEE4A75182}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_GoreHit-002" ID="{2E8E7E6B-B14D-4879-AA8B-629C85DB26B6}" ShortID="244342085">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-7</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_GoreHit-002" ID="{CDA57A20-8815-476F-9E6C-3C661661B5EA}">
+															<Language>SFX</Language>
+															<AudioFile>BB_GoreHit-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1008822290"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_GoreHit-002" ID="{CDA57A20-8815-476F-9E6C-3C661661B5EA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_GoreHit-003" ID="{81A6FDD3-E2F0-4C41-AE20-53DBAE337D80}" ShortID="221071456">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-1</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_GoreHit-003" ID="{3ADBF105-46DD-49F6-B875-082ECB0AC8CA}">
+															<Language>SFX</Language>
+															<AudioFile>BB_GoreHit-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="610450215"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_GoreHit-003" ID="{3ADBF105-46DD-49F6-B875-082ECB0AC8CA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_GoreHit-004" ID="{0DD63A99-DA03-4410-8345-AA47AA2FE67B}" ShortID="1073514893">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-7</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_GoreHit-004" ID="{2731A2DF-E81F-4BE1-9E14-DC4E95E028F9}">
+															<PropertyList>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0928270042194093"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>BB_GoreHit-004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="949173328"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_GoreHit-004" ID="{2731A2DF-E81F-4BE1-9E14-DC4E95E028F9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_GoreHit-005" ID="{0EEC9DB2-B7CC-4B96-AF41-F1AC0D30EF16}" ShortID="71743737">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-11</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_GoreHit-005" ID="{50BF9D22-4F93-4C06-A1E8-BAE90D6F5A77}">
+															<Language>SFX</Language>
+															<AudioFile>BB_GoreHit-005.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="581581624"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_GoreHit-005" ID="{50BF9D22-4F93-4C06-A1E8-BAE90D6F5A77}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_GoreHit-006" ID="{F19BA51C-3254-472A-AC82-9BAECA0ADA7B}" ShortID="195446161">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-6</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_GoreHit-006" ID="{019D34AC-5AA4-42F1-B55A-9623D3E8AF9C}">
+															<Language>SFX</Language>
+															<AudioFile>BB_GoreHit-006.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="303353997"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_GoreHit-006" ID="{019D34AC-5AA4-42F1-B55A-9623D3E8AF9C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_GoreHit-007" ID="{9C0253F1-DD32-4F5B-BC3F-5130DDF3EB33}" ShortID="222511470">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-11</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_GoreHit-007" ID="{C0C93654-ABA9-459E-BA56-D86738645324}">
+															<Language>SFX</Language>
+															<AudioFile>BB_GoreHit-007.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="122133511"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_GoreHit-007" ID="{C0C93654-ABA9-459E-BA56-D86738645324}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_GoreHit-008" ID="{3F38F2F1-3559-4A80-A148-F93F60D238AD}" ShortID="129431642">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-12</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_GoreHit-008" ID="{10605196-1A23-4718-8E90-C6555BEE0BA1}">
+															<Language>SFX</Language>
+															<AudioFile>BB_GoreHit-008.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="145170808"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_GoreHit-008" ID="{10605196-1A23-4718-8E90-C6555BEE0BA1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="Sword" ID="{8DA52AD1-B9E0-4C2E-94BF-A4612B185E50}" ShortID="131608258">
@@ -1557,6 +1886,28 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
+										<Sound Name="Yelp" ID="{C63EAFBF-CECA-48B4-B491-8E018251215D}" ShortID="75708752">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_Yelp" ID="{E03680F2-35F5-4A59-8D0A-6BFFBF122331}">
+													<Language>SFX</Language>
+													<AudioFile>BB_Yelp.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="306652734"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_Yelp" ID="{E03680F2-35F5-4A59-8D0A-6BFFBF122331}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</ActorMixer>
 								<BlendContainer Name="GameOver" ID="{DEAF0657-AFB2-42D6-8BB9-12D0A02B9D65}" ShortID="950197830">
