@@ -4,13 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
-using Unity.Mathematics;
 using UnityEngine.SceneManagement;
 using System;
 
 public class GameManager : MonoBehaviour
 {
     public Gradient colorGradient;
+    public Gradient NpcGradient;
     public GameObject bSplatter;
     public Animator deathAnim;
     public Animator heartAnim;
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public Sprite cSprite;
     public Sprite cDSprite;
     public Image dArmor;
+    public List<Sprite> npcSprites = new List<Sprite>();
 
     [Header("Tiles")]
     public Tilemap floor;
@@ -82,6 +83,20 @@ public class GameManager : MonoBehaviour
         Color c = colorGradient.Evaluate(rnd);
 
         return c;
+    }
+    public Color randomNpcColor()
+    {
+        float rnd = UnityEngine.Random.Range(0f, 1f);
+        Color c = NpcGradient.Evaluate(rnd);
+
+        return c;
+    }
+    public Sprite randomSprite()
+    {
+        int r = UnityEngine.Random.Range(0,npcSprites.Count);
+
+
+        return npcSprites[r];
     }
 
     public void OnDeath()

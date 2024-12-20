@@ -38,10 +38,11 @@ public class Enemy : MonoBehaviour
     {
         d = GetComponent<Deflector>();
         d.deflectionActive = false;
+        GetComponent<SpriteRenderer>().sprite = GameManager.Instance.randomSprite();
         initSprite = GetComponent<SpriteRenderer>().sprite;
         sword = FindObjectOfType<SwordScript>();
         player = GameObject.Find("Player").transform;
-        Color c = GameManager.Instance.randomColor();
+        Color c = GameManager.Instance.randomNpcColor();
         GetComponent<SpriteRenderer>().color = c;
         initColor = c;
         bloodstain.color = c;

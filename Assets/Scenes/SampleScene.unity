@@ -28423,6 +28423,36 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 8
     m_NumAlphaKeys: 2
+  NpcGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.89371544, b: 0.5801887, a: 1}
+    key1: {r: 1, g: 0.4198113, b: 0.4198113, a: 1}
+    key2: {r: 1, g: 0.504717, b: 0.92516434, a: 0}
+    key3: {r: 0.87073344, g: 0.514151, b: 1, a: 0}
+    key4: {r: 0.6525668, g: 0.6179246, b: 1, a: 0}
+    key5: {r: 0.495283, g: 0.75159156, b: 1, a: 0}
+    key6: {r: 0.41037738, g: 1, b: 0.72442424, a: 0}
+    key7: {r: 0.4814678, g: 1, b: 0.4764151, a: 0}
+    ctime0: 8288
+    ctime1: 16962
+    ctime2: 24672
+    ctime3: 31611
+    ctime4: 37779
+    ctime5: 48766
+    ctime6: 56476
+    ctime7: 61102
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 8
+    m_NumAlphaKeys: 2
   bSplatter: {fileID: 4466453010552009775, guid: 8bb751120721767438a6efc474ed82d7, type: 3}
   deathAnim: {fileID: 1980829943}
   heartAnim: {fileID: 963369594}
@@ -28439,6 +28469,13 @@ MonoBehaviour:
   cSprite: {fileID: 21300000, guid: cc10def27d165bc4a9ed6b7a35877d1e, type: 3}
   cDSprite: {fileID: 21300000, guid: 15fd2cc0b172b4341a3a6691f739f4f8, type: 3}
   dArmor: {fileID: 1827234697}
+  npcSprites:
+  - {fileID: 21300000, guid: a81876ade93275b408492f5c704b3c5d, type: 3}
+  - {fileID: 21300000, guid: f1b0af0239fb12343b8d2a1838ed171a, type: 3}
+  - {fileID: 21300000, guid: d87535b0e5c7c1d48920d69eb965d8d6, type: 3}
+  - {fileID: 21300000, guid: 7ea9fc1b902c93a479fc7c5cb138b9e4, type: 3}
+  - {fileID: 21300000, guid: 58928bc99722d6b4d8a547211015db61, type: 3}
+  - {fileID: 1775771984, guid: 873f66416d0ba7b41a14f9bc0adfef9c, type: 3}
   floor: {fileID: 1889912524}
   wall: {fileID: 1943879765}
 --- !u!4 &1574376435
@@ -28572,11 +28609,11 @@ MonoBehaviour:
   Player_Footstep:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 08302d09154641a468f3b0940eeefe99, type: 2}
+    WwiseObjectReference: {fileID: 0}
   NPC_Footstep:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 2a3868d330f7e3f4fa317ec50f73718d, type: 2}
+    WwiseObjectReference: {fileID: 0}
   Death:
     idInternal: 0
     valueGuidInternal: 
