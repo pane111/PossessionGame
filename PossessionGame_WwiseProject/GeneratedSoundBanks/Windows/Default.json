@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{B8BF223E-710B-71C5-D3DC-7E06EF23C5F5}",
+    "Hash": "{FA35321E-D083-E2EA-0716-DBF57DD7662C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
@@ -232,6 +232,14 @@
       "CachePath": "B9/{B9D361F0-927B-2355-AC84-69634FB3E3BA}.wem"
      },
      {
+      "Id": "414426413",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerFootstep-001.wav",
+      "CachePath": "7A/{7A8424BD-C3A8-EF52-49E2-73D218BE5DE1}.wem"
+     },
+     {
       "Id": "452811761",
       "Language": "SFX",
       "Streaming": "false",
@@ -342,6 +350,14 @@
       "Location": "Memory",
       "ShortName": "BB_GoreHit-003.wav",
       "CachePath": "D7/{D7A44427-9E50-6399-EE28-453AF18F921D}.wem"
+     },
+     {
+      "Id": "618487565",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerFootstep-002.wav",
+      "CachePath": "EE/{EE3D43A3-117B-58CA-D779-311D158F69C1}.wem"
      },
      {
       "Id": "631153395",
@@ -464,6 +480,14 @@
       "CachePath": "BC/{BC6D37AD-0416-7EF5-F755-02FF85BECCFB}.wem"
      },
      {
+      "Id": "897192660",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerFootstep-003.wav",
+      "CachePath": "8E/{8E9E8625-BAE5-F418-708F-7D33957EDCDC}.wem"
+     },
+     {
       "Id": "899258533",
       "Language": "SFX",
       "Streaming": "false",
@@ -510,6 +534,14 @@
       "Location": "Memory",
       "ShortName": "BB_SwordSlash-017.wav",
       "CachePath": "BD/{BD5043CA-66EB-50F6-5C0B-4EEFCFC030D1}.wem"
+     },
+     {
+      "Id": "977806515",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_NPCFootstep.wav",
+      "CachePath": "F5/{F556E99E-2BC2-4576-F9C7-C6017E69FD8F}.wem"
      },
      {
       "Id": "1008822290",
@@ -719,6 +751,22 @@
       }
      },
      {
+      "Id": "3808769252",
+      "Name": "NPCFootstep",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\NPCFootstep",
+      "GUID": "{4E04A37B-B81B-48EC-B76E-31CED821F3C6}",
+      "Color": "17",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "0.10884642",
+      "DurationMax": "0.13713789",
+      "MediaRefs": [
+       {
+        "Id": "977806515"
+       }
+      ]
+     },
+     {
       "Id": "1715677421",
       "Name": "NPCTakeDmg",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\NPCTakeDmg",
@@ -807,6 +855,27 @@
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
+     },
+     {
+      "Id": "3542290436",
+      "Name": "PlayerFootstep",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Player\\PlayerFootstep",
+      "GUID": "{0355431B-3AD3-4505-B0D8-B9467CB586D4}",
+      "Color": "17",
+      "DurationType": "OneShot",
+      "DurationMin": "0.058986787",
+      "DurationMax": "0.099315666",
+      "MediaRefs": [
+       {
+        "Id": "414426413"
+       },
+       {
+        "Id": "618487565"
+       },
+       {
+        "Id": "897192660"
+       }
+      ]
      },
      {
       "Id": "1908999728",
@@ -1153,6 +1222,6 @@
     ]
    }
   ],
-  "FileHash": "{34332254-33CC-F013-014F-1648BACD3C8E}"
+  "FileHash": "{2DD093A3-B48C-0312-BC8A-EA04F14AFAEE}"
  }
 }

@@ -215,6 +215,17 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="WeaponDeath" ID="{115D6B63-0B80-4D2C-982D-EF7FADD510E0}"/>
+								<Event Name="NPCFootstep" ID="{4E04A37B-B81B-48EC-B76E-31CED821F3C6}">
+									<ChildrenList>
+										<Action Name="" ID="{439EDBD1-91B3-40D7-B744-510C6198CD18}" ShortID="927064402">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="NPCFootstep" ID="{015D9131-F5CB-47CE-B0B9-56F3C45F0B7E}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Player" ID="{07B5BD21-499A-42BC-B78A-FF30B8D56FFE}" ShortID="878290952">
@@ -275,6 +286,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="DmgTaken-Player" ID="{D893129C-4AA8-457F-A8A3-68FB77CCC960}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerFootstep" ID="{0355431B-3AD3-4505-B0D8-B9467CB586D4}">
+									<ChildrenList>
+										<Action Name="" ID="{4C23C1DE-3AE7-4550-A015-DF99C9E8A0A8}" ShortID="959438924">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerFootstep" ID="{4F240096-BD30-4537-8801-4A57C28EEEB7}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

@@ -24,9 +24,11 @@ namespace AK
         static const AkUniqueID LASERSTART = 3029728422U;
         static const AkUniqueID LASERSTOP = 2918173670U;
         static const AkUniqueID NPCDEATH = 539785156U;
+        static const AkUniqueID NPCFOOTSTEP = 3808769252U;
         static const AkUniqueID NPCTAKEDMG = 1715677421U;
         static const AkUniqueID ORBSHOT = 281493892U;
         static const AkUniqueID PAUSE = 3092587493U;
+        static const AkUniqueID PLAYERFOOTSTEP = 3542290436U;
         static const AkUniqueID PULL = 1908999728U;
         static const AkUniqueID PURIFY = 3440167856U;
         static const AkUniqueID REPELL = 2723812599U;

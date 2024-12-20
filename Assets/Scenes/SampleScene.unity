@@ -28493,7 +28493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562b9e391694e0c44955eb6a58d5df61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterVolume: 2
+  masterVolume: 4
   bpm: 0
   GS_Titlescreen:
     idInternal: 0
@@ -28569,6 +28569,14 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 59a3bc7eb103c204e96a97cf84b5bbe2, type: 2}
+  Player_Footstep:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 08302d09154641a468f3b0940eeefe99, type: 2}
+  NPC_Footstep:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2a3868d330f7e3f4fa317ec50f73718d, type: 2}
   Death:
     idInternal: 0
     valueGuidInternal: 

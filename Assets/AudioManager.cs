@@ -31,6 +31,8 @@ public class AudioManager : MonoBehaviour
     public Event Repell;
     public Event PlayerDmgTaken;
     public Event Dash;
+    public Event Player_Footstep;
+    public Event NPC_Footstep;
     public Event Death;
     public Event GameOver;
     public Event Revive;
@@ -74,6 +76,14 @@ public class AudioManager : MonoBehaviour
     {
         DemonModeOff.Post(gameObject);
         GS_NormalMode.SetValue();
+    }
+    public void Footstep_Player()
+    {
+        Player_Footstep.Post(gameObject);
+    }
+    public void Footstep_NPC(GameObject go)
+    {
+        NPC_Footstep.Post(go);
     }
     #endregion
 

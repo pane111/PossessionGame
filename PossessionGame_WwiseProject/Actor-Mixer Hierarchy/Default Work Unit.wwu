@@ -327,9 +327,116 @@
 												<ActiveSource Name="BB_RepellWhoosh" ID="{8611A968-15A0-4883-A264-A46EB54DF43C}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<RandomSequenceContainer Name="PlayerFootstep" ID="{4F240096-BD30-4537-8801-4A57C28EEEB7}" ShortID="746093115">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{4C7D24FE-CEFC-475D-B358-2F7739542D62}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="100"/>
+																	<Property Name="Min" Type="Real64" Value="-100"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="BB_PlayerFootstep-001" ID="{12C75244-731F-4B9F-AAC9-429329166793}" ShortID="73727504">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_PlayerFootstep-001" ID="{AA236C17-1CC3-4049-AFE8-D7D1C6456D85}">
+															<Language>SFX</Language>
+															<AudioFile>BB_PlayerFootstep-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="414426413"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_PlayerFootstep-001" ID="{AA236C17-1CC3-4049-AFE8-D7D1C6456D85}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_PlayerFootstep-002" ID="{E855470D-5B46-4B2C-9AD6-BF49B28759AE}" ShortID="606914371">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_PlayerFootstep-002" ID="{52AC4EDD-4C27-419A-8FD8-22F239490DDA}">
+															<Language>SFX</Language>
+															<AudioFile>BB_PlayerFootstep-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="618487565"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_PlayerFootstep-002" ID="{52AC4EDD-4C27-419A-8FD8-22F239490DDA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="BB_PlayerFootstep-003" ID="{83A81236-0D10-481B-B2BF-8CC7CDC2D05F}" ShortID="719496360">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_PlayerFootstep-003" ID="{8CA5854F-9E9A-4539-8998-D87F80F6117A}">
+															<Language>SFX</Language>
+															<AudioFile>BB_PlayerFootstep-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="897192660"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_PlayerFootstep-003" ID="{8CA5854F-9E9A-4539-8998-D87F80F6117A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="NPC" ID="{E2E815A5-8BEF-418A-B8C9-AC05327DBBE5}" ShortID="891129276">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{837A0FE7-5999-44DB-82CC-91C281F09146}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
 											<ObjectRef Name="Basic" ID="{4432FB45-89E2-4DFB-B160-BD1634C4FE66}" WorkUnitID="{66D1794F-14F8-4093-923F-898809682E41}"/>
@@ -1107,6 +1214,53 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
+										<Sound Name="NPCFootstep" ID="{015D9131-F5CB-47CE-B0B9-56F3C45F0B7E}" ShortID="980911501">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{4ACC46FD-D154-4EC3-B82C-90C500A136AD}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="200"/>
+																	<Property Name="Min" Type="Real64" Value="-200"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_NPCFootstep" ID="{B79EC533-A028-4330-BB88-8B6DC5B5C3EB}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00281268433679508"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00281268433679508"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>BB_NPCFootstep.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="977806515"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_NPCFootstep" ID="{B79EC533-A028-4330-BB88-8B6DC5B5C3EB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="Sword" ID="{8DA52AD1-B9E0-4C2E-94BF-A4612B185E50}" ShortID="131608258">
