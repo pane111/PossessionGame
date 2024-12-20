@@ -117,7 +117,13 @@
 								</Event>
 								<Event Name="ChrystalHit" ID="{AA1B9688-6220-4BF4-9E42-93B75DA7885B}">
 									<ChildrenList>
-										<Action Name="" ID="{319B31FB-E34E-4CBE-98E0-DB532ACB927B}" ShortID="489035373"/>
+										<Action Name="" ID="{319B31FB-E34E-4CBE-98E0-DB532ACB927B}" ShortID="489035373">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BB_ChrystalHit" ID="{847F7184-DC0E-480D-9677-B49CB286A41D}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="NPCDeath" ID="{DB293F34-6D79-47FC-9950-6EDDD876F118}">
@@ -224,7 +230,24 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Repell" ID="{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}"/>
+								<Event Name="Repell" ID="{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}">
+									<ChildrenList>
+										<Action Name="" ID="{4380C4A3-12A3-4F2D-9FC6-68B3CB3B7246}" ShortID="1039200023">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RepellWoosh" ID="{528A11AB-87B0-4D70-B8B3-1A86D9516636}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{4CDAA994-4DA3-4041-9557-CDE888143B76}" ShortID="1052889781">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DeflectDing" ID="{6570592A-7F15-49B9-9550-C1294ECAA62E}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="Pull" ID="{E10D2661-0E07-43A7-B9CB-DB5427902EB9}">
 									<ChildrenList>
 										<Action Name="" ID="{5423FD9E-39A3-4DC6-BB6F-9E8554069D70}" ShortID="888566583">
@@ -285,7 +308,7 @@
 								</Action>
 								<Action Name="" ID="{3C87C91E-42FE-4F28-B5C0-1F00B6471C51}" ShortID="356035898">
 									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="7"/>
+										<Property Name="ActionType" Type="int16" Value="2"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -316,9 +339,6 @@
 						<Event Name="Revive" ID="{DAC6B62D-BBAB-45B1-B999-0A666DC03071}">
 							<ChildrenList>
 								<Action Name="" ID="{E3F60B7F-407D-4513-82E9-655A1592C6DB}" ShortID="843611877">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="9"/>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>

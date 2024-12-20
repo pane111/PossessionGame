@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{A35E5DAE-3C99-E086-5242-FCE59C49D0E9}",
+    "Hash": "{B8BF223E-710B-71C5-D3DC-7E06EF23C5F5}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
@@ -208,6 +208,14 @@
       "CachePath": "CE/{CE821361-2CD0-D320-372B-CFBF75A8000D}.wem"
      },
      {
+      "Id": "350607052",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_ChrystalHit.wav",
+      "CachePath": "00/{005F723A-CBBA-4403-F027-4FE49258407C}.wem"
+     },
+     {
       "Id": "356138506",
       "Language": "SFX",
       "Streaming": "false",
@@ -350,6 +358,14 @@
       "Location": "Memory",
       "ShortName": "BB_SwordSlash-011.wav",
       "CachePath": "34/{34D1C60C-6997-F1EE-461E-4FFFBC75F7A9}.wem"
+     },
+     {
+      "Id": "636888268",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_RepellWhoosh.wav",
+      "CachePath": "7B/{7B136530-0895-D447-990A-38275557C7F6}.wem"
      },
      {
       "Id": "641745021",
@@ -548,10 +564,15 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\ChrystalHit",
       "GUID": "{AA1B9688-6220-4BF4-9E42-93B75DA7885B}",
       "Color": "17",
-      "MaxAttenuation": "0",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.53399956",
+      "DurationMax": "0.5925096",
+      "MediaRefs": [
+       {
+        "Id": "350607052"
+       }
+      ]
      },
      {
       "Id": "1942692385",
@@ -827,10 +848,17 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Player\\Repell",
       "GUID": "{4E789253-2ED1-4B4C-A8B4-0A74A28AE590}",
       "Color": "17",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.56249434",
+      "DurationMax": "0.5789767",
+      "MediaRefs": [
+       {
+        "Id": "636888268"
+       },
+       {
+        "Id": "857025659"
+       }
+      ]
      },
      {
       "Id": "953277036",
@@ -852,6 +880,9 @@
       "MediaRefs": [
        {
         "Id": "262197951"
+       },
+       {
+        "Id": "452811761"
        }
       ],
       "PluginRefs": {
@@ -898,8 +929,8 @@
       "Color": "17",
       "MaxAttenuation": "100",
       "DurationType": "OneShot",
-      "DurationMin": "0.56249434",
-      "DurationMax": "0.56249434",
+      "DurationMin": "0.5464812",
+      "DurationMax": "0.5789767",
       "MediaRefs": [
        {
         "Id": "42162311"
@@ -1122,6 +1153,6 @@
     ]
    }
   ],
-  "FileHash": "{D778E22C-1550-FF15-F36C-0C28E5207AC2}"
+  "FileHash": "{0A49BB27-9DE5-F2D7-7525-C9F08A7BDD46}"
  }
 }

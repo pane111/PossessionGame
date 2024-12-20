@@ -37,6 +37,7 @@ public class AudioManager : MonoBehaviour
     public Event NPCDeath;
     public Event NPCDeathHEART;
     public Event NPCTakeDmg;
+    public Event CrystalHit;
     public Event Purify;
     public Event OrbShotBig;
     public Event OrbShotSmall;

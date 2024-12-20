@@ -33,7 +33,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-7</Value>
+														<Value>-12</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -298,6 +298,35 @@
 												</ObjectList>
 											</ObjectLists>
 										</RandomSequenceContainer>
+										<Sound Name="RepellWoosh" ID="{528A11AB-87B0-4D70-B8B3-1A86D9516636}" ShortID="260019155">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-15</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_RepellWhoosh" ID="{8611A968-15A0-4883-A264-A46EB54DF43C}">
+													<Language>SFX</Language>
+													<AudioFile>BB_RepellWhoosh.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="636888268"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_RepellWhoosh" ID="{8611A968-15A0-4883-A264-A46EB54DF43C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="NPC" ID="{E2E815A5-8BEF-418A-B8C9-AC05327DBBE5}" ShortID="891129276">
@@ -548,6 +577,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<RandomSequenceContainer Name="DmgTaken-Chrystal" ID="{09EE1379-AA2B-442A-A712-20C11C8D7797}" ShortID="735345652">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-11</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -556,6 +592,45 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="BB_ChrystalHit" ID="{847F7184-DC0E-480D-9677-B49CB286A41D}" ShortID="347552300">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{46D0D40D-4DFC-45DE-AF01-00FB9473650E}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="90"/>
+																			<Property Name="Min" Type="Real64" Value="-90"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="BB_ChrystalHit" ID="{0C63B18A-BEED-4E89-8738-A6E147B0919D}">
+															<Language>SFX</Language>
+															<AudioFile>BB_ChrystalHit.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="350607052"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="BB_ChrystalHit" ID="{0C63B18A-BEED-4E89-8738-A6E147B0919D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="ShotOrb" ID="{EFF53352-0CD9-4814-B367-C594353D53F9}" ShortID="236429892">
 											<ReferenceList>
@@ -1894,6 +1969,19 @@
 													</ValueList>
 												</Property>
 												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{BA3AD6CD-B6D2-4357-B5DB-8999513E2C49}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="50"/>
+																	<Property Name="Min" Type="Real64" Value="-50"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-3</Value>

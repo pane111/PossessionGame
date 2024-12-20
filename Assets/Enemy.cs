@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour
     public CursedWeapon weapon;
     void Start()
     {
+        GetComponent<Deflector>().enabled = false;
         initSprite = GetComponent<SpriteRenderer>().sprite;
         sword = FindObjectOfType<SwordScript>();
         player = GameObject.Find("Player").transform;
@@ -94,6 +95,7 @@ public class Enemy : MonoBehaviour
     {
         if (curHealth > 0 && gameObject.activeInHierarchy)
         {
+            GetComponent<Deflector>().enabled = true;
             demon = true;
             crystal.SetActive(!heartExposed);
             heart.SetActive(heartExposed);
@@ -102,7 +104,6 @@ public class Enemy : MonoBehaviour
             GetComponent<Animator>().enabled = false;
             rb.velocity= Vector2.zero;
             rb.isKinematic = true;
-            GetComponent<Collider2D>().enabled = false;
             StartCoroutine(flipSprite());
         }
         
@@ -110,6 +111,7 @@ public class Enemy : MonoBehaviour
 
     void ExitDM()
     {
+        GetComponent<Deflector>().enabled = false;
         if (curHealth > 0)
         {
             playerFound = false;
@@ -141,29 +143,36 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.name == "PlayerSword" && !purified)
         {
-            if (other.gameObject.GetComponent<SwordScript>().isSlashing)
+            if(demon && curHealth > 0)
             {
-                StartCoroutine(TakeDamage(3));
+                AudioManager.Instance.CrystalHit.Post(gameObject);
             }
             else
             {
-                StartCoroutine(TakeDamage(1));
+                if (other.gameObject.GetComponent<SwordScript>().isSlashing)
+                {
+                    StartCoroutine(TakeDamage(3));
+                }
+                else
+                {
+                    StartCoroutine(TakeDamage(1));
+                }
+                Vector2 dir = transform.position - other.transform.position;
+                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                Quaternion lDir = Quaternion.AngleAxis(angle, Vector3.forward);
+                GameObject bs = Instantiate(GameManager.Instance.bSplatter, transform.position, lDir);
+
+                if (heartExposed && demon)
+                {
+                    AudioManager.Instance.NPCHeartHit.Post(gameObject);
+                    StartCoroutine(TakeDamage(0));
+                    heart.GetComponent<Collider2D>().enabled = false;
+                    heart.SetActive(false);
+                    player.GetComponent<Player>().OnPurify();
+                    Purify();
+                }
+                bs.transform.position = (Vector2)transform.position + dir.normalized;
             }
-            Vector2 dir = transform.position - other.transform.position;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            Quaternion lDir = Quaternion.AngleAxis(angle, Vector3.forward);
-            GameObject bs = Instantiate(GameManager.Instance.bSplatter,transform.position, lDir);
-            
-            if (heartExposed && demon)
-            {
-                AudioManager.Instance.NPCHeartHit.Post(gameObject);
-                StartCoroutine(TakeDamage(0));
-                heart.GetComponent<Collider2D>().enabled = false;
-                heart.SetActive(false);
-                player.GetComponent<Player>().OnPurify();
-                Purify();
-            }
-            bs.transform.position = (Vector2)transform.position + dir.normalized;
         }
     }
     public void Purify()
