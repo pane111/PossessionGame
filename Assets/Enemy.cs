@@ -154,7 +154,7 @@ public class Enemy : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
                 GameManager.Instance.GetComponent<AudioManager>().NPC_Footstep.Post(gameObject);
-                yield return new WaitForSeconds(flipTime);
+                yield return new WaitForSeconds(flipTime/2);
                 StartCoroutine(flipSprite());
             }
         }
