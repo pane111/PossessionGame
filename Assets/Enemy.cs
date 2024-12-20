@@ -86,6 +86,7 @@ public class Enemy : MonoBehaviour
     }
     public void ExposeHeart()
     {
+        GetComponent<Deflector>().enabled = false;
         heartExposed = true;
         crystal.SetActive(false);
         heart.SetActive(true);
@@ -95,7 +96,7 @@ public class Enemy : MonoBehaviour
     {
         if (curHealth > 0 && gameObject.activeInHierarchy)
         {
-            GetComponent<Deflector>().enabled = true;
+            GetComponent<Deflector>().enabled = !heartExposed;
             demon = true;
             crystal.SetActive(!heartExposed);
             heart.SetActive(heartExposed);
