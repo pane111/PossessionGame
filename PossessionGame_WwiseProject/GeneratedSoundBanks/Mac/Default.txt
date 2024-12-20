@@ -44,6 +44,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1910264	BB_Hit-001	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\61\{612CEF66-FE4F-5682-894E-3F1CF3327840}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\DmgTaken-NPC\BB_Hit-001		2376
 	5243194	BB_Hit-008	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\25\{25430DCD-20F0-F5C8-0B5F-1836029717E3}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\DmgTaken-NPC\BB_Hit-008		2575
 	9813012	BB_SwordSlash-004	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\E6\{E6C6DB45-A2ED-5451-E6EC-6604D89BA500}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-004		8432
+	20195507	Purify	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\AF\{AF7E8CAC-24F2-90E9-7054-D95D5B48E781}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\Purify		5600
 	42162311	BB_Deflect-005	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\C1\{C1E00E05-CF75-1178-E8B4-2D408C51E7A4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\Deflect\BB_Deflect-005		4045
 	46996557	BB_Hit-007	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\A2\{A26D29C0-5062-4B8E-AD03-C99A2228DCCC}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\DmgTaken-NPC\BB_Hit-007		2819
 	49518134	BB_SwordSlash-007	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\62\{62C1641B-4F64-7A3D-83BA-4BA3B2773FCD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-007		7890
@@ -67,7 +68,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	356138506	BB_Growl-001	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\54\{54536F81-B9B8-CA4D-4A28-8AD8D4F5894A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\Growl\BB_Growl-001		7008
 	401123077	BB_SwordSlash-002	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\B9\{B9D361F0-927B-2355-AC84-69634FB3E3BA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-002		8134
 	452811761	DMTicking	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\79\{79A675C5-BB2D-8673-B3D9-1171E077209E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\DMTicking		50140
-	458456398	Purify	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\F9\{F922AB73-4D5C-A32F-28BC-A609CB7351BE}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\Purify		6398
 	460084475	BB_Shot-001	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\CB\{CB63CCF5-5F2D-AF93-F7DE-A5328BF7CD41}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\ShotOrb\BB_Shot-001		5008
 	461224180	BB_SwordSlash-008	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\4D\{4D86EC08-5DD9-5578-B61B-D1F813D6EE1F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-008		8285
 	538465745	DMOn	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\44\{44184080-EA70-B695-32F1-934C54BA9789}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\DMOn		7850
@@ -90,7 +90,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	706095391	BB_Growl-003	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\74\{7416FAF3-BA6E-D81D-8F40-AD7EFF6CF183}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\Growl\BB_Growl-003		4615
 	727025831	BB_Hit-003	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\90\{90BB17D2-FDC1-D3D5-4577-EDE37930173B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\DmgTaken-NPC\BB_Hit-003		2752
 	833573005	BB_Hit-002	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\CD\{CD41DE6E-2FA7-07E3-5087-A6CFDEE2C52E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\DmgTaken-NPC\BB_Hit-002		2711
-	857025659	Repell	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\EE\{EEAA65A5-A302-6CBC-233F-79316FEE885E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\Repell		6470
+	857025659	DeflectDing	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\B7\{B72D8804-35C6-1232-C4B1-E7C951962FB8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\DeflectDing		6458
 	866604450	BB_SwordSlash-012	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\5C\{5C268CB2-2195-3854-DA29-18FF116AE50C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-012		7853
 	870991461	BB_SwordSlash-009	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\EF\{EF7C40B2-858B-E578-B022-28518262A6CD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-009		8588
 	876691427	BB_GoreHit-001	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\8E\{8EDBA9B0-7DB9-7C45-C24A-15DE376A6715}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\DmgTaken-Gore\BB_GoreHit-001		3741
