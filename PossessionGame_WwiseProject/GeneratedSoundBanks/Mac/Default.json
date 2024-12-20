@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{761DB71B-AC76-521B-EA59-35A3A4AED9C9}",
+    "Hash": "{7B629E69-BEDF-EB86-0C5E-95D0776BE545}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
@@ -293,7 +293,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "329516__lpa134__hood-impact.wav",
-      "CachePath": "61/{6106B880-37D1-A958-E73B-8DDAE73AE257}.wem"
+      "CachePath": "0C/{0C26BD43-CE5A-62C9-ACC2-B5E0038B9AB8}.wem"
      },
      {
       "Id": "635287032",
@@ -966,6 +966,6 @@
     ]
    }
   ],
-  "FileHash": "{70B54E41-BE5F-90F0-0530-16EFF9BCA8D8}"
+  "FileHash": "{EB2778AC-3BD9-BB02-DB58-C576EF4721B2}"
  }
 }

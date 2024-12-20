@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{E19B4292-5BF7-73D0-5A42-DD42A97FA04C}",
+    "Hash": "{0A5830AD-1854-0964-1B3F-E729D1EE2913}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -48,6 +48,12 @@
       "Name": "HP",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\HP",
       "GUID": "{FA783F1A-7D73-4DD3-91A0-3C84A292843E}"
+     },
+     {
+      "Id": "2918011349",
+      "Name": "MasterVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MasterVolume",
+      "GUID": "{66E98FDA-456D-472E-B227-EF5239B7E209}"
      },
      {
       "Id": "3347766931",
@@ -104,6 +110,6 @@
     ]
    }
   ],
-  "FileHash": "{4661F54A-9834-0268-6DAD-C89F90DE1A52}"
+  "FileHash": "{E54BE885-F368-82CC-F17A-285FAFA9DFE4}"
  }
 }

@@ -181,6 +181,7 @@ public class Enemy : MonoBehaviour
     }
     public void Rescue()
     {
+        AudioManager.Instance.Purify.Post(gameObject);
         GetComponent<SpriteRenderer>().enabled = false;
         lightBeam.SetActive(true);
         Invoke("DisableThis", 1);

@@ -33847,7 +33847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562b9e391694e0c44955eb6a58d5df61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterVolume: 10
+  masterVolume: 2
   bpm: 0
   GS_Titlescreen:
     idInternal: 0
@@ -33887,6 +33887,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 7a0e97ac5a940b74b807180c7222b783, type: 2}
+  volume:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8916f2e3d4fafcd469e852781d7bcbf4, type: 2}
   SwordSlash:
     idInternal: 0
     valueGuidInternal: 
@@ -33943,6 +33947,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: a0d658e40155a554c8aab58a17ea33c3, type: 2}
+  Purify:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5730ee56d615c154aa9369fde5773c82, type: 2}
   OrbShotBig:
     idInternal: 0
     valueGuidInternal: 

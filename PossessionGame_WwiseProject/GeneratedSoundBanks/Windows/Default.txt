@@ -74,7 +74,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	589670513	Woof	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\53\{53028254-2862-A9FA-987D-10A08A0C004E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\Woof		2448
 	591849815	BB_BigSlash-004	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\C1\{C17081E9-DF9A-B400-1DAB-5F5B3B0A859B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\SwordSlashBIG\BB_BigSlash-004		5121
 	598379007	Pull	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\75\{752300BE-BED9-B681-193A-2C9304136DCD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\Pull		12582
-	631153395	PlayerDeath	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\61\{6106B880-37D1-A958-E73B-8DDAE73AE257}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\PlayerDeath		64669
+	631153395	PlayerDeath	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\0C\{0C26BD43-CE5A-62C9-ACC2-B5E0038B9AB8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Player\PlayerDeath		64669
 	635287032	BB_SwordSlash-011	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\34\{34D1C60C-6997-F1EE-461E-4FFFBC75F7A9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-011		7759
 	641745021	BB_Hit-004	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\87\{8770B146-D5AC-0D64-7C0A-C258F9D455E5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\DmgTaken-NPC\BB_Hit-004		2675
 	669352187	BB_Deflect-001	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\B0\{B0698EE1-4946-539F-5E2F-EA7F076CF238}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\Deflect\BB_Deflect-001		3932

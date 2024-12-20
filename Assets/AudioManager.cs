@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
     [Header("RTPC")] //connected!
     public RTPC possessionRTPC;
     public RTPC healthRTPC;
+    public RTPC volume;
 
     [Header("Events")] //nothing connected except demonMode and startMusic
     public Event SwordSlash;
@@ -36,6 +37,7 @@ public class AudioManager : MonoBehaviour
     public Event NPCDeath;
     public Event NPCDeathHEART;
     public Event NPCTakeDmg;
+    public Event Purify;
     public Event OrbShotBig;
     public Event OrbShotSmall;
     public Event NPCHeartHit;
@@ -52,6 +54,11 @@ public class AudioManager : MonoBehaviour
         GS_Titlescreen.SetValue();
         StartMusic.Post(gameObject);
         bpmMod = bpm / 60;
+    }
+
+    private void Update()
+    {
+        volume.SetGlobalValue(masterVolume);
     }
 
     #region Methods

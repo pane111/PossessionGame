@@ -62,6 +62,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID HP = 1769415205U;
+        static const AkUniqueID MASTERVOLUME = 2918011349U;
         static const AkUniqueID POSSESSION = 3347766931U;
     } // namespace GAME_PARAMETERS
 
