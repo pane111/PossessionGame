@@ -30,13 +30,14 @@ public class Enemy : MonoBehaviour
     public float flipTime;
     public GameObject crystal;
     public GameObject heart;
-    bool heartExposed;
+    public bool heartExposed;
     public ParticleSystem crystalHit;
-
+    Deflector d;
     public CursedWeapon weapon;
     void Start()
     {
-        GetComponent<Deflector>().enabled = false;
+        d = GetComponent<Deflector>();
+        d.deflectionActive = false;
         initSprite = GetComponent<SpriteRenderer>().sprite;
         sword = FindObjectOfType<SwordScript>();
         player = GameObject.Find("Player").transform;
@@ -63,13 +64,18 @@ public class Enemy : MonoBehaviour
             {
                 if (hit.transform == player)
                 {
-                    playerFound = true;
-                    GetComponent<Animator>().enabled = true;
+                    if (!playerFound)
+                    {
+                        playerFound = true;
+                        StartCoroutine(flipSprite());
+                    }
+                    
+                    
                 }
                 else
                 {
                     playerFound = false;
-                    GetComponent<Animator>().enabled = false;
+                    
                 }
             }
 
@@ -86,7 +92,7 @@ public class Enemy : MonoBehaviour
     }
     public void ExposeHeart()
     {
-        GetComponent<Deflector>().enabled = false;
+        d.deflectionActive = false;
         heartExposed = true;
         crystal.SetActive(false);
         heart.SetActive(true);
@@ -96,32 +102,38 @@ public class Enemy : MonoBehaviour
     {
         if (curHealth > 0 && gameObject.activeInHierarchy)
         {
-            GetComponent<Deflector>().enabled = !heartExposed;
+            gameObject.layer = 0;
+            //GetComponent<Deflector>().enabled = true; <-- Enable/Disable does not work on scripts that do not implement monobehaviour methods (start, update)
+
             demon = true;
             crystal.SetActive(!heartExposed);
             heart.SetActive(heartExposed);
             GetComponent<SpriteRenderer>().sprite = demonSprite;
             GetComponent<SpriteRenderer>().color = Color.white;
-            GetComponent<Animator>().enabled = false;
             rb.velocity= Vector2.zero;
             rb.isKinematic = true;
+
+            d.deflectionActive = !heartExposed;
+
             StartCoroutine(flipSprite());
+
+            
         }
         
     }
 
     void ExitDM()
     {
-        GetComponent<Deflector>().enabled = false;
+        d.deflectionActive = false;
         if (curHealth > 0)
         {
+            gameObject.layer = 6;
             playerFound = false;
             demon = false;
             crystal.SetActive(false);
             heart.SetActive(false);
             GetComponent<SpriteRenderer>().sprite = initSprite;
             GetComponent<SpriteRenderer>().color = initColor;
-            GetComponent<Animator>().enabled = true;
             rb.isKinematic = false;
             GetComponent<Collider2D>().enabled = true;
         }
@@ -135,6 +147,16 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(flipTime);
             StartCoroutine(flipSprite());
         }
+        else
+        {
+            if (playerFound)
+            {
+                GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+                GameManager.Instance.GetComponent<AudioManager>().NPC_Footstep.Post(gameObject);
+                yield return new WaitForSeconds(flipTime);
+                StartCoroutine(flipSprite());
+            }
+        }
         
         yield return null;
     }
@@ -144,7 +166,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.name == "PlayerSword" && !purified)
         {
-            if(demon && curHealth > 0)
+            if(demon && !heartExposed)
             {
                 AudioManager.Instance.CrystalHit.Post(gameObject);
             }
@@ -213,7 +235,7 @@ public class Enemy : MonoBehaviour
             sma.startColor = GameManager.Instance.randomColor();
             if (!dead) { bloodSpray.Play(); GameManager.Instance.AddKill(); }
                 
-            GetComponent<Animator>().enabled = false;
+            
             dead = true;
             GetComponent<Collider2D>().isTrigger = true;
             GetComponent<SpriteRenderer>().sprite = corpseSprite;

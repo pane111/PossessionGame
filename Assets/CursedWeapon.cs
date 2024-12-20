@@ -29,6 +29,7 @@ public class CursedWeapon : MonoBehaviour
         curHealth -= amount;
         if (curHealth <= 0) {
             //OnDeath();
+            lr.enabled = true;
             FreeNPC();
         }
         else

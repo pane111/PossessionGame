@@ -106,6 +106,7 @@ public class Player : MonoBehaviour
             if (stepTimer <= 0 )
             {
                 sr.flipX = !sr.flipX;
+                GameManager.Instance.GetComponent<AudioManager>().Player_Footstep.Post(gameObject);
                 stepTimer = maxStepTimer;
             }
             if (Input.GetKeyDown(KeyCode.Space) && dashCooldown <= 0)

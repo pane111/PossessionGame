@@ -8,28 +8,28 @@ public class CursedSpear : CursedWeapon
     public float attackTime;
     public float attackCooldown;
     float ccd=0;
+    float rot = 0;
     public float attackWindup;
     public float moveSpeed;
     bool attacking;
     Vector2 pDir;
     public ParticleSystem fire;
-
+    public Transform sprite;
     // Update is called once per frame
     void Update()
     {
-
+        FindPlayer();
+        lr.SetPosition(1, enemy.transform.position - transform.position);
         if (playerFound)
         {
-            lr.transform.parent = null;
-            lr.transform.position = lr.transform.position - Vector3.forward * 6;
-            lr.SetPosition(0, transform.position);
-            lr.SetPosition(1, enemy.transform.position);
             pDir = player.transform.position - transform.position;
             float pDist = pDir.magnitude;
             if (!attacking)
             {
+                rot += Mathf.Pow(3f,Time.deltaTime);
                 GetComponent<Rigidbody2D>().MovePosition(Vector3.Lerp(transform.position, player.GetComponent<Player>().orbiter.position, Time.deltaTime * moveSpeed));
-                GetComponent<Rigidbody2D>().AddTorque(pDir.magnitude);
+                //GetComponent<Rigidbody2D>().AddTorque(pDir.magnitude);
+                sprite.rotation = Quaternion.Euler(0, 0, rot);
                 if (ccd <= 0)
                 {
                     ccd = 9999;
@@ -65,7 +65,7 @@ public class CursedSpear : CursedWeapon
         
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.angularVelocity = 0;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        sprite.rotation = Quaternion.Euler(0, 0, angle);
         rb.velocity = -pDir.normalized * moveSpeed;
         Vector2 curDir = pDir;
         yield return new WaitForSeconds(attackWindup);
@@ -77,6 +77,7 @@ public class CursedSpear : CursedWeapon
         yield return new WaitForSeconds(attackTime);
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(1);
+        rot = 0;
         attacking = false;
         ccd = attackCooldown;
         yield return null;

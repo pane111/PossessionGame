@@ -5033,7 +5033,6 @@ GameObject:
   - component: {fileID: 7718155269484473883}
   - component: {fileID: 6919442280816976261}
   - component: {fileID: 9175227541803226001}
-  - component: {fileID: 5800526422586770189}
   - component: {fileID: -7184720209576335132}
   m_Layer: 6
   m_Name: EnemyPrefab
@@ -5215,29 +5214,9 @@ MonoBehaviour:
   flipTime: 0.1
   crystal: {fileID: 8678817923989325992}
   heart: {fileID: 9200997949574462041}
+  heartExposed: 0
   crystalHit: {fileID: 4483225694051457993}
   weapon: {fileID: 0}
---- !u!95 &5800526422586770189
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2479403772325472405}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 984e10a6b289f824e829091bab86cd9c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &-7184720209576335132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5251,6 +5230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deflectFrom: {fileID: 5166289023763487935}
+  deflectionActive: 1
+  deflectPlayerOnTouch: 0
   repelForce: 10
   effect: {fileID: 7305955933817682636}
 --- !u!1 &3208104092215943183
@@ -20147,7 +20128,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.89
+  m_Radius: 1
 --- !u!1001 &80507582977897926
 PrefabInstance:
   m_ObjectHideFlags: 0

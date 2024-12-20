@@ -8,7 +8,7 @@ public class CursedShield : CursedWeapon
     public float rotSpeed;
     float curRot = 0;
     public ParticleSystem fire;
-   
+    public float travelSpeed;
 
     
     void Update()
@@ -18,6 +18,11 @@ public class CursedShield : CursedWeapon
         if (curRot >= 360 || curRot <= -360)
         {
             curRot = 0;
+        }
+        if (curHealth <= 0)
+        {
+            GetComponent<Rigidbody2D>().MovePosition(Vector2.Lerp(transform.position,enemy.transform.position,Time.deltaTime*travelSpeed));
+            lr.SetPosition(1, enemy.transform.position - transform.position);
         }
     }
     public override void OnDeath()
