@@ -48,6 +48,7 @@ public class AudioManager : MonoBehaviour
     public Event LaserStop;
     [SerializeField] private Event DemonModeOn;
     [SerializeField] private Event DemonModeOff;
+    public Event StartTicking;
     public Event StartMusic;
     public Event Pause;
     public Event Resume;

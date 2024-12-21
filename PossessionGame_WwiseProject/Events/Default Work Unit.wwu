@@ -306,37 +306,20 @@
 						</Folder>
 						<Event Name="Death" ID="{2CD70137-CF50-4DFC-9521-ACB5D98CB7EC}">
 							<ChildrenList>
-								<Action Name="" ID="{805DD85A-8278-48DD-9833-F6DF1EB34129}" ShortID="1012112108">
+								<Action Name="" ID="{2069101B-C282-4B8C-87CA-35457C10061E}" ShortID="167720483">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="3"/>
 									</PropertyList>
 									<ReferenceList/>
 									<ChildrenList>
-										<EventActionException Name="" ID="{3705AB47-F909-421B-B4E8-9C33DFB72FF0}">
+										<EventActionException Name="" ID="{2CBEB319-EF55-40E1-8502-E77F7DC2D762}">
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Music" ID="{230F61EE-BBAD-44DC-961E-064266359991}" WorkUnitID="{BD1301FD-2A3C-45C0-B448-3915E92BF266}"/>
 												</Reference>
 											</ReferenceList>
 										</EventActionException>
-										<EventActionException Name="" ID="{9A2FB4F3-6F28-4E23-9F1C-F7FB73CF53EC}">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
-												</Reference>
-											</ReferenceList>
-										</EventActionException>
 									</ChildrenList>
-								</Action>
-								<Action Name="" ID="{3C87C91E-42FE-4F28-B5C0-1F00B6471C51}" ShortID="356035898">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
-										</Reference>
-									</ReferenceList>
 								</Action>
 								<Action Name="" ID="{7953EBCE-5DAF-41B8-84CF-7043F9D6EB7C}" ShortID="421999836">
 									<ReferenceList>
@@ -360,13 +343,6 @@
 						</Event>
 						<Event Name="Revive" ID="{DAC6B62D-BBAB-45B1-B999-0A666DC03071}">
 							<ChildrenList>
-								<Action Name="" ID="{E3F60B7F-407D-4513-82E9-655A1592C6DB}" ShortID="843611877">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{0997F760-D4D7-4E72-A679-7039ACCCEADA}" ShortID="599424517">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -445,6 +421,17 @@
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
 									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="TickingOn" ID="{F5B70D5E-D7F0-475D-A1CB-F13C26298621}">
+							<ChildrenList>
+								<Action Name="" ID="{A5A7F558-3117-4DD7-9688-83FBD87114CF}" ShortID="296144385">
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="DMTicking" ID="{1F6E1A0B-6297-4C61-8A77-7DED332D0BC2}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>

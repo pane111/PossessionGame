@@ -21,8 +21,8 @@ public class CursedShield : CursedWeapon
         }
         if (curHealth <= 0)
         {
-            GetComponent<Rigidbody2D>().MovePosition(Vector2.Lerp(transform.position,enemy.transform.position,Time.deltaTime*travelSpeed));
-            lr.SetPosition(1, enemy.transform.position - transform.position);
+            GetComponent<Rigidbody2D>().MovePosition(Vector2.Lerp(transform.position,demonHeart.transform.position,Time.deltaTime*travelSpeed));
+            lr.SetPosition(1, demonHeart.transform.position - transform.position);
         }
     }
     public override void OnDeath()

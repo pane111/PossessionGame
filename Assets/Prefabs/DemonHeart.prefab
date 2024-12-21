@@ -5032,10 +5032,10 @@ GameObject:
   - component: {fileID: 5910652313944599971}
   - component: {fileID: 7718155269484473883}
   - component: {fileID: 6919442280816976261}
-  - component: {fileID: 9175227541803226001}
   - component: {fileID: -7184720209576335132}
+  - component: {fileID: 113764269713767613}
   m_Layer: 6
-  m_Name: EnemyPrefab
+  m_Name: DemonHeart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5107,7 +5107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1775771984, guid: 873f66416d0ba7b41a14f9bc0adfef9c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6b024158921e27438f7b7c6b7597deb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5180,43 +5180,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &9175227541803226001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2479403772325472405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21a14f391c98d4443b0a9723edb0b237, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 15
-  curHealth: 15
-  speed: 3
-  detectRange: 30
-  playerFound: 0
-  rb: {fileID: 7718155269484473883}
-  corpseSprite: {fileID: 21300000, guid: 7837674739443e44f813170fcfdc317c, type: 3}
-  hitEffect: {fileID: 534672450225509831}
-  blood: {fileID: 8215031102857929556}
-  bloodSpray: {fileID: 8675482905188897201}
-  sparkles: {fileID: 8958921668239559871}
-  player: {fileID: 0}
-  bloodstain: {fileID: 3148423645784464570}
-  lm:
-    serializedVersion: 2
-    m_Bits: 1
-  lightBeam: {fileID: 1486286827095364145}
-  purified: 0
-  demonSprite: {fileID: 21300000, guid: ca304e4871f286d47858dcd5cb93c27e, type: 3}
-  flipTime: 0.1
-  crystal: {fileID: 8678817923989325992}
-  heart: {fileID: 9200997949574462041}
-  heartExposed: 0
-  crystalHit: {fileID: 4483225694051457993}
-  weapon: {fileID: 0}
 --- !u!114 &-7184720209576335132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5234,6 +5197,26 @@ MonoBehaviour:
   deflectPlayerOnTouch: 0
   repelForce: 10
   effect: {fileID: 7305955933817682636}
+--- !u!114 &113764269713767613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479403772325472405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0664a936d6a797489a8e90302f64759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
+  heartExposed: 0
+  crystal: {fileID: 8678817923989325992}
+  crystalHit: {fileID: 4483225694051457993}
+  hitEffect: {fileID: 534672450225509831}
+  blood: {fileID: 8215031102857929556}
+  bloodSpray: {fileID: 8675482905188897201}
+  bloodstain: {fileID: 4551006050398295167}
 --- !u!1 &3208104092215943183
 GameObject:
   m_ObjectHideFlags: 0

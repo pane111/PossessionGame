@@ -48,7 +48,7 @@ public class CursedPot : CursedWeapon
         {
             lr.enabled = true;
             lr.SetPosition(0, Vector3.zero);
-            lr.SetPosition(1, enemy.transform.position - transform.position);
+            lr.SetPosition(1, demonHeart.transform.position - transform.position);
         }
     }
     public override void FindPlayer()

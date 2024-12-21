@@ -26,7 +26,7 @@ public class CursedSpear : CursedWeapon
     void Update()
     {
         FindPlayer();
-        lr.SetPosition(1, enemy.transform.position - transform.position);
+        lr.SetPosition(1, demonHeart.transform.position - transform.position);
         if (playerFound)
         {
             pDir = player.transform.position - transform.position;
