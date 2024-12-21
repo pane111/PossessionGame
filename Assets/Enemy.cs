@@ -142,7 +142,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator flipSprite()
     {
-        if (demon)
+        if (demon && !dead)
         {
             GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
             yield return new WaitForSeconds(flipTime);
@@ -150,7 +150,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            if (playerFound)
+            if (playerFound &&!dead)
             {
                 GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
                 GameManager.Instance.GetComponent<AudioManager>().NPC_Footstep.Post(gameObject);
