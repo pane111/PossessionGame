@@ -40,6 +40,7 @@ namespace AK
         static const AkUniqueID SWORDSLASH = 3113731383U;
         static const AkUniqueID SWORDSLASH_BIG = 2749466912U;
         static const AkUniqueID TAKEDMG = 3336527240U;
+        static const AkUniqueID TICKINGON = 2775380377U;
         static const AkUniqueID WEAPONDEATH = 3587473649U;
     } // namespace EVENTS
 

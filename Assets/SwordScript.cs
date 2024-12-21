@@ -25,6 +25,8 @@ public class SwordScript : MonoBehaviour
     public float speedModIdle;
     public float speedModAttack;
     private float speedMod;
+    private float targetTimer;
+    public float maxTargetTimer;
     [SerializeField]
     float maxVelPossMod;
     [Header("Pull")]
@@ -60,14 +62,22 @@ public class SwordScript : MonoBehaviour
         speedMod = speedModIdle;
         Idling = true;
         moveFreely = true;
+        targetTimer = maxTargetTimer;
     }
 
     void FixedUpdate()
     {
-        
-
         //TARGETING
-        if (Idling) { curTarget = playerChar.gameObject.GetComponent<Player>().orbiter; FindEnemy();  }
+        if (Idling) 
+        {
+            targetTimer -= Time.deltaTime;
+            if (targetTimer < 0)
+            {
+                FindEnemy();
+                targetTimer = maxTargetTimer;
+            }
+            curTarget = playerChar.gameObject.GetComponent<Player>().orbiter;
+        }
         else
         {
             curSAT -= Time.deltaTime;
@@ -78,6 +88,7 @@ public class SwordScript : MonoBehaviour
             }
         }
         Vector2 dir = curTarget.position - transform.position;
+
         //MOVING
         if (moveFreely)
         {
@@ -92,7 +103,7 @@ public class SwordScript : MonoBehaviour
             rb.velocity = rb.velocity.normalized * maxVelocity;
 
         //PULL CHECK
-        if (!moveFreely && Vector2.Distance(pullPos, transform.position) < 0.5f) { moveFreely = true; FindEnemy(); playerChar.gameObject.GetComponent<Player>().leash.enabled = false; }
+        if (!moveFreely && Vector2.Distance(pullPos, transform.position) < 0.5f) { moveFreely = true; playerChar.gameObject.GetComponent<Player>().leash.enabled = false; }
     }
 
     IEnumerator SlashAttack()
@@ -154,16 +165,15 @@ public class SwordScript : MonoBehaviour
 
     void Untarget()
     {
-        
         curTarget=playerChar.transform;
-        FindEnemy();
-
+        Idling = true;
     }
 
     public void Pull()
     {
         AudioManager.Instance.Pull.Post(gameObject);
         curTarget = playerChar.transform;
+        Idling = true;
         moveFreely = false;
         pullImg.color = new Color(pullImg.color.r, pullImg.color.g, pullImg.color.b, 0.2f);
         rb.velocity = Vector2.zero;

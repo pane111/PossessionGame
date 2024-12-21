@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour
     public Event NPCDeathHEART;
     public Event NPCTakeDmg;
     public Event CrystalHit;
+    public Event CrystalBroken;
     public Event Purify;
     public Event OrbShotBig;
     public Event OrbShotSmall;
@@ -48,6 +49,7 @@ public class AudioManager : MonoBehaviour
     public Event LaserStop;
     [SerializeField] private Event DemonModeOn;
     [SerializeField] private Event DemonModeOff;
+    public Event StartTicking;
     public Event StartMusic;
     public Event Pause;
     public Event Resume;

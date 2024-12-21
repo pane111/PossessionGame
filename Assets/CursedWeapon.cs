@@ -6,20 +6,24 @@ public class CursedWeapon : MonoBehaviour
 {
     public float maxHealth;
     public float curHealth;
-    public GameObject enemy;
+    public GameObject demonHeart;
     public Transform player;
 
     public float detectRange;
     public bool playerFound;
     public ParticleSystem damageEffect;
-    bool dead=false;
+    bool dead = false;
     public LineRenderer lr;
+
+    public bool playerContact = false;
 
     private void Start()
     {
+        demonHeart.GetComponent<DemonHeart>().weapon = this;
         player = GameObject.Find("Player").transform;
         GameManager.Instance.startDM += this.OnDM;
         GameManager.Instance.stopDM += this.OnExitDM;
+        lr.enabled = true;
     }
 
     public virtual void TakeDamage(float amount)
@@ -28,34 +32,31 @@ public class CursedWeapon : MonoBehaviour
         damageEffect.Play();
         curHealth -= amount;
         if (curHealth <= 0) {
-            //OnDeath();
-            lr.enabled = true;
             FreeNPC();
         }
         else
         {
-            StartCoroutine(CrystalVisual());
+            demonHeart.GetComponent<DemonHeart>().crystalHit.Play();
+            lr.SetPosition(0, Vector3.zero);
+            lr.SetPosition(1, demonHeart.transform.position - transform.position);
         }
     }
 
     public void FreeNPC() //Allows player to finish the NPC
     {
-        enemy.GetComponent<Enemy>().ExposeHeart();
+        demonHeart.GetComponent<DemonHeart>().ExposeHeart();
     }
 
     public virtual void OnDM()
     {
         if (!dead)
         {
-            if (enemy.GetComponent<Enemy>().curHealth <= 0)
-            {
-                lr.gameObject.SetActive(false);
-            }
+            lr.gameObject.SetActive(false);
             gameObject.SetActive(true);
         }
             
     }
-    public void OnExitDM()
+    public virtual void OnExitDM()
     {
         if (!dead)
             gameObject.SetActive(false);
@@ -74,31 +75,18 @@ public class CursedWeapon : MonoBehaviour
         dead = true;
         lr.gameObject.SetActive(false);
         GameManager.Instance.player.OnPurify();
-        //enemy.GetComponent<Enemy>().Purify();
     }
 
-    IEnumerator CrystalVisual()
-    {
-        enemy.GetComponent<Enemy>().crystalHit.Play();
-        lr.enabled = true;
-        lr.SetPosition(0, Vector3.zero);
-        lr.SetPosition(1,enemy.transform.position-transform.position);
-        
-        yield return new WaitForSeconds(0.2f);
-        lr.enabled = false;
-    }
-
-    // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<SwordScript>() != null)
         {
+            playerContact = true;
             playerFound = true;
             Vector2 dir = transform.position - collision.transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             Quaternion lDir = Quaternion.AngleAxis(angle, Vector3.forward);
             GameObject bs = Instantiate(GameManager.Instance.bSplatter, transform.position, lDir);
-
 
             bs.transform.position = (Vector2)transform.position + dir.normalized;
             if (collision.GetComponent<SwordScript>().isSlashing)

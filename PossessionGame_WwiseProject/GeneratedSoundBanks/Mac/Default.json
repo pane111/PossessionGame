@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{FA35321E-D083-E2EA-0716-DBF57DD7662C}",
+    "Hash": "{5BED1798-BDC3-BE8E-2911-473F8A03252C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
@@ -405,7 +405,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_Laser.wav",
-      "CachePath": "72/{72B49B16-912E-5C15-B8D1-63DBC8EFC612}.wem"
+      "CachePath": "B3/{B35214B0-29D7-0EAC-979D-BBCA935FEE8B}.wem"
      },
      {
       "Id": "700998746",
@@ -445,7 +445,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_Repell.wav",
-      "CachePath": "B7/{B72D8804-35C6-1232-C4B1-E7C951962FB8}.wem"
+      "CachePath": "D2/{D2344D12-5FA2-DB13-C8E6-04AE5FBFBB1F}.wem"
      },
      {
       "Id": "866604450",
@@ -509,7 +509,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_GoreHit-004.wav",
-      "CachePath": "01/{019D8D9E-7C43-40E2-7557-9635029315FB}.wem"
+      "CachePath": "9F/{9FB8DF29-8BCD-225D-E2C5-C7C223FBFA86}.wem"
      },
      {
       "Id": "954352770",
@@ -541,7 +541,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_NPCFootstep.wav",
-      "CachePath": "F5/{F556E99E-2BC2-4576-F9C7-C6017E69FD8F}.wem"
+      "CachePath": "32/{32F7024C-2CFD-6EC8-7CB0-4BB255ED21EA}.wem"
      },
      {
       "Id": "1008822290",
@@ -949,9 +949,6 @@
       "MediaRefs": [
        {
         "Id": "262197951"
-       },
-       {
-        "Id": "452811761"
        }
       ],
       "PluginRefs": {
@@ -1163,6 +1160,19 @@
       "DurationMax": "0"
      },
      {
+      "Id": "2775380377",
+      "Name": "TickingOn",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\TickingOn",
+      "GUID": "{F5B70D5E-D7F0-475D-A1CB-F13C26298621}",
+      "Color": "17",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "452811761"
+       }
+      ]
+     },
+     {
       "Id": "3587473649",
       "Name": "WeaponDeath",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\WeaponDeath",
@@ -1222,6 +1232,6 @@
     ]
    }
   ],
-  "FileHash": "{2CDA0272-052D-C461-F3E5-0A47AD514F8E}"
+  "FileHash": "{5E90BB3F-F039-2AD2-C7C9-BE3CA6A9040F}"
  }
 }

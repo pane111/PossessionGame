@@ -51,8 +51,6 @@ public class Enemy : MonoBehaviour
         GameManager.Instance.startDM += EnterDM;
         GameManager.Instance.stopDM += ExitDM;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (!dead && !purified && !demon)

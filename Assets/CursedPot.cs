@@ -14,6 +14,7 @@ public class CursedPot : CursedWeapon
     float pDist;
     void Start()
     {
+        demonHeart.GetComponent<DemonHeart>().weapon = this;
         player = GameObject.Find("Player").transform;
         shotCd =maxShotCd;
         GameManager.Instance.startDM += this.OnDM;
@@ -48,7 +49,7 @@ public class CursedPot : CursedWeapon
         {
             lr.enabled = true;
             lr.SetPosition(0, Vector3.zero);
-            lr.SetPosition(1, enemy.transform.position - transform.position);
+            lr.SetPosition(1, demonHeart.transform.position - transform.position);
         }
     }
     public override void FindPlayer()

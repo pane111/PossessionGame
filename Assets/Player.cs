@@ -323,10 +323,11 @@ public class Player : MonoBehaviour
 
     public void Revive()
     {
+        if (demonModeActive) { AudioManager.Instance.StartTicking.Post(gameObject); }
         AudioManager.Instance.Revive.Post(gameObject);
         _curHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
-        Corruption += 35;
+        Corruption += 30;
         SetInvincible(5);
     }
 }
