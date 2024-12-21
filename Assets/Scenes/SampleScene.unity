@@ -28960,11 +28960,11 @@ MonoBehaviour:
   Player_Footstep:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 08302d09154641a468f3b0940eeefe99, type: 2}
   NPC_Footstep:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 2a3868d330f7e3f4fa317ec50f73718d, type: 2}
   Death:
     idInternal: 0
     valueGuidInternal: 
@@ -28996,7 +28996,7 @@ MonoBehaviour:
   CrystalBroken:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: b3d6fc25dfc2c8b4785675482c77c3fc, type: 2}
   Purify:
     idInternal: 0
     valueGuidInternal: 
@@ -29032,7 +29032,7 @@ MonoBehaviour:
   StartTicking:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 8f654cdd54ef1fc47bf3ff4cb1b24dbc, type: 2}
   StartMusic:
     idInternal: 0
     valueGuidInternal: 
@@ -29771,6 +29771,7 @@ MonoBehaviour:
   demonSpeed: 7
   maxStepTimer: 0.1
   stepTimer: 0.2
+  stepSoundCount: 1
   dashImg: {fileID: 1496285516}
   dashForce: 30
   maxDashTimer: 0.2

@@ -226,6 +226,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="CrystalBreak" ID="{4C527E8F-6DA2-43FB-BCE7-EEB6FF3B8B04}">
+									<ChildrenList>
+										<Action Name="" ID="{C584902B-077D-40EF-8FFE-FCB76E8DBBC9}" ShortID="465158030">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrystalBroken" ID="{3105FD9F-F9CE-49AF-B480-787D59801A2C}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Player" ID="{07B5BD21-499A-42BC-B78A-FF30B8D56FFE}" ShortID="878290952">
@@ -285,7 +296,7 @@
 										<Action Name="" ID="{97068B56-6FA7-40D4-8D30-543272FC24F4}" ShortID="413899736">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="DmgTaken-Player" ID="{D893129C-4AA8-457F-A8A3-68FB77CCC960}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+													<ObjectRef Name="DmgTaken-Player" ID="{B6917CB5-2421-48E1-97FB-B50F24B003B4}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

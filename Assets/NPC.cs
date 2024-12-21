@@ -27,7 +27,6 @@ public class NPC : MonoBehaviour
     public ParticleSystem bloodSpray;
     public SpriteRenderer bloodstain;
 
-
     bool dm = false;
     private void Start()
     {
@@ -50,12 +49,14 @@ public class NPC : MonoBehaviour
 
     IEnumerator MoveRandom()
     {
-        yield return new WaitForSeconds(Random.Range(1.5f, 3f));
+        float r1 = Random.Range(1.5f, 3f);
+        float r2 = Random.Range(1, 2);
+        yield return new WaitForSeconds(r1);
         Vector3 dest = Vector2.zero;
         dest.x = Random.Range(transform.position.x - 5, transform.position.x + 5);
         dest.y = Random.Range(transform.position.y - 5, transform.position.y + 5);
         rb.velocity = (dest - transform.position).normalized * speed * mod;
-        yield return new WaitForSeconds(Random.Range(1, 2));
+        yield return new WaitForSeconds(r2);
         rb.velocity = Vector2.zero;
         if(!dead) StartCoroutine (MoveRandom());
     }
@@ -72,8 +73,6 @@ public class NPC : MonoBehaviour
             GetComponent<SpriteRenderer>().color = Color.white;
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
-
-            StartCoroutine(flipSprite());
         }
     }
     public void ExitDM()
@@ -90,25 +89,15 @@ public class NPC : MonoBehaviour
         }
     }
 
-    IEnumerator flipSprite()
+    IEnumerator flipSprite(float time)
     {
-        if (dm && !dead)
+        if(!dm && !dead)
         {
             GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
-            yield return new WaitForSeconds(flipTime);
-            StartCoroutine(flipSprite());
+            AudioManager.Instance.NPC_Footstep.Post(gameObject);
+            yield return new WaitForSeconds(flipTime / 2);
+            StartCoroutine(flipSprite(time - flipTime / 2));
         }
-        else
-        {
-            if (!dead)
-            {
-                GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
-                GameManager.Instance.GetComponent<AudioManager>().NPC_Footstep.Post(gameObject);
-                yield return new WaitForSeconds(flipTime / 2);
-                StartCoroutine(flipSprite());
-            }
-        }
-
         yield return null;
     }
 
