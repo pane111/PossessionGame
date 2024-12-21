@@ -89281,6 +89281,7 @@ MonoBehaviour:
   maxVel: 35
   speedModIdle: 2
   speedModAttack: 3
+  maxTargetTimer: 3
   maxVelPossMod: 1
   pullImg: {fileID: 1913390092}
   pullSpeed: 500

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.Arm;
@@ -118,6 +119,7 @@ public class NPC : MonoBehaviour
             else
             {
                 StartCoroutine(TakeDamage(1));
+                if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; }
             }
             Vector2 dir = transform.position - other.transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
