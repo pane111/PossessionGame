@@ -43,7 +43,7 @@ public class CursedWeapon : MonoBehaviour
         enemy.GetComponent<Enemy>().ExposeHeart();
     }
 
-    public void OnDM()
+    public virtual void OnDM()
     {
         if (!dead)
         {

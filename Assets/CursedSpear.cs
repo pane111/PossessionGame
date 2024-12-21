@@ -16,6 +16,13 @@ public class CursedSpear : CursedWeapon
     public ParticleSystem fire;
     public Transform sprite;
     // Update is called once per frame
+
+    public override void OnDM()
+    {
+        base.OnDM();
+        attacking = false;
+        ccd = attackCooldown;
+    }
     void Update()
     {
         FindPlayer();
