@@ -42,6 +42,20 @@ public class NPC : MonoBehaviour
 
         GameManager.Instance.startDM += EnterDM;
         GameManager.Instance.stopDM += ExitDM;
+
+        StartCoroutine(MoveRandom());
+    }
+
+    IEnumerator MoveRandom()
+    {
+        yield return new WaitForSeconds(Random.Range(1.5f, 3f));
+        Vector3 dest = Vector2.zero;
+        dest.x = Random.Range(transform.position.x - 5, transform.position.x + 5);
+        dest.y = Random.Range(transform.position.y - 5, transform.position.y + 5);
+        rb.velocity = (dest - transform.position).normalized * speed;
+        yield return new WaitForSeconds(Random.Range(1, 2));
+        rb.velocity = Vector2.zero;
+        StartCoroutine (MoveRandom());
     }
 
     public void EnterDM()
