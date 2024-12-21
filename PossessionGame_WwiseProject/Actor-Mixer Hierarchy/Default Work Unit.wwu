@@ -1262,6 +1262,13 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="CrystalBroken" ID="{3105FD9F-F9CE-49AF-B480-787D59801A2C}" ShortID="718940169">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-11</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -1270,6 +1277,18 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BB_CrystalBroken" ID="{55C08144-310F-40A7-97D5-3CF133F099D4}">
+													<Language>SFX</Language>
+													<AudioFile>BB_CrystalBroken.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="446503542"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BB_CrystalBroken" ID="{55C08144-310F-40A7-97D5-3CF133F099D4}" Platform="Linked"/>
+											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
 								</ActorMixer>

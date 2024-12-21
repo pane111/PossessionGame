@@ -15,6 +15,7 @@ public class DemonHeart : MonoBehaviour
     public ParticleSystem blood;
     public ParticleSystem bloodSpray;
     public GameObject bloodstain;
+    public GameObject lightBeam;
     SpriteRenderer sr;
     SwordScript sword;
     Deflector d;
@@ -35,6 +36,7 @@ public class DemonHeart : MonoBehaviour
         d.deflectionActive = false;
         heartExposed = true;
         crystal.SetActive(false);
+        AudioManager.Instance.CrystalBroken.Post(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -50,6 +52,8 @@ public class DemonHeart : MonoBehaviour
                 AudioManager.Instance.NPCHeartHit.Post(gameObject);
                 GetComponent<Collider2D>().enabled = false;
                 sr.enabled = false;
+                FindObjectOfType<Player>().OnPurify();
+                weapon.OnDeath();
 
                 StartCoroutine(HeartHit());
             }
@@ -65,5 +69,12 @@ public class DemonHeart : MonoBehaviour
         hitEffect.SetActive(true);
         yield return new WaitForSeconds(0.05f);
         hitEffect.SetActive(false);
+        yield return new WaitForSeconds(1);
+        AudioManager.Instance.Purify.Post(gameObject);
+        GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.layer = 0;
+        lightBeam.SetActive(true);
+        yield return new WaitForSeconds(1);
+        lightBeam.SetActive(false);
     }
 }

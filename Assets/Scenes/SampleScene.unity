@@ -28993,6 +28993,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: b09b2bfda43752443a1ae37c96770a43, type: 2}
+  CrystalBroken:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   Purify:
     idInternal: 0
     valueGuidInternal: 

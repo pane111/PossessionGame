@@ -56,7 +56,7 @@ public class CursedWeapon : MonoBehaviour
         }
             
     }
-    public void OnExitDM()
+    public virtual void OnExitDM()
     {
         if (!dead)
             gameObject.SetActive(false);

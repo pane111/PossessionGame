@@ -54,6 +54,20 @@ public class CursedStaff : CursedWeapon
         }
 
     }
+    public override void OnExitDM()
+    {
+        base.OnExitDM();
+        AudioManager.Instance.LaserStop.Post(gameObject);
+        beamStart.gameObject.SetActive(false);
+        beamEnd.gameObject.SetActive(false);
+        beamStarted = false;
+        beam.enabled = false;
+    }
+    public override void OnDM()
+    {
+        base.OnDM();
+        beamCooldown = maxBeamCd;
+    }
 
     public override void FindPlayer()
     {

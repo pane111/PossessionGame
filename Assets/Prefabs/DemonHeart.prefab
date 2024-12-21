@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2969956774131914094}
   - component: {fileID: 5664429050210211533}
   - component: {fileID: 1050349243637250868}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LightBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 5282910189955459650}
   - component: {fileID: 356629615392327589}
   - component: {fileID: 2959480679488017573}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5034,7 +5034,7 @@ GameObject:
   - component: {fileID: 6919442280816976261}
   - component: {fileID: -7184720209576335132}
   - component: {fileID: 113764269713767613}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DemonHeart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5126,7 +5126,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2479403772325472405}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -5217,6 +5217,7 @@ MonoBehaviour:
   blood: {fileID: 8215031102857929556}
   bloodSpray: {fileID: 8675482905188897201}
   bloodstain: {fileID: 4551006050398295167}
+  lightBeam: {fileID: 1486286827095364145}
 --- !u!1 &3208104092215943183
 GameObject:
   m_ObjectHideFlags: 0
@@ -10115,7 +10116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7962157077994568952}
   - component: {fileID: 3148423645784464570}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bloodstain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10200,7 +10201,7 @@ GameObject:
   - component: {fileID: 3271971749837525656}
   - component: {fileID: 8958921668239559871}
   - component: {fileID: 1979839291146532285}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Sparkles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15029,7 +15030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3591912169977667717}
   - component: {fileID: 666333806375512726}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15114,7 +15115,7 @@ GameObject:
   - component: {fileID: 3456786236250769416}
   - component: {fileID: 4483225694051457993}
   - component: {fileID: 1513669548326012751}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CrystalHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20002,7 +20003,7 @@ GameObject:
   - component: {fileID: 2949582761714816629}
   - component: {fileID: 1188033796789991253}
   - component: {fileID: 5063031479290803661}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Heart
   m_TagString: Heart
   m_Icon: {fileID: 0}

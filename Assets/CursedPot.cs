@@ -14,6 +14,7 @@ public class CursedPot : CursedWeapon
     float pDist;
     void Start()
     {
+        demonHeart.GetComponent<DemonHeart>().weapon = this;
         player = GameObject.Find("Player").transform;
         shotCd =maxShotCd;
         GameManager.Instance.startDM += this.OnDM;

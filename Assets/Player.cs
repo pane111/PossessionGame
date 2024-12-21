@@ -327,7 +327,7 @@ public class Player : MonoBehaviour
         AudioManager.Instance.Revive.Post(gameObject);
         _curHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
-        Corruption += 35;
+        Corruption += 30;
         SetInvincible(5);
     }
 }
