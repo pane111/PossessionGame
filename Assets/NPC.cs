@@ -51,12 +51,15 @@ public class NPC : MonoBehaviour
     {
         float r1 = Random.Range(1.5f, 3f);
         float r2 = Random.Range(1, 2);
+        
         yield return new WaitForSeconds(r1);
         Vector3 dest = Vector2.zero;
         dest.x = Random.Range(transform.position.x - 5, transform.position.x + 5);
         dest.y = Random.Range(transform.position.y - 5, transform.position.y + 5);
         rb.velocity = (dest - transform.position).normalized * speed * mod;
+        GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(r2);
+        GetComponent<Animator>().enabled = false;
         rb.velocity = Vector2.zero;
         if(!dead) StartCoroutine (MoveRandom());
     }
@@ -89,16 +92,11 @@ public class NPC : MonoBehaviour
         }
     }
 
-    IEnumerator flipSprite(float time)
+    
+
+    public void FootstepSound()
     {
-        if(!dm && !dead)
-        {
-            GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
-            AudioManager.Instance.NPC_Footstep.Post(gameObject);
-            yield return new WaitForSeconds(flipTime / 2);
-            StartCoroutine(flipSprite(time - flipTime / 2));
-        }
-        yield return null;
+        AudioManager.Instance.NPC_Footstep.Post(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 7718155269484473883}
   - component: {fileID: 6919442280816976261}
   - component: {fileID: 3653798921706567484}
+  - component: {fileID: 3968852409583210475}
   m_Layer: 6
   m_Name: NPCPrefab
   m_TagString: Untagged
@@ -369,6 +370,27 @@ MonoBehaviour:
   blood: {fileID: 8215031102857929556}
   bloodSpray: {fileID: 8675482905188897201}
   bloodstain: {fileID: 3148423645784464570}
+--- !u!95 &3968852409583210475
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479403772325472405}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 984e10a6b289f824e829091bab86cd9c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3208104092215943183
 GameObject:
   m_ObjectHideFlags: 0
