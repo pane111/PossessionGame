@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	281493892	OrbShot			\Default Work Unit\SFX\NPC\OrbShot	
 	282544866	Revive			\Default Work Unit\SFX\Revive	
+	317641954	ButtonPress			\Default Work Unit\UI\ButtonPress	
 	521993242	CrystalBreak			\Default Work Unit\SFX\NPC\CrystalBreak	
 	539785156	NPCDeath			\Default Work Unit\SFX\NPC\NPCDeath	
 	779278001	Death			\Default Work Unit\SFX\Death	
@@ -47,6 +48,7 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1910264	BB_Hit-001	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\61\{612CEF66-FE4F-5682-894E-3F1CF3327840}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\DmgTaken-NPC\BB_Hit-001		2376
 	5243194	BB_Hit-008	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\25\{25430DCD-20F0-F5C8-0B5F-1836029717E3}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\DmgTaken-NPC\BB_Hit-008		2575
+	6795285	Button	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\68\{680EB1F1-2670-CD05-5A93-09D02B94D91A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\UI\Button		2231
 	9813012	BB_SwordSlash-004	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\E6\{E6C6DB45-A2ED-5451-E6EC-6604D89BA500}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\QuickSlash\BB_SwordSlash-004		8432
 	20195507	Purify	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\AF\{AF7E8CAC-24F2-90E9-7054-D95D5B48E781}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\NPC\Purify		5600
 	42162311	BB_Deflect-005	C:\games\PossessionGame\PossessionGame_WwiseProject\.cache\C1\{C1E00E05-CF75-1178-E8B4-2D408C51E7A4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Main\SFX\Sword\Deflect\BB_Deflect-005		4045

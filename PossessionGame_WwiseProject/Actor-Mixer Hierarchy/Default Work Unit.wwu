@@ -334,7 +334,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-18</Value>
+														<Value>-20</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1470,7 +1470,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-14</Value>
+														<Value>-20</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -2465,6 +2465,39 @@
 										</Reference>
 									</ReferenceList>
 								</BlendContainer>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="UI" ID="{863BF6C6-FBF8-423B-A24B-1E36F7D72D4F}" ShortID="611233981">
+							<ChildrenList>
+								<Sound Name="Button" ID="{64AAA930-C7C4-4F34-93DD-08BD900D625E}" ShortID="255604910">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C93F44EA-46B0-4CE2-82A6-6A989AB9F979}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Thud" ID="{31094BD2-6508-4088-8C4A-566EBBC59DED}">
+											<Language>SFX</Language>
+											<AudioFile>Thud.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="6795285"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Thud" ID="{31094BD2-6508-4088-8C4A-566EBBC59DED}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{79D00323-6EA4-B007-8C26-2C6A759CB6FC}",
+    "Hash": "{9572C3CD-D476-B843-B332-7FAEA8526C99}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
@@ -30,6 +30,14 @@
       "Location": "Memory",
       "ShortName": "BB_Hit-008.wav",
       "CachePath": "25/{25430DCD-20F0-F5C8-0B5F-1836029717E3}.wem"
+     },
+     {
+      "Id": "6795285",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Thud.wav",
+      "CachePath": "68/{680EB1F1-2670-CD05-5A93-09D02B94D91A}.wem"
      },
      {
       "Id": "9813012",
@@ -670,6 +678,20 @@
      ]
     },
     "Events": [
+     {
+      "Id": "317641954",
+      "Name": "ButtonPress",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\ButtonPress",
+      "GUID": "{0A9EFB46-EBC5-469C-8E47-E3F2E2E4F8EC}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2381042",
+      "DurationMax": "1.2381042",
+      "MediaRefs": [
+       {
+        "Id": "6795285"
+       }
+      ]
+     },
      {
       "Id": "3587433844",
       "Name": "ChrystalHit",
@@ -1357,6 +1379,6 @@
     ]
    }
   ],
-  "FileHash": "{60ABE89C-A32D-29DD-0190-9D324BB013F6}"
+  "FileHash": "{44E03C77-D35C-5DA9-884E-52399F16115B}"
  }
 }
