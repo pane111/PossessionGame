@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8887383194783479688}
   - component: {fileID: 1029631776064125364}
   - component: {fileID: 7836632626684559869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4919,7 +4919,7 @@ GameObject:
   - component: {fileID: 3758776918874797049}
   - component: {fileID: 5798199056802467467}
   - component: {fileID: 1709649180156291626}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shield
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -5094,7 +5094,7 @@ GameObject:
   - component: {fileID: 6276498958831286836}
   - component: {fileID: 6710218844870274451}
   - component: {fileID: 3914418995339324786}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9998,7 +9998,7 @@ GameObject:
   - component: {fileID: 6506739832225313028}
   - component: {fileID: 8479126076386708178}
   - component: {fileID: 7467607343094140790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CursedShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10162,7 +10162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3758548173892290923}
   - component: {fileID: 4660841593006457789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EyeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10246,7 +10246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 276224774994881430}
   - component: {fileID: 2980626202352906894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LineToNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10381,7 +10381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 581734861442305938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10456,6 +10456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Repel
       objectReference: {fileID: 0}
+    - target: {fileID: 2595692329285479887, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10522,6 +10526,10 @@ PrefabInstance:
     - target: {fileID: 2595692329285479887, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
       propertyPath: m_Name
       value: Repel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595692329285479887, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

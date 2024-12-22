@@ -76,13 +76,12 @@ public class SwordScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        //TARGETING
         if (Idling) 
         {
             targetTimer -= Time.deltaTime;
             if (targetTimer < 0)
             {
-                FindEnemy();
+                //FindEnemy();
                 targetTimer = maxTargetTimer;
             }
             curTarget = playerChar.gameObject.GetComponent<Player>().orbiter;
@@ -98,7 +97,6 @@ public class SwordScript : MonoBehaviour
         }
         Vector2 dir = curTarget.position - transform.position;
 
-        //MOVING
         if (moveFreely)
         {
             rb.AddForce(dir * Mathf.Pow(dir.magnitude, 2) * speedMod);
@@ -111,7 +109,6 @@ public class SwordScript : MonoBehaviour
         if (rb.velocity.magnitude > maxVelocity)
             rb.velocity = rb.velocity.normalized * maxVelocity;
 
-        //PULL CHECK
         if (!moveFreely && Vector2.Distance(pullPos, transform.position) < 0.5f) { moveFreely = true; playerChar.gameObject.GetComponent<Player>().leash.enabled = false; }
     }
 
@@ -139,7 +136,7 @@ public class SwordScript : MonoBehaviour
         curSAT = slashAttackTimer;
         yield return null;
     }
-
+    /*
     void FindEnemy()
     {
         if (Physics2D.OverlapCircle(transform.position, curRange * rangePossMod, cf, enemyColls) != 0)
@@ -156,15 +153,15 @@ public class SwordScript : MonoBehaviour
             Idling = false;
             curTarget = enemyColls[closestEnemy].transform;
             StartCoroutine(ShowInterest());
-            /*
-            reticle.SetActive(true);
-            reticle.transform.position = curTarget.position - Vector3.forward;
-            reticle.transform.parent = curTarget;
-            */
-        }
+            
+            //reticle.SetActive(true);
+            //reticle.transform.position = curTarget.position - Vector3.forward;
+            //reticle.transform.parent = curTarget;
+            
+}
         else { Idling = true; }
     }
-
+    */
     IEnumerator ShowInterest()
     {
         print("huh");

@@ -53,6 +53,7 @@ public class AudioManager : MonoBehaviour
     public Event StartMusic;
     public Event Pause;
     public Event Resume;
+    public Event ButtonClick;
 
     private void Start()
     {

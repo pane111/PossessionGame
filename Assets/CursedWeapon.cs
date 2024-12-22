@@ -8,6 +8,7 @@ public class CursedWeapon : MonoBehaviour
     public float curHealth;
     public GameObject demonHeart;
     public Transform player;
+    private SwordScript sword;
 
     public float detectRange;
     public bool playerFound;
@@ -17,7 +18,7 @@ public class CursedWeapon : MonoBehaviour
     bool canTakeDamage;
     public bool playerContact = false;
     public SpriteRenderer sr;
-    private void Start()
+    protected virtual void Start()
     {
         GetComponent<Deflector>().deflectFrom = transform;
 
@@ -27,6 +28,7 @@ public class CursedWeapon : MonoBehaviour
         GameManager.Instance.startDM += this.OnDM;
         GameManager.Instance.stopDM += this.OnExitDM;
         lr.enabled = true;
+        sword = FindObjectOfType<SwordScript>();
     }
 
     public virtual void TakeDamage(float amount)
@@ -119,6 +121,7 @@ public class CursedWeapon : MonoBehaviour
             else
             {
                 TakeDamage(1);
+                if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
         }
     }

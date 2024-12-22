@@ -12,22 +12,14 @@ public class CursedPot : CursedWeapon
     public float shockDist;
     float shotCd;
     float pDist;
-    void Start()
+    protected override void Start()
     {
-        GetComponent<Deflector>().deflectFrom = transform;
-
-        GetComponent<Deflector>().repelForce = 100;
-        demonHeart.GetComponent<DemonHeart>().weapon = this;
-        player = GameObject.Find("Player").transform;
+        base.Start();
         shotCd =maxShotCd;
-        GameManager.Instance.startDM += this.OnDM;
-        GameManager.Instance.stopDM += this.OnExitDM;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
         if (playerFound)
         {
             shotCd -= Time.deltaTime;
