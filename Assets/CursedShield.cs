@@ -13,6 +13,7 @@ public class CursedShield : CursedWeapon
     
     void Update()
     {
+        lr.SetPosition(1, demonHeart.transform.position - transform.position);
         FindPlayer();
         rotator.rotation = Quaternion.Euler(0, 0, curRot += Time.deltaTime * rotSpeed);
         if (curRot >= 360 || curRot <= -360)

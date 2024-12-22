@@ -20,6 +20,7 @@ public class CursedPot : CursedWeapon
 
     void Update()
     {
+        lr.SetPosition(1, demonHeart.transform.position - transform.position);
         if (playerFound)
         {
             shotCd -= Time.deltaTime;

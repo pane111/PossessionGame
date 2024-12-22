@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
     public LineRenderer leash;
     public Transform sword;
     private SwordScript swordScript;
-    bool invincible = false;
+    public bool invincible;
     bool canRepell = true;
 
     public Sprite demonSprite;
@@ -119,7 +119,8 @@ public class Player : MonoBehaviour
                 dashImg.color = new Color(dashImg.color.r, dashImg.color.g, dashImg.color.b, 0.2f);
                 isDashing = true;
                 rb.AddForce(moveDirection.normalized * dashForce, ForceMode2D.Impulse);
-                StartCoroutine(SetInvincible(dashTimer));
+                invincible = true;
+                StartCoroutine(SetInvincible(maxDashTimer));
                 afterimage.Play();
                 dashTimer = maxDashTimer;
                 dashCooldown = maxDashCooldown;
@@ -216,6 +217,7 @@ public class Player : MonoBehaviour
                 CurHealth = maxHealth;
                 healthBar.fillAmount = CurHealth / maxHealth;
                 GameManager.Instance.OnDeath();
+                
                 StartCoroutine(SetInvincible(5));
             }
         }
@@ -223,8 +225,10 @@ public class Player : MonoBehaviour
     }
     IEnumerator SetInvincible(float dur)
     {
+        print("Set invincible time " + dur);
         invincible = true;
         yield return new WaitForSeconds(dur);
+        
         invincible = false;
         yield return null;
     }

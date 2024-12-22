@@ -26,7 +26,7 @@ public class CursedStaff : CursedWeapon
             beamCooldown = 9999;
             StartCoroutine(beamAttack());
         }
-
+        lr.SetPosition(1, demonHeart.transform.position - transform.position);
 
         if (beamStarted)
         {
