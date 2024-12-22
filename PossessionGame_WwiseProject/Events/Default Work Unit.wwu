@@ -226,6 +226,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="CrystalBreak" ID="{4C527E8F-6DA2-43FB-BCE7-EEB6FF3B8B04}">
+									<ChildrenList>
+										<Action Name="" ID="{C584902B-077D-40EF-8FFE-FCB76E8DBBC9}" ShortID="465158030">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrystalBroken" ID="{3105FD9F-F9CE-49AF-B480-787D59801A2C}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Player" ID="{07B5BD21-499A-42BC-B78A-FF30B8D56FFE}" ShortID="878290952">
@@ -285,7 +296,7 @@
 										<Action Name="" ID="{97068B56-6FA7-40D4-8D30-543272FC24F4}" ShortID="413899736">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="DmgTaken-Player" ID="{D893129C-4AA8-457F-A8A3-68FB77CCC960}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+													<ObjectRef Name="DmgTaken-Player" ID="{B6917CB5-2421-48E1-97FB-B50F24B003B4}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -490,6 +501,21 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="UI" ID="{CBBE4981-A01C-492C-AF71-BF52A12C2CF4}" ShortID="350966451">
+					<ChildrenList>
+						<Event Name="ButtonPress" ID="{0A9EFB46-EBC5-469C-8E47-E3F2E2E4F8EC}">
+							<ChildrenList>
+								<Action Name="" ID="{2EBFA08C-3194-40A0-99E6-C6D1E9725AD9}" ShortID="307184122">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Button" ID="{64AAA930-C7C4-4F34-93DD-08BD900D625E}" WorkUnitID="{8746F10F-C8A8-4F38-BF7D-C536546DC3D3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

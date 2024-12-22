@@ -15,6 +15,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private float curHealth;
     bool dead = false;
     public float speed;
+    private int mod = 1;
     [Header("Visuals")]
     public float flipTime;
     Sprite initSprite;
@@ -25,7 +26,6 @@ public class NPC : MonoBehaviour
     public ParticleSystem blood;
     public ParticleSystem bloodSpray;
     public SpriteRenderer bloodstain;
-
 
     bool dm = false;
     private void Start()
@@ -49,18 +49,22 @@ public class NPC : MonoBehaviour
 
     IEnumerator MoveRandom()
     {
-        yield return new WaitForSeconds(Random.Range(1.5f, 3f));
+        float r1 = Random.Range(1.5f, 3f);
+        float r2 = Random.Range(1, 2);
+        yield return new WaitForSeconds(r1);
         Vector3 dest = Vector2.zero;
         dest.x = Random.Range(transform.position.x - 5, transform.position.x + 5);
         dest.y = Random.Range(transform.position.y - 5, transform.position.y + 5);
-        rb.velocity = (dest - transform.position).normalized * speed;
-        yield return new WaitForSeconds(Random.Range(1, 2));
+        rb.velocity = (dest - transform.position).normalized * speed * mod;
+        yield return new WaitForSeconds(r2);
         rb.velocity = Vector2.zero;
-        StartCoroutine (MoveRandom());
+        if(!dead) StartCoroutine (MoveRandom());
     }
 
     public void EnterDM()
     {
+        mod = 0;
+        rb.velocity = Vector2.zero;
         dm = true;
         gameObject.layer = 0;
         if (curHealth > 0 && gameObject.activeInHierarchy)
@@ -69,8 +73,6 @@ public class NPC : MonoBehaviour
             GetComponent<SpriteRenderer>().color = Color.white;
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
-
-            StartCoroutine(flipSprite());
         }
     }
     public void ExitDM()
@@ -83,34 +85,25 @@ public class NPC : MonoBehaviour
             GetComponent<SpriteRenderer>().color = initColor;
             rb.isKinematic = false;
             GetComponent<Collider2D>().enabled = true;
+            mod = 1;
         }
     }
 
-    IEnumerator flipSprite()
+    IEnumerator flipSprite(float time)
     {
-        if (dm && !dead)
+        if(!dm && !dead)
         {
             GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
-            yield return new WaitForSeconds(flipTime);
-            StartCoroutine(flipSprite());
+            AudioManager.Instance.NPC_Footstep.Post(gameObject);
+            yield return new WaitForSeconds(flipTime / 2);
+            StartCoroutine(flipSprite(time - flipTime / 2));
         }
-        else
-        {
-            if (!dead)
-            {
-                GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
-                GameManager.Instance.GetComponent<AudioManager>().NPC_Footstep.Post(gameObject);
-                yield return new WaitForSeconds(flipTime / 2);
-                StartCoroutine(flipSprite());
-            }
-        }
-
         yield return null;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "PlayerSword")
+        if (other.gameObject.name == "PlayerSword" && !dm)
         {
             if (other.gameObject.GetComponent<SwordScript>().isSlashing)
             {
@@ -119,7 +112,9 @@ public class NPC : MonoBehaviour
             else
             {
                 StartCoroutine(TakeDamage(1));
-                if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; }
+                if (curHealth > 0) { 
+                    if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
+                }
             }
             Vector2 dir = transform.position - other.transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -141,6 +136,7 @@ public class NPC : MonoBehaviour
             if (!dead) { bloodSpray.Play(); GameManager.Instance.AddKill(); }
 
             dead = true;
+            mod = 0;
             GetComponent<Collider2D>().isTrigger = true;
             GetComponent<SpriteRenderer>().sprite = corpseSprite;
             sword.OnEnemyDeath();

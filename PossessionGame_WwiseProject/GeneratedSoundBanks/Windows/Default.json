@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{037A8740-05D1-4723-AAE2-90C2F440BBE9}",
     "Language": "SFX",
-    "Hash": "{5BED1798-BDC3-BE8E-2911-473F8A03252C}",
+    "Hash": "{9572C3CD-D476-B843-B332-7FAEA8526C99}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Default",
     "ShortName": "Default",
     "Path": "Default.bnk",
@@ -30,6 +30,14 @@
       "Location": "Memory",
       "ShortName": "BB_Hit-008.wav",
       "CachePath": "25/{25430DCD-20F0-F5C8-0B5F-1836029717E3}.wem"
+     },
+     {
+      "Id": "6795285",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Thud.wav",
+      "CachePath": "68/{680EB1F1-2670-CD05-5A93-09D02B94D91A}.wem"
      },
      {
       "Id": "9813012",
@@ -88,6 +96,14 @@
       "CachePath": "E0/{E06DE3F7-E90F-E33D-E51F-1BA108EF43F8}.wem"
      },
      {
+      "Id": "92059435",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerHit-001.wav",
+      "CachePath": "98/{98B5D7F6-36F7-F602-ED64-D69574DBC8DD}.wem"
+     },
+     {
       "Id": "97633555",
       "Language": "SFX",
       "Streaming": "false",
@@ -126,6 +142,14 @@
       "Location": "Memory",
       "ShortName": "BB_GoreHit-008.wav",
       "CachePath": "57/{577DEDAD-E930-4C3A-B3B3-1BAFAF1A29B0}.wem"
+     },
+     {
+      "Id": "152950651",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerHit-003.wav",
+      "CachePath": "52/{52A40557-50D1-17C5-4144-0999E30F8213}.wem"
      },
      {
       "Id": "163708401",
@@ -224,6 +248,14 @@
       "CachePath": "54/{54536F81-B9B8-CA4D-4A28-8AD8D4F5894A}.wem"
      },
      {
+      "Id": "363840590",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerHit-006.wav",
+      "CachePath": "8B/{8BFA7055-1176-DC94-2836-48F7FBE2E5CF}.wem"
+     },
+     {
       "Id": "401123077",
       "Language": "SFX",
       "Streaming": "false",
@@ -238,6 +270,22 @@
       "Location": "Memory",
       "ShortName": "BB_PlayerFootstep-001.wav",
       "CachePath": "7A/{7A8424BD-C3A8-EF52-49E2-73D218BE5DE1}.wem"
+     },
+     {
+      "Id": "418880856",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerHit-005.wav",
+      "CachePath": "B0/{B06EDAF2-1F36-C6C2-BE78-C192EB65165D}.wem"
+     },
+     {
+      "Id": "446503542",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_CrystalBroken.wav",
+      "CachePath": "87/{879D89C3-D666-76F1-6DD9-F8CCB5505E42}.wem"
      },
      {
       "Id": "452811761",
@@ -384,6 +432,14 @@
       "CachePath": "7B/{7B136530-0895-D447-990A-38275557C7F6}.wem"
      },
      {
+      "Id": "639840552",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerHit-008.wav",
+      "CachePath": "EE/{EECFD3E0-9144-6A48-DCD4-C5B6EDE965EB}.wem"
+     },
+     {
       "Id": "641745021",
       "Language": "SFX",
       "Streaming": "false",
@@ -438,6 +494,14 @@
       "Location": "Memory",
       "ShortName": "BB_Hit-002.wav",
       "CachePath": "CD/{CD41DE6E-2FA7-07E3-5087-A6CFDEE2C52E}.wem"
+     },
+     {
+      "Id": "838526637",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerHit-004.wav",
+      "CachePath": "FB/{FB145304-0B80-911A-1EDF-2F1722F76B36}.wem"
      },
      {
       "Id": "857025659",
@@ -496,12 +560,28 @@
       "CachePath": "CD/{CD6F5DBE-629E-E7AD-9C43-F0CB59D4B78D}.wem"
      },
      {
+      "Id": "916264881",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerHit-002.wav",
+      "CachePath": "5E/{5E03C7D4-FA13-00EB-6E09-9FA613C50932}.wem"
+     },
+     {
       "Id": "932953512",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BB_Hit-005.wav",
       "CachePath": "1B/{1BB8E7C2-EA32-94E2-FF41-6B935FD28FC3}.wem"
+     },
+     {
+      "Id": "938859185",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "348241__newagesoup__punch-boxing-04.wav",
+      "CachePath": "80/{80EAEB68-65C4-2120-985F-3676E724A1F2}.wem"
      },
      {
       "Id": "949173328",
@@ -542,6 +622,14 @@
       "Location": "Memory",
       "ShortName": "BB_NPCFootstep.wav",
       "CachePath": "32/{32F7024C-2CFD-6EC8-7CB0-4BB255ED21EA}.wem"
+     },
+     {
+      "Id": "986138979",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BB_PlayerHit-007.wav",
+      "CachePath": "54/{54F6685B-56B7-C136-ADDC-FE1D073342CF}.wem"
      },
      {
       "Id": "1008822290",
@@ -591,18 +679,48 @@
     },
     "Events": [
      {
+      "Id": "317641954",
+      "Name": "ButtonPress",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\ButtonPress",
+      "GUID": "{0A9EFB46-EBC5-469C-8E47-E3F2E2E4F8EC}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2381042",
+      "DurationMax": "1.2381042",
+      "MediaRefs": [
+       {
+        "Id": "6795285"
+       }
+      ]
+     },
+     {
       "Id": "3587433844",
       "Name": "ChrystalHit",
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\ChrystalHit",
       "GUID": "{AA1B9688-6220-4BF4-9E42-93B75DA7885B}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.53399956",
       "DurationMax": "0.5925096",
       "MediaRefs": [
        {
         "Id": "350607052"
+       }
+      ]
+     },
+     {
+      "Id": "521993242",
+      "Name": "CrystalBreak",
+      "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\CrystalBreak",
+      "GUID": "{4C527E8F-6DA2-43FB-BCE7-EEB6FF3B8B04}",
+      "Color": "17",
+      "MaxAttenuation": "15",
+      "DurationType": "OneShot",
+      "DurationMin": "0.4062585",
+      "DurationMax": "0.4062585",
+      "MediaRefs": [
+       {
+        "Id": "446503542"
        }
       ]
      },
@@ -669,7 +787,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\DetectEnemy",
       "GUID": "{E3F1FBCC-7B90-4E3E-868B-DEAFF6C72B00}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.20843537",
       "DurationMax": "0.20843537",
@@ -695,7 +813,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\HeartHit",
       "GUID": "{C397DCEA-5037-4AFC-8896-0DA273EF1C50}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.3437415",
       "DurationMax": "0.3437415",
@@ -711,7 +829,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\LaserStart",
       "GUID": "{D61BD85F-1834-4461-9312-7148FA11DCCD}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -756,7 +874,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\NPCFootstep",
       "GUID": "{4E04A37B-B81B-48EC-B76E-31CED821F3C6}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.10884642",
       "DurationMax": "0.13713789",
@@ -772,7 +890,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\NPCTakeDmg",
       "GUID": "{F80FE745-ED79-4A0B-AA0F-45077BFD8BD1}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.12498866",
       "DurationMax": "0.18750566",
@@ -833,7 +951,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\OrbShot",
       "GUID": "{C472FEB7-05B8-4D94-89CB-EBF6D46B7E92}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.37658718",
       "DurationMax": "0.42017522",
@@ -901,7 +1019,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\Purify",
       "GUID": "{DE1B1726-8B20-463D-B240-924769DA718A}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.5",
       "DurationMax": "0.5",
@@ -965,7 +1083,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\NPC\\SmallShot",
       "GUID": "{678A295F-1A62-405E-BEA7-06BBD689CE82}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.12498866",
       "DurationMax": "0.12498866",
@@ -993,7 +1111,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\SwordDeflect",
       "GUID": "{29E79F97-784D-49B4-B4D7-17DACF4FF4A9}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.5464812",
       "DurationMax": "0.5789767",
@@ -1024,7 +1142,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\SwordSlash",
       "GUID": "{6F4388BC-85BB-447F-8038-72F756E2DEF4}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "1.3749887",
       "DurationMax": "1.5",
@@ -1118,7 +1236,7 @@
       "ObjectPath": "\\Events\\Default Work Unit\\SFX\\Sword\\SwordSlash_BIG",
       "GUID": "{BB286FF0-C49C-417A-969C-BDB635C16BC8}",
       "Color": "17",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "15",
       "DurationType": "OneShot",
       "DurationMin": "0.8750113",
       "DurationMax": "1",
@@ -1156,8 +1274,37 @@
       "GUID": "{8E20AB0B-1904-406D-825C-DA8E374541F1}",
       "Color": "17",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "4.011",
+      "DurationMax": "4.011",
+      "MediaRefs": [
+       {
+        "Id": "92059435"
+       },
+       {
+        "Id": "152950651"
+       },
+       {
+        "Id": "363840590"
+       },
+       {
+        "Id": "418880856"
+       },
+       {
+        "Id": "639840552"
+       },
+       {
+        "Id": "838526637"
+       },
+       {
+        "Id": "916264881"
+       },
+       {
+        "Id": "938859185"
+       },
+       {
+        "Id": "986138979"
+       }
+      ]
      },
      {
       "Id": "2775380377",
@@ -1232,6 +1379,6 @@
     ]
    }
   ],
-  "FileHash": "{16C750FB-63C7-A940-00C4-08341EA8C11D}"
+  "FileHash": "{44E03C77-D35C-5DA9-884E-52399F16115B}"
  }
 }

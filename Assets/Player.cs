@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     Vector2 moveDirection = Vector2.zero;
     public float maxStepTimer = 0.2f;
     public float stepTimer = 0.2f;
+    int stepCounter;
+    public int stepSoundCount;
     [Header("Dash")]
     public Image dashImg;
     public float dashForce;
@@ -78,6 +80,7 @@ public class Player : MonoBehaviour
     public Transform orbiter;
     void Start()
     {
+        stepCounter = stepSoundCount;
         _curHealth = maxHealth;
         stepTimer = maxStepTimer;
         swordScript = sword.GetComponent<SwordScript>();
@@ -105,8 +108,9 @@ public class Player : MonoBehaviour
             stepTimer -= Time.deltaTime;
             if (stepTimer <= 0 )
             {
+                if(stepCounter > 0) { stepCounter--; }
+                else if (stepCounter==0) { AudioManager.Instance.Player_Footstep.Post(gameObject); stepCounter = stepSoundCount; }
                 sr.flipX = !sr.flipX;
-                GameManager.Instance.GetComponent<AudioManager>().Player_Footstep.Post(gameObject);
                 stepTimer = maxStepTimer;
             }
             if (Input.GetKeyDown(KeyCode.Space) && dashCooldown <= 0)
@@ -184,12 +188,9 @@ public class Player : MonoBehaviour
     }
     public void TakeDamage()
     {
-
-        
-
-
         if (!invincible)
         {
+            AudioManager.Instance.PlayerDmgTaken.Post(gameObject);
             if (!blood.isPlaying)
                 blood.Play();
             sr.color = Color.red;

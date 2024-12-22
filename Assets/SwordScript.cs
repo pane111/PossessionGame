@@ -55,14 +55,23 @@ public class SwordScript : MonoBehaviour
     [Header("Other")]
     public GameObject reticle;
     List<Collider2D> enemyColls = new List<Collider2D>();
+    public GameObject exclamation;
+    bool exclFollowing = false;
     
     void Start()
     {
+        exclamation.SetActive(false);
         curTarget = playerChar;
         speedMod = speedModIdle;
         Idling = true;
         moveFreely = true;
         targetTimer = maxTargetTimer;
+    }
+
+    private void Update()
+    {
+        if(exclFollowing)
+        { exclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 1.4f, transform.position.z); }
     }
 
     void FixedUpdate()
@@ -146,6 +155,7 @@ public class SwordScript : MonoBehaviour
             }
             Idling = false;
             curTarget = enemyColls[closestEnemy].transform;
+            StartCoroutine(ShowInterest());
             /*
             reticle.SetActive(true);
             reticle.transform.position = curTarget.position - Vector3.forward;
@@ -154,6 +164,20 @@ public class SwordScript : MonoBehaviour
         }
         else { Idling = true; }
     }
+
+    IEnumerator ShowInterest()
+    {
+        print("huh");
+        exclamation.SetActive(true);
+        exclamation.transform.position = new Vector3(transform.position.x, transform.position.y + 1.4f, transform.position.z);
+        exclFollowing = true;
+        yield return new WaitForSeconds(0.6f);
+        exclamation.SetActive(false);
+        exclFollowing = false;
+    }
+
+    public void SIforNPC() { StartCoroutine(ShowInterest()); }
+
     public void OnEnemyDeath()
     {
         reticle.transform.parent = null;
