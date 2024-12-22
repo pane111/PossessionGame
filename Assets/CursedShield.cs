@@ -15,7 +15,7 @@ public class CursedShield : CursedWeapon
     {
         lr.SetPosition(1, demonHeart.transform.position - transform.position);
         FindPlayer();
-        rotator.rotation = Quaternion.Euler(0, 0, curRot += Time.deltaTime * rotSpeed);
+        rotator.up = Vector2.Lerp(rotator.up, -(player.transform.position - transform.position), rotSpeed * Time.deltaTime);
         if (curRot >= 360 || curRot <= -360)
         {
             curRot = 0;
