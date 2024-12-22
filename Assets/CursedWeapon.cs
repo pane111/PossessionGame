@@ -59,11 +59,11 @@ public class CursedWeapon : MonoBehaviour
     {
         if (!dead)
         {
-            lr.gameObject.SetActive(false);
+            //lr.gameObject.SetActive(false);
             gameObject.SetActive(true);
             canTakeDamage = true;
             GetComponent<Deflector>().deflectionActive = false;
-           sr.color = Color.white;
+            sr.color = Color.white;
         }
             
     }

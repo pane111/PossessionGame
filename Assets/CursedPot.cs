@@ -27,7 +27,7 @@ public class CursedPot : CursedWeapon
     // Update is called once per frame
     void Update()
     {
-        
+        lr.SetPosition(1, demonHeart.transform.position - transform.position);
         if (playerFound)
         {
             shotCd -= Time.deltaTime;
