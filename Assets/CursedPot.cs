@@ -15,7 +15,8 @@ public class CursedPot : CursedWeapon
     void Start()
     {
         GetComponent<Deflector>().deflectFrom = transform;
-
+        lr.gameObject.SetActive(true);
+        lr.enabled = true;
         GetComponent<Deflector>().repelForce = 100;
         demonHeart.GetComponent<DemonHeart>().weapon = this;
         player = GameObject.Find("Player").transform;
