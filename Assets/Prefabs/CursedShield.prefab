@@ -10110,10 +10110,12 @@ MonoBehaviour:
   lr: {fileID: 2980626202352906894}
   playerContact: 0
   sr: {fileID: 4660841593006457789}
+  rb: {fileID: 0}
   rotator: {fileID: 581734861442305938}
-  rotSpeed: 160
+  rotSpeed: 0.5
   fire: {fileID: 1029631776064125364}
   travelSpeed: 4
+  playerDist: 3.5
 --- !u!95 &8479126076386708178
 Animator:
   serializedVersion: 5
@@ -10397,7 +10399,7 @@ Transform:
   m_GameObject: {fileID: 7893770080672830107}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

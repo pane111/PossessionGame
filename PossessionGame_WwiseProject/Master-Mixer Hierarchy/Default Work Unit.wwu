@@ -241,12 +241,12 @@
 														<PointList>
 															<Point>
 																<XPos>0</XPos>
-																<YPos>72</YPos>
+																<YPos>54</YPos>
 																<Flags>5</Flags>
 															</Point>
 															<Point>
-																<XPos>22.75711</XPos>
-																<YPos>62</YPos>
+																<XPos>22.97593</XPos>
+																<YPos>54</YPos>
 																<Flags>0</Flags>
 															</Point>
 															<Point>
@@ -290,7 +290,7 @@
 																<Flags>5</Flags>
 															</Point>
 															<Point>
-																<XPos>93.2166301969365</XPos>
+																<XPos>50.76586</XPos>
 																<YPos>0</YPos>
 																<Flags>0</Flags>
 															</Point>

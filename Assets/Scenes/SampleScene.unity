@@ -89784,13 +89784,13 @@ PrefabInstance:
       value: CursedShield
       objectReference: {fileID: 0}
     - target: {fileID: 6506739832225313028, guid: 85207f74d07f7d34ea58b45b18a2b972, type: 3}
-      propertyPath: rotSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506739832225313028, guid: 85207f74d07f7d34ea58b45b18a2b972, type: 3}
       propertyPath: demonHeart
       value: 
       objectReference: {fileID: 1657982144}
+    - target: {fileID: 6506739832225313028, guid: 85207f74d07f7d34ea58b45b18a2b972, type: 3}
+      propertyPath: playerDist
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

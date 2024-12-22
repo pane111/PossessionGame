@@ -18,6 +18,7 @@ public class CursedWeapon : MonoBehaviour
     bool canTakeDamage;
     public bool playerContact = false;
     public SpriteRenderer sr;
+    [HideInInspector] public Rigidbody2D rb;
     protected virtual void Start()
     {
         GetComponent<Deflector>().deflectFrom = transform;
@@ -29,6 +30,7 @@ public class CursedWeapon : MonoBehaviour
         GameManager.Instance.stopDM += this.OnExitDM;
         lr.enabled = true;
         sword = FindObjectOfType<SwordScript>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public virtual void TakeDamage(float amount)
@@ -72,7 +74,7 @@ public class CursedWeapon : MonoBehaviour
     public virtual void OnExitDM()
     {
         
-
+        if (Vector2.Distance(player.position, transform.position) >= detectRange) { playerContact = false; }
 
         if (playerContact && !dead)
         {
