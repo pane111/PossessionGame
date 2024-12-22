@@ -1346,8 +1346,8 @@ MonoBehaviour:
   - Touch a <color=red>Statue of the Abyss</color> to enter <color=red>Demon Mode</color>.
     In this state, you will move faster, and the demons will be revealed. Find and
     attack the demons to shatter the crystals that protect their heart, then strike
-    at their heart to fully exorcise them. Statues will replenish their power after
-    some time.
+    at their heart to fully exorcise them. Once a demon has seen you, it will follow
+    you out of <color=red>Demon Mode</color>, so be careful.
   - Your sword will attempt to attack humans automatically. You can press the Shift
     key to <color=red>Pull</color> the sword towards you, interrupting whatever it
     was doing. When facing a demon, try pressing the E key to <color=red>Repel</color>

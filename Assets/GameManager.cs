@@ -153,4 +153,16 @@ public class GameManager : MonoBehaviour
         Color.RGBToHSV(floor.color, out hsvWall.x, out hsvWall.y, out hsvWall.z);
         wall.color = Color.HSVToRGB(0, 0, 100 - hsvWall.z);
     }
+
+    public void TriggerEnding()
+    {
+        if (player.Corruption >= 100)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+        else
+        {
+            SceneManager.LoadScene("Ending");
+        }
+    }
 }
