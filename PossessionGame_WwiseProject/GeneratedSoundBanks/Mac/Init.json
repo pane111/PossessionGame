@@ -10,11 +10,29 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{0A5830AD-1854-0964-1B3F-E729D1EE2913}",
+    "Hash": "{4BE77CE3-BF25-9025-D5C8-594D315EA8D7}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
+     "Custom": [
+      {
+       "Id": "540149095",
+       "Name": "Guitar Distortion (Custom)",
+       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\[Effect Slot [0]: (Guitar Distortion)]\\Guitar Distortion (Custom)",
+       "GUID": "{047E9821-B53D-4149-92B1-76EF2FD59DDC}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      },
+      {
+       "Id": "766515996",
+       "Name": "Guitar Distortion (Custom)",
+       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\[Effect Slot [1]: (Guitar Distortion)]\\Guitar Distortion (Custom)",
+       "GUID": "{3C61A643-162F-4909-92F5-240DF5391DAF}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      }
+     ],
      "AudioDevices": [
       {
        "Id": "2317455096",
@@ -36,10 +54,26 @@
     },
     "Busses": [
      {
+      "Id": "3071607971",
+      "Name": "Combat Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Combat Bus",
+      "GUID": "{C80367BE-E8BC-424F-A7C5-3AAC49ABBB01}"
+     },
+     {
       "Id": "3803692087",
       "Name": "Master Audio Bus",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
-      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "540149095"
+        },
+        {
+         "Id": "766515996"
+        }
+       ]
+      }
      }
     ],
     "GameParameters": [
@@ -110,6 +144,6 @@
     ]
    }
   ],
-  "FileHash": "{E54BE885-F368-82CC-F17A-285FAFA9DFE4}"
+  "FileHash": "{FCE7395C-0C4E-76C0-1484-BD63C12F3C5A}"
  }
 }

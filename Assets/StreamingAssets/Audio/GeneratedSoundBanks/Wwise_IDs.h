@@ -80,6 +80,7 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID COMBAT_BUS = 3071607971U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
     } // namespace BUSSES
 

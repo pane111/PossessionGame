@@ -9,7 +9,176 @@
 							<ObjectRef Name="System" ID="{9DADD78D-3A69-4F7A-BC81-7272AF9E10F5}" WorkUnitID="{D597C28B-1487-461D-A425-289EF1F58122}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Combat Bus" ID="{C80367BE-E8BC-424F-A7C5-3AAC49ABBB01}">
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{87196ABA-8DD3-448A-9531-B9405B735E8B}" ShortID="323841569">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Volume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Possession" ID="{460F872A-1866-4F40-A119-5160329725AA}" WorkUnitID="{3991B70A-525E-4066-B528-5031D7854D6E}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{603C2067-BE3E-4096-8814-4D69EC7F33C0}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-2</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>46.82713</XPos>
+																		<YPos>4</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>109.40919</XPos>
+																		<YPos>9.9098</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>200</XPos>
+																		<YPos>12.65967</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
+					</ChildrenList>
 					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{10900B13-9077-4FCF-8FDA-944975927DB3}" ShortID="1020699143">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Guitar Distortion (Custom)" ID="{047E9821-B53D-4149-92B1-76EF2FD59DDC}" ShortID="540149095" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+														<PropertyList>
+															<Property Name="DistortionDrive" Type="Real32" Value="100"/>
+															<Property Name="DistortionType" Type="int32" Value="3"/>
+														</PropertyList>
+														<ObjectLists>
+															<ObjectList Name="RTPC">
+																<Reference>
+																	<Local>
+																		<RTPC Name="" ID="{22154EF6-1329-4569-A03B-3F38B9D06078}" ShortID="934033572">
+																			<PropertyList>
+																				<Property Name="PropertyName" Type="string" Value="WetDryMix"/>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="ControlInput">
+																					<ObjectRef Name="Possession" ID="{460F872A-1866-4F40-A119-5160329725AA}" WorkUnitID="{3991B70A-525E-4066-B528-5031D7854D6E}"/>
+																				</Reference>
+																				<Reference Name="Curve">
+																					<Custom>
+																						<Curve Name="" ID="{5BF86CB5-1742-4C5A-8E68-997E7B4DFE0D}">
+																							<PropertyList>
+																								<Property Name="Flags" Type="int32" Value="1"/>
+																							</PropertyList>
+																							<PointList>
+																								<Point>
+																									<XPos>0</XPos>
+																									<YPos>-100</YPos>
+																									<Flags>5</Flags>
+																								</Point>
+																								<Point>
+																									<XPos>200</XPos>
+																									<YPos>100</YPos>
+																									<Flags>37</Flags>
+																								</Point>
+																							</PointList>
+																						</Curve>
+																					</Custom>
+																				</Reference>
+																			</ReferenceList>
+																		</RTPC>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{4F6B3A43-6856-4899-875C-30052C73AACC}" ShortID="897118097">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Guitar Distortion (Custom)" ID="{3C61A643-162F-4909-92F5-240DF5391DAF}" ShortID="766515996" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+														<PropertyList>
+															<Property Name="DistortionDrive" Type="Real32" Value="100"/>
+															<Property Name="DistortionType" Type="int32" Value="3"/>
+														</PropertyList>
+														<ObjectLists>
+															<ObjectList Name="RTPC">
+																<Reference>
+																	<Local>
+																		<RTPC Name="" ID="{DFB9C386-5DE5-4A24-908E-BDFCEDED7DE7}" ShortID="882855508">
+																			<PropertyList>
+																				<Property Name="PropertyName" Type="string" Value="WetDryMix"/>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="ControlInput">
+																					<ObjectRef Name="Possession" ID="{460F872A-1866-4F40-A119-5160329725AA}" WorkUnitID="{3991B70A-525E-4066-B528-5031D7854D6E}"/>
+																				</Reference>
+																				<Reference Name="Curve">
+																					<Custom>
+																						<Curve Name="" ID="{75301750-31C5-4A5C-B27F-A001A790A82A}">
+																							<PropertyList>
+																								<Property Name="Flags" Type="int32" Value="1"/>
+																							</PropertyList>
+																							<PointList>
+																								<Point>
+																									<XPos>0</XPos>
+																									<YPos>-100</YPos>
+																									<Flags>5</Flags>
+																								</Point>
+																								<Point>
+																									<XPos>200</XPos>
+																									<YPos>39.65517</YPos>
+																									<Flags>37</Flags>
+																								</Point>
+																							</PointList>
+																						</Curve>
+																					</Custom>
+																				</Reference>
+																			</ReferenceList>
+																		</RTPC>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
 						<ObjectList Name="RTPC">
 							<Reference>
 								<Local>
@@ -36,6 +205,91 @@
 															<Point>
 																<XPos>15</XPos>
 																<YPos>6</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{437D27A1-8593-417A-9FF5-41B7A5E16622}" ShortID="989824334">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="HP" ID="{FA783F1A-7D73-4DD3-91A0-3C84A292843E}" WorkUnitID="{3991B70A-525E-4066-B528-5031D7854D6E}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{5FBD27E5-329B-42F2-BF66-67485EBD81C9}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>72</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>22.75711</XPos>
+																<YPos>62</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>33.91685</XPos>
+																<YPos>43</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{4B086E48-3F64-4BAF-9B28-4EAE40ED0B8B}" ShortID="103443939">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Pitch"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Possession" ID="{460F872A-1866-4F40-A119-5160329725AA}" WorkUnitID="{3991B70A-525E-4066-B528-5031D7854D6E}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{A96231BD-0FA8-4BFA-9DB2-18510D631ED5}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>93.2166301969365</XPos>
+																<YPos>0</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>200</XPos>
+																<YPos>-1820</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>

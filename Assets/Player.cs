@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Player : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
         get => _curHealth;
         set
         {
-            if (CurHealth <= 0)
+            if (value <= 0)
             {
                 value = 0;
                 GameManager.Instance.OnDeath();
@@ -225,7 +226,6 @@ public class Player : MonoBehaviour
     }
     IEnumerator SetInvincible(float dur)
     {
-        print("Set invincible time " + dur);
         invincible = true;
         yield return new WaitForSeconds(dur);
         
@@ -330,7 +330,7 @@ public class Player : MonoBehaviour
     {
         if (demonModeActive) { AudioManager.Instance.StartTicking.Post(gameObject); }
         AudioManager.Instance.Revive.Post(gameObject);
-        _curHealth = maxHealth;
+        CurHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
         Corruption += 30;
         SetInvincible(5);

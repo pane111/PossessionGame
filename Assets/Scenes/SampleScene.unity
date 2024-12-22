@@ -29045,6 +29045,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: c66c0ffbae663c6448f5f8dfd2f5e86d, type: 2}
+  ButtonClick:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!114 &1574376438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29787,6 +29791,7 @@ MonoBehaviour:
   afterimage: {fileID: 758453470}
   leash: {fileID: 1051627746}
   sword: {fileID: 2079086542}
+  invincible: 0
   demonSprite: {fileID: 21300000, guid: cc57f05bfb06ab84a9915d91b741b945, type: 3}
   demonModeDuration: 30
   demonModeActive: 0
@@ -71075,7 +71080,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1943879762
@@ -89495,10 +89500,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1663226944247371834, guid: a2fd8f119b76b3a40a99b10749a0367e, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1663226944247371834, guid: a2fd8f119b76b3a40a99b10749a0367e, type: 3}
       propertyPath: demonHeart
       value: 
       objectReference: {fileID: 272065108}
@@ -89559,10 +89560,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1363840749484149300, guid: eeb25d9938bdd664f89f3a7eb2485a84, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1363840749484149300, guid: eeb25d9938bdd664f89f3a7eb2485a84, type: 3}
       propertyPath: demonHeart
       value: 
@@ -89663,10 +89660,6 @@ PrefabInstance:
     - target: {fileID: 1463125548570356774, guid: d41e1037da76c33418b4ca500e8e5a22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6885302527300738001, guid: d41e1037da76c33418b4ca500e8e5a22, type: 3}
-      propertyPath: enemy
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6885302527300738001, guid: d41e1037da76c33418b4ca500e8e5a22, type: 3}
       propertyPath: demonHeart
@@ -89789,10 +89782,6 @@ PrefabInstance:
     - target: {fileID: 4477191157477471462, guid: 85207f74d07f7d34ea58b45b18a2b972, type: 3}
       propertyPath: m_Name
       value: CursedShield
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506739832225313028, guid: 85207f74d07f7d34ea58b45b18a2b972, type: 3}
-      propertyPath: enemy
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6506739832225313028, guid: 85207f74d07f7d34ea58b45b18a2b972, type: 3}
       propertyPath: demonHeart
