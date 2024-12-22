@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - DemonTrigger
   - Heart
+  - Spikes
   layers:
   - Default
   - TransparentFX
