@@ -74,6 +74,10 @@
 														<PropertyList>
 															<Property Name="DistortionDrive" Type="Real32" Value="100"/>
 															<Property Name="DistortionType" Type="int32" Value="3"/>
+															<Property Name="PostEQBand3Enable" Type="bool" Value="True"/>
+															<Property Name="PostEQBand3Gain" Type="Real32" Value="-2"/>
+															<Property Name="PreEQBand3Enable" Type="bool" Value="True"/>
+															<Property Name="PreEQBand3Gain" Type="Real32" Value="-6"/>
 														</PropertyList>
 														<ObjectLists>
 															<ObjectList Name="RTPC">
@@ -124,6 +128,9 @@
 							<Reference>
 								<Local>
 									<EffectSlot Name="" ID="{4F6B3A43-6856-4899-875C-30052C73AACC}" ShortID="897118097">
+										<PropertyList>
+											<Property Name="Bypass" Type="bool" Value="True"/>
+										</PropertyList>
 										<ReferenceList>
 											<Reference Name="Effect">
 												<Custom>
@@ -158,7 +165,7 @@
 																								</Point>
 																								<Point>
 																									<XPos>200</XPos>
-																									<YPos>39.65517</YPos>
+																									<YPos>1.72413</YPos>
 																									<Flags>37</Flags>
 																								</Point>
 																							</PointList>
