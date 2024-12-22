@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 1363840749484149300}
   - component: {fileID: 8230038712526259118}
   - component: {fileID: 3941075634694439059}
+  - component: {fileID: 5896260877239551484}
   m_Layer: 0
   m_Name: CursedPot
   m_TagString: Untagged
@@ -377,6 +378,7 @@ Transform:
   - {fileID: 6000816977359582989}
   - {fileID: 3607937590406744409}
   - {fileID: 3561901031667257932}
+  - {fileID: 6175626943778162587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &47428880854172955
@@ -455,12 +457,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 14
   curHealth: 14
-  enemy: {fileID: 0}
+  demonHeart: {fileID: 0}
   player: {fileID: 0}
   detectRange: 10
   playerFound: 0
   damageEffect: {fileID: 5883552925422385163}
   lr: {fileID: 6133974387709490596}
+  playerContact: 0
+  sr: {fileID: 1222574351894044019}
   orb: {fileID: 3467425950754920455, guid: 53f1fbd647b0815418a8a8491ec3d9e2, type: 3}
   anim: {fileID: 8230038712526259118}
   shotPoint: {fileID: 168019445970694257}
@@ -512,6 +516,23 @@ MonoBehaviour:
   scalingFactor: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &5896260877239551484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508788603483053696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0db1e11fd182847be6d2d991a6f82b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deflectFrom: {fileID: 0}
+  deflectionActive: 0
+  deflectPlayerOnTouch: 1
+  repelForce: 50
+  effect: {fileID: 879495977931515891}
 --- !u!1 &4894633339667311733
 GameObject:
   m_ObjectHideFlags: 0
@@ -10657,3 +10678,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &5828565069132309073
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7688917779829608986}
+    m_Modifications:
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595692329285479887, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_Name
+      value: Repel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+--- !u!198 &879495977931515891 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6689993764559095202, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+  m_PrefabInstance: {fileID: 5828565069132309073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6175626943778162587 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+  m_PrefabInstance: {fileID: 5828565069132309073}
+  m_PrefabAsset: {fileID: 0}

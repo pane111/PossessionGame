@@ -14,11 +14,14 @@ public class CursedWeapon : MonoBehaviour
     public ParticleSystem damageEffect;
     bool dead = false;
     public LineRenderer lr;
-
+    bool canTakeDamage;
     public bool playerContact = false;
-
+    public SpriteRenderer sr;
     private void Start()
     {
+        GetComponent<Deflector>().deflectFrom = transform;
+
+        GetComponent<Deflector>().repelForce = 100;
         demonHeart.GetComponent<DemonHeart>().weapon = this;
         player = GameObject.Find("Player").transform;
         GameManager.Instance.startDM += this.OnDM;
@@ -28,18 +31,23 @@ public class CursedWeapon : MonoBehaviour
 
     public virtual void TakeDamage(float amount)
     {
-        AudioManager.Instance.SwordSlash.Post(gameObject);
-        damageEffect.Play();
-        curHealth -= amount;
-        if (curHealth <= 0) {
-            FreeNPC();
-        }
-        else
+        if (canTakeDamage)
         {
-            demonHeart.GetComponent<DemonHeart>().crystalHit.Play();
-            lr.SetPosition(0, Vector3.zero);
-            lr.SetPosition(1, demonHeart.transform.position - transform.position);
+            AudioManager.Instance.SwordSlash.Post(gameObject);
+            damageEffect.Play();
+            curHealth -= amount;
+            if (curHealth <= 0)
+            {
+                FreeNPC();
+            }
+            else
+            {
+                demonHeart.GetComponent<DemonHeart>().crystalHit.Play();
+                lr.SetPosition(0, Vector3.zero);
+                lr.SetPosition(1, demonHeart.transform.position - transform.position);
+            }
         }
+        
     }
 
     public void FreeNPC() //Allows player to finish the NPC
@@ -53,13 +61,28 @@ public class CursedWeapon : MonoBehaviour
         {
             lr.gameObject.SetActive(false);
             gameObject.SetActive(true);
+            canTakeDamage = true;
+            GetComponent<Deflector>().deflectionActive = false;
+           sr.color = Color.white;
         }
             
     }
     public virtual void OnExitDM()
     {
-        if (!dead)
-            gameObject.SetActive(false);
+        
+
+
+        if (playerContact && !dead)
+        {
+            GetComponent<Deflector>().deflectionActive = true;
+            sr.color = new Color(1, 1, 1, 0.4f);
+            canTakeDamage = false;
+        }
+        else
+        {
+            if (!dead)
+                gameObject.SetActive(false);
+        }
         
         
     }

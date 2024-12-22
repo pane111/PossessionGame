@@ -5139,6 +5139,7 @@ GameObject:
   - component: {fileID: 8869114389215697007}
   - component: {fileID: 7527962835011614030}
   - component: {fileID: 1663226944247371834}
+  - component: {fileID: 5538905644148747931}
   m_Layer: 0
   m_Name: CursedSpear
   m_TagString: Projectile
@@ -5164,6 +5165,7 @@ Transform:
   - {fileID: 2750132088115217366}
   - {fileID: 7117650178388292455}
   - {fileID: 142640577452425633}
+  - {fileID: 3534412723950883287}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &792719335555702905
@@ -5294,12 +5296,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   curHealth: 10
-  enemy: {fileID: 0}
+  demonHeart: {fileID: 0}
   player: {fileID: 0}
   detectRange: 10
   playerFound: 0
   damageEffect: {fileID: 7202309461044854618}
   lr: {fileID: 8361499515988188058}
+  playerContact: 0
+  sr: {fileID: 792719335555702905}
   attackForce: 50
   attackTime: 0.4
   attackCooldown: 3
@@ -5307,6 +5311,23 @@ MonoBehaviour:
   moveSpeed: 4
   fire: {fileID: 5919325062353436186}
   sprite: {fileID: 142640577452425633}
+--- !u!114 &5538905644148747931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875542825106738983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0db1e11fd182847be6d2d991a6f82b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deflectFrom: {fileID: 4918983966371036579}
+  deflectionActive: 0
+  deflectPlayerOnTouch: 1
+  repelForce: 50
+  effect: {fileID: 7533504817427263935}
 --- !u!1 &6282681842268339832
 GameObject:
   m_ObjectHideFlags: 0
@@ -15145,3 +15166,70 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1001 &3772823885417657373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4918983966371036579}
+    m_Modifications:
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595692329285479887, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+      propertyPath: m_Name
+      value: Repel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+--- !u!4 &3534412723950883287 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 384779526583559626, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+  m_PrefabInstance: {fileID: 3772823885417657373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7533504817427263935 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6689993764559095202, guid: 2f0fa70a99d74c5498b373bb6579b60a, type: 3}
+  m_PrefabInstance: {fileID: 3772823885417657373}
+  m_PrefabAsset: {fileID: 0}

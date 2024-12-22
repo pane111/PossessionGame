@@ -14,6 +14,9 @@ public class CursedPot : CursedWeapon
     float pDist;
     void Start()
     {
+        GetComponent<Deflector>().deflectFrom = transform;
+
+        GetComponent<Deflector>().repelForce = 100;
         demonHeart.GetComponent<DemonHeart>().weapon = this;
         player = GameObject.Find("Player").transform;
         shotCd =maxShotCd;
