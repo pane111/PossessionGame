@@ -63,7 +63,6 @@ public class CursedWeapon : MonoBehaviour
     {
         if (!dead)
         {
-            //lr.gameObject.SetActive(false);
             gameObject.SetActive(true);
             canTakeDamage = true;
             GetComponent<Deflector>().deflectionActive = false;
@@ -79,16 +78,13 @@ public class CursedWeapon : MonoBehaviour
         if (playerContact && !dead)
         {
             GetComponent<Deflector>().deflectionActive = true;
-            sr.color = new Color(1, 1, 1, 0.4f);
+            sr.color = new Color(1, 1, 1, 0.3f);
             canTakeDamage = false;
         }
         else
         {
-            if (!dead)
-                gameObject.SetActive(false);
+            if (!dead) gameObject.SetActive(false);
         }
-        
-        
     }
 
     public virtual void FindPlayer()
