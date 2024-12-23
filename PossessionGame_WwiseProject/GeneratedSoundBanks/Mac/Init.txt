@@ -20,7 +20,6 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	540149095	Guitar Distortion (Custom)	Wwise Guitar Distortion			
-	766515996	Guitar Distortion (Custom)	Wwise Guitar Distortion			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
