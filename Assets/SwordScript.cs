@@ -44,6 +44,8 @@ public class SwordScript : MonoBehaviour
     public float callbackTime;
     public ParticleSystem repel;
     [Header("Attack")]
+    public int attacksUntilUntarget;
+    [HideInInspector] public int attacksCount;
     public float curRange;
     [SerializeField]
     float rangePossMod;
@@ -66,6 +68,7 @@ public class SwordScript : MonoBehaviour
         Idling = true;
         moveFreely = true;
         targetTimer = maxTargetTimer;
+        attacksCount = 0;
     }
 
     private void Update()
@@ -88,11 +91,15 @@ public class SwordScript : MonoBehaviour
         }
         else
         {
-            curSAT -= Time.deltaTime;
-            if (curSAT < 0)
+            if (attacksCount == attacksUntilUntarget) { Untarget(); attacksCount = 0; }
+            else
             {
-                StartCoroutine(SlashAttack());
-                curSAT = 9999;
+                curSAT -= Time.deltaTime;
+                if (curSAT < 0)
+                {
+                    StartCoroutine(SlashAttack());
+                    curSAT = 9999;
+                }
             }
         }
         Vector2 dir = curTarget.position - transform.position;
@@ -199,6 +206,7 @@ public class SwordScript : MonoBehaviour
         pullImg.color = new Color(pullImg.color.r, pullImg.color.g, pullImg.color.b, 0.2f);
         rb.velocity = Vector2.zero;
         rb.AddForce((playerChar.position - transform.position) * pullSpeed, ForceMode2D.Force);
+        playerChar.GetComponent<Player>().rb.AddForce((transform.position - playerChar.position) * pullSpeed, ForceMode2D.Force);
         pullPos = playerChar.position;
     }
 

@@ -103,6 +103,7 @@ public class NPC : MonoBehaviour
     {
         if (other.gameObject.name == "PlayerSword" && !dm)
         {
+            if (sword.curTarget == this.gameObject.transform) { sword.attacksCount++; }
             if (other.gameObject.GetComponent<SwordScript>().isSlashing)
             {
                 StartCoroutine(TakeDamage(3));

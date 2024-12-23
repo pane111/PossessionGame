@@ -10104,7 +10104,7 @@ MonoBehaviour:
   curHealth: 10
   demonHeart: {fileID: 0}
   player: {fileID: 0}
-  detectRange: 10
+  detectRange: 6
   playerFound: 0
   damageEffect: {fileID: 6710218844870274451}
   lr: {fileID: 2980626202352906894}

@@ -42,7 +42,7 @@ public class CursedWeapon : MonoBehaviour
             curHealth -= amount;
             if (curHealth <= 0)
             {
-                FreeNPC();
+                CrushCrystal();
             }
             else
             {
@@ -54,7 +54,7 @@ public class CursedWeapon : MonoBehaviour
         
     }
 
-    public void FreeNPC() //Allows player to finish the NPC
+    public void CrushCrystal()
     {
         demonHeart.GetComponent<DemonHeart>().ExposeHeart();
     }
@@ -106,6 +106,8 @@ public class CursedWeapon : MonoBehaviour
         {
             playerContact = true;
             playerFound = true;
+            SwordScript sword = collision.GetComponent<SwordScript>();
+            if (sword.curTarget == this.gameObject.transform) { sword.attacksCount++; }
             Vector2 dir = transform.position - collision.transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             Quaternion lDir = Quaternion.AngleAxis(angle, Vector3.forward);
