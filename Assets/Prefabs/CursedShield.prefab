@@ -10115,7 +10115,7 @@ MonoBehaviour:
   rotSpeed: 0.5
   fire: {fileID: 1029631776064125364}
   travelSpeed: 4
-  playerDist: 3.5
+  playerDist: 4
 --- !u!95 &8479126076386708178
 Animator:
   serializedVersion: 5
