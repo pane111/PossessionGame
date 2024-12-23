@@ -10,6 +10,7 @@ TagManager:
   - DemonTrigger
   - Heart
   - Spikes
+  - End
   layers:
   - Default
   - TransparentFX

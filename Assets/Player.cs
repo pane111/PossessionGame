@@ -290,7 +290,7 @@ public class Player : MonoBehaviour
 
             TakeCustomDamage(15);
         }
-        if (collision.gameObject.CompareTag("DemonTrigger"))
+        else if (collision.gameObject.CompareTag("DemonTrigger"))
         {
             if (!demonModeActive)
             {
@@ -298,8 +298,7 @@ public class Player : MonoBehaviour
             }
             
         }
-
-        if (collision.gameObject.GetComponent<Enemy>() != null)
+        else if (collision.gameObject.GetComponent<Enemy>() != null)
         {
             if (collision.gameObject.GetComponent<Enemy>().purified)
             {
@@ -307,6 +306,10 @@ public class Player : MonoBehaviour
                 GameManager.Instance.saved++;
                 collision.gameObject.GetComponent<Enemy>().Rescue();
             }
+        }
+        else if (collision.gameObject.CompareTag("End"))
+        {
+            GameManager.Instance.TriggerEnding();
         }
     }
     public void knockbackFailsafe(float d)
