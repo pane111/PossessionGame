@@ -88,6 +88,10 @@ public class AudioManager : MonoBehaviour
     {
         NPC_Footstep.Post(go);
     }
+    public void ButtonPress()
+    {
+        ButtonClick.Post(gameObject);
+    }
     #endregion
 
     #region Singleton

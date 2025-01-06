@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using AK.Wwise;
+using Event = AK.Wwise.Event;
 
 public class TitleScreenManager : MonoBehaviour
 {
@@ -17,6 +19,9 @@ public class TitleScreenManager : MonoBehaviour
     public Image tutorialPic;
     public TextMeshProUGUI tutorialName;
     public TextMeshProUGUI tutorialDesc;
+
+    public Event ButtonClick;
+
     void Start()
     {
         LoadTutorial();
@@ -77,5 +82,10 @@ public class TitleScreenManager : MonoBehaviour
     public void Help()
     {
         toggleTWindow();
+    }
+
+    public void ButtonPress()
+    {
+        ButtonClick.Post(gameObject);
     }
 }
