@@ -7,6 +7,17 @@ public class TelegraphedAttack : MonoBehaviour
     public float timeUntilHit;
     public SpriteRenderer sr;
     public ParticleSystem effect;
+    public GameObject eAnim;
+    public GameObject toSpawn;
+
+    public enum DangerType
+    {
+        Effect,
+        Anim,
+        Spawn
+    }
+    public DangerType type;
+
     public float destroyTime;
     public Vector2 size;
     public bool isCircle;
@@ -18,7 +29,20 @@ public class TelegraphedAttack : MonoBehaviour
 
     void TriggerEffect()
     {
-        effect.Play();
+        if (type == DangerType.Effect)
+        {
+            effect.Play();
+        }
+        else if (type == DangerType.Spawn)
+        {
+            Instantiate(toSpawn,transform.position,Quaternion.identity);
+        }
+        else
+        {
+            eAnim.SetActive(true);
+        }
+
+        
         if (isCircle)
         {
             Collider2D hitColliders = Physics2D.OverlapCircle(transform.position, size.x);
