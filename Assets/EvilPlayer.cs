@@ -134,13 +134,23 @@ public class EvilPlayer : BossParentScript
             bs.transform.position = (Vector2)transform.position + dir.normalized;
             if (collision.GetComponent<SwordScript>().isSlashing)
             {
+                if (CurHealth-3<=0)
+                {
+                    collision.GetComponent<SwordScript>().curTarget = player;
+                }
                 TakeDamage(3);
+                
             }
             else
             {
+                if (CurHealth - 1 <= 0)
+                {
+                    collision.GetComponent<SwordScript>().curTarget = player;
+                }
                 TakeDamage(1);
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
+            
         }
     }
 }

@@ -102,6 +102,13 @@ public class SwordScript : MonoBehaviour
                 }
             }
         }
+
+        if (curTarget==null)
+        {
+            curTarget = playerChar.gameObject.GetComponent<Player>().orbiter;
+            Idling = true;
+        }
+
         Vector2 dir = curTarget.position - transform.position;
 
         if (moveFreely)

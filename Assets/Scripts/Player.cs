@@ -212,6 +212,7 @@ public class Player : MonoBehaviour
             sr.color = Color.red;
             Invoke("StopBleeding", 0.2f);
             CurHealth -= amount;
+            
             healthBar.fillAmount = CurHealth / maxHealth;
             if (CurHealth <= 0)
             {
@@ -220,6 +221,10 @@ public class Player : MonoBehaviour
                 GameManager.Instance.OnDeath();
                 
                 StartCoroutine(SetInvincible(5));
+            }
+            else
+            {
+                StartCoroutine(SetInvincible(0.5f));
             }
         }
         
