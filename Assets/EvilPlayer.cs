@@ -24,7 +24,7 @@ public class EvilPlayer : BossParentScript
     {
         CurHealth = maxHealth;
         player = GameObject.Find("Player").transform;
-        player.GetComponent<Player>().sword.GetComponent<SwordScript>().curTarget = transform;
+        //player.GetComponent<Player>().sword.GetComponent<SwordScript>().curTarget = transform;
         DecideDirection();
         Invoke("StartDash", Random.Range(minDashCd, maxDashCd));
         rb = GetComponent<Rigidbody2D>();
