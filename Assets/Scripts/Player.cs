@@ -288,7 +288,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
 
-            TakeCustomDamage(15);
+            TakeCustomDamage(5);
         }
         else if (collision.gameObject.CompareTag("DemonTrigger"))
         {

@@ -65,7 +65,7 @@ public class TelegraphedAttack : MonoBehaviour
                 print(hitColliders.gameObject);
                 if (hitColliders.gameObject.name == "Player")
                 {
-                    hitColliders.gameObject.GetComponent<Player>().TakeCustomDamage(15);
+                    hitColliders.gameObject.GetComponent<Player>().TakeCustomDamage(5);
 
                 }
             }

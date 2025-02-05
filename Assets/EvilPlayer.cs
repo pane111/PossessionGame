@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EvilPlayer : MonoBehaviour
+public class EvilPlayer : BossParentScript
 {
     public float moveSpeed;
     public float dashForce;
@@ -22,6 +22,7 @@ public class EvilPlayer : MonoBehaviour
     float turning=0;
     void Start()
     {
+        CurHealth = maxHealth;
         player = GameObject.Find("Player").transform;
         player.GetComponent<Player>().sword.GetComponent<SwordScript>().curTarget = transform;
         DecideDirection();
@@ -116,5 +117,30 @@ public class EvilPlayer : MonoBehaviour
         afterimage.Stop();
         Invoke("StartDash",Random.Range(minDashCd, maxDashCd));
         yield return null;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<SwordScript>() != null)
+        {
+            
+            SwordScript sword = collision.GetComponent<SwordScript>();
+            if (sword.curTarget == this.gameObject.transform) { sword.attacksCount++; }
+            Vector2 dir = transform.position - collision.transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Quaternion lDir = Quaternion.AngleAxis(angle, Vector3.forward);
+            GameObject bs = Instantiate(GameManager.Instance.bSplatter, transform.position, lDir);
+
+            bs.transform.position = (Vector2)transform.position + dir.normalized;
+            if (collision.GetComponent<SwordScript>().isSlashing)
+            {
+                TakeDamage(3);
+            }
+            else
+            {
+                TakeDamage(1);
+                if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
+            }
+        }
     }
 }
