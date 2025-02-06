@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     public Image swordGlow;
     public Image overlay;
     public ParticleSystem afterimage;
-
+    bool canMove=true;
     public LineRenderer leash;
     public Transform sword;
     private SwordScript swordScript;
@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
         leash.SetPosition(1,v);
 
 
-        if (!isDashing)
+        if (!isDashing && canMove)
         {
             if (!demonModeActive)
             {
@@ -282,6 +282,19 @@ public class Player : MonoBehaviour
         sr.sprite = s;
         yield return null;
     }
+    IEnumerator knockback(Vector2 knockFrom)
+    {
+        canMove = false;
+        rb.velocity = Vector2.zero;
+        Vector2 dir = (Vector2)transform.position - knockFrom;
+        rb.AddForce(dir.normalized * 50, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.15f);
+        
+        rb.velocity = Vector2.zero;
+        canMove = true;
+
+        yield return null;
+    }
 
     public void StopBleeding()
     {
@@ -294,6 +307,15 @@ public class Player : MonoBehaviour
         {
 
             TakeCustomDamage(5);
+        }
+        else if (collision.gameObject.CompareTag("Knockback"))
+        {
+            if (!invincible)   
+                StartCoroutine(knockback(collision.gameObject.transform.position));
+            TakeCustomDamage(5);
+            
+
+
         }
         else if (collision.gameObject.CompareTag("DemonTrigger"))
         {

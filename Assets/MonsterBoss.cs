@@ -7,11 +7,95 @@ using UnityEngine.UI;
 public class MonsterBoss : BossParentScript
 {
     Transform player;
+    public Rigidbody2D rb;
+    public Vector3 centerCoords;
+    bool moveFreely;
+    bool canAttack;
+    public float moveSpeed;
+    public Animator anim;
+    public GameObject leftSideAttack;
+    public GameObject rightSideAttack;
+    public GameObject summonedStaff;
+    public GameObject leftCleave;
+    public GameObject rightCleave;
     private void Start()
     {
+        bgEffect.SetActive(true);
         player = GameObject.Find("Player").transform;
+        rb = GetComponent<Rigidbody2D>();
         CurHealth = maxHealth;
+        StartCoroutine(moveToMiddle());
         TakeDamage(0);
+        Invoke("SummonStaff",Random.Range(2,5));
+        Invoke("CleavePlayer",Random.Range(3,8));
+        Invoke("PunchAttack",5);
+        PunchAttack();
+    }
+    private void Update()
+    {
+        
+    }
+    public void CleavePlayer()
+    {
+        
+        float lor = Random.Range(0, 100);
+        if (lor < 50)
+        {
+            GameObject cleave = Instantiate(leftCleave, player.position - Vector3.right * 3, Quaternion.identity);
+            Destroy(cleave, 5);
+        }
+        else
+        {
+            GameObject cleave = Instantiate(rightCleave, player.position + Vector3.right * 3, Quaternion.identity);
+            Destroy(cleave, 5);
+        }
+        Invoke("CleavePlayer", 6);
+    }
+    public void SummonStaff()
+    {
+        float rX = Random.Range(-3, 3);
+        float rY = Random.Range(-3, 3);
+        Vector2 offset = new Vector2(rX, rY);
+        GameObject s = Instantiate(summonedStaff,(Vector2)player.position + offset,Quaternion.identity);
+        Destroy(s, 6);
+        Invoke("SummonStaff", 10);
+    }
+    public void PunchAttack()
+    {
+        if (transform.position.x > player.position.x)
+        {
+            anim.SetTrigger("PunchLeft");
+        }
+        else
+        {
+            anim.SetTrigger("PunchRight");
+        }
+        Invoke("PunchAttack", 7);
+    }
+
+    IEnumerator moveToMiddle()
+    {
+        Vector2 dir = centerCoords - transform.position;
+        moveFreely = false;
+        canAttack = false;
+        rb.velocity = dir.normalized * moveSpeed;
+        yield return new WaitForSeconds(dir.magnitude/moveSpeed);
+        rb.velocity = Vector2.zero;
+        moveFreely = true;
+
+
+
+        yield return null;
+    }
+    public void SpawnLeftAttack()
+    {
+        GameObject la = Instantiate(leftSideAttack,transform.position,Quaternion.identity);
+        Destroy(la, 6);
+    }
+    public void SpawnRightAttack()
+    {
+        GameObject la = Instantiate(rightSideAttack, transform.position, Quaternion.identity);
+        Destroy(la, 6);
     }
 
 

@@ -17,7 +17,6 @@ public class EvilPlayer : BossParentScript
     public GameObject circleAttack;
     public ParticleSystem afterimage;
     public float stepDelay;
-    public SpriteRenderer sr;
     Rigidbody2D rb;
     float turning=0;
     void Start()

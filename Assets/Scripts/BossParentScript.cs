@@ -11,6 +11,8 @@ public class BossParentScript : MonoBehaviour
     public GameObject additional;
     public Sprite portrait;
     public Image dPortrait;
+    public SpriteRenderer sr;
+    public GameObject bgEffect;
     public float CurHealth
     {
         get { return curHealth; }
@@ -48,11 +50,23 @@ public class BossParentScript : MonoBehaviour
         curDialogue++;
         dialogAnim.SetTrigger("Dialogue");
     }
+    IEnumerator damageEffect()
+    {
+        sr.color = Color.red;
+        yield return new WaitForSeconds(0.15f);
+        sr.color = Color.white;
+        yield return null;
+    }
 
     public void TakeDamage(float amount)
     {
         CurHealth -= amount;
-        hpBarAnim.SetTrigger("Hit");
+        if (CurHealth < maxHealth)
+        {
+            StartCoroutine(damageEffect());
+            hpBarAnim.SetTrigger("Hit");
+        }
+        
         if (CurHealth <= 0) {
             healthBar.enabled = false;
             print("Boss died");
