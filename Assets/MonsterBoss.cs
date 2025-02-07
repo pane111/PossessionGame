@@ -18,6 +18,9 @@ public class MonsterBoss : BossParentScript
     public GameObject summonedStaff;
     public GameObject leftCleave;
     public GameObject rightCleave;
+    public SpreadShot rotatingBullets;
+    public float shotRepeats;
+    public float shotDeg;
     private void Start()
     {
         bgEffect.SetActive(true);
@@ -29,11 +32,54 @@ public class MonsterBoss : BossParentScript
         Invoke("SummonStaff",Random.Range(2,5));
         Invoke("CleavePlayer",Random.Range(3,8));
         Invoke("PunchAttack",5);
-        PunchAttack();
+        Invoke("Shoot", Random.Range(8, 16));
     }
     private void Update()
     {
         
+    }
+    void Shoot()
+    {
+        StartCoroutine(bullets());
+    }
+
+    IEnumerator MoveAround()
+    {
+        Vector2 offset = new Vector2(Random.Range(-18,18), Random.Range(-4,4));
+        Vector2 dir = ((Vector2)centerCoords+offset) - (Vector2)transform.position;
+        moveFreely = false;
+        canAttack = false;
+        rb.velocity = dir.normalized * moveSpeed;
+        yield return new WaitForSeconds(dir.magnitude / moveSpeed);
+        rb.velocity = Vector2.zero;
+        moveFreely = true;
+        yield return new WaitForSeconds(Random.Range(2, 5));
+        Vector2 distv = centerCoords - transform.position;
+        if (Mathf.Abs(distv.y) > 4 || Mathf.Abs(distv.x) > 18)
+        {
+            StartCoroutine(moveToMiddle());
+        }
+        else
+        {
+            StartCoroutine(MoveAround());
+        }
+        
+
+        yield return null;
+    }
+
+    IEnumerator bullets()
+    {
+        rotatingBullets.OnShoot();
+        for (int i=0;i<shotRepeats;i++)
+        {
+            rotatingBullets.transform.Rotate(0, 0, shotDeg);
+            yield return new WaitForSeconds(0.2f);
+            rotatingBullets.OnShoot();
+        }
+        rotatingBullets.transform.rotation = Quaternion.Euler(0, 0, 0);
+        Invoke("Shoot", Random.Range(6, 12));
+        yield return null;
     }
     public void CleavePlayer()
     {
@@ -49,7 +95,7 @@ public class MonsterBoss : BossParentScript
             GameObject cleave = Instantiate(rightCleave, player.position + Vector3.right * 3, Quaternion.identity);
             Destroy(cleave, 5);
         }
-        Invoke("CleavePlayer", 6);
+        Invoke("CleavePlayer", 15);
     }
     public void SummonStaff()
     {
@@ -58,7 +104,7 @@ public class MonsterBoss : BossParentScript
         Vector2 offset = new Vector2(rX, rY);
         GameObject s = Instantiate(summonedStaff,(Vector2)player.position + offset,Quaternion.identity);
         Destroy(s, 6);
-        Invoke("SummonStaff", 10);
+        Invoke("SummonStaff", 12);
     }
     public void PunchAttack()
     {
@@ -70,7 +116,7 @@ public class MonsterBoss : BossParentScript
         {
             anim.SetTrigger("PunchRight");
         }
-        Invoke("PunchAttack", 7);
+        Invoke("PunchAttack", Random.Range(6,10));
     }
 
     IEnumerator moveToMiddle()
@@ -83,7 +129,8 @@ public class MonsterBoss : BossParentScript
         rb.velocity = Vector2.zero;
         moveFreely = true;
 
-
+        yield return new WaitForSeconds(Random.Range(5, 15));
+        StartCoroutine(MoveAround());
 
         yield return null;
     }
