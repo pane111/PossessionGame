@@ -25986,7 +25986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cd2755b6ad4cc488028a73fe15fd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 80
+  maxHealth: 120
   additional: {fileID: 0}
   portrait: {fileID: 21300000, guid: 8e8c594740e6ff143afc3f00817a9c7b, type: 3}
   dPortrait: {fileID: 1273011834}

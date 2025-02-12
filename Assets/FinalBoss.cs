@@ -68,6 +68,8 @@ public class FinalBoss : BossParentScript
     {
         canDoThings = true;
         GetComponent<Collider2D>().enabled = true;
+        dialogueText.text = "You still stand...? But how?";
+        dialogAnim.SetTrigger("Dialogue");
     }
 
     void TriggerUltAttack()
@@ -115,7 +117,7 @@ public class FinalBoss : BossParentScript
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
 
-            bgR.material.SetFloat("_Exposure", 1 + (1 - (CurHealth / maxHealth))*5);
+            bgR.material.SetFloat("_Exposure", 1 + (1 - (CurHealth / maxHealth))*2);
         }
     }
 }
