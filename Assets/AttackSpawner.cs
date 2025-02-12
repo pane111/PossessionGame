@@ -12,21 +12,37 @@ public class AttackSpawner : MonoBehaviour
     public bool deleteAfter;
     public float deleteTime;
     Vector2 curPos;
+    Vector2 curPos2;
+    public float initDelay=0;
+    public bool repeatInOtherDirectionAsWell;
+    bool isFirst = true;
 
     public GameObject attackPrefab;
     void Start()
     {
         curPos = transform.position;
-        SpawnAttack();
+        curPos2 = transform.position;
+        Invoke("SpawnAttack", initDelay);
     }
 
     void SpawnAttack()
     {
         GameObject spawned = Instantiate(attackPrefab,curPos,Quaternion.identity);
 
+        GameObject spawned2 = null;
+        if (repeatInOtherDirectionAsWell && !isFirst)
+        {
+            spawned2 = Instantiate(attackPrefab, curPos2, Quaternion.identity);
+            
+        }
+        isFirst = false;
         if (spawnSpawner)
         {
             spawned.GetComponent<AttackSpawner>().dir = dir2;
+        }
+        else
+        {
+            curPos2 += dir2;
         }
         if (deleteAfter)
         {

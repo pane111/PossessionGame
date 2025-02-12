@@ -12,6 +12,7 @@ TagManager:
   - Spikes
   - End
   - Knockback
+  - DZone
   layers:
   - Default
   - TransparentFX

@@ -10,10 +10,22 @@ public class SpreadShot : MonoBehaviour
     public bool randomRotation;
     public float shotForce;
     public bool triggerOnStart;
+    public bool triggerOnDeath;
+    public float addedDeg;
+    public float retriggerDelay;
+    public bool retrigger;
 
     private void Start()
     {
         if (triggerOnStart)
+        {
+            OnShoot();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (triggerOnDeath)
         {
             OnShoot();
         }
@@ -27,7 +39,7 @@ public class SpreadShot : MonoBehaviour
             {
                 float angle = Random.Range(-maxDeg, maxDeg);
                 GameObject shotBullet = Instantiate(toShoot, transform.position, Quaternion.identity);
-                shotBullet.transform.localRotation = Quaternion.Euler(0, 0, transform.localRotation.eulerAngles.z + maxDeg / 2 - angle);
+                shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle)+addedDeg);
                 shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
                 Destroy(shotBullet, 5);
             }
@@ -35,11 +47,16 @@ public class SpreadShot : MonoBehaviour
             {
                 float angle = (maxDeg / bulletAmount) * i;
                 GameObject shotBullet = Instantiate(toShoot, transform.position, Quaternion.identity);
-                shotBullet.transform.localRotation = Quaternion.Euler(0, 0, transform.localRotation.eulerAngles.z + maxDeg / 2 - angle);
+                shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle) + addedDeg);
                 shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
                 Destroy(shotBullet, 5);
             }
 
+        }
+
+        if (retrigger)
+        {
+            Invoke("OnShoot", retriggerDelay);
         }
     }
 }

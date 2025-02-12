@@ -8,6 +8,11 @@ public class FinalBoss : BossParentScript
     Transform player;
     public Animator clockAnim;
     public Renderer bgR;
+    bool ultAttackTriggered = false;
+    public GameObject ultAttack;
+    public Animator anim;
+    public bool canDoThings=true;
+    public float ultTimer;
     private void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -18,27 +23,63 @@ public class FinalBoss : BossParentScript
         StartCoroutine(TimeManip());
     }
 
+    private void Update()
+    {
+        if (CurHealth<=maxHealth/2 && Time.timeScale==1 && !ultAttackTriggered)
+        {
+            TriggerUltAttack();
+        }
+    }
+
     IEnumerator TimeManip()
     {
-        float r = Random.Range(0, 100);
-        if (r <= 50)
+        if (canDoThings)
         {
-            Time.timeScale = 2f;
+            float r = Random.Range(0, 100);
+            if (r <= 50)
+            {
+                Time.timeScale = 2f;
+                Time.fixedDeltaTime = 0.02F * Time.timeScale;
+            }
+            else
+            {
+                Time.timeScale = 0.65f;
+                Time.fixedDeltaTime = 0.02F * Time.timeScale;
+            }
+            clockAnim.SetTrigger("Trigger");
+            yield return new WaitForSecondsRealtime(8);
+            Time.timeScale = 1;
             Time.fixedDeltaTime = 0.02F * Time.timeScale;
+            clockAnim.SetTrigger("Trigger");
         }
-        else
-        {
-            Time.timeScale = 0.65f;
-            Time.fixedDeltaTime = 0.02F * Time.timeScale;
-        }
-        clockAnim.SetTrigger("Trigger");
-        yield return new WaitForSecondsRealtime(8);
-        Time.timeScale = 1;
-        Time.fixedDeltaTime = 0.02F * Time.timeScale;
-        clockAnim.SetTrigger("Trigger");
-        yield return new WaitForSecondsRealtime(Random.Range(5,8));
+        
+        yield return new WaitForSecondsRealtime(Random.Range(8,13));
+        
         StartCoroutine(TimeManip());
         yield return null;
+    }
+    public void DisableActions()
+    {
+        canDoThings = false;
+        GetComponent<Collider2D>().enabled = false;
+    }
+
+    public void EnableActions()
+    {
+        canDoThings = true;
+        GetComponent<Collider2D>().enabled = true;
+    }
+
+    void TriggerUltAttack()
+    {
+        ultAttackTriggered = true;
+        DisableActions();
+        dialogueText.text = "Souls of fallen warriors, come to me! I command you... erase this filth!";
+        dialogAnim.SetTrigger("Dialogue");
+        anim.SetTrigger("Ult");
+        Invoke("EnableActions", ultTimer);
+        GameObject u = Instantiate(ultAttack,transform.position, Quaternion.identity);
+        
     }
 
 
@@ -74,7 +115,7 @@ public class FinalBoss : BossParentScript
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
 
-            bgR.material.SetFloat("_Exposure", 1 + (1 - (CurHealth / maxHealth))*7);
+            bgR.material.SetFloat("_Exposure", 1 + (1 - (CurHealth / maxHealth))*5);
         }
     }
 }
