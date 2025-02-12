@@ -7,6 +7,7 @@ public class FinalBoss : BossParentScript
     public Color bgColor;
     Transform player;
     public Animator clockAnim;
+    public Renderer bgR;
     private void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -73,6 +74,7 @@ public class FinalBoss : BossParentScript
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
 
+            bgR.material.SetFloat("_Exposure", 1 + (1 - (CurHealth / maxHealth))*7);
         }
     }
 }

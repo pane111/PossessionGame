@@ -282,6 +282,10 @@ public class Player : MonoBehaviour
         sr.sprite = s;
         yield return null;
     }
+    public void TriggerKB(Vector2 from)
+    {
+        StartCoroutine(knockback(from));
+    }
     IEnumerator knockback(Vector2 knockFrom)
     {
         canMove = false;

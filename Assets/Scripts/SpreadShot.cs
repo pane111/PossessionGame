@@ -9,6 +9,15 @@ public class SpreadShot : MonoBehaviour
     public float maxDeg;
     public bool randomRotation;
     public float shotForce;
+    public bool triggerOnStart;
+
+    private void Start()
+    {
+        if (triggerOnStart)
+        {
+            OnShoot();
+        }
+    }
     public void OnShoot()
     {
 

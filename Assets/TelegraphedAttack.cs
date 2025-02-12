@@ -9,7 +9,8 @@ public class TelegraphedAttack : MonoBehaviour
     public ParticleSystem effect;
     public GameObject eAnim;
     public GameObject toSpawn;
-
+    public float damage = 5;
+    public bool kb;
     public enum DangerType
     {
         Effect,
@@ -24,6 +25,7 @@ public class TelegraphedAttack : MonoBehaviour
     private void Start()
     {
         Invoke("TriggerEffect", timeUntilHit);
+        GetComponent<Animator>().SetFloat("Time", 1/timeUntilHit);
     }
 
 
@@ -51,7 +53,11 @@ public class TelegraphedAttack : MonoBehaviour
                 print(hitColliders.gameObject);
                 if (hitColliders.gameObject.name == "Player")
                 {
-                    hitColliders.gameObject.GetComponent<Player>().TakeCustomDamage(15);
+                    hitColliders.gameObject.GetComponent<Player>().TakeCustomDamage(damage);
+                    if (kb)
+                    {
+                        hitColliders.gameObject.GetComponent<Player>().TriggerKB(transform.position);
+                    }
 
                 }
             }
@@ -65,7 +71,11 @@ public class TelegraphedAttack : MonoBehaviour
                 print(hitColliders.gameObject);
                 if (hitColliders.gameObject.name == "Player")
                 {
-                    hitColliders.gameObject.GetComponent<Player>().TakeCustomDamage(5);
+                    hitColliders.gameObject.GetComponent<Player>().TakeCustomDamage(damage);
+                    if (kb)
+                    {
+                        hitColliders.gameObject.GetComponent<Player>().TriggerKB(transform.position);
+                    }
 
                 }
             }
