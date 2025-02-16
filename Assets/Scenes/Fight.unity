@@ -26002,26 +26002,23 @@ MonoBehaviour:
   - Your worthless existence ends today... as will the rest of humanity!
   - I will devour all that lives... has ever lived... and will ever live! Time itself
     bends to my will!
-  - You disgusting, filthy insect... I will kill you, again and again and again...
-  - Impossible... How can you still resist me!?
   - No... This can't be happening!
-  - 'It... matters not... The cycle will repeat... As long as you live, I will always
-    return... '
+  - Ungh... Stop at once...!
   dPercentages:
   - 100
   - 90
   - 80
-  - 60
   - 40
   - 25
-  - 15
   bgColor: {r: 0, g: 0, b: 0, a: 1}
+  p2: {fileID: 21300000, guid: 0e7d93bec8ff54547820cd31e4339b75, type: 3}
+  p3: {fileID: 21300000, guid: 5d485617385d55d4c9985f308920e5ed, type: 3}
   clockAnim: {fileID: 286530572}
   bgR: {fileID: 1117702448}
   ultAttack: {fileID: 4134742835986779296, guid: 48b7fc88c6ae8254285724424c108925, type: 3}
   anim: {fileID: 54648334}
   canDoThings: 1
-  ultTimer: 64
+  ultTimer: 74
 --- !u!50 &478476431
 Rigidbody2D:
   serializedVersion: 4

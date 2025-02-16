@@ -21,7 +21,12 @@ public class BossParentScript : MonoBehaviour
             curHealth = value;
             dPortrait.sprite = portrait;
             healthBar.enabled = true;
-            healthBar.rectTransform.sizeDelta = new Vector2(3600 * (curHealth / maxHealth),200);
+            if (curHealth>=0)
+                healthBar.rectTransform.sizeDelta = new Vector2(3600 * (curHealth / maxHealth),200);
+            else
+            {
+                healthBar.rectTransform.sizeDelta = new Vector2(0, 200);
+            }
             if (curDialogue < dPercentages.Count - 1)
             {
                 if ((curHealth / maxHealth) * 100 <= dPercentages[curDialogue])

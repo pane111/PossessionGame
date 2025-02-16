@@ -5336,12 +5336,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timers:
-  - 10
+  - 20
   - 12
   - 16
   - 16
   attacks:
-  - {fileID: 3484934772856826967, guid: bfc7eeb625c586248ae4a7eb07421f69, type: 3}
+  - {fileID: 3796109004707393025, guid: 9e0fb0b85837b2440b8dbe9c0b641c1e, type: 3}
   - {fileID: 80990624527292273, guid: 953413832ffb6564a9cfc6ef84bc0500, type: 3}
   - {fileID: 8910893151125074493, guid: 68cce134ff45df141b7996f8b82374be, type: 3}
   - {fileID: 5360551282279637907, guid: 1818165b08a9f5f43bc72db3ded03428, type: 3}

@@ -10480,7 +10480,7 @@ GameObject:
   - component: {fileID: 1233889182050593007}
   m_Layer: 0
   m_Name: DamageZone
-  m_TagString: Knockback
+  m_TagString: DZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15792,7 +15792,7 @@ GameObject:
   - component: {fileID: 5485916258689645701}
   m_Layer: 0
   m_Name: DamageZone
-  m_TagString: Knockback
+  m_TagString: DZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21444,13 +21444,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toShoot: {fileID: 366156874002828003, guid: 835b30ed8310f5e4fa1ef2ce753f70c8, type: 3}
-  bulletAmount: 2
+  bulletAmount: 6
   maxDeg: 360
   randomRotation: 1
   shotForce: 10
   triggerOnStart: 0
   triggerOnDeath: 0
   addedDeg: 0
+  retriggerDelay: 0
+  retrigger: 0
 --- !u!1 &9164574133115184172
 GameObject:
   m_ObjectHideFlags: 0

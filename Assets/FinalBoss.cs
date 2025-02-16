@@ -5,6 +5,8 @@ using UnityEngine;
 public class FinalBoss : BossParentScript
 {
     public Color bgColor;
+    public Sprite p2;
+    public Sprite p3;
     Transform player;
     public Animator clockAnim;
     public Renderer bgR;
@@ -25,7 +27,7 @@ public class FinalBoss : BossParentScript
 
     private void Update()
     {
-        if (CurHealth<=maxHealth/2 && Time.timeScale==1 && !ultAttackTriggered)
+        if (CurHealth<=maxHealth*0.65f && Time.timeScale==1 && !ultAttackTriggered)
         {
             TriggerUltAttack();
         }
@@ -66,14 +68,18 @@ public class FinalBoss : BossParentScript
 
     public void EnableActions()
     {
+        portrait = p3;
+        dPortrait.sprite = portrait;
         canDoThings = true;
         GetComponent<Collider2D>().enabled = true;
-        dialogueText.text = "You still stand...? But how?";
+        dialogueText.text = "You still stand...? But how? This cannot be...!";
         dialogAnim.SetTrigger("Dialogue");
     }
 
     void TriggerUltAttack()
     {
+        portrait = p2;
+        dPortrait.sprite = portrait;
         ultAttackTriggered = true;
         DisableActions();
         dialogueText.text = "Souls of fallen warriors, come to me! I command you... erase this filth!";
@@ -116,8 +122,13 @@ public class FinalBoss : BossParentScript
                 TakeDamage(1);
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
+            if (CurHealth <= 0)
+            {
+                dialogueText.text = "N-no... Please... I don't want to die... Not yet...! Noooooo!!!";
+                dialogAnim.SetTrigger("Dialogue");
+            }
 
-            bgR.material.SetFloat("_Exposure", 1 + (1 - (CurHealth / maxHealth))*2);
+            bgR.material.SetFloat("_Exposure", 1 - (1 - (CurHealth / maxHealth))*1);
         }
     }
 }

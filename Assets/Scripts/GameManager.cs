@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
     public Tilemap floor;
     public Tilemap wall;
 
+
+
+    float storedTS=1;
     
     public Action startDM;
     public Action stopDM;
@@ -101,6 +104,7 @@ public class GameManager : MonoBehaviour
 
     public void OnDeath()
     {
+        storedTS = Time.timeScale;
         AudioManager.Instance.GS_GameOver.SetValue();
         AudioManager.Instance.Death.Post(gameObject);
         deathAnim.SetTrigger("Death");
@@ -132,7 +136,8 @@ public class GameManager : MonoBehaviour
 
     public void Continue()
     {
-        Time.timeScale = 1;
+        
+        Time.timeScale = storedTS;
         deathMenu.SetActive(false);
         player.Revive();
     }
@@ -140,6 +145,7 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.Instance.GameOver.Post(gameObject);
         Time.timeScale = 1;
+        Time.fixedDeltaTime = 0.02F * Time.timeScale;
         SceneManager.LoadScene("GameOver");
     }
 
