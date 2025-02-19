@@ -108,7 +108,7 @@ MonoBehaviour:
   kb: 1
   type: 0
   destroyTime: 2
-  size: {x: 4, y: 4}
+  size: {x: 5, y: 5}
   isCircle: 1
 --- !u!95 &2229439877871849158
 Animator:

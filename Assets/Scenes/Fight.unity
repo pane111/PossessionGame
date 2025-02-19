@@ -133148,6 +133148,7 @@ MonoBehaviour:
   - {fileID: 1775771984, guid: 873f66416d0ba7b41a14f9bc0adfef9c, type: 3}
   floor: {fileID: 0}
   wall: {fileID: 0}
+  storedTS: 1
 --- !u!4 &1574376435
 Transform:
   m_ObjectHideFlags: 0

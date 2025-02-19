@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    float storedTS=1;
+    public float storedTS=1;
     
     public Action startDM;
     public Action stopDM;
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     public void OnDeath()
     {
-        storedTS = Time.timeScale;
+        
         AudioManager.Instance.GS_GameOver.SetValue();
         AudioManager.Instance.Death.Post(gameObject);
         deathAnim.SetTrigger("Death");

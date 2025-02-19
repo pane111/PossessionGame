@@ -41,16 +41,19 @@ public class FinalBoss : BossParentScript
             if (r <= 50)
             {
                 Time.timeScale = 2f;
+                GameManager.Instance.storedTS = 2;
                 Time.fixedDeltaTime = 0.02F * Time.timeScale;
             }
             else
             {
                 Time.timeScale = 0.65f;
+                GameManager.Instance.storedTS = 0.65f;
                 Time.fixedDeltaTime = 0.02F * Time.timeScale;
             }
             clockAnim.SetTrigger("Trigger");
             yield return new WaitForSecondsRealtime(8);
             Time.timeScale = 1;
+            GameManager.Instance.storedTS =1;
             Time.fixedDeltaTime = 0.02F * Time.timeScale;
             clockAnim.SetTrigger("Trigger");
         }
