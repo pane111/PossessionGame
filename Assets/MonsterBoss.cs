@@ -164,6 +164,8 @@ public class MonsterBoss : BossParentScript
                 if (CurHealth - 3 <= 0)
                 {
                     collision.GetComponent<SwordScript>().curTarget = player;
+                    dialogueText.text = "The time has come... I can feel it...!";
+                    dialogAnim.SetTrigger("Dialogue");
                 }
                 TakeDamage(3);
 
@@ -173,6 +175,8 @@ public class MonsterBoss : BossParentScript
                 if (CurHealth - 1 <= 0)
                 {
                     collision.GetComponent<SwordScript>().curTarget = player;
+                    dialogueText.text = "The time has come... I can feel it...!";
+                    dialogAnim.SetTrigger("Dialogue");
                 }
                 TakeDamage(1);
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }

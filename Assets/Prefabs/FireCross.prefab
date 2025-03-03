@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4104874200730222795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5009745983994654154}
+  m_Layer: 0
+  m_Name: FireCross
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5009745983994654154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4104874200730222795}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -36.56009, y: -1.6178197, z: -0.3457949}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1139775042418248743}
+  - {fileID: 1608972904267116655}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3506632660206260773
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5009745983994654154}
+    m_Modifications:
+    - target: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527119675923171965, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+      propertyPath: m_Name
+      value: FireSpawner2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+--- !u!4 &1608972904267116655 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2809744273597096522, guid: 3ec50018ebc9e924a8057f45bcee8aec, type: 3}
+  m_PrefabInstance: {fileID: 3506632660206260773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7390244504277136624
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5009745983994654154}
+    m_Modifications:
+    - target: {fileID: 651302941029169125, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_Name
+      value: FireSpawner1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+--- !u!4 &1139775042418248743 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7592549332504197335, guid: add9dbc102754f3418661bb8dcfcbe25, type: 3}
+  m_PrefabInstance: {fileID: 7390244504277136624}
+  m_PrefabAsset: {fileID: 0}

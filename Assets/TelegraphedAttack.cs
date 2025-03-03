@@ -11,6 +11,7 @@ public class TelegraphedAttack : MonoBehaviour
     public GameObject toSpawn;
     public float damage = 5;
     public bool kb;
+    public bool ice;
     public enum DangerType
     {
         Effect,
@@ -51,7 +52,7 @@ public class TelegraphedAttack : MonoBehaviour
             if (hitColliders != null)
             {
                 print(hitColliders.gameObject);
-                if (hitColliders.gameObject.name == "Player")
+                if (hitColliders.gameObject.name == "Player" && damage != 0)
                 {
                     hitColliders.gameObject.GetComponent<Player>().TakeCustomDamage(damage);
                     if (kb)
@@ -59,6 +60,11 @@ public class TelegraphedAttack : MonoBehaviour
                         hitColliders.gameObject.GetComponent<Player>().TriggerKB(transform.position);
                     }
 
+                }
+
+                if (damage == 0 && hitColliders.gameObject.tag=="Ring")
+                {
+                        hitColliders.gameObject.GetComponent<FireRing>().Hit(ice);
                 }
             }
             

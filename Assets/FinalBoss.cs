@@ -11,10 +11,15 @@ public class FinalBoss : BossParentScript
     public Animator clockAnim;
     public Renderer bgR;
     bool ultAttackTriggered = false;
+    bool fireandicetriggered = false;
     public GameObject ultAttack;
     public Animator anim;
     public bool canDoThings=true;
     public float ultTimer;
+    public GameObject ring;
+    bool invincible=false;
+    public GameObject fireShooter;
+    public GameObject iceShooter;
     private void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -22,15 +27,72 @@ public class FinalBoss : BossParentScript
         TakeDamage(0);
         Camera.main.backgroundColor = bgColor;
         bgEffect.SetActive(true);
-        StartCoroutine(TimeManip());
+        //StartCoroutine(TimeManip());
     }
 
     private void Update()
     {
-        if (CurHealth<=maxHealth*0.65f && Time.timeScale==1 && !ultAttackTriggered)
+        if (CurHealth <= maxHealth*0.8f && Time.timeScale == 1 && !fireandicetriggered)
+        {
+            TriggerFireAndIceAttack();
+        }
+        if (CurHealth<=maxHealth*0.3f && Time.timeScale==1 && !ultAttackTriggered && fireandicetriggered)
         {
             TriggerUltAttack();
         }
+    }
+    public void TriggerFireAndIceAttack()
+    {
+        fireandicetriggered = true;
+        StartCoroutine(FireAndIce());
+    }
+
+    IEnumerator FireAndIce()
+    {
+        
+        invincible = true;
+        dialogueText.text = "The very elements are mine to control! Let's see how you deal with THIS!";
+        dialogAnim.SetTrigger("Dialogue");
+        GameObject nring = Instantiate(ring, transform.position, Quaternion.identity);
+        //float rx = Random.Range(-20, 20);
+        //float ry = Random.Range(-12,12);
+        Vector3 offset = new Vector3(-12, 0,0);
+
+        GameObject fs = Instantiate(fireShooter, transform.position + offset, Quaternion.identity);
+        //rx = Random.Range(-20, 20);
+       // ry = Random.Range(-12,12);
+        offset = new Vector3(12, 0,0);
+        GameObject ics = Instantiate(iceShooter, transform.position + offset, Quaternion.identity);
+        yield return new WaitForSeconds(14);
+        if (nring.GetComponent<FireRing>().isFire && nring.GetComponent<FireRing>().level>0) {
+            dialogueText.text = "Mwahahahaaa! Can you feel the fires of hell searing your flesh? What will you do now, I wonder?";
+            dialogAnim.SetTrigger("Dialogue");
+        }
+        else if (!nring.GetComponent<FireRing>().isFire && nring.GetComponent<FireRing>().level > 0)
+        {
+            dialogueText.text = "Mwahahahaaa! Can you feel the eternal ice freezing your blood? What will you do now, I wonder?";
+            dialogAnim.SetTrigger("Dialogue");
+        }
+        else if (nring.GetComponent<FireRing>().level==0)
+        {
+            dialogueText.text = "Hmm... Have you figured it out? No matter... We've only just begun! Mwahahahahahaaaa!!";
+            dialogAnim.SetTrigger("Dialogue");
+        }
+
+        yield return new WaitForSeconds(6);
+        if (nring.GetComponent<FireRing>().level == 0)
+        {
+            dialogueText.text = "Seems your head isn't completely empty... Very well... it's time I stop holding back!";
+            dialogAnim.SetTrigger("Dialogue");
+        }
+        invincible = false;
+        Destroy(ics);
+        Destroy(fs);
+        yield return new WaitForSeconds(5);
+        dialogueText.text = "Time itself bends to my will! I will devour all that lives, has ever lived, and will ever live!";
+        dialogAnim.SetTrigger("Dialogue");
+        StartCoroutine(TimeManip());
+        yield return null;
     }
 
     IEnumerator TimeManip()
@@ -96,7 +158,7 @@ public class FinalBoss : BossParentScript
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<SwordScript>() != null)
+        if (collision.GetComponent<SwordScript>() != null && !invincible)
         {
 
             SwordScript sword = collision.GetComponent<SwordScript>();
@@ -112,6 +174,7 @@ public class FinalBoss : BossParentScript
                 if (CurHealth - 3 <= 0)
                 {
                     collision.GetComponent<SwordScript>().curTarget = player;
+                    
                 }
                 TakeDamage(3);
 

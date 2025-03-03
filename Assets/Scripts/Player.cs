@@ -202,6 +202,29 @@ public class Player : MonoBehaviour
         }
         
     }
+    public void TakeForcedDamage(float amount)
+    {
+        AudioManager.Instance.PlayerDmgTaken.Post(gameObject);
+        if (!blood.isPlaying)
+            blood.Play();
+        sr.color = Color.red;
+        Invoke("StopBleeding", 0.2f);
+        CurHealth -= amount;
+
+        healthBar.fillAmount = CurHealth / maxHealth;
+        if (CurHealth <= 0)
+        {
+            CurHealth = maxHealth;
+            healthBar.fillAmount = CurHealth / maxHealth;
+            GameManager.Instance.OnDeath();
+
+            StartCoroutine(SetInvincible(5));
+        }
+        else
+        {
+            StartCoroutine(SetInvincible(0.5f));
+        }
+    }
     public void TakeCustomDamage(float amount)
     {
         if (!invincible)

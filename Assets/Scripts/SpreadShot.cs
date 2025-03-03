@@ -14,9 +14,11 @@ public class SpreadShot : MonoBehaviour
     public float addedDeg;
     public float retriggerDelay;
     public bool retrigger;
-
+    public bool addDegAfterRetrigger;
+    float ad2;
     private void Start()
     {
+        ad2 = addedDeg;
         if (triggerOnStart)
         {
             OnShoot();
@@ -51,11 +53,15 @@ public class SpreadShot : MonoBehaviour
                 shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
                 Destroy(shotBullet, 5);
             }
-
+            
         }
 
         if (retrigger)
         {
+            if (addDegAfterRetrigger)
+            {
+                addedDeg += ad2;
+            }
             Invoke("OnShoot", retriggerDelay);
         }
     }

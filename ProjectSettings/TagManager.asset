@@ -13,6 +13,9 @@ TagManager:
   - End
   - Knockback
   - DZone
+  - Fire
+  - Ice
+  - Ring
   layers:
   - Default
   - TransparentFX
