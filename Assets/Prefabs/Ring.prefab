@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9185688137033483022}
   - component: {fileID: 5825605934858159224}
   - component: {fileID: 6017040874684499270}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: IceShards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4916,7 +4916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3673641556159986076}
   - component: {fileID: 7128940956020870758}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Outline2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5000,7 +5000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 344910338544931466}
   - component: {fileID: 1280268696208244536}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5086,7 +5086,7 @@ GameObject:
   - component: {fileID: 559380320326768464}
   - component: {fileID: 1813542769031843517}
   - component: {fileID: 2939321960385086113}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: FireDetonation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9992,7 +9992,7 @@ GameObject:
   - component: {fileID: 6390791793889618278}
   - component: {fileID: 7227182216794372066}
   - component: {fileID: 782325419418121846}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14858,7 +14858,7 @@ GameObject:
   - component: {fileID: 1064783095320842982}
   - component: {fileID: 282439942565232206}
   - component: {fileID: 2770040818860124408}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IceDetonation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19756,7 +19756,7 @@ GameObject:
   - component: {fileID: 7936218178334284833}
   - component: {fileID: 1372993661888296389}
   - component: {fileID: 8142571198756724360}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LevelCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19929,7 +19929,7 @@ GameObject:
   - component: {fileID: 6772449768445815702}
   - component: {fileID: 2969514161198536696}
   - component: {fileID: 4965111399315845779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ring
   m_TagString: Ring
   m_Icon: {fileID: 0}
@@ -20023,7 +20023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFire: 1
-  detonationTime: 20
+  detonationTime: 30
   level: 1
   fireColor: {r: 1, g: 0.45882356, b: 0.098039225, a: 1}
   iceColor: {r: 0.3254717, g: 0.66724813, b: 1, a: 1}
@@ -20105,7 +20105,7 @@ GameObject:
   - component: {fileID: 3505373717676443775}
   - component: {fileID: 8937037481898332496}
   - component: {fileID: 6370847555456023770}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IceAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24970,7 +24970,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1310802202557365470}
   - component: {fileID: 2984676431094986524}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}

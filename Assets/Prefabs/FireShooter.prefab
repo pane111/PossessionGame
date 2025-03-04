@@ -107,9 +107,10 @@ MonoBehaviour:
   triggerOnStart: 1
   triggerOnDeath: 1
   addedDeg: 30
-  retriggerDelay: 1.6
+  retriggerDelay: 4
   retrigger: 1
   addDegAfterRetrigger: 1
+  isNotBullet: 0
 --- !u!1 &765793835197373389
 GameObject:
   m_ObjectHideFlags: 0

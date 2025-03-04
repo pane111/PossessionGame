@@ -104,6 +104,9 @@ MonoBehaviour:
   effect: {fileID: 1050261203755192891}
   eAnim: {fileID: 0}
   toSpawn: {fileID: 0}
+  damage: 5
+  kb: 0
+  ice: 0
   type: 0
   destroyTime: 2
   size: {x: 3, y: 30}

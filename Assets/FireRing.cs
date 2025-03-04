@@ -16,7 +16,8 @@ public class FireRing : MonoBehaviour
     public ParticleSystem fireDet;
     public ParticleSystem iceDet;
     public TextMeshPro counter;
-    
+
+    bool invincible = false;
     void Start()
     {
         int r = Random.Range(0, 100);
@@ -90,131 +91,88 @@ public class FireRing : MonoBehaviour
     }
     public void Hit(bool ice)
     {
-        if (ice)
+        if (!invincible)
         {
-            if (isFire)
+
+            if (ice)
             {
-                level--;
+                if (isFire)
+                {
+                    level--;
+                }
+                else
+                {
+                    level++;
+                }
             }
             else
             {
-                level++;
+                if (isFire)
+                {
+                    level++;
+                }
+                else
+                {
+                    level--;
+                }
             }
-        }
-        else
-        {
-            if (isFire)
+            if (level == 0)
             {
-                level++;
-            }
-            else
-            {
-                level--;
-            }
-        }
-        if (level == 0)
-        {
-            GetComponent<SpriteRenderer>().color = Color.gray;
-            iceAura.SetActive(false);
-            fireAura.SetActive(false);
-        }
-        if (level < 0)
-        {
-            isFire = !isFire;
-            level = 1;
-            if (isFire)
-            {
-                GetComponent<SpriteRenderer>().color = fireColor;
-                fireAura.SetActive(true);
+                GetComponent<SpriteRenderer>().color = Color.gray;
                 iceAura.SetActive(false);
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().color = iceColor;
                 fireAura.SetActive(false);
-                iceAura.SetActive(true);
             }
-        }
-        if (level > 0)
-        {
-            if (isFire)
+            if (level < 0)
             {
-                GetComponent<SpriteRenderer>().color = fireColor;
-                fireAura.SetActive(true);
-                iceAura.SetActive(false);
+                isFire = !isFire;
+                level = 1;
+                if (isFire)
+                {
+                    GetComponent<SpriteRenderer>().color = fireColor;
+                    fireAura.SetActive(true);
+                    iceAura.SetActive(false);
+                }
+                else
+                {
+                    GetComponent<SpriteRenderer>().color = iceColor;
+                    fireAura.SetActive(false);
+                    iceAura.SetActive(true);
+                }
             }
-            else
+            if (level > 0)
             {
-                GetComponent<SpriteRenderer>().color = iceColor;
-                fireAura.SetActive(false);
-                iceAura.SetActive(true);
+                if (isFire)
+                {
+                    GetComponent<SpriteRenderer>().color = fireColor;
+                    fireAura.SetActive(true);
+                    iceAura.SetActive(false);
+                }
+                else
+                {
+                    GetComponent<SpriteRenderer>().color = iceColor;
+                    fireAura.SetActive(false);
+                    iceAura.SetActive(true);
+                }
             }
+            counter.text = level.ToString();
+            invincible = true;
+            Invoke("ResetToNotInvincible", 0.4f);
         }
-        counter.text = level.ToString();
+    }
+    void ResetToNotInvincible()
+    {
+        invincible = false;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isFire)
+        if (other.gameObject.tag == "Fire")
         {
-            if (other.gameObject.tag=="Fire")
-            {
-                level++;
-            }
-            else if (other.gameObject.tag=="Ice")
-            {
-                level--;
-            }
+            Hit(false);
         }
-        else
+        else if (other.gameObject.tag == "Ice")
         {
-            if (other.gameObject.tag == "Fire")
-            {
-                level--;
-            }
-            else if (other.gameObject.tag == "Ice")
-            {
-                level++;
-            }
+            Hit(true);
         }
-        
-        if (level==0)
-        {
-            GetComponent<SpriteRenderer>().color = Color.gray;
-            iceAura.SetActive(false);
-            fireAura.SetActive(false);
-        }
-        if (level<0)
-        {
-            isFire = !isFire;
-            level = 1;
-            if (isFire)
-            {
-                GetComponent<SpriteRenderer>().color = fireColor;
-                fireAura.SetActive(true);
-                iceAura.SetActive(false);
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().color = iceColor;
-                fireAura.SetActive(false);
-                iceAura.SetActive(true);
-            }
-        }
-        if (level>0)
-        {
-            if (isFire)
-            {
-                GetComponent<SpriteRenderer>().color = fireColor;
-                fireAura.SetActive(true);
-                iceAura.SetActive(false);
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().color = iceColor;
-                fireAura.SetActive(false);
-                iceAura.SetActive(true);
-            }
-        }
-        counter.text = level.ToString();
+
     }
 }

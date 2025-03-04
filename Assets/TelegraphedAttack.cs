@@ -28,6 +28,10 @@ public class TelegraphedAttack : MonoBehaviour
         Invoke("TriggerEffect", timeUntilHit);
         GetComponent<Animator>().SetFloat("Time", 1/timeUntilHit);
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawCube(transform.position, new Vector3(size.x, size.y, 0));
+    }
 
 
     void TriggerEffect()
@@ -48,7 +52,7 @@ public class TelegraphedAttack : MonoBehaviour
         
         if (isCircle)
         {
-            Collider2D hitColliders = Physics2D.OverlapCircle(transform.position, size.x);
+            Collider2D hitColliders = Physics2D.OverlapCircle(transform.position, size.x,~7);
             if (hitColliders != null)
             {
                 print(hitColliders.gameObject);
@@ -71,7 +75,8 @@ public class TelegraphedAttack : MonoBehaviour
         }
         else
         {
-            Collider2D hitColliders = Physics2D.OverlapArea((Vector2)transform.position + size/2, (Vector2)transform.position - size/2);
+            Collider2D hitColliders = Physics2D.OverlapBox(transform.position, size,0,~7);
+            //Collider2D hitColliders = Physics2D.OverlapArea((Vector2)transform.position + size/2, (Vector2)transform.position - size/2);
             if (hitColliders != null)
             {
                 print(hitColliders.gameObject);

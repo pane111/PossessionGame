@@ -20,6 +20,7 @@ public class FinalBoss : BossParentScript
     bool invincible=false;
     public GameObject fireShooter;
     public GameObject iceShooter;
+    public GameObject shooter;
     private void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -63,7 +64,7 @@ public class FinalBoss : BossParentScript
        // ry = Random.Range(-12,12);
         offset = new Vector3(12, 0,0);
         GameObject ics = Instantiate(iceShooter, transform.position + offset, Quaternion.identity);
-        yield return new WaitForSeconds(14);
+        yield return new WaitForSeconds(20);
         if (nring.GetComponent<FireRing>().isFire && nring.GetComponent<FireRing>().level>0) {
             dialogueText.text = "Mwahahahaaa! Can you feel the fires of hell searing your flesh? What will you do now, I wonder?";
             dialogAnim.SetTrigger("Dialogue");
@@ -79,7 +80,7 @@ public class FinalBoss : BossParentScript
             dialogAnim.SetTrigger("Dialogue");
         }
 
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(10);
         if (nring.GetComponent<FireRing>().level == 0)
         {
             dialogueText.text = "Seems your head isn't completely empty... Very well... it's time I stop holding back!";
@@ -133,6 +134,7 @@ public class FinalBoss : BossParentScript
 
     public void EnableActions()
     {
+        shooter.SetActive(true);
         portrait = p3;
         dPortrait.sprite = portrait;
         canDoThings = true;
@@ -143,6 +145,7 @@ public class FinalBoss : BossParentScript
 
     void TriggerUltAttack()
     {
+        shooter.SetActive(false);
         portrait = p2;
         dPortrait.sprite = portrait;
         ultAttackTriggered = true;

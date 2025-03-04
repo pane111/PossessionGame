@@ -15,6 +15,7 @@ public class SpreadShot : MonoBehaviour
     public float retriggerDelay;
     public bool retrigger;
     public bool addDegAfterRetrigger;
+    public bool isNotBullet = false;
     float ad2;
     private void Start()
     {
@@ -41,16 +42,23 @@ public class SpreadShot : MonoBehaviour
             {
                 float angle = Random.Range(-maxDeg, maxDeg);
                 GameObject shotBullet = Instantiate(toShoot, transform.position, Quaternion.identity);
-                shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle)+addedDeg);
-                shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
+                if (!isNotBullet)
+                {
+                    shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle) + addedDeg);
+                    shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
+                }
+                
                 Destroy(shotBullet, 5);
             }
             else
             {
                 float angle = (maxDeg / bulletAmount) * i;
                 GameObject shotBullet = Instantiate(toShoot, transform.position, Quaternion.identity);
-                shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle) + addedDeg);
-                shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
+                if (!isNotBullet)
+                {
+                    shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle) + addedDeg);
+                    shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
+                }
                 Destroy(shotBullet, 5);
             }
             
