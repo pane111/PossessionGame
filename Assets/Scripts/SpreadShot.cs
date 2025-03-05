@@ -16,6 +16,7 @@ public class SpreadShot : MonoBehaviour
     public bool retrigger;
     public bool addDegAfterRetrigger;
     public bool isNotBullet = false;
+    public bool canShoot=true;
     float ad2;
     private void Start()
     {
@@ -35,33 +36,37 @@ public class SpreadShot : MonoBehaviour
     }
     public void OnShoot()
     {
-
-        for (int i = 0; i < bulletAmount; i++)
+        if (canShoot)
         {
-            if (randomRotation)
+
+
+            for (int i = 0; i < bulletAmount; i++)
             {
-                float angle = Random.Range(-maxDeg, maxDeg);
-                GameObject shotBullet = Instantiate(toShoot, transform.position, Quaternion.identity);
-                if (!isNotBullet)
+                if (randomRotation)
                 {
-                    shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle) + addedDeg);
-                    shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
+                    float angle = Random.Range(-maxDeg, maxDeg);
+                    GameObject shotBullet = Instantiate(toShoot, transform.position, Quaternion.identity);
+                    if (!isNotBullet)
+                    {
+                        shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle) + addedDeg);
+                        shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
+                    }
+
+                    Destroy(shotBullet, 5);
                 }
-                
-                Destroy(shotBullet, 5);
-            }
-            else
-            {
-                float angle = (maxDeg / bulletAmount) * i;
-                GameObject shotBullet = Instantiate(toShoot, transform.position, Quaternion.identity);
-                if (!isNotBullet)
+                else
                 {
-                    shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle) + addedDeg);
-                    shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
+                    float angle = (maxDeg / bulletAmount) * i;
+                    GameObject shotBullet = Instantiate(toShoot, transform.position, Quaternion.identity);
+                    if (!isNotBullet)
+                    {
+                        shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle) + addedDeg);
+                        shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
+                    }
+                    Destroy(shotBullet, 5);
                 }
-                Destroy(shotBullet, 5);
+
             }
-            
         }
 
         if (retrigger)

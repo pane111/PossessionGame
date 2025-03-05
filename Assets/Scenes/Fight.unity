@@ -179,6 +179,7 @@ MonoBehaviour:
   retrigger: 1
   addDegAfterRetrigger: 1
   isNotBullet: 0
+  canShoot: 1
 --- !u!1 &30782707
 GameObject:
   m_ObjectHideFlags: 0
@@ -26013,7 +26014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &478476429
 Transform:
   m_ObjectHideFlags: 0
@@ -26043,7 +26044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cd2755b6ad4cc488028a73fe15fd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
+  maxHealth: 140
   additional: {fileID: 0}
   portrait: {fileID: 21300000, guid: 8e8c594740e6ff143afc3f00817a9c7b, type: 3}
   dPortrait: {fileID: 1273011834}
@@ -26074,7 +26075,9 @@ MonoBehaviour:
   ring: {fileID: 7762484920799019377, guid: 06cca4e69341943459253a58f0d8df44, type: 3}
   fireShooter: {fileID: 7865111134536795, guid: 646319c85cbba3641917275774fac137, type: 3}
   iceShooter: {fileID: 4085690800392097406, guid: f0fe14b4b7071f14cadf35c9a1f6e26f, type: 3}
-  shooter: {fileID: 1440654889}
+  shots:
+  - {fileID: 18712711}
+  - {fileID: 808934578}
 --- !u!50 &478476431
 Rigidbody2D:
   serializedVersion: 4
@@ -71772,6 +71775,7 @@ MonoBehaviour:
   retrigger: 1
   addDegAfterRetrigger: 0
   isNotBullet: 1
+  canShoot: 1
 --- !u!1 &815316488
 GameObject:
   m_ObjectHideFlags: 0
@@ -77361,7 +77365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &976422671
 Transform:
   m_ObjectHideFlags: 0
@@ -144324,7 +144328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1835709973
 Transform:
   m_ObjectHideFlags: 0
@@ -160270,7 +160274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3754007146077638777, guid: 1496628c1fdde414c931d92c21be4fee, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7538983464937888468, guid: 1496628c1fdde414c931d92c21be4fee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -160425,7 +160429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273334815893086290, guid: bb09f471d231ae14b87f4bdcdf3ee9d3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8675350612961221957, guid: bb09f471d231ae14b87f4bdcdf3ee9d3, type: 3}
       propertyPath: owner

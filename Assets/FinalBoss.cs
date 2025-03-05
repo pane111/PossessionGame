@@ -20,7 +20,7 @@ public class FinalBoss : BossParentScript
     bool invincible=false;
     public GameObject fireShooter;
     public GameObject iceShooter;
-    public GameObject shooter;
+    public List<SpreadShot> shots = new List<SpreadShot>();
     private void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -134,7 +134,10 @@ public class FinalBoss : BossParentScript
 
     public void EnableActions()
     {
-        shooter.SetActive(true);
+        foreach (SpreadShot sh in shots)
+        {
+            sh.canShoot = true;
+        }
         portrait = p3;
         dPortrait.sprite = portrait;
         canDoThings = true;
@@ -145,7 +148,10 @@ public class FinalBoss : BossParentScript
 
     void TriggerUltAttack()
     {
-        shooter.SetActive(false);
+        foreach (SpreadShot sh in shots)
+        {
+            sh.canShoot = false;
+        }
         portrait = p2;
         dPortrait.sprite = portrait;
         ultAttackTriggered = true;
