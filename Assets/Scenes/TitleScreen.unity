@@ -1359,6 +1359,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fc5ba8821d61f7b4fac743da64744999, type: 3}
   - {fileID: 21300000, guid: 63ada8db27f41ad4c9942f020d4e3bdb, type: 3}
   - {fileID: 21300000, guid: 14c5f1172ab80ff4d91d8c6468525d1a, type: 3}
+  - {fileID: 21300000, guid: 62cefd75433421b4fbdbf86e3f5183b0, type: 3}
   - {fileID: 21300000, guid: cc10def27d165bc4a9ed6b7a35877d1e, type: 3}
   tutorialNames:
   - The Story, Part 1
@@ -1368,19 +1369,18 @@ MonoBehaviour:
   - Your weapon is the enemy
   - Dashing
   - Corruption
+  - Telegraphed Attacks
   - That's it
   descriptions:
   - Many years ago, a kingdom was plagued by <color=red>Cursed Artifacts</color>
     - Items possessed by demonic entities which would drive their owners to insanity
-    and eventually take over their very souls.
+    and eventually take over their bodies.
   - Those afflicted by the curse are taken to the <color=red>Keep of Souls</color>.
     You are an <color=red>Exorcist</color> - you must exterminate the demons and
     purge the afflicted of their curse by using your own cursed weapon. Only a demon
     can slay another demon, after all.
   - However, you must take care... Your weapon seeks the blood of innocents, and
-    it is your mission to save them. Stop the blade from taking their lives, but
-    take care not to get too close - possessed as they are, they will attempt to
-    wound you.
+    it is your mission to save them. Stop the blade from taking their lives!
   - Touch a <color=red>Statue of the Abyss</color> to enter <color=red>Demon Mode</color>.
     In this state, you will move faster, and the demons will be revealed. Find and
     attack the demons to shatter the crystals that protect their heart, then strike
@@ -1397,6 +1397,9 @@ MonoBehaviour:
     your weapon to slay humans, will grant it more power and raise your corruption.
     Exorcising a demon will lower your corruption. You must keep it as low as possible,
     no matter the cost.
+  - Sometimes, you may see a "danger zone" indicated by a "field", like in the picture.
+    The field will vanish after a short time, and you will take damage if you are
+    still inside the danger zone. Move out in time or use your dash to avoid damage!
   - We have high hopes for you. Do not fail your mission. The curse must be broken.
   curTutorial: 0
   tWindow: {fileID: 265964277}
@@ -1936,8 +1939,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 518, y: 93}
-  m_SizeDelta: {x: 800.2774, y: 800.2774}
+  m_AnchoredPosition: {x: 562.03357, y: 137.03357}
+  m_SizeDelta: {x: 712.2103, y: 712.2103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1847995580
 MonoBehaviour:

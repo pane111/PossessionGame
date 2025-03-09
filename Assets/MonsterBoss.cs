@@ -21,8 +21,12 @@ public class MonsterBoss : BossParentScript
     public SpreadShot rotatingBullets;
     public float shotRepeats;
     public float shotDeg;
+    public GameObject oldFloor;
+    public GameObject newFloor;
     private void Start()
     {
+        oldFloor.SetActive(false);
+        newFloor.SetActive(true);
         bgEffect.SetActive(true);
         player = GameObject.Find("Player").transform;
         rb = GetComponent<Rigidbody2D>();
@@ -164,6 +168,7 @@ public class MonsterBoss : BossParentScript
                 if (CurHealth - 3 <= 0)
                 {
                     collision.GetComponent<SwordScript>().curTarget = player;
+                    moveToMiddle();
                     dialogueText.text = "The time has come... I can feel it...!";
                     dialogAnim.SetTrigger("Dialogue");
                 }
@@ -175,6 +180,7 @@ public class MonsterBoss : BossParentScript
                 if (CurHealth - 1 <= 0)
                 {
                     collision.GetComponent<SwordScript>().curTarget = player;
+                    moveToMiddle();
                     dialogueText.text = "The time has come... I can feel it...!";
                     dialogAnim.SetTrigger("Dialogue");
                 }

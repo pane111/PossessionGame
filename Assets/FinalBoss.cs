@@ -11,7 +11,7 @@ public class FinalBoss : BossParentScript
     public Animator clockAnim;
     public Renderer bgR;
     bool ultAttackTriggered = false;
-    bool fireandicetriggered = false;
+    public bool fireandicetriggered = false;
     public GameObject ultAttack;
     public Animator anim;
     public bool canDoThings=true;
@@ -21,8 +21,15 @@ public class FinalBoss : BossParentScript
     public GameObject fireShooter;
     public GameObject iceShooter;
     public List<SpreadShot> shots = new List<SpreadShot>();
+    public GameObject oldFloor;
+    public GameObject newFloor;
+    public Material sb1;
+    public Material sb2;
     private void Start()
     {
+        transform.position = new Vector3(-37, 0, -4);
+        oldFloor.SetActive(false);
+        newFloor.SetActive(true);
         player = GameObject.Find("Player").transform;
         CurHealth = maxHealth;
         TakeDamage(0);
@@ -199,11 +206,11 @@ public class FinalBoss : BossParentScript
             }
             if (CurHealth <= 0)
             {
-                dialogueText.text = "N-no... Please... I don't want to die... Not yet...! Noooooo!!!";
+                dialogueText.text = "Ungh... N-no... Please... Stop! I beg you...!";
                 dialogAnim.SetTrigger("Dialogue");
             }
 
-            bgR.material.SetFloat("_Exposure", 1 - (1 - (CurHealth / maxHealth))*1);
+            bgR.materials[0].Lerp(sb1, sb2, 1- CurHealth / maxHealth);
         }
     }
 }

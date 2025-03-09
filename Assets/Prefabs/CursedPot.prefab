@@ -465,6 +465,7 @@ MonoBehaviour:
   lr: {fileID: 6133974387709490596}
   playerContact: 0
   sr: {fileID: 1222574351894044019}
+  rb: {fileID: 0}
   orb: {fileID: 3467425950754920455, guid: 53f1fbd647b0815418a8a8491ec3d9e2, type: 3}
   anim: {fileID: 8230038712526259118}
   shotPoint: {fileID: 168019445970694257}
