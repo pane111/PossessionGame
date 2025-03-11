@@ -111,6 +111,7 @@ MonoBehaviour:
   retrigger: 1
   addDegAfterRetrigger: 1
   isNotBullet: 0
+  canShoot: 1
 --- !u!1 &765793835197373389
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 765793835197373389}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -337,18 +338,18 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0.85568786, b: 1, a: 0.654902}
+        key0: {r: 1, g: 0.13054681, b: 0, a: 0.654902}
         key1: {r: 1, g: 1, b: 1, a: 0.61960787}
-        key2: {r: 0.4009434, g: 0.57792765, b: 1, a: 0}
-        key3: {r: 0, g: 0.40884575, b: 0.5377358, a: 0}
-        key4: {r: 1, g: 0, b: 0.7714772, a: 0}
+        key2: {r: 1, g: 0.21905386, b: 0, a: 0}
+        key3: {r: 1, g: 0.70029396, b: 0.39999998, a: 0}
+        key4: {r: 0.3679245, g: 0.18108276, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 19468
-        ctime2: 43947
-        ctime3: 65535
+        ctime1: 9252
+        ctime2: 22552
+        ctime3: 43947
         ctime4: 65535
         ctime5: 0
         ctime6: 0
@@ -363,7 +364,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 4
+        m_NumColorKeys: 5
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2

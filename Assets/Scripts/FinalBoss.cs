@@ -51,13 +51,14 @@ public class FinalBoss : BossParentScript
     }
     public void TriggerFireAndIceAttack()
     {
+        
         fireandicetriggered = true;
         StartCoroutine(FireAndIce());
     }
 
     IEnumerator FireAndIce()
     {
-        
+        GameManager.Instance.SendNotification("An extreme temperature fills your body! Touch the opposite element to balance it out!");
         invincible = true;
         dialogueText.text = "The very elements are mine to control! Let's see how you deal with THIS!";
         dialogAnim.SetTrigger("Dialogue");

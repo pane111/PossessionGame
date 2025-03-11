@@ -18,6 +18,7 @@ public class CursedWeapon : MonoBehaviour
     bool canTakeDamage;
     public bool playerContact = false;
     public SpriteRenderer sr;
+    public GameObject cBreakEffect; 
     [HideInInspector] public Rigidbody2D rb;
     protected virtual void Start()
     {
@@ -56,6 +57,12 @@ public class CursedWeapon : MonoBehaviour
 
     public void CrushCrystal()
     {
+        if (!GameManager.Instance.crystalTutorial)
+        {
+            GameManager.Instance.SendNotification("You have shattered the barrier protecting the demon's heart! Find the heart and attack it!");
+            GameManager.Instance.crystalTutorial = true;
+        }
+        cBreakEffect.SetActive(true);
         demonHeart.GetComponent<DemonHeart>().ExposeHeart();
     }
 
@@ -116,11 +123,11 @@ public class CursedWeapon : MonoBehaviour
             bs.transform.position = (Vector2)transform.position + dir.normalized;
             if (collision.GetComponent<SwordScript>().isSlashing)
             {
-                TakeDamage(3);
+                TakeDamage(3 + GameManager.Instance.dmgUpgrades* GameManager.Instance.dmgIncrease*3);
             }
             else
             {
-                TakeDamage(1);
+                TakeDamage(1 + +GameManager.Instance.dmgUpgrades * GameManager.Instance.dmgIncrease);
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
         }

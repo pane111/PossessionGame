@@ -54,13 +54,18 @@ public class Player : MonoBehaviour
         set
         {
             if (value < 0) { value = 0; }
-            AudioManager.Instance.possessionRTPC.SetGlobalValue(value);
+            if (AudioManager.Instance!=null)
+            {
+                AudioManager.Instance.possessionRTPC.SetGlobalValue(value);
+            }
+            
             _corruption = value;
         }
     }
     public float corruptionLossOnPurify = 40;
     public Image corruptionImage;
     public TextMeshProUGUI corruptionText;
+    public bool resizeCorrText;
     public Image swordGlow;
     public Image overlay;
     public ParticleSystem afterimage;
@@ -79,8 +84,20 @@ public class Player : MonoBehaviour
     float curDeg=0;
     public Transform rotator;
     public Transform orbiter;
+
+    
     void Start()
     {
+
+        if (PlayerPrefs.HasKey("Corruption"))
+        {
+            Corruption = PlayerPrefs.GetFloat("Corruption");
+            
+        }
+        if (Corruption > 0)
+        {
+            GameManager.Instance.SendNotification("A dark force has taken your boons!");
+        }
         stepCounter = stepSoundCount;
         _curHealth = maxHealth;
         stepTimer = maxStepTimer;
@@ -129,6 +146,10 @@ public class Player : MonoBehaviour
             }
 
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            SetCorruption(90);
+        }
 
         if (Input.GetKeyDown(KeyCode.E) && canRepell && Vector2.Distance(transform.position, sword.position) < swordScript.repellRange)
         {
@@ -151,11 +172,11 @@ public class Player : MonoBehaviour
         {
             if (!demonModeActive)
             {
-                rb.velocity = moveDirection.normalized * speed;
+                rb.velocity = moveDirection.normalized * speed * (1 + (GameManager.Instance.MSUpgrades*GameManager.Instance.MSIncrease));
             }
             else
             {
-                rb.velocity = moveDirection.normalized * speed * 1.3f;
+                rb.velocity = moveDirection.normalized * speed * 1.3f * (1 + (GameManager.Instance.MSUpgrades * GameManager.Instance.MSIncrease*1.2f));
             }
 
             dashCooldown -= Time.deltaTime;
@@ -180,7 +201,11 @@ public class Player : MonoBehaviour
         corruptionImage.color = new Color(1, 1, 1, Corruption / 100);
         swordGlow.color = new Color(1, 1, 1, Corruption / 100);
 
-        corruptionText.transform.localScale = Vector3.one * (0.45f + Corruption / 100);
+        if (resizeCorrText)
+        {
+            corruptionText.transform.localScale = Vector3.one * (0.45f + Corruption / 100);
+        }
+        
             overlay.color = new Color(1, 1, 1, Corruption / 100);
 
     }
@@ -197,7 +222,13 @@ public class Player : MonoBehaviour
                 blood.Play();
             sr.color = Color.red;
             Invoke("StopBleeding", 0.2f);
-            CurHealth -= 0.5f;
+            float amount = 0.5f;
+            amount = amount * (1 - GameManager.Instance.defUpgrades * GameManager.Instance.defIncrease);
+            if (amount <= 0.25f)
+            {
+                amount = 0.25f;
+            }
+            CurHealth -= amount;
             healthBar.fillAmount = CurHealth / maxHealth;
         }
         
@@ -209,6 +240,11 @@ public class Player : MonoBehaviour
             blood.Play();
         sr.color = Color.red;
         Invoke("StopBleeding", 0.2f);
+        amount = amount * (1 - GameManager.Instance.defUpgrades * GameManager.Instance.defIncrease);
+        if (amount <= 1)
+        {
+            amount = 1;
+        }
         CurHealth -= amount;
 
         healthBar.fillAmount = CurHealth / maxHealth;
@@ -234,8 +270,13 @@ public class Player : MonoBehaviour
                 blood.Play();
             sr.color = Color.red;
             Invoke("StopBleeding", 0.2f);
+            amount = amount * (1 - GameManager.Instance.defUpgrades * GameManager.Instance.defIncrease);
+            if (amount <= 1)
+            {
+                amount = 1;
+            }
             CurHealth -= amount;
-            
+
             healthBar.fillAmount = CurHealth / maxHealth;
             if (CurHealth <= 0)
             {
@@ -336,6 +377,11 @@ public class Player : MonoBehaviour
             TakeCustomDamage(10);
         }
 
+        if (collision.gameObject.CompareTag("Portal"))
+        {
+            GameManager.Instance.GoToBossFight();
+        }
+
         if (collision.gameObject.CompareTag("Projectile"))
         {
 
@@ -388,11 +434,20 @@ public class Player : MonoBehaviour
             StopBleeding();
         }
     }
+    public void SetCorruption(float amount)
+    {
+        Corruption = amount;
+    }
+    public float GetCorruption()
+    {
+        return Corruption;
+    }
 
     public void Revive()
     {
         if (demonModeActive) { AudioManager.Instance.StartTicking.Post(gameObject); }
         AudioManager.Instance.Revive.Post(gameObject);
+        maxHealth = 100 + GameManager.Instance.hpUpgrades * GameManager.Instance.hpIncrease;
         CurHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
         Corruption += 30;

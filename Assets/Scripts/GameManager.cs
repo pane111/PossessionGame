@@ -9,6 +9,9 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
+
+    public bool setCorrTo0;
+
     public Gradient colorGradient;
     public Gradient NpcGradient;
     public GameObject bSplatter;
@@ -41,6 +44,28 @@ public class GameManager : MonoBehaviour
     
     public Action startDM;
     public Action stopDM;
+
+    public TextMeshProUGUI notificationText;
+    public Animator notif;
+    public bool crystalTutorial;
+
+
+    [Header("Upgrades")]
+    public int MSUpgrades;
+    public float MSIncrease;
+    public int dmgUpgrades;
+    public float dmgIncrease;
+    public int hpUpgrades;
+    public float hpIncrease;
+    public int defUpgrades;
+    public float defIncrease;
+    public TextMeshProUGUI ch1;
+    public TextMeshProUGUI ch2;
+    int choice1=0;
+    int choice2=1;
+    public List<string> possibleChoices = new List<string>();
+    
+
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -52,11 +77,26 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        if (player == null)
+            player = FindObjectOfType<Player>();
+
+
+        if (setCorrTo0)
+        {
+            player.SetCorruption(0);
+            PlayerPrefs.SetFloat("Corruption", 0);
+        }
+
+
+        
+
     }
     void Start()
     {
+
         bgColor = Camera.main.backgroundColor;
-        player = FindObjectOfType<Player>();
+       
+
         OnDemonModeExit();
     }
 
@@ -66,6 +106,20 @@ public class GameManager : MonoBehaviour
         {
             SetBPM(2);
         }
+    }
+    public void SendNotification(string message)
+    {
+        if (notificationText != null)
+        {
+            notificationText.text = message;
+        }
+        else
+        {
+            notificationText.text = "Error! Message was empty.";
+        }
+
+        notif.SetTrigger("Message");
+
     }
 
     public void AddKill()
@@ -104,7 +158,7 @@ public class GameManager : MonoBehaviour
 
     public void OnDeath()
     {
-        
+        GetChoices();
         AudioManager.Instance.GS_GameOver.SetValue();
         AudioManager.Instance.Death.Post(gameObject);
         deathAnim.SetTrigger("Death");
@@ -125,7 +179,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnDemonModeExit()
     {
-        stopDM.Invoke();
+        if(stopDM!=null) stopDM.Invoke();
         AudioManager.Instance.ExitDemonMode();
         character.sprite = cSprite;
         armor.enabled = true;
@@ -134,19 +188,63 @@ public class GameManager : MonoBehaviour
         InvertColor();
     }
 
-    public void Continue()
+    public void GetChoices()
     {
+        choice1 = UnityEngine.Random.Range(0,possibleChoices.Count);
+        ch1.text = possibleChoices[choice1];
+
+        choice2 = UnityEngine.Random.Range(0, possibleChoices.Count);
+        while (choice2==choice1) //We don't want the same choice twice, so we roll until we get a new one
+        {
+            choice2 = UnityEngine.Random.Range(0, possibleChoices.Count);
+        }
+        ch2.text= possibleChoices[choice2];
+
+
+
+    }
+
+    public void Continue()  //This is CHOICE 2
+    {
+        getStatUpgrade(choice2);
         
         Time.timeScale = storedTS;
         deathMenu.SetActive(false);
         player.Revive();
     }
-    public void GiveUp()
+    public void GiveUp() //This is CHOICE 1
     {
+        getStatUpgrade(choice1);
+
+        Time.timeScale = storedTS;
+        deathMenu.SetActive(false);
+        player.Revive();
+        /*
         AudioManager.Instance.GameOver.Post(gameObject);
         Time.timeScale = 1;
         Time.fixedDeltaTime = 0.02F * Time.timeScale;
         SceneManager.LoadScene("GameOver");
+        */
+    }
+
+    void getStatUpgrade(int c)
+    {
+        switch(c)
+        {
+            case 0:
+                MSUpgrades++;
+                break;
+            case 1:
+                dmgUpgrades++;
+                break;
+            case 2:
+                defUpgrades++;
+                break;
+                case 3:
+                hpUpgrades++;
+                break;
+
+        }
     }
 
     public void InvertColor()
@@ -159,9 +257,15 @@ public class GameManager : MonoBehaviour
         Color.RGBToHSV(floor.color, out hsvWall.x, out hsvWall.y, out hsvWall.z);
         wall.color = Color.HSVToRGB(0, 0, 100 - hsvWall.z);
     }
+    public void GoToBossFight()
+    {
+        PlayerPrefs.SetFloat("Corruption", player.Corruption);
+        SceneManager.LoadScene("Fight");
+    }
 
     public void TriggerEnding()
     {
+        
         if (player.Corruption >= 100)
         {
             SceneManager.LoadScene("GameOver");

@@ -16,6 +16,7 @@ TagManager:
   - Fire
   - Ice
   - Ring
+  - Portal
   layers:
   - Default
   - TransparentFX

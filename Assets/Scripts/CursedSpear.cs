@@ -15,6 +15,7 @@ public class CursedSpear : CursedWeapon
     Vector2 pDir;
     public ParticleSystem fire;
     public Transform sprite;
+    public GameObject indicator;
     // Update is called once per frame
 
     public override void OnDM()
@@ -75,9 +76,12 @@ public class CursedSpear : CursedWeapon
         sprite.rotation = Quaternion.Euler(0, 0, angle);
         rb.velocity = -pDir.normalized * moveSpeed;
         Vector2 curDir = pDir;
+
         yield return new WaitForSeconds(attackWindup);
+        indicator.SetActive(true);
         rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.6f);
+        indicator.SetActive(false);
         //angle = Mathf.Atan2(player.position.y - transform.position.y, player.position.x - transform.position.x) * Mathf.Rad2Deg - 90;
         //transform.rotation = Quaternion.Euler(0, 0, angle);
         rb.velocity = curDir.normalized * attackForce;
