@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     int choice2=1;
     public List<string> possibleChoices = new List<string>();
     
-
+    
     public static GameManager Instance { get; private set; }
     private void Awake()
     {

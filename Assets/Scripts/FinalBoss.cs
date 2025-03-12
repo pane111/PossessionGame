@@ -205,11 +205,7 @@ public class FinalBoss : BossParentScript
                 TakeDamage(1);
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
-            if (CurHealth <= 0)
-            {
-                dialogueText.text = "Ungh... N-no... Please... Stop! I beg you...!";
-                dialogAnim.SetTrigger("Dialogue");
-            }
+            
 
             bgR.materials[0].Lerp(sb1, sb2, 1- CurHealth / maxHealth);
         }

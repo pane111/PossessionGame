@@ -73,6 +73,9 @@ public class BossParentScript : MonoBehaviour
         }
         
         if (CurHealth <= 0) {
+            Time.timeScale = 1;
+            GameManager.Instance.storedTS = 1;
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
             healthBar.enabled = false;
             print("Boss died");
             transition.SetActive(true);
