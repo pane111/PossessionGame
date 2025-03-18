@@ -80,7 +80,8 @@ public class CursedWeapon : MonoBehaviour
     public virtual void OnExitDM()
     {
         
-        if (Vector2.Distance(player.position, transform.position) >= detectRange) { playerContact = false; }
+        if (Vector2.Distance(player.position, transform.position) >= detectRange) { //playerContact = false;
+                                                                                   }
 
         if (playerContact && !dead)
         {

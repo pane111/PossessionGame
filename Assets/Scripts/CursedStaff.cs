@@ -81,7 +81,7 @@ public class CursedStaff : CursedWeapon
                 beamCooldown = 2;
                 Invoke("ShootBullets", fireDelay);
             }
-            
+            playerContact = true;
             playerFound = true; }
     }
     public override void OnDeath()

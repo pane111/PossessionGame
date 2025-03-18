@@ -5388,7 +5388,7 @@ MonoBehaviour:
   damageEffect: {fileID: 7202309461044854618}
   lr: {fileID: 8361499515988188058}
   playerContact: 0
-  sr: {fileID: 792719335555702905}
+  sr: {fileID: 3615282703646770155}
   cBreakEffect: {fileID: 8549043754002859431}
   rb: {fileID: 0}
   attackForce: 50
