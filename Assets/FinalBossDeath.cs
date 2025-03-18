@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class FinalBossDeath : MonoBehaviour
 {
     public List<GameObject> toDisable = new List<GameObject>();
+    public List<GameObject> toEnable = new List<GameObject>();
     public ParticleSystem playerRepel;
     public ParticleSystem bleed;
     void Start()
@@ -17,6 +18,8 @@ public class FinalBossDeath : MonoBehaviour
                 go.SetActive(false);
             }
         }
+        foreach (GameObject go in toEnable)
+        { if (go != null) { go.SetActive(true); } }
         Camera.main.GetComponent<CamScript>().player = this.transform;
     }
 

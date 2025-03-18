@@ -5010,6 +5010,9 @@ MonoBehaviour:
   addedDeg: 0
   retriggerDelay: 0
   retrigger: 0
+  addDegAfterRetrigger: 0
+  isNotBullet: 0
+  canShoot: 1
 --- !u!1 &1728524719019971485
 GameObject:
   m_ObjectHideFlags: 0
@@ -14938,6 +14941,7 @@ MonoBehaviour:
   toSpawn: {fileID: 0}
   damage: 15
   kb: 0
+  ice: 0
   type: 0
   destroyTime: 2
   size: {x: 30, y: 3}
@@ -20118,6 +20122,9 @@ MonoBehaviour:
   addedDeg: 0
   retriggerDelay: 0
   retrigger: 0
+  addDegAfterRetrigger: 0
+  isNotBullet: 0
+  canShoot: 1
 --- !u!1 &6687665616703199864
 GameObject:
   m_ObjectHideFlags: 0
