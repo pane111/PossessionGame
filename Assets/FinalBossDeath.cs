@@ -22,6 +22,7 @@ public class FinalBossDeath : MonoBehaviour
         { if (go != null) { go.SetActive(true); } }
         Camera.main.GetComponent<CamScript>().player = this.transform;
     }
+    
 
     public void Repel()
     {

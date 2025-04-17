@@ -71,7 +71,7 @@ public class FireRing : MonoBehaviour
         if (level>0)
         {
             counter.color = Color.red;
-            p.TakeForcedDamage(30 * level);
+            p.TakeForcedDamage(15 * level);
             if (isFire)
             {
                 fireDet.Play();

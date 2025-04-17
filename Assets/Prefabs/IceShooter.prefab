@@ -106,11 +106,12 @@ MonoBehaviour:
   shotForce: 12
   triggerOnStart: 1
   triggerOnDeath: 1
-  addedDeg: 30
+  addedDeg: 45
   retriggerDelay: 0.6
   retrigger: 1
   addDegAfterRetrigger: 1
   isNotBullet: 0
+  canShoot: 1
 --- !u!1 &6874050182689959435
 GameObject:
   m_ObjectHideFlags: 0

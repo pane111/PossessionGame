@@ -100,14 +100,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toShoot: {fileID: 6518974428527003664, guid: 8e0f551c5e7fae24c9a455c53d1661ed, type: 3}
-  bulletAmount: 3
+  bulletAmount: 6
   maxDeg: 360
-  randomRotation: 1
-  shotForce: 10
+  randomRotation: 0
+  shotForce: 7
   triggerOnStart: 1
   triggerOnDeath: 1
-  addedDeg: 30
-  retriggerDelay: 4
+  addedDeg: 45
+  retriggerDelay: 1
   retrigger: 1
   addDegAfterRetrigger: 1
   isNotBullet: 0

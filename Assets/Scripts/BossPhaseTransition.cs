@@ -15,12 +15,18 @@ public class BossPhaseTransition : MonoBehaviour
 
     public TextMeshProUGUI dText;
     public Animator dAnim;
+    public bool disableDialogue;
 
     private void Start()
     {
         if (centerCameraOnThis)
         {
             Camera.main.GetComponent<CamScript>().player = toCenterOn;
+        }
+
+        if (disableDialogue)
+        {
+            dAnim.gameObject.SetActive(false);
         }
     }
 

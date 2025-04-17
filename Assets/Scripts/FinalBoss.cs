@@ -25,6 +25,7 @@ public class FinalBoss : BossParentScript
     public GameObject newFloor;
     public Material sb1;
     public Material sb2;
+    public GameObject finalBG;
     private void Start()
     {
         transform.position = new Vector3(-37, 0, -4);
@@ -160,6 +161,8 @@ public class FinalBoss : BossParentScript
         {
             sh.canShoot = false;
         }
+        bgEffect.SetActive(false);
+        finalBG.SetActive(true);
         portrait = p2;
         dPortrait.sprite = portrait;
         ultAttackTriggered = true;
