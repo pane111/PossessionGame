@@ -10107,13 +10107,14 @@ MonoBehaviour:
   detectRange: 6
   playerFound: 0
   damageEffect: {fileID: 6710218844870274451}
+  dead: 0
   lr: {fileID: 2980626202352906894}
   playerContact: 0
   sr: {fileID: 4660841593006457789}
   cBreakEffect: {fileID: 1512129079020775101}
   rb: {fileID: 0}
   rotator: {fileID: 581734861442305938}
-  rotSpeed: 0.5
+  rotSpeed: 0.4
   fire: {fileID: 1029631776064125364}
   travelSpeed: 1.75
   playerDist: 4

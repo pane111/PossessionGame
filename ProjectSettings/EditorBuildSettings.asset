@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fight.unity
     guid: 37fd896c2e30a424a8da1251d4494ee9
+  - enabled: 1
+    path: Assets/Scenes/Teleport.unity
+    guid: 36c64bea1ea8a924f93265f7cba7547d
   m_configObjects: {}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CursedShield : CursedWeapon
@@ -54,13 +55,16 @@ public class CursedShield : CursedWeapon
 
     public override void OnDeath()
     {
-        base.OnDeath();
+        dead = true;
+        GameManager.Instance.player.OnPurify();
         fire.Play();
         fire.transform.parent = null;
         Destroy(fire, 4);
         GetComponent<Collider2D>().enabled = false;
         rb.isKinematic = true;
         gameObject.SetActive(false);
+        rotator.gameObject.SetActive(false);
+        print("Reached end of death sequence");
 
     }
 }

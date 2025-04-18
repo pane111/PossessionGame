@@ -13,7 +13,7 @@ public class CursedWeapon : MonoBehaviour
     public float detectRange;
     public bool playerFound;
     public ParticleSystem damageEffect;
-    bool dead = false;
+    public bool dead = false;
     public LineRenderer lr;
     bool canTakeDamage;
     public bool playerContact = false;
@@ -109,7 +109,11 @@ public class CursedWeapon : MonoBehaviour
     public virtual void OnDeath()
     {
         dead = true;
-        lr.gameObject.SetActive(false);
+        if (lr!=null)
+        {
+            lr.gameObject.SetActive(false);
+        }
+        
         GameManager.Instance.player.OnPurify();
     }
 

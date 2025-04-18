@@ -26,6 +26,7 @@ public class FinalBoss : BossParentScript
     public Material sb1;
     public Material sb2;
     public GameObject finalBG;
+    public GameObject add;
     private void Start()
     {
         transform.position = new Vector3(-37, 0, -4);
@@ -210,7 +211,6 @@ public class FinalBoss : BossParentScript
             }
             
 
-            bgR.materials[0].Lerp(sb1, sb2, 1- CurHealth / maxHealth);
         }
     }
 }

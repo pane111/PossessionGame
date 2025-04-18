@@ -456,8 +456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17396180c500d346961889bef3a0746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 14
-  curHealth: 14
+  maxHealth: 7
+  curHealth: 7
   demonHeart: {fileID: 0}
   player: {fileID: 0}
   detectRange: 10

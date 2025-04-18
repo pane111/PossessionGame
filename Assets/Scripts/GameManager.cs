@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F6))
         {
-            SetBPM(2);
+            dmgUpgrades = 10;
         }
     }
     public void SendNotification(string message)
@@ -259,8 +259,8 @@ public class GameManager : MonoBehaviour
     }
     public void GoToBossFight()
     {
-        PlayerPrefs.SetFloat("Corruption", player.Corruption);
-        SceneManager.LoadScene("Fight");
+        PlayerPrefs.SetFloat("Corruption", 0);
+        SceneManager.LoadScene("Teleport");
     }
 
     public void TriggerEnding()

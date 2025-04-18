@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
                 sr.flipX = !sr.flipX;
                 stepTimer = maxStepTimer;
             }
-            if (Input.GetKeyDown(KeyCode.Space) && dashCooldown <= 0)
+            if (Input.GetButtonDown("Jump") && dashCooldown <= 0)
             {
                 AudioManager.Instance.Dash.Post(gameObject);
                 dashImg.color = new Color(dashImg.color.r, dashImg.color.g, dashImg.color.b, 0.2f);
@@ -154,13 +154,13 @@ public class Player : MonoBehaviour
             SetCorruption(90);
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && canRepell && Vector2.Distance(transform.position, sword.position) < swordScript.repellRange)
+        if (Input.GetButtonDown("Fire2") && canRepell && Vector2.Distance(transform.position, sword.position) < swordScript.repellRange)
         {
             StartCoroutine(Repell());
             swordScript.RepellFunction();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetButtonDown("Fire3"))
         {
             StartCoroutine(pullEffect());
             swordScript.Pull();

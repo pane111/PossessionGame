@@ -55,6 +55,7 @@ public class CursedSpear : CursedWeapon
         fire.Play();
         fire.transform.parent = null;
         Destroy(fire,4);
+        
         Destroy(lr.gameObject);
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().isKinematic = true;
