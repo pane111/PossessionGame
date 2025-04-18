@@ -85,7 +85,10 @@ public class Player : MonoBehaviour
     public Transform rotator;
     public Transform orbiter;
 
-    
+    public float juicedUp=1; //Increase when juiced
+    public float juicedMult;
+    public float juicedDuration;
+    bool juiceTutorialTriggered = false;
     void Start()
     {
 
@@ -172,11 +175,11 @@ public class Player : MonoBehaviour
         {
             if (!demonModeActive)
             {
-                rb.velocity = moveDirection.normalized * speed * (1 + (GameManager.Instance.MSUpgrades*GameManager.Instance.MSIncrease));
+                rb.velocity = moveDirection.normalized * juicedUp * speed * (1 + (GameManager.Instance.MSUpgrades*GameManager.Instance.MSIncrease));
             }
             else
             {
-                rb.velocity = moveDirection.normalized * speed * 1.3f * (1 + (GameManager.Instance.MSUpgrades * GameManager.Instance.MSIncrease*1.2f));
+                rb.velocity = moveDirection.normalized * speed * juicedUp * 1.3f * (1 + (GameManager.Instance.MSUpgrades * GameManager.Instance.MSIncrease*1.2f));
             }
 
             dashCooldown -= Time.deltaTime;
@@ -364,6 +367,14 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
+    IEnumerator OnJuiced()
+    {
+        juicedUp = juicedMult;
+        yield return new WaitForSeconds(juicedDuration);
+        juicedUp = 1;
+        yield return null;
+    }
+
     public void StopBleeding()
     {
         blood.Stop();
@@ -375,6 +386,17 @@ public class Player : MonoBehaviour
         {
 
             TakeCustomDamage(10);
+        }
+
+        if (collision.gameObject.CompareTag("Juice") && juicedUp==1)
+        {
+            StartCoroutine(OnJuiced());
+            Destroy(collision.gameObject);
+            if (!juiceTutorialTriggered)
+            {
+                juiceTutorialTriggered = true;
+                GameManager.Instance.SendNotification("Consume <color=red>Ambrosial Juice</color> to gain increased movement speed for a short time!");
+            }
         }
 
         if (collision.gameObject.CompareTag("Portal"))

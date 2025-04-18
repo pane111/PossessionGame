@@ -32,6 +32,11 @@ public class CursedWeapon : MonoBehaviour
         lr.enabled = true;
         sword = FindObjectOfType<SwordScript>();
         rb = GetComponent<Rigidbody2D>();
+        OnStart();
+    }
+    public virtual void OnStart()
+    {
+
     }
 
     public virtual void TakeDamage(float amount)

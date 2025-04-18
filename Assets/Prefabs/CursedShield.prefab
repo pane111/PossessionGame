@@ -10100,8 +10100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7aaaa9e4b8203d4d82e0a715fd3b2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  curHealth: 10
+  maxHealth: 8
+  curHealth: 8
   demonHeart: {fileID: 0}
   player: {fileID: 0}
   detectRange: 6
@@ -10115,8 +10115,9 @@ MonoBehaviour:
   rotator: {fileID: 581734861442305938}
   rotSpeed: 0.5
   fire: {fileID: 1029631776064125364}
-  travelSpeed: 2.5
+  travelSpeed: 1.75
   playerDist: 4
+  creature: {fileID: 1903111920105780, guid: ab6c4c5c11dca324f8445b7816d94132, type: 3}
 --- !u!95 &8479126076386708178
 Animator:
   serializedVersion: 5

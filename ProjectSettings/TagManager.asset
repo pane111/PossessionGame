@@ -17,6 +17,7 @@ TagManager:
   - Ice
   - Ring
   - Portal
+  - Juice
   layers:
   - Default
   - TransparentFX

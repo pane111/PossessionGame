@@ -10,6 +10,13 @@ public class CursedShield : CursedWeapon
     public ParticleSystem fire;
     public float travelSpeed;
     public float playerDist;
+    public GameObject creature;
+
+    public override void OnStart()
+    {
+        base.OnStart();
+        SpawnCreature();
+    }
 
     void Update()
     {
@@ -31,6 +38,20 @@ public class CursedShield : CursedWeapon
         }
         lr.SetPosition(1, demonHeart.transform.position - transform.position);
     }
+
+    void SpawnCreature()
+    {
+        
+        print("Trying to spawn creature");
+        if (playerFound && curHealth > 0)
+        {
+            print("Creature spawned");
+            Instantiate(creature,transform.position,Quaternion.identity);
+        }
+
+        Invoke("SpawnCreature", 10);
+    }
+
     public override void OnDeath()
     {
         base.OnDeath();
