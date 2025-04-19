@@ -10116,7 +10116,7 @@ MonoBehaviour:
   rotator: {fileID: 581734861442305938}
   rotSpeed: 0.4
   fire: {fileID: 1029631776064125364}
-  travelSpeed: 1.75
+  travelSpeed: 0.5
   playerDist: 4
   creature: {fileID: 1903111920105780, guid: ab6c4c5c11dca324f8445b7816d94132, type: 3}
 --- !u!95 &8479126076386708178

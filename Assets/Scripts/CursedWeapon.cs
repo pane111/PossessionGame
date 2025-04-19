@@ -18,6 +18,7 @@ public class CursedWeapon : MonoBehaviour
     bool canTakeDamage;
     public bool playerContact = false;
     public SpriteRenderer sr;
+    bool hasTriggeredTut = false;
     public GameObject cBreakEffect; 
     [HideInInspector] public Rigidbody2D rb;
     protected virtual void Start()
@@ -33,25 +34,31 @@ public class CursedWeapon : MonoBehaviour
         sword = FindObjectOfType<SwordScript>();
         rb = GetComponent<Rigidbody2D>();
         OnStart();
+        
     }
     public virtual void OnStart()
     {
-
+        OnExitDM();
     }
 
     public virtual void TakeDamage(float amount)
     {
         if (canTakeDamage)
         {
-            AudioManager.Instance.SwordSlash.Post(gameObject);
-            damageEffect.Play();
+            
+            
             curHealth -= amount;
             if (curHealth <= 0)
             {
                 CrushCrystal();
+                AudioManager.Instance.SwordDeflect.Post(gameObject);
+                StartCoroutine(LineColor());
+
             }
             else
             {
+                AudioManager.Instance.SwordSlash.Post(gameObject);
+                damageEffect.Play();
                 demonHeart.GetComponent<DemonHeart>().crystalHit.Play();
                 lr.SetPosition(0, Vector3.zero);
                 lr.SetPosition(1, demonHeart.transform.position - transform.position);
@@ -59,13 +66,26 @@ public class CursedWeapon : MonoBehaviour
         }
         
     }
+    IEnumerator LineColor()
+    {
+        lr.material.color = Color.black;
+        yield return new WaitForSeconds(0.2f);
+        lr.material.color = Color.white;
+        yield return null;
+    }
 
     public void CrushCrystal()
     {
-        if (!GameManager.Instance.crystalTutorial)
+        if (!GameManager.Instance.crystalTutorial && !hasTriggeredTut)
         {
-            GameManager.Instance.SendNotification("You have shattered the barrier protecting the demon's heart! Find the heart and attack it!");
-            GameManager.Instance.crystalTutorial = true;
+            GameManager.Instance.SendNotification("You have shattered the barrier protecting the demon's heart! Follow the tether and attack the heart!");
+            GameManager.Instance.cTutorialCount--;
+            hasTriggeredTut = true;
+            if (GameManager.Instance.cTutorialCount <= 0)
+            {
+                GameManager.Instance.crystalTutorial = true;
+            }
+            
         }
         cBreakEffect.SetActive(true);
         demonHeart.GetComponent<DemonHeart>().ExposeHeart();

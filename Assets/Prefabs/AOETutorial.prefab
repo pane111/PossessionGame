@@ -59,6 +59,7 @@ MonoBehaviour:
   addDegAfterRetrigger: 0
   isNotBullet: 1
   canShoot: 1
+  destroyBulletAuto: 1
 --- !u!1 &2945109654692754977
 GameObject:
   m_ObjectHideFlags: 0

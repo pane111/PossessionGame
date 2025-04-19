@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI statsText;
     Color bgColor;
     public Color demonModeColor;
+    public Gradient lineG;
+    public Gradient lineG2;
     public GameObject deathMenu;
     [Header("Sprites")]
     public float usedAbilityOpacity; //not connected rn
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI notificationText;
     public Animator notif;
+    public int cTutorialCount = 3;
     public bool crystalTutorial;
 
 

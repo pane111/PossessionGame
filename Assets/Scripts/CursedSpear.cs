@@ -35,7 +35,7 @@ public class CursedSpear : CursedWeapon
             if (!attacking)
             {
                 rot += Mathf.Pow(3f,Time.deltaTime);
-                GetComponent<Rigidbody2D>().MovePosition(Vector3.Lerp(transform.position, player.GetComponent<Player>().orbiter.position, Time.deltaTime * moveSpeed));
+                GetComponent<Rigidbody2D>().MovePosition(Vector3.Lerp(transform.position, player.GetComponent<Player>().orbiter.position - (Vector3)pDir.normalized * 3.5f, Time.deltaTime * moveSpeed));
                 //GetComponent<Rigidbody2D>().AddTorque(pDir.magnitude);
                 sprite.rotation = Quaternion.Euler(0, 0, rot);
                 if (ccd <= 0)

@@ -9,10 +9,6 @@ public class SceneLoaderScript : MonoBehaviour
     bool canSkip=false;
     private void Start()
     {
-        if (PlayerPrefs.GetInt("GameBeaten")==1)
-        {
-            canSkip = true;
-        }
 
     }
     private void Update()

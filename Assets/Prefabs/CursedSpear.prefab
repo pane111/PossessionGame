@@ -5379,13 +5379,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634e05f5527f356449c47cb1c219bb5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  curHealth: 10
+  maxHealth: 8
+  curHealth: 8
   demonHeart: {fileID: 0}
   player: {fileID: 0}
   detectRange: 6
   playerFound: 0
   damageEffect: {fileID: 7202309461044854618}
+  dead: 0
   lr: {fileID: 8361499515988188058}
   playerContact: 0
   sr: {fileID: 3615282703646770155}

@@ -7,6 +7,7 @@ public class DemonHeart : MonoBehaviour
     public bool heartExposed = false;
     [Header("Visuals")]
     public GameObject crystal;
+    public ParticleSystem shatter;
     public ParticleSystem crystalHit;
     public GameObject hitEffect;
     public ParticleSystem blood;
@@ -16,6 +17,7 @@ public class DemonHeart : MonoBehaviour
     SpriteRenderer sr;
     SwordScript sword;
     Deflector d;
+    bool exploded = false;
     Color c = Color.black;
 
     private void Start()
@@ -30,6 +32,10 @@ public class DemonHeart : MonoBehaviour
     }
     public void ExposeHeart()
     {
+        if (!exploded)
+            shatter.Play();
+
+        exploded = true;
         d.deflectionActive = false;
         heartExposed = true;
         crystal.SetActive(false);

@@ -22,20 +22,22 @@ public class CursedShield : CursedWeapon
     void Update()
     {
         FindPlayer();
-        rotator.up = Vector2.Lerp(rotator.up, -(player.transform.position - transform.position), rotSpeed * Time.deltaTime);
+        
         if (curRot >= 360 || curRot <= -360)
         {
             curRot = 0;
         }
         if (curHealth <= 0)
         {
-            rb.MovePosition(Vector2.Lerp(transform.position, demonHeart.transform.position, Time.deltaTime * travelSpeed));
+            rb.MovePosition(Vector2.Lerp(transform.position, demonHeart.transform.position, Time.deltaTime * 2));
+            rotator.rotation *= Quaternion.Euler(0,0,rotSpeed * Time.deltaTime * 360);
         }
         else if (playerFound)
         {
             Vector2 dir = player.position - transform.position;
             Vector2 targetPos = (Vector2)transform.position + dir - ((dir).normalized * playerDist);
             rb.MovePosition(Vector2.Lerp(transform.position, targetPos, Time.deltaTime * travelSpeed));
+            rotator.up = Vector2.Lerp(rotator.up, -(player.transform.position - transform.position), rotSpeed * Time.deltaTime);
         }
         lr.SetPosition(1, demonHeart.transform.position - transform.position);
     }
@@ -44,13 +46,13 @@ public class CursedShield : CursedWeapon
     {
         
         print("Trying to spawn creature");
-        if (playerFound && curHealth > 0)
+        if (playerFound && !dead)
         {
             print("Creature spawned");
             Instantiate(creature,transform.position,Quaternion.identity);
         }
 
-        Invoke("SpawnCreature", 10);
+        Invoke("SpawnCreature", 7.5f);
     }
 
     public override void OnDeath()

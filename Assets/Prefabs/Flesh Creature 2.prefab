@@ -5211,7 +5211,7 @@ MonoBehaviour:
   turning: 5
   maintainedDistance: 1
   turnDeg: 50
-  health: 3
+  health: 2
   bloodSplat: {fileID: 4466453010552009775, guid: 8bb751120721767438a6efc474ed82d7, type: 3}
 --- !u!114 &4822723968248352819
 MonoBehaviour:
@@ -5238,6 +5238,7 @@ MonoBehaviour:
   addDegAfterRetrigger: 1
   isNotBullet: 0
   canShoot: 1
+  destroyBulletAuto: 1
 --- !u!1 &7620296461723564993
 GameObject:
   m_ObjectHideFlags: 0

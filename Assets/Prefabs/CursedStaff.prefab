@@ -10783,13 +10783,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2cdcac182eb6bd4aa6f4dacdd308b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
-  curHealth: 15
+  maxHealth: 12
+  curHealth: 12
   demonHeart: {fileID: 0}
   player: {fileID: 0}
   detectRange: 10
   playerFound: 0
   damageEffect: {fileID: 8491602043244900052}
+  dead: 0
   lr: {fileID: 372390243529181815}
   playerContact: 0
   sr: {fileID: 93041604503286826}
@@ -10799,8 +10800,8 @@ MonoBehaviour:
   beamStart: {fileID: 5224776188633743690}
   beam: {fileID: 4164685384621297022}
   beamEnd: {fileID: 5397684455476248208}
-  followSpeed: 8
-  beamDuration: 3
+  followSpeed: 3.5
+  beamDuration: 6
   spreadShot: {fileID: 401257653753158725}
   fireDelay: 2
   moveRange: 3
@@ -10851,6 +10852,7 @@ MonoBehaviour:
   addDegAfterRetrigger: 0
   isNotBullet: 0
   canShoot: 1
+  destroyBulletAuto: 1
 --- !u!114 &846851305215846535
 MonoBehaviour:
   m_ObjectHideFlags: 0
