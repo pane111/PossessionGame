@@ -6,8 +6,6 @@ public class BloodSplatterScript : MonoBehaviour
 {
     public float fadeDelay;
     public float fadeTime;
-    bool isFading = false;
-    Color c;
     public List<Sprite> sprites = new List<Sprite>();
     void Start()
     {
@@ -16,7 +14,7 @@ public class BloodSplatterScript : MonoBehaviour
         transform.localScale = Vector3.one * randSize;
         GetComponent<SpriteRenderer>().sprite = sprites[rand];
         GetComponent<SpriteRenderer>().color = GameManager.Instance.randomColor();
-        c = GetComponent<SpriteRenderer>().color;
+        transform.position = new Vector3(transform.position.x,transform.position.y, 0);
         
     }
 }

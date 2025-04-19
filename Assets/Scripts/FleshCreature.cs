@@ -26,6 +26,7 @@ public class FleshCreature : MonoBehaviour
         player = GameObject.Find("Player").transform;
         StartCoroutine(Attack());
         DecideDirection();
+        Destroy(gameObject, 60);
     }
 
     // Update is called once per frame

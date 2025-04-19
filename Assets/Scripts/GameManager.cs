@@ -102,9 +102,13 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F6))
+        if (Input.GetKey(KeyCode.LeftAlt))
         {
-            dmgUpgrades = 10;
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                player.SetCorruption(200);
+                TriggerEnding();
+            }
         }
     }
     public void SendNotification(string message)
@@ -259,7 +263,7 @@ public class GameManager : MonoBehaviour
     }
     public void GoToBossFight()
     {
-        PlayerPrefs.SetFloat("Corruption", 0);
+        PlayerPrefs.SetFloat("Corruption", player.Corruption);
         SceneManager.LoadScene("Teleport");
     }
 

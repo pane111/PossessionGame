@@ -149,10 +149,6 @@ public class Player : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SetCorruption(90);
-        }
 
         if (Input.GetButtonDown("Fire2") && canRepell && Vector2.Distance(transform.position, sword.position) < swordScript.repellRange)
         {
@@ -472,7 +468,7 @@ public class Player : MonoBehaviour
         maxHealth = 100 + GameManager.Instance.hpUpgrades * GameManager.Instance.hpIncrease;
         CurHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
-        Corruption += 30;
+        Corruption += 35;
         SetInvincible(5);
     }
 }

@@ -23,6 +23,7 @@ public class FinalBossDeath : MonoBehaviour
         { if (go != null) { go.SetActive(true); } }
         Camera.main.GetComponent<CamScript>().player = this.transform;
         Camera.main.cullingMask = lm;
+        PlayerPrefs.SetInt("GameBeaten", 1);
     }
     
 

@@ -9,8 +9,6 @@ public class MonsterBoss : BossParentScript
     Transform player;
     public Rigidbody2D rb;
     public Vector3 centerCoords;
-    bool moveFreely;
-    bool canAttack;
     public float moveSpeed;
     public Animator anim;
     public GameObject leftSideAttack;
@@ -51,12 +49,9 @@ public class MonsterBoss : BossParentScript
     {
         Vector2 offset = new Vector2(Random.Range(-18,18), Random.Range(-4,4));
         Vector2 dir = ((Vector2)centerCoords+offset) - (Vector2)transform.position;
-        moveFreely = false;
-        canAttack = false;
         rb.velocity = dir.normalized * moveSpeed;
         yield return new WaitForSeconds(dir.magnitude / moveSpeed);
         rb.velocity = Vector2.zero;
-        moveFreely = true;
         yield return new WaitForSeconds(Random.Range(2, 5));
         Vector2 distv = centerCoords - transform.position;
         if (Mathf.Abs(distv.y) > 4 || Mathf.Abs(distv.x) > 18)
@@ -126,12 +121,9 @@ public class MonsterBoss : BossParentScript
     IEnumerator moveToMiddle()
     {
         Vector2 dir = centerCoords - transform.position;
-        moveFreely = false;
-        canAttack = false;
         rb.velocity = dir.normalized * moveSpeed;
         yield return new WaitForSeconds(dir.magnitude/moveSpeed);
         rb.velocity = Vector2.zero;
-        moveFreely = true;
 
         yield return new WaitForSeconds(Random.Range(5, 15));
         StartCoroutine(MoveAround());

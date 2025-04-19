@@ -21,6 +21,6 @@ public class GameOverScreen : MonoBehaviour
 
     void Next()
     {
-        SceneManager.LoadScene("TitleScreen");
+        SceneManager.LoadScene("Credits");
     }
 }

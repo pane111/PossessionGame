@@ -19,12 +19,21 @@ public class TitleScreenManager : MonoBehaviour
     public Image tutorialPic;
     public TextMeshProUGUI tutorialName;
     public TextMeshProUGUI tutorialDesc;
-
+    public GameObject bonus;
     public Event ButtonClick;
 
     void Start()
     {
         LoadTutorial();
+        if (!PlayerPrefs.HasKey("GameBeaten"))
+        {
+            PlayerPrefs.SetInt("GameBeaten", 0);
+        }
+
+        if (PlayerPrefs.GetInt("GameBeaten")==1)
+        {
+            bonus.SetActive(true);
+        }
     }
 
     // Update is called once per frame
