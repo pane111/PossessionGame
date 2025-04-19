@@ -19,7 +19,8 @@ public class CursedWeapon : MonoBehaviour
     public bool playerContact = false;
     public SpriteRenderer sr;
     bool hasTriggeredTut = false;
-    public GameObject cBreakEffect; 
+    public GameObject cBreakEffect;
+    public Sprite heartSprite;
     [HideInInspector] public Rigidbody2D rb;
     protected virtual void Start()
     {
@@ -78,7 +79,15 @@ public class CursedWeapon : MonoBehaviour
     {
         if (!GameManager.Instance.crystalTutorial && !hasTriggeredTut)
         {
-            GameManager.Instance.SendNotification("You have shattered the barrier protecting the demon's heart! Follow the tether and attack the heart!");
+            if (GameManager.Instance.cTutorialCount== 3)
+            {
+                Invoke("Popup", 1.5f);
+            }
+            else
+            {
+                GameManager.Instance.SendNotification("You have shattered the barrier protecting the demon's heart! Follow the tether and attack the heart!");
+            }
+            
             GameManager.Instance.cTutorialCount--;
             hasTriggeredTut = true;
             if (GameManager.Instance.cTutorialCount <= 0)
@@ -89,6 +98,10 @@ public class CursedWeapon : MonoBehaviour
         }
         cBreakEffect.SetActive(true);
         demonHeart.GetComponent<DemonHeart>().ExposeHeart();
+    }
+    void Popup()
+    {
+        GameManager.Instance.PopupTutorial("You have shattered the barrier protecting the demon's heart! Follow the <color=red>tether</color> and attack the heart!", heartSprite);
     }
 
     public virtual void OnDM()

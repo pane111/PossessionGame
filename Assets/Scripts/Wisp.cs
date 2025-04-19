@@ -6,6 +6,7 @@ public class Wisp : MonoBehaviour
 {
     SpriteRenderer sr;
     float flipTime = 0.15f;
+    public Sprite tutSprite;
 
     public string msg;
 
@@ -29,7 +30,7 @@ public class Wisp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ( collision.gameObject.name=="Player" ) {
-            GameManager.Instance.SendNotification(msg);
+            GameManager.Instance.PopupTutorial(msg,tutSprite);
             Destroy(gameObject);
         
         }

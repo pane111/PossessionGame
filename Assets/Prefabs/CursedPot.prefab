@@ -463,10 +463,12 @@ MonoBehaviour:
   detectRange: 10
   playerFound: 0
   damageEffect: {fileID: 5883552925422385163}
+  dead: 0
   lr: {fileID: 6133974387709490596}
   playerContact: 0
   sr: {fileID: 1222574351894044019}
   cBreakEffect: {fileID: 6678158605002473940}
+  heartSprite: {fileID: 21300000, guid: b6b024158921e27438f7b7c6b7597deb, type: 3}
   rb: {fileID: 0}
   orb: {fileID: 3467425950754920455, guid: 53f1fbd647b0815418a8a8491ec3d9e2, type: 3}
   anim: {fileID: 8230038712526259118}

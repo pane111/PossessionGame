@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public int kills = 0;
     public int saved = 0;
     public TextMeshProUGUI statsText;
+    public TextMeshProUGUI popupTutText;
+    public Image popupImg;
+    public GameObject popupTut;
     Color bgColor;
     public Color demonModeColor;
     public Gradient lineG;
@@ -209,6 +212,19 @@ public class GameManager : MonoBehaviour
 
 
 
+    }
+
+    public void PopupTutorial(string t, Sprite s)
+    {
+        popupTutText.text = t;
+        popupTut.SetActive(true);
+        popupImg.sprite = s;
+        Time.timeScale = 0;
+    }
+    public void RemovePopup()
+    {
+        popupTut.SetActive(false);
+        Time.timeScale = storedTS;
     }
 
     public void Continue()  //This is CHOICE 2

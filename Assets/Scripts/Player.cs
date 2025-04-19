@@ -391,7 +391,6 @@ public class Player : MonoBehaviour
             if (!juiceTutorialTriggered)
             {
                 juiceTutorialTriggered = true;
-                GameManager.Instance.SendNotification("Consume <color=red>Ambrosial Juice</color> to gain increased movement speed for a short time!");
             }
         }
 

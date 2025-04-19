@@ -10112,6 +10112,7 @@ MonoBehaviour:
   playerContact: 0
   sr: {fileID: 4660841593006457789}
   cBreakEffect: {fileID: 1512129079020775101}
+  heartSprite: {fileID: 21300000, guid: b6b024158921e27438f7b7c6b7597deb, type: 3}
   rb: {fileID: 0}
   rotator: {fileID: 581734861442305938}
   rotSpeed: 0.4
