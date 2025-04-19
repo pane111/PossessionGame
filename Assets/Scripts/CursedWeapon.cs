@@ -81,7 +81,7 @@ public class CursedWeapon : MonoBehaviour
         {
             if (GameManager.Instance.cTutorialCount== 3)
             {
-                Invoke("Popup", 1.5f);
+                Invoke("Popup", 1.75f);
             }
             else
             {
