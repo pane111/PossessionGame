@@ -47,4 +47,10 @@ MonoBehaviour:
   repeatTimes: 7
   repeatDelay: 0.3
   dir: {x: 2.5, y: 0}
+  dir2: {x: 0, y: 0}
+  spawnSpawner: 0
+  deleteAfter: 0
+  deleteTime: 0
+  initDelay: 0
+  repeatInOtherDirectionAsWell: 0
   attackPrefab: {fileID: 8846133032739260142, guid: 907279675c2e77c4f999745bd9d35341, type: 3}

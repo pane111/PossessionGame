@@ -50,7 +50,7 @@ public class EvilSword : MonoBehaviour
         rb.AddTorque(100, ForceMode2D.Impulse);
         rb.velocity = Vector2.zero;
         
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.8f);
         GetComponent<SpreadShot>().OnShoot();
         rb.AddForce(dir.normalized * 100, ForceMode2D.Impulse);
         slashes.Play();

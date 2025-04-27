@@ -7,9 +7,16 @@ public class SceneLoaderScript : MonoBehaviour
 {
     public string scene;
     bool canSkip=false;
+    public GameObject boonTxt;
     private void Start()
     {
-
+        if (boonTxt != null)
+        {
+            if (PlayerPrefs.GetInt("HadBoons")==1)
+            {
+                boonTxt.SetActive(true);
+            }
+        }
     }
     private void Update()
     {

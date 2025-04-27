@@ -34,6 +34,7 @@ public class TitleScreenManager : MonoBehaviour
         {
             bonus.SetActive(true);
         }
+        TutToggle(true);
     }
 
     // Update is called once per frame
@@ -66,6 +67,17 @@ public class TitleScreenManager : MonoBehaviour
             toggleTWindow();
         }
         LoadTutorial() ;
+    }
+    public void TutToggle(bool toggle)
+    {
+        if (toggle)
+        {
+            PlayerPrefs.SetInt("Tutorials", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Tutorials", 0);
+        }
     }
     public void PrevTutorial()
     {

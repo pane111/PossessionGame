@@ -70,7 +70,9 @@ public class GameManager : MonoBehaviour
     int choice1=0;
     int choice2=1;
     public List<string> possibleChoices = new List<string>();
-    
+
+    public bool npctutorial = false;
+    bool displayTutorials=true;
     
     public static GameManager Instance { get; private set; }
     private void Awake()
@@ -90,9 +92,13 @@ public class GameManager : MonoBehaviour
         if (setCorrTo0)
         {
             player.SetCorruption(0);
+            PlayerPrefs.SetInt("HadBoons", 1);
             PlayerPrefs.SetFloat("Corruption", 0);
         }
-
+        if (PlayerPrefs.GetInt("Tutorials")==0)
+        {
+            displayTutorials = false;
+        }
 
         
 
@@ -115,6 +121,10 @@ public class GameManager : MonoBehaviour
                 player.SetCorruption(200);
                 TriggerEnding();
             }
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                GoToBossFight();
+            }
         }
     }
     public void SendNotification(string message)
@@ -135,7 +145,7 @@ public class GameManager : MonoBehaviour
     public void AddKill()
     {
         kills++;
-        player.Corruption += 5;
+        player.AddCorruptionVoid(UnityEngine.Random.Range(40, 60));
         statsText.text="time\n99:99\nkills\n"+kills.ToString();
     }
     public void SetBPM(float _bpm)
@@ -213,13 +223,18 @@ public class GameManager : MonoBehaviour
 
 
     }
+    
 
     public void PopupTutorial(string t, Sprite s)
     {
-        popupTutText.text = t;
-        popupTut.SetActive(true);
-        popupImg.sprite = s;
-        Time.timeScale = 0;
+        if (displayTutorials)
+        {
+            popupTutText.text = t;
+            popupTut.SetActive(true);
+            popupImg.sprite = s;
+            Time.timeScale = 0;
+        }
+        
     }
     public void RemovePopup()
     {
@@ -282,7 +297,9 @@ public class GameManager : MonoBehaviour
     }
     public void GoToBossFight()
     {
-        PlayerPrefs.SetFloat("Corruption", player.Corruption);
+        if (defUpgrades > 0 || dmgUpgrades > 0 || hpUpgrades > 0 || MSUpgrades > 0) {
+            PlayerPrefs.SetInt("HadBoons", 1);
+        }
         SceneManager.LoadScene("Teleport");
     }
 

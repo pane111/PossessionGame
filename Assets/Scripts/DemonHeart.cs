@@ -19,6 +19,7 @@ public class DemonHeart : MonoBehaviour
     Deflector d;
     bool exploded = false;
     Color c = Color.black;
+    int crystalHitAmt = 0;
 
     private void Start()
     {
@@ -49,6 +50,12 @@ public class DemonHeart : MonoBehaviour
             if (!heartExposed)
             {
                 AudioManager.Instance.CrystalHit.Post(gameObject);
+                crystalHitAmt++;
+                if (crystalHitAmt >= 10)
+                {
+                    GameManager.Instance.PopupTutorial("You cannot break the crystal by attacking it! Find the demon tethered to the crystal and attack it until the crystal breaks!", crystal.GetComponent<SpriteRenderer>().sprite);
+                    crystalHitAmt = -100;
+                }
             }
             else
             {

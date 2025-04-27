@@ -27,6 +27,9 @@ public class FinalBoss : BossParentScript
     public Material sb2;
     public GameObject finalBG;
     public GameObject add;
+    public GameObject barrier;
+    public Sprite tSprite;
+    public GameObject beams;
     private void Start()
     {
         transform.position = new Vector3(-37, 0, -4);
@@ -60,10 +63,11 @@ public class FinalBoss : BossParentScript
 
     IEnumerator FireAndIce()
     {
-        GameManager.Instance.SendNotification("An extreme temperature fills your body! Touch the opposite element to balance it out!");
+        GameManager.Instance.SendNotification("An extreme temperature is filling your body! Touch the opposite element to reduce the counter and balance it out!");
         invincible = true;
-        dialogueText.text = "The very elements are mine to control! Let's see how you deal with THIS!";
-        dialogAnim.SetTrigger("Dialogue");
+        barrier.SetActive(true);
+        //dialogueText.text = "The very elements are mine to control! Let's see how you deal with THIS!";
+        //dialogAnim.SetTrigger("Dialogue");
         GameObject nring = Instantiate(ring, transform.position, Quaternion.identity);
         //float rx = Random.Range(-20, 20);
         //float ry = Random.Range(-12,12);
@@ -97,6 +101,7 @@ public class FinalBoss : BossParentScript
             dialogAnim.SetTrigger("Dialogue");
         }
         invincible = false;
+        barrier.SetActive(false);
         Destroy(ics);
         Destroy(fs);
         yield return new WaitForSeconds(5);
@@ -139,6 +144,7 @@ public class FinalBoss : BossParentScript
     public void DisableActions()
     {
         canDoThings = false;
+        beams.SetActive(false);
         GetComponent<Collider2D>().enabled = false;
     }
 
@@ -148,12 +154,46 @@ public class FinalBoss : BossParentScript
         {
             sh.canShoot = true;
         }
+        beams.SetActive(true);
         portrait = p3;
         dPortrait.sprite = portrait;
         canDoThings = true;
         GetComponent<Collider2D>().enabled = true;
         dialogueText.text = "You still stand...? But how? This cannot be...!";
         dialogAnim.SetTrigger("Dialogue");
+    }
+    public override void TakeDamage(float amount)
+    {
+        if (CurHealth - amount <= 0 && !ultAttackTriggered)
+        {
+            CurHealth = 1;
+        }
+        else
+        {
+            CurHealth -= amount;
+        }
+        
+        if (CurHealth < maxHealth)
+        {
+            StartCoroutine(damageEffect());
+            hpBarAnim.SetTrigger("Hit");
+        }
+
+        if (CurHealth <= 0)
+        {
+            Time.timeScale = 1;
+            GameManager.Instance.storedTS = 1;
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
+            healthBar.enabled = false;
+            print("Boss died");
+            transition.SetActive(true);
+            transition.transform.position = transform.position;
+            if (additional != null)
+            {
+                Destroy(additional.gameObject);
+            }
+            Destroy(gameObject);
+        }
     }
 
     void TriggerUltAttack()
@@ -197,7 +237,7 @@ public class FinalBoss : BossParentScript
                     collision.GetComponent<SwordScript>().curTarget = player;
                     
                 }
-                TakeDamage(3);
+                TakeDamage(3 + 0.3f * GameManager.Instance.dmgUpgrades);
 
             }
             else
@@ -206,7 +246,7 @@ public class FinalBoss : BossParentScript
                 {
                     collision.GetComponent<SwordScript>().curTarget = player;
                 }
-                TakeDamage(1);
+                TakeDamage(1 + 0.1f * GameManager.Instance.dmgUpgrades);
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
             

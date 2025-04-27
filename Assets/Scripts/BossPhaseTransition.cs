@@ -17,6 +17,8 @@ public class BossPhaseTransition : MonoBehaviour
     public Animator dAnim;
     public bool disableDialogue;
 
+    public bool transformPlayer;
+
     private void Start()
     {
         if (centerCameraOnThis)
@@ -60,6 +62,10 @@ public class BossPhaseTransition : MonoBehaviour
         if (centerCameraOnThis)
         {
             Camera.main.GetComponent<CamScript>().player = GameObject.Find("Player").transform;
+        }
+        if (transformPlayer)
+        {
+            GameManager.Instance.player.FBDemonMode();
         }
         bgEffect.SetActive(false);
         newPhase.SetActive(true);

@@ -52,7 +52,7 @@ public class CursedShield : CursedWeapon
             Instantiate(creature,transform.position,Quaternion.identity);
         }
 
-        Invoke("SpawnCreature", 7.5f);
+        Invoke("SpawnCreature", 14);
     }
 
     public override void OnDeath()

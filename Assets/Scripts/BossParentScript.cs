@@ -55,7 +55,7 @@ public class BossParentScript : MonoBehaviour
         curDialogue++;
         dialogAnim.SetTrigger("Dialogue");
     }
-    IEnumerator damageEffect()
+    public IEnumerator damageEffect()
     {
         sr.color = Color.red;
         yield return new WaitForSeconds(0.15f);
@@ -63,7 +63,7 @@ public class BossParentScript : MonoBehaviour
         yield return null;
     }
 
-    public void TakeDamage(float amount)
+    public virtual void TakeDamage(float amount)
     {
         CurHealth -= amount;
         if (CurHealth < maxHealth)

@@ -18,6 +18,8 @@ TagManager:
   - Ring
   - Portal
   - Juice
+  - ForcedDamage
+  - DZone2
   layers:
   - Default
   - TransparentFX

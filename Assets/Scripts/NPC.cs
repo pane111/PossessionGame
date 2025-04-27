@@ -27,6 +27,9 @@ public class NPC : MonoBehaviour
     public ParticleSystem bloodSpray;
     public SpriteRenderer bloodstain;
 
+    bool scared = false;
+    Transform player;
+
     bool dm = false;
     private void Start()
     {
@@ -40,28 +43,40 @@ public class NPC : MonoBehaviour
         initColor = sr.color;
         bloodstain.color = initColor;
         bloodstain.enabled = false;
-
+        player = GameManager.Instance.player.transform;
         GameManager.Instance.startDM += EnterDM;
         GameManager.Instance.stopDM += ExitDM;
 
         StartCoroutine(MoveRandom());
     }
 
+    private void Update()
+    {
+        if (!dead && scared && !GameManager.Instance.player.demonModeActive) {
+            rb.velocity = (transform.position - player.position).normalized * speed * 2;
+            GetComponent<Animator>().enabled = true;
+        }
+    }
+
     IEnumerator MoveRandom()
     {
-        float r1 = Random.Range(1.5f, 3f);
-        float r2 = Random.Range(1, 2);
+        if (!scared)
+        {
+            float r1 = Random.Range(1.5f, 3f);
+            float r2 = Random.Range(1, 2);
+
+            yield return new WaitForSeconds(r1);
+            Vector3 dest = Vector2.zero;
+            dest.x = Random.Range(transform.position.x - 5, transform.position.x + 5);
+            dest.y = Random.Range(transform.position.y - 5, transform.position.y + 5);
+            rb.velocity = (dest - transform.position).normalized * speed * mod;
+            GetComponent<Animator>().enabled = true;
+            yield return new WaitForSeconds(r2);
+            GetComponent<Animator>().enabled = false;
+            rb.velocity = Vector2.zero;
+            if (!dead) StartCoroutine(MoveRandom());
+        }
         
-        yield return new WaitForSeconds(r1);
-        Vector3 dest = Vector2.zero;
-        dest.x = Random.Range(transform.position.x - 5, transform.position.x + 5);
-        dest.y = Random.Range(transform.position.y - 5, transform.position.y + 5);
-        rb.velocity = (dest - transform.position).normalized * speed * mod;
-        GetComponent<Animator>().enabled = true;
-        yield return new WaitForSeconds(r2);
-        GetComponent<Animator>().enabled = false;
-        rb.velocity = Vector2.zero;
-        if(!dead) StartCoroutine (MoveRandom());
     }
 
     public void EnterDM()
@@ -126,9 +141,16 @@ public class NPC : MonoBehaviour
     IEnumerator TakeDamage(float amount)
     {
         AudioManager.Instance.NPCTakeDmg.Post(gameObject);
+        scared = true;
+        GetComponent<Animator>().SetFloat("Speed", 2);
         curHealth -= amount;
         if (curHealth <= 0)
         {
+            if (!GameManager.Instance.npctutorial)
+            {
+                GameManager.Instance.npctutorial = true;
+                GameManager.Instance.PopupTutorial("Your sword has just killed an innocent person! Be careful, as attacking and killing innocents will heavily corrupt you!", sr.sprite);
+            }
             GameManager.Instance.gameObject.GetComponent<AudioManager>().NPCDeath.Post(gameObject);
             ParticleSystem.MainModule sma = bloodSpray.main;
             sma.startColor = GameManager.Instance.randomColor();
@@ -144,6 +166,10 @@ public class NPC : MonoBehaviour
             rb.isKinematic = true;
             FindObjectOfType<Player>().StopBleeding();
             gameObject.layer = 0;
+        }
+        else
+        {
+            GameManager.Instance.player.Corruption += 1;
         }
         ParticleSystem.MainModule ma = blood.main;
         ma.startColor = GameManager.Instance.randomColor();

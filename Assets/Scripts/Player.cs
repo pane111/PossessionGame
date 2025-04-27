@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
         get => _curHealth;
         set
         {
+            StartCoroutine(onDamageTaken());
             if (value <= 0)
             {
                 value = 0;
@@ -62,7 +63,8 @@ public class Player : MonoBehaviour
             _corruption = value;
         }
     }
-    public float corruptionLossOnPurify = 40;
+    public float corruptionLossOnPurify = 10;
+    public Vector2 maxCorrChange;
     public Image corruptionImage;
     public TextMeshProUGUI corruptionText;
     public bool resizeCorrText;
@@ -89,6 +91,8 @@ public class Player : MonoBehaviour
     public float juicedMult;
     public float juicedDuration;
     bool juiceTutorialTriggered = false;
+    public Animator anim;
+    
     void Start()
     {
 
@@ -97,10 +101,7 @@ public class Player : MonoBehaviour
             Corruption = PlayerPrefs.GetFloat("Corruption");
             
         }
-        if (Corruption > 0)
-        {
-            GameManager.Instance.SendNotification("A dark force has taken your boons!");
-        }
+        anim = GetComponent<Animator>();
         stepCounter = stepSoundCount;
         _curHealth = maxHealth;
         stepTimer = maxStepTimer;
@@ -195,7 +196,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        corruptionText.text = Corruption.ToString() +"%";
+        corruptionText.text = Corruption.ToString("F0") +"%";
         corruptionText.color = Color.Lerp(Color.white, Color.red, Corruption / 100);
         corruptionImage.color = new Color(1, 1, 1, Corruption / 100);
         swordGlow.color = new Color(1, 1, 1, Corruption / 100);
@@ -231,6 +232,16 @@ public class Player : MonoBehaviour
             healthBar.fillAmount = CurHealth / maxHealth;
         }
         
+    }
+
+    IEnumerator onDamageTaken()
+    {
+        healthBar.color = Color.red;
+        yield return new WaitForSeconds(0.15f);
+        healthBar.color = Color.white;
+
+
+        yield return null;
     }
     public void TakeForcedDamage(float amount)
     {
@@ -303,6 +314,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        /*
         if (collision.gameObject.layer == 6)
         {
             TakeDamage();
@@ -310,6 +322,7 @@ public class Player : MonoBehaviour
                 blood.Play();
             sr.color = Color.red;
         }
+        */
     }
 
     IEnumerator Repell()
@@ -330,9 +343,14 @@ public class Player : MonoBehaviour
         swordScript.pullImg.color = new Color(swordScript.pullImg.color.r, swordScript.pullImg.color.g, swordScript.pullImg.color.b, 1f);
         yield return null;
     }
+    public void FBDemonMode()
+    {
+        anim.SetTrigger("TriggerDM");
+    }
 
     IEnumerator DemonMode()
     {
+        
         demonModeActive = true;
         speed = demonSpeed;
         Sprite s = sr.sprite;
@@ -376,12 +394,21 @@ public class Player : MonoBehaviour
         blood.Stop();
         sr.color = Color.white;
     }
+    public void AddCorruptionVoid(float amount)
+    {
+        StartCoroutine(AddCorr(amount));
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("DZone"))
         {
 
-            TakeCustomDamage(10);
+            TakeCustomDamage(20);
+        }
+        if (collision.gameObject.CompareTag("DZone2"))
+        {
+
+            TakeCustomDamage(35);
         }
 
         if (collision.gameObject.CompareTag("Juice") && juicedUp==1)
@@ -467,7 +494,24 @@ public class Player : MonoBehaviour
         maxHealth = 100 + GameManager.Instance.hpUpgrades * GameManager.Instance.hpIncrease;
         CurHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
-        Corruption += 35;
+        StartCoroutine(AddCorr(Random.Range(maxCorrChange.x, maxCorrChange.y)));
         SetInvincible(5);
+    }
+    IEnumerator AddCorr(float amount)
+    {
+        float initC = Corruption;
+        float elapsedTime = 0;
+        float addedAmt = 0;
+        while (addedAmt < amount)
+        {
+            elapsedTime += Time.fixedUnscaledDeltaTime;
+            Corruption += elapsedTime/35;
+            addedAmt += elapsedTime/35;
+            
+            yield return null;
+        }
+        Corruption = initC + amount;
+
+        yield return null;
     }
 }
