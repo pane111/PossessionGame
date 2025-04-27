@@ -28,11 +28,13 @@ public class TitleScreenManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("GameBeaten"))
         {
             PlayerPrefs.SetInt("GameBeaten", 0);
+            
         }
 
         if (PlayerPrefs.GetInt("GameBeaten")==1)
         {
             bonus.SetActive(true);
+            PlayerPrefs.SetInt("CanSkipCredits", 1);
         }
         TutToggle(true);
     }

@@ -17,6 +17,7 @@ public class SceneLoaderScript : MonoBehaviour
                 boonTxt.SetActive(true);
             }
         }
+        canSkip = PlayerPrefs.HasKey("CanSkipCredits");
     }
     private void Update()
     {

@@ -300,6 +300,10 @@ public class GameManager : MonoBehaviour
         if (defUpgrades > 0 || dmgUpgrades > 0 || hpUpgrades > 0 || MSUpgrades > 0) {
             PlayerPrefs.SetInt("HadBoons", 1);
         }
+        else
+        {
+            PlayerPrefs.SetInt("HadBoons", 0);
+        }
         SceneManager.LoadScene("Teleport");
     }
 
