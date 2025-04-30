@@ -18,7 +18,7 @@ public class BossPhaseTransition : MonoBehaviour
     public bool disableDialogue;
 
     public bool transformPlayer;
-
+    public GameObject additionalCutscene;
     private void Start()
     {
         if (centerCameraOnThis)
@@ -36,6 +36,10 @@ public class BossPhaseTransition : MonoBehaviour
     {
         dText.text = text;
         dAnim.SetTrigger("Dialogue");
+    }
+    public void AddCutscene()
+    {
+        additionalCutscene.SetActive(true);
     }
 
     public void EnableThings()

@@ -30,6 +30,9 @@ public class FinalBoss : BossParentScript
     public GameObject barrier;
     public Sprite tSprite;
     public GameObject beams;
+    public GameObject planet;
+    public float planetCD;
+    float dmgMult = 1;
     private void Start()
     {
         transform.position = new Vector3(-37, 0, -4);
@@ -40,6 +43,7 @@ public class FinalBoss : BossParentScript
         TakeDamage(0);
         Camera.main.backgroundColor = bgColor;
         bgEffect.SetActive(true);
+        Invoke("SpawnPlanet", planetCD/3);
         //StartCoroutine(TimeManip());
     }
 
@@ -121,6 +125,7 @@ public class FinalBoss : BossParentScript
                 Time.timeScale = 2f;
                 GameManager.Instance.storedTS = 2;
                 Time.fixedDeltaTime = 0.02F * Time.timeScale;
+                dmgMult = 0.65f;
             }
             else
             {
@@ -131,6 +136,7 @@ public class FinalBoss : BossParentScript
             clockAnim.SetTrigger("Trigger");
             yield return new WaitForSecondsRealtime(8);
             Time.timeScale = 1;
+            dmgMult = 1;
             GameManager.Instance.storedTS =1;
             Time.fixedDeltaTime = 0.02F * Time.timeScale;
             clockAnim.SetTrigger("Trigger");
@@ -195,6 +201,15 @@ public class FinalBoss : BossParentScript
             Destroy(gameObject);
         }
     }
+    void SpawnPlanet()
+    {
+        if (canDoThings)
+        {
+            Vector3 r = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
+            Instantiate(planet, player.position + r, Quaternion.identity);
+        }
+        Invoke("SpawnPlanet", planetCD);
+    }
 
     void TriggerUltAttack()
     {
@@ -237,7 +252,7 @@ public class FinalBoss : BossParentScript
                     collision.GetComponent<SwordScript>().curTarget = player;
                     
                 }
-                TakeDamage(3 + 0.3f * GameManager.Instance.dmgUpgrades);
+                TakeDamage((3 + 0.3f * GameManager.Instance.dmgUpgrades)*dmgMult);
 
             }
             else
@@ -246,7 +261,7 @@ public class FinalBoss : BossParentScript
                 {
                     collision.GetComponent<SwordScript>().curTarget = player;
                 }
-                TakeDamage(1 + 0.1f * GameManager.Instance.dmgUpgrades);
+                TakeDamage((1 + 0.1f * GameManager.Instance.dmgUpgrades)*dmgMult);
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
             
