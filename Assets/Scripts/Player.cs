@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
     public Image swordGlow;
     public Image overlay;
     public ParticleSystem afterimage;
-    bool canMove=true;
+    public bool canMove = true;
     public LineRenderer leash;
     public Transform sword;
     private SwordScript swordScript;
@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
                 sr.flipX = !sr.flipX;
                 stepTimer = maxStepTimer;
             }
-            if (Input.GetButtonDown("Jump") && dashCooldown <= 0)
+            if (Input.GetButtonDown("Jump") && canMove && dashCooldown <= 0)
             {
                 AudioManager.Instance.Dash.Post(gameObject);
                 dashImg.color = new Color(dashImg.color.r, dashImg.color.g, dashImg.color.b, 0.2f);
@@ -151,13 +151,13 @@ public class Player : MonoBehaviour
 
         }
 
-        if (Input.GetButtonDown("Fire2") && canRepell && Vector2.Distance(transform.position, sword.position) < swordScript.repellRange)
+        if (Input.GetButtonDown("Fire2") && canMove && canRepell && Vector2.Distance(transform.position, sword.position) < swordScript.repellRange)
         {
             StartCoroutine(Repell());
             swordScript.RepellFunction();
         }
 
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetButtonDown("Fire3") && canMove)
         {
             StartCoroutine(pullEffect());
             swordScript.Pull();

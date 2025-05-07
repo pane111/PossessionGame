@@ -233,11 +233,15 @@ public class GameManager : MonoBehaviour
             popupTut.SetActive(true);
             popupImg.sprite = s;
             Time.timeScale = 0;
+            player.canMove = false;
+            //Audio pause effect
         }
         
     }
     public void RemovePopup()
     {
+        //audio pause effect vorbei
+        player.canMove = true;
         popupTut.SetActive(false);
         Time.timeScale = storedTS;
     }
