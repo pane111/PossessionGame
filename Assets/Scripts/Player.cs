@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Player : MonoBehaviour
 {
@@ -105,7 +106,7 @@ public class Player : MonoBehaviour
         {
             emDmgMult = 1.35f;
             demonModeDuration = demonModeDuration * 0.9f;
-            maxCorrChange *= 1.15f;
+            maxCorrChange.y = maxCorrChange.y * 1.5f;
            
         }
         anim = GetComponent<Animator>();
@@ -268,8 +269,7 @@ public class Player : MonoBehaviour
         if (CurHealth <= 0)
         {
             CurHealth = maxHealth;
-            healthBar.fillAmount = CurHealth / maxHealth;
-            GameManager.Instance.OnDeath();
+            healthBar.fillAmount = 0;
 
             StartCoroutine(SetInvincible(5));
         }
@@ -299,7 +299,6 @@ public class Player : MonoBehaviour
             {
                 CurHealth = maxHealth;
                 healthBar.fillAmount = CurHealth / maxHealth;
-                GameManager.Instance.OnDeath();
                 
                 StartCoroutine(SetInvincible(5));
             }
@@ -403,6 +402,7 @@ public class Player : MonoBehaviour
     }
     public void AddCorruptionVoid(float amount)
     {
+        print("Added corruption + " + amount);
         StartCoroutine(AddCorr(amount));
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -496,12 +496,13 @@ public class Player : MonoBehaviour
 
     public void Revive()
     {
+        print("Revived");
         if (demonModeActive) { AudioManager.Instance.StartTicking.Post(gameObject); }
         AudioManager.Instance.Revive.Post(gameObject);
         maxHealth = 100 + GameManager.Instance.hpUpgrades * GameManager.Instance.hpIncrease;
         CurHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
-        StartCoroutine(AddCorr(Random.Range(maxCorrChange.x, maxCorrChange.y)));
+        AddCorruptionVoid(Random.Range(maxCorrChange.x, maxCorrChange.y));
         SetInvincible(5);
     }
     IEnumerator AddCorr(float amount)
@@ -510,7 +511,7 @@ public class Player : MonoBehaviour
         float initC = Corruption;
         float elapsedTime = 0;
         float addedAmt = 0;
-        /*
+        
         while (addedAmt < amount)
         {
             elapsedTime += Time.fixedUnscaledDeltaTime;
@@ -519,7 +520,7 @@ public class Player : MonoBehaviour
             
             yield return null;
         }
-        */
+        
         Corruption = initC + amount;
 
         yield return null;

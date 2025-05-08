@@ -68,8 +68,8 @@ public class CursedStaff : CursedWeapon
         base.OnDM();
         if (GameManager.Instance.expertMode)
         {
-            beamDuration = beamDuration * 1.3f;
-            followSpeed = followSpeed * 1.1f;
+            beamDuration = beamDuration * 1.05f;
+            followSpeed = followSpeed * 1.05f;
         }
         beamCooldown = maxBeamCd;
     }

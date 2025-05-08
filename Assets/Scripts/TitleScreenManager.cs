@@ -22,9 +22,17 @@ public class TitleScreenManager : MonoBehaviour
     public GameObject bonus;
     public Event ButtonClick;
     public GameObject bonus2;
-
+    public Toggle tutorials;
     void Start()
     {
+        if (PlayerPrefs.GetInt("Tutorials")==0)
+            {
+            tutorials.isOn = false;
+        }
+        else
+        {
+            TutToggle(true);
+        }
         LoadTutorial();
         if (!PlayerPrefs.HasKey("GameBeaten"))
         {
@@ -41,7 +49,7 @@ public class TitleScreenManager : MonoBehaviour
             bonus.SetActive(true);
             PlayerPrefs.SetInt("CanSkipCredits", 1);
         }
-        TutToggle(true);
+        
     }
 
     // Update is called once per frame

@@ -2884,6 +2884,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 7e8257b535e3c994cbf7e60d0ea2ee11, type: 2}
   bonus2: {fileID: 1397421661}
+  tutorials: {fileID: 1459913518}
 --- !u!4 &1099588241
 Transform:
   m_ObjectHideFlags: 0
