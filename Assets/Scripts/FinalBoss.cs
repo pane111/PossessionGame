@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FinalBoss : BossParentScript
 {
@@ -224,11 +225,19 @@ public class FinalBoss : BossParentScript
         ultAttackTriggered = true;
         DisableActions();
         dialogueText.text = "Souls of fallen warriors, come to me! I command you... erase this filth!";
+        
         dialogAnim.SetTrigger("Dialogue");
         anim.SetTrigger("Ult");
+        Invoke("MidUltSpeech", 5);
         Invoke("EnableActions", ultTimer);
         GameObject u = Instantiate(ultAttack,transform.position, Quaternion.identity);
         
+    }
+
+    void MidUltSpeech()
+    {
+        dialogueText.text = "Dodge this, SUCKER! Hahahahahaaaaaaaa!!!";
+        dialogAnim.SetTrigger("Dialogue");
     }
 
 

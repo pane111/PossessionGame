@@ -19,6 +19,7 @@ public class BossPhaseTransition : MonoBehaviour
 
     public bool transformPlayer;
     public GameObject additionalCutscene;
+    public Animator addAnim;
     private void Start()
     {
         if (centerCameraOnThis)
@@ -40,6 +41,10 @@ public class BossPhaseTransition : MonoBehaviour
     public void AddCutscene()
     {
         additionalCutscene.SetActive(true);
+    }
+    public void TriggerAddAnim()
+    {
+        addAnim.SetTrigger("Trigger");
     }
 
     public void EnableThings()

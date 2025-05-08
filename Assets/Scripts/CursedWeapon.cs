@@ -21,9 +21,17 @@ public class CursedWeapon : MonoBehaviour
     bool hasTriggeredTut = false;
     public GameObject cBreakEffect;
     public Sprite heartSprite;
+    public Sprite altSprite;
+    Sprite normalSprite;
     [HideInInspector] public Rigidbody2D rb;
     protected virtual void Start()
     {
+        normalSprite = sr.sprite;
+        if (GameManager.Instance.expertMode)
+        {
+            maxHealth *= 1.25f;
+            curHealth = maxHealth;
+        }
         GetComponent<Deflector>().deflectFrom = transform;
 
         GetComponent<Deflector>().repelForce = 100;
@@ -96,6 +104,7 @@ public class CursedWeapon : MonoBehaviour
             }
             
         }
+        sr.color = new Color(1, 1, 1, 0.3f);
         cBreakEffect.SetActive(true);
         demonHeart.GetComponent<DemonHeart>().ExposeHeart();
     }
@@ -111,7 +120,7 @@ public class CursedWeapon : MonoBehaviour
             gameObject.SetActive(true);
             canTakeDamage = true;
             GetComponent<Deflector>().deflectionActive = false;
-            sr.color = Color.white;
+            sr.sprite = normalSprite;
         }
             
     }
@@ -124,7 +133,7 @@ public class CursedWeapon : MonoBehaviour
         if (playerContact && !dead)
         {
             GetComponent<Deflector>().deflectionActive = true;
-            sr.color = new Color(1, 1, 1, 0.3f);
+            sr.sprite = altSprite;
             canTakeDamage = false;
         }
         else

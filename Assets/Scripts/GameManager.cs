@@ -73,10 +73,15 @@ public class GameManager : MonoBehaviour
 
     public bool npctutorial = false;
     bool displayTutorials=true;
+    public bool expertMode=false;
     
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
+        if (PlayerPrefs.GetInt("EM") == 1)
+        {
+            expertMode = true;
+        }
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -107,7 +112,7 @@ public class GameManager : MonoBehaviour
     {
 
         bgColor = Camera.main.backgroundColor;
-       
+        
 
         OnDemonModeExit();
     }
@@ -316,7 +321,16 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Ending");
+            if(expertMode)
+            {
+                PlayerPrefs.SetInt("EMBeaten", 1);
+                SceneManager.LoadScene("GoodEnding");
+            }
+            else
+            {
+                SceneManager.LoadScene("Ending");
+            }
+            
         }
     }
 }

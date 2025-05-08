@@ -21,6 +21,7 @@ public class TitleScreenManager : MonoBehaviour
     public TextMeshProUGUI tutorialDesc;
     public GameObject bonus;
     public Event ButtonClick;
+    public GameObject bonus2;
 
     void Start()
     {
@@ -29,6 +30,10 @@ public class TitleScreenManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("GameBeaten", 0);
             
+        }
+        if (PlayerPrefs.HasKey("EMBeaten"))
+        {
+            bonus2.SetActive(true);
         }
 
         if (PlayerPrefs.GetInt("GameBeaten")==1)
@@ -96,6 +101,12 @@ public class TitleScreenManager : MonoBehaviour
 
     public void PlayGame()
     {
+        PlayerPrefs.SetInt("EM", 0);
+        SceneManager.LoadScene("SampleScene");
+    }
+    public void PlayGameEM()
+    {
+        PlayerPrefs.SetInt("EM", 1);
         SceneManager.LoadScene("SampleScene");
     }
     public void StopGame()

@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
     public float juicedDuration;
     bool juiceTutorialTriggered = false;
     public Animator anim;
-    
+    float emDmgMult=1;
     void Start()
     {
 
@@ -100,6 +100,11 @@ public class Player : MonoBehaviour
         {
             Corruption = PlayerPrefs.GetFloat("Corruption");
             
+        }
+        if (GameManager.Instance.expertMode)
+        {
+            emDmgMult = 1.5f;
+            demonModeDuration = demonModeDuration * 0.9f;
         }
         anim = GetComponent<Animator>();
         stepCounter = stepSoundCount;
@@ -223,7 +228,7 @@ public class Player : MonoBehaviour
             sr.color = Color.red;
             Invoke("StopBleeding", 0.2f);
             float amount = 0.5f;
-            amount = amount * (1 - GameManager.Instance.defUpgrades * GameManager.Instance.defIncrease);
+            amount = amount * (1 - GameManager.Instance.defUpgrades * GameManager.Instance.defIncrease) * emDmgMult;
             if (amount <= 0.25f)
             {
                 amount = 0.25f;
@@ -250,7 +255,7 @@ public class Player : MonoBehaviour
             blood.Play();
         sr.color = Color.red;
         Invoke("StopBleeding", 0.2f);
-        amount = amount * (1 - GameManager.Instance.defUpgrades * GameManager.Instance.defIncrease);
+        amount = amount * (1 - GameManager.Instance.defUpgrades * GameManager.Instance.defIncrease) * emDmgMult;
         if (amount <= 1)
         {
             amount = 1;
@@ -280,7 +285,7 @@ public class Player : MonoBehaviour
                 blood.Play();
             sr.color = Color.red;
             Invoke("StopBleeding", 0.2f);
-            amount = amount * (1 - GameManager.Instance.defUpgrades * GameManager.Instance.defIncrease);
+            amount = amount * (1 - GameManager.Instance.defUpgrades * GameManager.Instance.defIncrease) * emDmgMult;
             if (amount <= 1)
             {
                 amount = 1;
@@ -499,6 +504,10 @@ public class Player : MonoBehaviour
     }
     IEnumerator AddCorr(float amount)
     {
+        if (GameManager.Instance.expertMode)
+        {
+            amount *= 1.4f;
+        }
         float initC = Corruption;
         float elapsedTime = 0;
         float addedAmt = 0;

@@ -10796,6 +10796,7 @@ MonoBehaviour:
   sr: {fileID: 93041604503286826}
   cBreakEffect: {fileID: 7394205952567297297}
   heartSprite: {fileID: 21300000, guid: b6b024158921e27438f7b7c6b7597deb, type: 3}
+  altSprite: {fileID: 21300000, guid: f692badc96df23e4ba45eeed64a2e450, type: 3}
   rb: {fileID: 0}
   maxBeamCd: 4
   beamStart: {fileID: 5224776188633743690}

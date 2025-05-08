@@ -16,6 +16,7 @@ public class CursedSpear : CursedWeapon
     public ParticleSystem fire;
     public Transform sprite;
     public GameObject indicator;
+   
     // Update is called once per frame
 
     public override void OnDM()

@@ -5392,6 +5392,7 @@ MonoBehaviour:
   sr: {fileID: 3615282703646770155}
   cBreakEffect: {fileID: 8549043754002859431}
   heartSprite: {fileID: 21300000, guid: b6b024158921e27438f7b7c6b7597deb, type: 3}
+  altSprite: {fileID: 21300000, guid: 35d225eb786f1264f8ca32912e1d3c91, type: 3}
   rb: {fileID: 0}
   attackForce: 50
   attackTime: 0.4
