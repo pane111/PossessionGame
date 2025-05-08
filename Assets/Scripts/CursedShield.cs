@@ -17,6 +17,10 @@ public class CursedShield : CursedWeapon
     {
         base.OnStart();
         SpawnCreature();
+        if (GameManager.Instance.expertMode)
+        {
+            rotSpeed *= 1.4f;
+        }
     }
 
     void Update()
@@ -48,6 +52,10 @@ public class CursedShield : CursedWeapon
         print("Trying to spawn creature");
         if (playerFound && !dead)
         {
+            if (GameManager.Instance.expertMode)
+            {
+                GetComponent<SpreadShot>().OnShoot();
+            }
             print("Creature spawned");
             Instantiate(creature,transform.position,Quaternion.identity);
         }

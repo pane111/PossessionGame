@@ -89,6 +89,10 @@ public class CursedSpear : CursedWeapon
         rb.velocity = curDir.normalized * attackForce;
         yield return new WaitForSeconds(attackTime);
         rb.velocity = Vector2.zero;
+        if (GameManager.Instance.expertMode)
+        {
+            GetComponent<SpreadShot>().OnShoot();
+        }
         yield return new WaitForSeconds(1);
         rot = 0;
         attacking = false;

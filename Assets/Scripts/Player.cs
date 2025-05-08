@@ -103,8 +103,10 @@ public class Player : MonoBehaviour
         }
         if (GameManager.Instance.expertMode)
         {
-            emDmgMult = 1.5f;
+            emDmgMult = 1.35f;
             demonModeDuration = demonModeDuration * 0.9f;
+            maxCorrChange *= 1.15f;
+           
         }
         anim = GetComponent<Animator>();
         stepCounter = stepSoundCount;
@@ -504,13 +506,11 @@ public class Player : MonoBehaviour
     }
     IEnumerator AddCorr(float amount)
     {
-        if (GameManager.Instance.expertMode)
-        {
-            amount *= 1.4f;
-        }
+        
         float initC = Corruption;
         float elapsedTime = 0;
         float addedAmt = 0;
+        /*
         while (addedAmt < amount)
         {
             elapsedTime += Time.fixedUnscaledDeltaTime;
@@ -519,6 +519,7 @@ public class Player : MonoBehaviour
             
             yield return null;
         }
+        */
         Corruption = initC + amount;
 
         yield return null;

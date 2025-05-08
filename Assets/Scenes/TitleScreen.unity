@@ -1387,12 +1387,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In Expert Mode, you will take increased damage, enemies will have more
-    health, and Demon Mode will have a shorter duration. Also, corruption increases
-    faster, and you will not receive a boon upon death.
+  m_text: 'In Expert Mode, you will take increased damage, enemies will be much stronger,
+    and Demon Mode will have a shorter duration. Also, corruption increases faster,
+    and you will not receive a boon upon death.
 
-    <color=red>Are you up
-    to the challenge?'
+    <color=red>Are you up to the
+    challenge?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7bb106efb1fd544db842a8318c26a7e, type: 2}
   m_sharedMaterial: {fileID: 4186326442822114195, guid: d7bb106efb1fd544db842a8318c26a7e, type: 2}
@@ -3289,6 +3289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1459913517}
   - component: {fileID: 1459913518}
+  - component: {fileID: 1459913519}
   m_Layer: 5
   m_Name: TutorialToggle
   m_TagString: Untagged
@@ -3358,7 +3359,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 926512656}
-  toggleTransition: 1
+  toggleTransition: 0
   graphic: {fileID: 502445429}
   m_Group: {fileID: 0}
   onValueChanged:
@@ -3377,6 +3378,24 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &1459913519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459913516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa93317cb5b2da4290438c58bcccb27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonToPress: Fire2
+  axisVal: 0.3
+  aboveAxisVal: 0
+  isButtonOrToggle: 0
+  isAxis: 0
+  initDelay: 0
 --- !u!1 &1506911156
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,7 +3761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1686447698
 RectTransform:
   m_ObjectHideFlags: 0

@@ -83,6 +83,10 @@ public class CursedPot : CursedWeapon
 
     public void ShootOrb()
     {
+        if (GameManager.Instance.expertMode)
+        {
+            GetComponent<SpreadShot>().OnShoot();
+        }
         AudioManager.Instance.OrbShotBig.Post(gameObject);
         anim.ResetTrigger("Shock");
         shotCd = maxShotCd;

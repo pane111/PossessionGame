@@ -66,6 +66,11 @@ public class CursedStaff : CursedWeapon
     public override void OnDM()
     {
         base.OnDM();
+        if (GameManager.Instance.expertMode)
+        {
+            beamDuration = beamDuration * 1.3f;
+            followSpeed = followSpeed * 1.1f;
+        }
         beamCooldown = maxBeamCd;
     }
 

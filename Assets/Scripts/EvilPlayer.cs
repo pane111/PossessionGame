@@ -21,6 +21,10 @@ public class EvilPlayer : BossParentScript
     float turning=0;
     void Start()
     {
+        if (GameManager.Instance.expertMode)
+        {
+            maxHealth = 50;
+        }
         CurHealth = maxHealth;
         player = GameObject.Find("Player").transform;
         //player.GetComponent<Player>().sword.GetComponent<SwordScript>().curTarget = transform;

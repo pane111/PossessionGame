@@ -36,6 +36,10 @@ public class FinalBoss : BossParentScript
     float dmgMult = 1;
     private void Start()
     {
+        if (GameManager.Instance.expertMode)
+        {
+            maxHealth = 350;
+        }
         transform.position = new Vector3(-37, 0, -4);
         oldFloor.SetActive(false);
         newFloor.SetActive(true);

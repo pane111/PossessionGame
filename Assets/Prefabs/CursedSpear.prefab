@@ -5224,6 +5224,7 @@ GameObject:
   - component: {fileID: 7527962835011614030}
   - component: {fileID: 1663226944247371834}
   - component: {fileID: 5538905644148747931}
+  - component: {fileID: 4442671951238558478}
   m_Layer: 6
   m_Name: CursedSpear
   m_TagString: Projectile
@@ -5419,6 +5420,32 @@ MonoBehaviour:
   deflectPlayerOnTouch: 1
   repelForce: 50
   effect: {fileID: 7533504817427263935}
+--- !u!114 &4442671951238558478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875542825106738983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20972d7181a520840968b79b39afeac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toShoot: {fileID: 5867954984462663463, guid: 11685445c97dd4248806bfdd0f10fd2f, type: 3}
+  bulletAmount: 6
+  maxDeg: 360
+  randomRotation: 0
+  shotForce: 12
+  triggerOnStart: 0
+  triggerOnDeath: 0
+  addedDeg: 0
+  retriggerDelay: 0
+  retrigger: 0
+  addDegAfterRetrigger: 0
+  isNotBullet: 0
+  canShoot: 1
+  destroyBulletAuto: 1
 --- !u!1 &5404913035420508757
 GameObject:
   m_ObjectHideFlags: 0

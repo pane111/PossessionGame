@@ -183,12 +183,22 @@ public class GameManager : MonoBehaviour
 
     public void OnDeath()
     {
-        GetChoices();
-        AudioManager.Instance.GS_GameOver.SetValue();
-        AudioManager.Instance.Death.Post(gameObject);
-        deathAnim.SetTrigger("Death");
-        Time.timeScale = 0;
-        deathMenu.SetActive(true);
+        if (!expertMode)
+        {
+            GetChoices();
+            AudioManager.Instance.GS_GameOver.SetValue();
+            AudioManager.Instance.Death.Post(gameObject);
+            deathAnim.SetTrigger("Death");
+            Time.timeScale = 0;
+            deathMenu.SetActive(true);
+        }
+        else
+        {
+            AudioManager.Instance.Death.Post(gameObject);
+            deathAnim.SetTrigger("Death");
+            player.Revive();
+        }
+        
     }
 
     public void OnDemonModeEnter()

@@ -23,6 +23,10 @@ public class MonsterBoss : BossParentScript
     public GameObject newFloor;
     private void Start()
     {
+        if (GameManager.Instance.expertMode)
+        {
+            maxHealth = 100;
+        }
         oldFloor.SetActive(false);
         newFloor.SetActive(true);
         bgEffect.SetActive(true);
