@@ -20,6 +20,7 @@ public class DemonHeart : MonoBehaviour
     bool exploded = false;
     Color c = Color.black;
     int crystalHitAmt = 0;
+    public bool dead=false;
 
     private void Start()
     {
@@ -64,7 +65,7 @@ public class DemonHeart : MonoBehaviour
                 sr.enabled = false;
                 FindObjectOfType<Player>().OnPurify();
                 weapon.OnDeath();
-
+                dead = true;
                 StartCoroutine(HeartHit());
             }
         }
