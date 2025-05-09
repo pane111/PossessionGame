@@ -29,7 +29,7 @@ public class TitleScreenManager : MonoBehaviour
             {
             tutorials.isOn = false;
         }
-        else
+        if (!PlayerPrefs.HasKey("Tutorials"))
         {
             TutToggle(true);
         }
