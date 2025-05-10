@@ -25,6 +25,8 @@ public class TitleScreenManager : MonoBehaviour
     public Toggle tutorials;
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         if (PlayerPrefs.GetInt("Tutorials")==0)
             {
             tutorials.isOn = false;

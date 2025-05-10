@@ -338,8 +338,8 @@ public class GameManager : MonoBehaviour
         {
             if(expertMode)
             {
-                PlayerPrefs.SetInt("EMBeaten", 1);
-                SceneManager.LoadScene("GoodEnding");
+                
+                SceneManager.LoadScene("SecretBossTransition");
             }
             else
             {

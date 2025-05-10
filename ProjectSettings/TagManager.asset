@@ -20,6 +20,7 @@ TagManager:
   - Juice
   - ForcedDamage
   - DZone2
+  - Sword
   layers:
   - Default
   - TransparentFX
