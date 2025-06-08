@@ -38,7 +38,7 @@ public class FinalBoss : BossParentScript
     {
         if (GameManager.Instance.expertMode)
         {
-            maxHealth = 350;
+            maxHealth = 325;
         }
         transform.position = new Vector3(-37, 0, -4);
         oldFloor.SetActive(false);

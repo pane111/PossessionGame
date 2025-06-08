@@ -23,7 +23,7 @@ public class EvilPlayer : BossParentScript
     {
         if (GameManager.Instance.expertMode)
         {
-            maxHealth = 50;
+            maxHealth = 45;
         }
         CurHealth = maxHealth;
         player = GameObject.Find("Player").transform;

@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
             {
                 value = 0;
                 GameManager.Instance.OnDeath();
-                StartCoroutine(SetInvincible(5));
+                StartCoroutine(SetInvincible(8));
             }
             AudioManager.Instance.healthRTPC.SetGlobalValue(value);
             _curHealth = value;
@@ -104,9 +104,10 @@ public class Player : MonoBehaviour
         }
         if (GameManager.Instance.expertMode)
         {
-            emDmgMult = 1.35f;
+            emDmgMult = 1.2f;
             demonModeDuration = demonModeDuration * 0.9f;
-            maxCorrChange.y = maxCorrChange.y * 1.5f;
+            maxCorrChange.y = maxCorrChange.y * 1.2f;
+            maxCorrChange.x = maxCorrChange.x * 0.95f;
            
         }
         anim = GetComponent<Animator>();
@@ -219,7 +220,7 @@ public class Player : MonoBehaviour
     }
     public void OnPurify()
     {
-        Corruption -= corruptionLossOnPurify;
+        Corruption -= corruptionLossOnPurify * emDmgMult;
     }
     public void TakeDamage()
     {
@@ -271,7 +272,7 @@ public class Player : MonoBehaviour
             CurHealth = maxHealth;
             healthBar.fillAmount = 0;
 
-            StartCoroutine(SetInvincible(5));
+            StartCoroutine(SetInvincible(8));
         }
         else
         {
@@ -300,7 +301,7 @@ public class Player : MonoBehaviour
                 CurHealth = maxHealth;
                 healthBar.fillAmount = CurHealth / maxHealth;
                 
-                StartCoroutine(SetInvincible(5));
+                StartCoroutine(SetInvincible(8));
             }
             else
             {
@@ -312,8 +313,9 @@ public class Player : MonoBehaviour
     IEnumerator SetInvincible(float dur)
     {
         invincible = true;
+        sr.color = new Color(0, 0, 0, 0.75f);
         yield return new WaitForSeconds(dur);
-        
+        sr.color = Color.white;
         invincible = false;
         yield return null;
     }
@@ -503,7 +505,7 @@ public class Player : MonoBehaviour
         CurHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
         AddCorruptionVoid(Random.Range(maxCorrChange.x, maxCorrChange.y));
-        SetInvincible(5);
+        SetInvincible(8);
     }
     IEnumerator AddCorr(float amount)
     {

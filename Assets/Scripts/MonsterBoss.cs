@@ -25,7 +25,7 @@ public class MonsterBoss : BossParentScript
     {
         if (GameManager.Instance.expertMode)
         {
-            maxHealth = 100;
+            maxHealth = 80;
         }
         oldFloor.SetActive(false);
         newFloor.SetActive(true);
