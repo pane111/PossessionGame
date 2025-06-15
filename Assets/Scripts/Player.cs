@@ -560,7 +560,7 @@ public class Player : MonoBehaviour
         }
         
         Corruption = initC + amount;
-        totalCorr = initC + amount;
+        totalCorr += amount;
 
         yield return null;
     }
