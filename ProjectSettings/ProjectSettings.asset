@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Stern32
   productName: Black Blade
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: e97e4161727f7d0448d65dccff8bcabf, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
