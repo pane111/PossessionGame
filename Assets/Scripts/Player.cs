@@ -130,6 +130,7 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetInt("Deaths", deaths);
         PlayerPrefs.SetInt("Kills", kills);
         PlayerPrefs.SetInt("NPCKills", npckills);
+        PlayerPrefs.SetFloat("Corruption", Corruption);
         PlayerPrefs.SetFloat("TotalCorr", totalCorr);
         PlayerPrefs.SetFloat("TimeTaken", timeTaken);
 
@@ -560,7 +561,7 @@ public class Player : MonoBehaviour
         }
         
         Corruption = initC + amount;
-        totalCorr += amount;
+        
 
         yield return null;
     }

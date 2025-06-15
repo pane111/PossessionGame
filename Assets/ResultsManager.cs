@@ -12,13 +12,15 @@ public class ResultsManager : MonoBehaviour
     public TextMeshProUGUI deaths;
     public TextMeshProUGUI totalCorr;
     public TextMeshProUGUI timeTaken;
+    public TextMeshProUGUI corr;
     public TextMeshProUGUI difficulty;
     void Start()
     {
         kills.text = "Demons Killed - " + PlayerPrefs.GetInt("Kills");
         npckills.text = "Innocents Killed - " + PlayerPrefs.GetInt("NPCKills");
         deaths.text = "Deaths - " + PlayerPrefs.GetInt("Deaths");
-        totalCorr.text = "Total Corruption Gained - " + PlayerPrefs.GetFloat("TotalCorr").ToString("F2");
+        corr.text = "Final Corruption Level - " + PlayerPrefs.GetFloat("Corruption").ToString("F2")+"%";
+        totalCorr.text = "Total Corruption Gained - " + PlayerPrefs.GetFloat("TotalCorr").ToString("F2")+"%";
         var ts = TimeSpan.FromSeconds(PlayerPrefs.GetFloat("TimeTaken"));
         timeTaken.text = "Time Taken - " + string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
         if (PlayerPrefs.GetInt("EM") == 1)

@@ -347,6 +347,7 @@ public class GameManager : MonoBehaviour
     public void TriggerEnding()
     {
         player.SaveData();
+        PlayerPrefs.SetFloat("Corruption", player.Corruption);
         if (player.Corruption >= 100)
         {
             SceneManager.LoadScene("GameOver");
