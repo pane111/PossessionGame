@@ -7,3 +7,5 @@ The original prototype for this game was created in about a week, but we decided
 While the game is by no means a fully complete and polished experience, we hope you will have fun with it! 
 
 You can download a windows build for the game on the Releases page.
+
+Contains flashing images and cartoonish violence (blood).
