@@ -5,3 +5,5 @@ You are an exorcist, locked in a castle with demonic artifacts that need to be d
 
 The original prototype for this game was created in about a week, but we decided to keep working on it to bring the game to a somewhat finished state.
 While the game is by no means a fully complete and polished experience, we hope you will have fun with it! 
+
+You can download a windows build for the game on the Releases page.
