@@ -9,3 +9,5 @@ While the game is by no means a fully complete and polished experience, we hope 
 You can download a windows build for the game on the Releases page.
 
 Contains flashing images and cartoonish violence (blood).
+
+You are free to use the source code for whatever you want but we do not recommend doing so.
