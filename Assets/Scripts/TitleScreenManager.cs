@@ -114,6 +114,10 @@ public class TitleScreenManager : MonoBehaviour
         PlayerPrefs.SetInt("EM", 0);
         SceneManager.LoadScene("SampleScene");
     }
+    public void Review()
+    {
+        SceneManager.LoadScene("Results");
+    }
     public void PlayGameEM()
     {
         PlayerPrefs.SetInt("EM", 1);

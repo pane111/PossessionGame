@@ -94,12 +94,18 @@ public class Player : MonoBehaviour
     bool juiceTutorialTriggered = false;
     public Animator anim;
     float emDmgMult=1;
+    public float timeTaken = 0;
+    public int kills = 0;
+    public int npckills = 0;
+    public int deaths = 0;
+    public float totalCorr = 0;
     void Start()
     {
 
         if (PlayerPrefs.HasKey("Corruption"))
         {
             Corruption = PlayerPrefs.GetFloat("Corruption");
+            LoadData();
             
         }
         if (GameManager.Instance.expertMode)
@@ -118,11 +124,39 @@ public class Player : MonoBehaviour
         AudioManager.Instance.GS_NormalMode.SetValue();
         initSpeed = speed;
     }
+    public void SaveData()
+    {
+        print("Saving data - Deaths " + deaths + " Kills " + kills + " NPC kills" + npckills + " TotalCorr " + totalCorr + " Time " + timeTaken);
+        PlayerPrefs.SetInt("Deaths", deaths);
+        PlayerPrefs.SetInt("Kills", kills);
+        PlayerPrefs.SetInt("NPCKills", npckills);
+        PlayerPrefs.SetFloat("TotalCorr", totalCorr);
+        PlayerPrefs.SetFloat("TimeTaken", timeTaken);
+
+    }
+    public void LoadData()
+    {
+        deaths = PlayerPrefs.GetInt("Deaths");
+        kills = PlayerPrefs.GetInt("Kills");
+        npckills = PlayerPrefs.GetInt("NPCKills");
+        totalCorr = PlayerPrefs.GetInt("TotalCorr");
+        timeTaken = PlayerPrefs.GetInt("TimeTaken");
+        print("Loaded data - Deaths " + deaths + " Kills " + kills + " NPC kills" + npckills + " TotalCorr " + totalCorr + " Time " + timeTaken);
+    }
+    public void ResetData()
+    {
+        print("Reset data");
+        PlayerPrefs.SetInt("Deaths", 0);
+        PlayerPrefs.SetInt("Kills", 0);
+        PlayerPrefs.SetInt("NPCKills", 0);
+        PlayerPrefs.SetFloat("TotalCorr", 0);
+        PlayerPrefs.SetFloat("TimeTaken", 0);
+    }
 
     // Update is called once per frame
     void Update()
     {
-
+        timeTaken += Time.fixedUnscaledDeltaTime;
         var vertical = Input.GetAxisRaw("Vertical");
         var horizontal = Input.GetAxisRaw("Horizontal");
         curDeg += Time.deltaTime * orbitSpeed;
@@ -405,6 +439,7 @@ public class Player : MonoBehaviour
     public void AddCorruptionVoid(float amount)
     {
         print("Added corruption + " + amount);
+        totalCorr += amount;
         StartCoroutine(AddCorr(amount));
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -504,6 +539,7 @@ public class Player : MonoBehaviour
         maxHealth = 100 + GameManager.Instance.hpUpgrades * GameManager.Instance.hpIncrease;
         CurHealth = maxHealth;
         healthBar.fillAmount = CurHealth / maxHealth;
+        deaths++;
         AddCorruptionVoid(Random.Range(maxCorrChange.x, maxCorrChange.y));
         SetInvincible(8);
     }
@@ -524,6 +560,7 @@ public class Player : MonoBehaviour
         }
         
         Corruption = initC + amount;
+        totalCorr = initC + amount;
 
         yield return null;
     }

@@ -65,6 +65,7 @@ public class BossParentScript : MonoBehaviour
 
     public virtual void TakeDamage(float amount)
     {
+        amount += 0.125f * GameManager.Instance.dmgUpgrades;
         CurHealth -= amount;
         if (CurHealth < maxHealth)
         {

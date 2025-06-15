@@ -1130,7 +1130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9bc893a496e58469577265e0692611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: TitleScreen
+  scene: Results
+  boonTxt: {fileID: 0}
 --- !u!95 &1275536517
 Animator:
   serializedVersion: 5

@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
         if (setCorrTo0)
         {
             player.SetCorruption(0);
+            player.ResetData();
             PlayerPrefs.SetInt("HadBoons", 1);
             PlayerPrefs.SetFloat("Corruption", 0);
         }
@@ -123,12 +124,27 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                player.SetCorruption(200);
                 TriggerEnding();
             }
             if (Input.GetKeyDown(KeyCode.B))
             {
                 GoToBossFight();
+            }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                dmgUpgrades += 100;
+            }
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                player.CurHealth -= 9999;
+            }
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                player.Corruption=0;
+            }
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                player.Corruption += 25;
             }
         }
     }
@@ -149,7 +165,7 @@ public class GameManager : MonoBehaviour
 
     public void AddKill()
     {
-        kills++;
+        player.npckills++;
         player.AddCorruptionVoid(UnityEngine.Random.Range(40, 60));
         statsText.text="time\n99:99\nkills\n"+kills.ToString();
     }
@@ -316,6 +332,7 @@ public class GameManager : MonoBehaviour
     }
     public void GoToBossFight()
     {
+        player.SaveData();
         PlayerPrefs.SetFloat("Corruption", player.Corruption);
         if (defUpgrades > 0 || dmgUpgrades > 0 || hpUpgrades > 0 || MSUpgrades > 0) {
             PlayerPrefs.SetInt("HadBoons", 1);
@@ -329,7 +346,7 @@ public class GameManager : MonoBehaviour
 
     public void TriggerEnding()
     {
-        
+        player.SaveData();
         if (player.Corruption >= 100)
         {
             SceneManager.LoadScene("GameOver");

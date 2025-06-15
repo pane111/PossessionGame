@@ -127,6 +127,8 @@ public class FinalBoss : BossParentScript
             float r = Random.Range(0, 100);
             if (r <= 50)
             {
+                clockAnim.SetTrigger("Fast");
+                yield return new WaitForSecondsRealtime(2.5f);
                 Time.timeScale = 2f;
                 GameManager.Instance.storedTS = 2;
                 Time.fixedDeltaTime = 0.02F * Time.timeScale;
@@ -134,11 +136,13 @@ public class FinalBoss : BossParentScript
             }
             else
             {
+                clockAnim.SetTrigger("Slow");
+                yield return new WaitForSecondsRealtime(2.5f);
                 Time.timeScale = 0.65f;
                 GameManager.Instance.storedTS = 0.65f;
                 Time.fixedDeltaTime = 0.02F * Time.timeScale;
             }
-            clockAnim.SetTrigger("Trigger");
+            
             yield return new WaitForSecondsRealtime(8);
             Time.timeScale = 1;
             dmgMult = 1;
@@ -175,6 +179,7 @@ public class FinalBoss : BossParentScript
     }
     public override void TakeDamage(float amount)
     {
+        amount += 0.1f * GameManager.Instance.dmgUpgrades;
         if (CurHealth - amount <= 0 && !ultAttackTriggered)
         {
             CurHealth = 1;
@@ -265,7 +270,7 @@ public class FinalBoss : BossParentScript
                     collision.GetComponent<SwordScript>().curTarget = player;
                     
                 }
-                TakeDamage((3 + 0.3f * GameManager.Instance.dmgUpgrades)*dmgMult);
+                TakeDamage(3*dmgMult);
 
             }
             else
@@ -274,7 +279,7 @@ public class FinalBoss : BossParentScript
                 {
                     collision.GetComponent<SwordScript>().curTarget = player;
                 }
-                TakeDamage((1 + 0.1f * GameManager.Instance.dmgUpgrades)*dmgMult);
+                TakeDamage(dmgMult);
                 if (sword.curTarget == sword.playerChar || sword.curTarget == sword.playerChar.gameObject.GetComponent<Player>().orbiter) { sword.curTarget = this.gameObject.transform; sword.Idling = false; sword.SIforNPC(); }
             }
             

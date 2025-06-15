@@ -64,6 +64,7 @@ public class DemonHeart : MonoBehaviour
                 GetComponent<Collider2D>().enabled = false;
                 sr.enabled = false;
                 FindObjectOfType<Player>().OnPurify();
+                FindObjectOfType<Player>().kills++;
                 weapon.OnDeath();
                 dead = true;
                 StartCoroutine(HeartHit());

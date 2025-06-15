@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI uiNotifText;
     public Animator dmgAnim;
     bool isDashing = false;
+    
     public float CurHp
     {
         get { return curHp; }

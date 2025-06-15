@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecretBossTransition.unity
     guid: 455a896d0133941448d39f03a8fb1fe0
+  - enabled: 1
+    path: Assets/Scenes/Results.unity
+    guid: a46b57c917ebbcc4f9a86e33053ee385
   m_configObjects: {}
