@@ -361,6 +361,6 @@ MonoBehaviour:
   player: {fileID: 0}
   sr: {fileID: 4835341807418679928}
   anim: {fileID: 5535230016607565466}
-  moves: 6
+  moves: 8
   offset: {x: -10.8, y: -4.9}
   jumpDur: 0.65
