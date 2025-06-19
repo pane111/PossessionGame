@@ -153,7 +153,7 @@ public class NPC : MonoBehaviour
             }
             if (GameManager.Instance.player.npckills ==3)
             {
-                GameManager.Instance.SendNotification("The path of blood is a disastrous one. You must cease immediately.");
+                GameManager.Instance.SendNotification("The path of blood will lead to ruin. You must cease immediately.");
             }
             GameManager.Instance.gameObject.GetComponent<AudioManager>().NPCDeath.Post(gameObject);
             GetComponent<Animator>().enabled = false;
