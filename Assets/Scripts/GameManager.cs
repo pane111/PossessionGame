@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     public List<string> possibleChoices = new List<string>();
 
     public bool npctutorial = false;
-    bool displayTutorials=true;
+    public bool displayTutorials=true;
     public bool expertMode=false;
     
     public static GameManager Instance { get; private set; }

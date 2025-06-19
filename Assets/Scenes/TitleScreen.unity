@@ -1139,7 +1139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &418348257
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1204,18 +1204,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1099588240}
-        m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
-        m_MethodName: PlayGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1099588240}
         m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
         m_MethodName: Review
@@ -3131,7 +3119,8 @@ MonoBehaviour:
     purge the afflicted of their curse by using your own cursed weapon. Only a demon
     can slay another demon, after all.
   - However, you must take care... Your weapon seeks the blood of innocents, and
-    it is your mission to save them. Stop the blade from taking their lives!
+    it is your mission to save them. Stop the blade from taking their lives! <color=red>The
+    path of blood is a disastrous one.
   - Touch a <color=red>Statue of the Abyss</color> to enter <color=red>Demon Mode</color>.
     In this state, you will move faster, and the demons will be revealed. Find and
     attack the demons to shatter the crystals that protect their heart, then strike

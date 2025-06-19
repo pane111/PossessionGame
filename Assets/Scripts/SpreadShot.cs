@@ -18,6 +18,7 @@ public class SpreadShot : MonoBehaviour
     public bool isNotBullet = false;
     public bool canShoot=true;
     public bool destroyBulletAuto = true;
+    public bool mirrorProjectile;
     float ad2;
     private void Start()
     {
@@ -52,6 +53,10 @@ public class SpreadShot : MonoBehaviour
                         shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle) + addedDeg);
                         shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
                     }
+                    if (mirrorProjectile)
+                    {
+                        shotBullet.transform.localScale = new Vector3(-shotBullet.transform.localScale.x, shotBullet.transform.localScale.y, shotBullet.transform.localScale.z);
+                    }
                     if (destroyBulletAuto)
                         Destroy(shotBullet, 5);
                 }
@@ -63,6 +68,10 @@ public class SpreadShot : MonoBehaviour
                     {
                         shotBullet.transform.localRotation = Quaternion.Euler(0, 0, (transform.localRotation.eulerAngles.z + maxDeg / 2 - angle) + addedDeg);
                         shotBullet.GetComponent<Rigidbody2D>().AddForce(shotBullet.transform.right * shotForce, ForceMode2D.Impulse);
+                    }
+                    if (mirrorProjectile)
+                    {
+                        shotBullet.transform.localScale = new Vector3(-shotBullet.transform.localScale.x, shotBullet.transform.localScale.y, shotBullet.transform.localScale.z);
                     }
                     if (destroyBulletAuto)
                         Destroy(shotBullet, 5);
@@ -80,4 +89,5 @@ public class SpreadShot : MonoBehaviour
             Invoke("OnShoot", retriggerDelay);
         }
     }
+    
 }

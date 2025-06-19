@@ -30,7 +30,7 @@ public class TelegraphedAttack : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.DrawCube(transform.position, new Vector3(size.x, size.y, 0));
+        //Gizmos.DrawCube(transform.position, new Vector3(size.x, size.y, 0));
     }
 
 

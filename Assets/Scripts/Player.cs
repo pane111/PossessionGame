@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
-using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -99,6 +98,8 @@ public class Player : MonoBehaviour
     public int npckills = 0;
     public int deaths = 0;
     public float totalCorr = 0;
+
+    public System.Action onDeath;
     void Start()
     {
 
@@ -506,6 +507,11 @@ public class Player : MonoBehaviour
         {
             GameManager.Instance.TriggerEnding();
         }
+        else if (collision.gameObject.CompareTag("FinalSecretDoor"))
+        {
+            ResetData();
+            SceneManager.LoadScene("Outside");
+        }
     }
     public void knockbackFailsafe(float d)
     {
@@ -534,6 +540,7 @@ public class Player : MonoBehaviour
 
     public void Revive()
     {
+        onDeath.Invoke();
         print("Revived");
         if (demonModeActive) { AudioManager.Instance.StartTicking.Post(gameObject); }
         AudioManager.Instance.Revive.Post(gameObject);

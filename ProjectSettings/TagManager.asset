@@ -21,6 +21,8 @@ TagManager:
   - ForcedDamage
   - DZone2
   - Sword
+  - PAura
+  - FinalSecretDoor
   layers:
   - Default
   - TransparentFX

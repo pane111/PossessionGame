@@ -16,6 +16,9 @@ public class ResultsManager : MonoBehaviour
     public TextMeshProUGUI difficulty;
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        
         kills.text = "Demons Killed - " + PlayerPrefs.GetInt("Kills");
         npckills.text = "Innocents Killed - " + PlayerPrefs.GetInt("NPCKills");
         deaths.text = "Deaths - " + PlayerPrefs.GetInt("Deaths");

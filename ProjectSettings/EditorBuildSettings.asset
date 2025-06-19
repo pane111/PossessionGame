@@ -38,4 +38,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Results.unity
     guid: a46b57c917ebbcc4f9a86e33053ee385
+  - enabled: 1
+    path: Assets/Scenes/Outside.unity
+    guid: 17e12457aba8b984cb922686d7d76e8a
+  - enabled: 1
+    path: Assets/Scenes/UltraSecretFight.unity
+    guid: edb1339e731785d4c87c06918b3d3b03
+  - enabled: 1
+    path: Assets/Scenes/FinalFightForReal.unity
+    guid: d400b378895e9eb4087d0e30ab10f7fa
+  - enabled: 1
+    path: Assets/Scenes/TrueEnding.unity
+    guid: 6249bbba006aed44787d16bfa4c792ee
   m_configObjects: {}

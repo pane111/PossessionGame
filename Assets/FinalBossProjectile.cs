@@ -7,9 +7,10 @@ public class FinalBossProjectile : MonoBehaviour
     Rigidbody rb;
     Transform player;
     Vector3 dir;
+    public bool is2D;
     void Start()
     {
-        player = Camera.main.transform;
+        player = GameObject.Find("Player").transform;
         rb = GetComponent<Rigidbody>();
         Vector3 r = new Vector3(Random.Range(-1,1),Random.Range(-1,1), Random.Range(-1,1));
         rb.AddForce(r.normalized * 50, ForceMode.Impulse);

@@ -151,10 +151,15 @@ public class NPC : MonoBehaviour
                 GameManager.Instance.npctutorial = true;
                 GameManager.Instance.PopupTutorial("Your sword has just killed an innocent person! Be careful, as attacking and killing innocents will heavily corrupt you!", sr.sprite);
             }
+            if (GameManager.Instance.player.npckills ==3)
+            {
+                GameManager.Instance.SendNotification("The path of blood is a disastrous one. You must cease immediately.");
+            }
             GameManager.Instance.gameObject.GetComponent<AudioManager>().NPCDeath.Post(gameObject);
+            GetComponent<Animator>().enabled = false;
             ParticleSystem.MainModule sma = bloodSpray.main;
             sma.startColor = GameManager.Instance.randomColor();
-            if (!dead) { bloodSpray.Play(); GameManager.Instance.AddKill(); }
+            if (!dead) { bloodSpray.Play(); GameManager.Instance.AddKill();  }
 
             dead = true;
             mod = 0;
