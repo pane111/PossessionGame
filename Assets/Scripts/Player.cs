@@ -540,7 +540,11 @@ public class Player : MonoBehaviour
 
     public void Revive()
     {
-        onDeath.Invoke();
+        if (onDeath!=null)
+        {
+            onDeath.Invoke();
+        }
+        
         print("Revived");
         if (demonModeActive) { AudioManager.Instance.StartTicking.Post(gameObject); }
         AudioManager.Instance.Revive.Post(gameObject);
