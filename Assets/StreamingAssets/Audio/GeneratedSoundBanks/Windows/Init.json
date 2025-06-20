@@ -1,0 +1,138 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Type": "User",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "Hash": "{991CCCBE-DF45-F3A1-DCFC-A0511E2AF435}",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk",
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "540149095",
+       "Name": "Guitar Distortion (Custom)",
+       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\[Effect Slot [0]: (Guitar Distortion)]\\Guitar Distortion (Custom)",
+       "GUID": "{047E9821-B53D-4149-92B1-76EF2FD59DDC}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      }
+     ],
+     "AudioDevices": [
+      {
+       "Id": "2317455096",
+       "Name": "No_Output",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\No_Output",
+       "GUID": "{E3C3260E-EE7D-4EF1-886B-8E1C0F81AE6B}",
+       "LibName": "No Output",
+       "LibId": "11862023"
+      },
+      {
+       "Id": "3859886410",
+       "Name": "System",
+       "ObjectPath": "\\Audio Devices\\Default Work Unit\\System",
+       "GUID": "{9DADD78D-3A69-4F7A-BC81-7272AF9E10F5}",
+       "LibName": "System",
+       "LibId": "11403271"
+      }
+     ]
+    },
+    "Busses": [
+     {
+      "Id": "3071607971",
+      "Name": "Combat Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Combat Bus",
+      "GUID": "{C80367BE-E8BC-424F-A7C5-3AAC49ABBB01}"
+     },
+     {
+      "Id": "3803692087",
+      "Name": "Master Audio Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "540149095"
+        }
+       ]
+      }
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1769415205",
+      "Name": "HP",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\HP",
+      "GUID": "{FA783F1A-7D73-4DD3-91A0-3C84A292843E}"
+     },
+     {
+      "Id": "2918011349",
+      "Name": "MasterVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MasterVolume",
+      "GUID": "{66E98FDA-456D-472E-B227-EF5239B7E209}"
+     },
+     {
+      "Id": "3347766931",
+      "Name": "Possession",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Possession",
+      "GUID": "{460F872A-1866-4F40-A119-5160329725AA}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "4091656514",
+      "Name": "GameState",
+      "ObjectPath": "\\States\\Default Work Unit\\GameState",
+      "GUID": "{CDB0E3AE-434D-4E3D-A3F8-D27F420D425C}",
+      "States": [
+       {
+        "Id": "319258907",
+        "Name": "Paused",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\Paused",
+        "GUID": "{4A70BB33-09B5-457F-9ABF-799DA08A8655}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\None",
+        "GUID": "{90B4B4C0-DACE-4C22-B7F2-9CAEEB74B230}"
+       },
+       {
+        "Id": "1002734233",
+        "Name": "NormalMode",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\NormalMode",
+        "GUID": "{30C6C111-1C76-49BB-AD5B-0D74E336A384}"
+       },
+       {
+        "Id": "2525823671",
+        "Name": "DemonMode",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\DemonMode",
+        "GUID": "{D8F3C64E-E7AA-4A31-B38A-65599981D96E}"
+       },
+       {
+        "Id": "3705726509",
+        "Name": "Title",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\Title",
+        "GUID": "{DF653ECE-6186-4448-A736-B213CB9A62B7}"
+       },
+       {
+        "Id": "4158285989",
+        "Name": "GameOver",
+        "ObjectPath": "\\States\\Default Work Unit\\GameState\\GameOver",
+        "GUID": "{6D3DD528-C1B5-4536-A51C-3D747A3F06E2}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{A94554B1-9888-DC10-1769-9A686BD5F1CF}"
+ }
+}

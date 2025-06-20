@@ -1,0 +1,27 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	4091656514	GameState			\Default Work Unit\GameState	
+
+State	ID	Name	State Group			Notes
+	319258907	Paused	GameState			
+	748895195	None	GameState			
+	1002734233	NormalMode	GameState			
+	2525823671	DemonMode	GameState			
+	3705726509	Title	GameState			
+	4158285989	GameOver	GameState			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1769415205	HP			\Default Work Unit\HP	
+	2918011349	MasterVolume			\Default Work Unit\MasterVolume	
+	3347766931	Possession			\Default Work Unit\Possession	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	3071607971	Combat Bus			\Default Work Unit\Master Audio Bus\Combat Bus	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Effect plug-ins	ID	Name	Type				Notes
+	540149095	Guitar Distortion (Custom)	Wwise Guitar Distortion			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+
