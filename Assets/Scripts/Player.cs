@@ -169,7 +169,10 @@ public class Player : MonoBehaviour
         }
         moveDirection.x = horizontal;
         moveDirection.y = vertical;
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Unstuck();
+        }
         if (moveDirection.magnitude > 0 )
         {
             stepTimer -= Time.deltaTime;
@@ -513,6 +516,13 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("Outside");
         }
     }
+
+    public void Unstuck()
+    {
+        canMove = true;
+        rb.velocity = Vector3.zero;
+        transform.position = new Vector3(-36.5f, -12, -1);
+    }
     public void knockbackFailsafe(float d)
     {
         Invoke("failsafe", d);
@@ -553,6 +563,7 @@ public class Player : MonoBehaviour
         healthBar.fillAmount = CurHealth / maxHealth;
         deaths++;
         AddCorruptionVoid(Random.Range(maxCorrChange.x, maxCorrChange.y));
+        
         SetInvincible(8);
     }
     IEnumerator AddCorr(float amount)
