@@ -89,6 +89,9 @@ public class FireRing : MonoBehaviour
            
         Destroy(gameObject,2);
     }
+
+
+
     public void Hit(bool ice)
     {
         if (!invincible)
@@ -103,6 +106,10 @@ public class FireRing : MonoBehaviour
                 else
                 {
                     level++;
+                    if (level > 5)
+                    {
+                        GameManager.Instance.SendNotification("You are <color=#96fff1>FREEZING TO DEATH</color>. Touch FIRE immediately!");
+                    }
                 }
             }
             else
@@ -110,6 +117,10 @@ public class FireRing : MonoBehaviour
                 if (isFire)
                 {
                     level++;
+                    if (level > 5)
+                    {
+                        GameManager.Instance.SendNotification("You are <color=#ffa142>BURNING TO DEATH</color>. Touch ICE immediately!");
+                    }
                 }
                 else
                 {
@@ -158,6 +169,21 @@ public class FireRing : MonoBehaviour
             invincible = true;
             Invoke("ResetToNotInvincible", 0.4f);
         }
+    }
+
+    IEnumerator OnValChange(int v)
+    {
+        if (v < 0)
+        {
+            counter.color = Color.green;
+        }
+        else if (v > 0)
+        {
+            counter.color = Color.red;
+        }
+        yield return new WaitForSeconds(0.15f);
+        counter.color = Color.white;
+        yield return null;
     }
     void ResetToNotInvincible()
     {

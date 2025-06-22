@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     public float dashCooldown = 0;
     public bool isDashing;
     public float maxDashCooldown = 1;
+    public Transform dashBar;
     [Header("Corruption")]
     public float _corruption = 0;
     public float Corruption
@@ -90,6 +91,7 @@ public class Player : MonoBehaviour
     public float juicedUp=1; //Increase when juiced
     public float juicedMult;
     public float juicedDuration;
+    float curJuiceDur;
     bool juiceTutorialTriggered = false;
     public Animator anim;
     float emDmgMult=1;
@@ -169,7 +171,7 @@ public class Player : MonoBehaviour
         }
         moveDirection.x = horizontal;
         moveDirection.y = vertical;
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && SceneManager.GetActiveScene().name == "SampleScene")
         {
             Unstuck();
         }
@@ -232,6 +234,11 @@ public class Player : MonoBehaviour
             { 
                 dashCooldown = 0;
                 dashImg.color = new Color(dashImg.color.r, dashImg.color.g, dashImg.color.b, 1f);
+                dashBar.localScale = new Vector3(0, 0.2f, 1);
+            }
+            else
+            {
+                dashBar.localScale = new Vector3((dashCooldown / maxDashCooldown), 0.2f, 1);
             }
         }
         else
@@ -431,7 +438,12 @@ public class Player : MonoBehaviour
     IEnumerator OnJuiced()
     {
         juicedUp = juicedMult;
-        yield return new WaitForSeconds(juicedDuration);
+        curJuiceDur = juicedDuration;
+        while (curJuiceDur > 0) {
+            curJuiceDur -= Time.deltaTime;
+            yield return null;
+        
+        }
         juicedUp = 1;
         yield return null;
     }
@@ -460,9 +472,17 @@ public class Player : MonoBehaviour
             TakeCustomDamage(35);
         }
 
-        if (collision.gameObject.CompareTag("Juice") && juicedUp==1)
+        if (collision.gameObject.CompareTag("Juice"))
         {
-            StartCoroutine(OnJuiced());
+            if (juicedUp==1)
+            {
+                StartCoroutine(OnJuiced());
+            }
+            else
+            {
+                curJuiceDur += juicedDuration;
+            }
+
             Destroy(collision.gameObject);
             if (!juiceTutorialTriggered)
             {

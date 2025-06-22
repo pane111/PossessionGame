@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -74,7 +75,10 @@ public class GameManager : MonoBehaviour
     public bool npctutorial = false;
     public bool displayTutorials=true;
     public bool expertMode=false;
-    
+
+    public CanvasGroup pauseMenu;
+    public GameObject pauseSelect;
+    bool paused = false;
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -147,7 +151,45 @@ public class GameManager : MonoBehaviour
                 player.Corruption += 25;
             }
         }
+
+        if (Input.GetButtonDown("Pause"))
+        {
+            if (paused)
+                UnpauseGame();
+            else
+                PauseGame();
+        }
     }
+
+    public void PauseGame()
+    {
+        pauseMenu.interactable = true;
+        pauseMenu.alpha = 1;
+        EventSystem.current.SetSelectedGameObject(pauseSelect);
+        Time.timeScale = 0;
+        paused = true;
+
+    }
+    public void UnpauseGame()
+    {
+        pauseMenu.interactable = false;
+        pauseMenu.alpha = 0;
+        Time.timeScale = storedTS;
+        paused = false;
+    }
+
+    public void ReturnToTitle()
+    {
+        UnpauseGame();
+        player.ResetData();
+        SceneManager.LoadScene("TitleScreen");
+    }
+    public void QuickRestart()
+    {
+        UnpauseGame();
+        SceneManager.LoadScene("SampleScene");
+    }
+
     public void SendNotification(string message)
     {
         if (notificationText != null)

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using AK.Wwise;
 using Event = AK.Wwise.Event;
+using UnityEngine.EventSystems;
 
 public class TitleScreenManager : MonoBehaviour
 {
@@ -23,18 +24,31 @@ public class TitleScreenManager : MonoBehaviour
     public Event ButtonClick;
     public GameObject bonus2;
     public Toggle tutorials;
+
+    public GameObject firstSelected;
+    public GameObject emButton;
+    private void Awake()
+    {
+        if (!PlayerPrefs.HasKey("Tutorials"))
+        {
+            PlayerPrefs.SetInt("Tutorials", 1);
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt("Tutorials") == 0)
+            {
+                tutorials.isOn = false;
+            }
+        }
+    }
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        if (PlayerPrefs.GetInt("Tutorials")==0)
-            {
-            tutorials.isOn = false;
-        }
-        if (!PlayerPrefs.HasKey("Tutorials"))
-        {
-            TutToggle(true);
-        }
+        EventSystem.current.SetSelectedGameObject(firstSelected);
+
+        
+        
         LoadTutorial();
         if (!PlayerPrefs.HasKey("GameBeaten"))
         {
@@ -71,6 +85,10 @@ public class TitleScreenManager : MonoBehaviour
     {
         curTutorial = 0;
         tWindow.SetActive(!tWindow.activeSelf);
+        if (!tWindow.activeInHierarchy)
+        {
+            EventSystem.current.SetSelectedGameObject(firstSelected);
+        }
     }
 
     public void NextTutorial()
@@ -108,7 +126,14 @@ public class TitleScreenManager : MonoBehaviour
         }
         LoadTutorial();
     }
-
+    public void SelectDefaultButton()
+    {
+        EventSystem.current.SetSelectedGameObject(firstSelected);
+    }
+    public void SelectEMBtn()
+    {
+        EventSystem.current.SetSelectedGameObject(emButton);
+    }
     public void PlayGame()
     {
         PlayerPrefs.SetInt("EM", 0);
