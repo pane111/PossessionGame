@@ -85,6 +85,7 @@ public class NPC : MonoBehaviour
         rb.velocity = Vector2.zero;
         dm = true;
         gameObject.layer = 0;
+        GetComponent<Collider2D>().isTrigger = true;
         if (curHealth > 0 && gameObject.activeInHierarchy)
         {
             GetComponent<SpriteRenderer>().sprite = demonSprite;
@@ -95,6 +96,7 @@ public class NPC : MonoBehaviour
     }
     public void ExitDM()
     {
+        GetComponent<Collider2D>().isTrigger = false;
         dm = false;
         if (curHealth > 0)
         {
