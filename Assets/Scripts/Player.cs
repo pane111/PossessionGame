@@ -532,6 +532,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("FinalSecretDoor"))
         {
+            GameManager.Instance.OnDemonModeExit();
             ResetData();
             SceneManager.LoadScene("Outside");
         }

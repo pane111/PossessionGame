@@ -58,9 +58,14 @@ public class LastFight : MonoBehaviour
     public SpreadShot ss3;
     public SpreadShot ss4;
     public GameObject otherUlt;
-    
+
+    bool finalPhase;
+    public GameObject finalPhaseGO;
+    public FinalChaosPhase f;
     void Start()
     {
+        
+        finalPhaseGO.SetActive(false);
         p = FindObjectOfType<Player>();
         p.onDeath += Heal;
         hpBarAnim.gameObject.SetActive(false);
@@ -136,7 +141,15 @@ public class LastFight : MonoBehaviour
             p.dashForce *= 1.4f;
             StartDialogue("I believe this will make things a little more fair, eh?");
             yield return new WaitForSeconds(dStayTime);
+            if (GameManager.Instance.expertMode)
+            {
+                StartDialogue("Oh, I see you're playing on expert mode... Let me disable that for you.");
+                GameManager.Instance.expertMode = false;
+                yield return new WaitForSeconds(dStayTime);
+                StartDialogue("Alright, enough waiting.");
+                yield return new WaitForSeconds(dStayTime);
 
+            }
             
 
         StartCoroutine(ConductBattle());
@@ -264,85 +277,153 @@ public class LastFight : MonoBehaviour
             hpBar.fillAmount = curHp / maxHp;
             StartDialogue("What? You do mind? Well, TOO BAD, because...");
             yield return new WaitForSeconds(dStayTime);
+
+            StartDialogue("I haven't even used my <color=red>ultimate attack</color> yet...");
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("Are you ready...?");
+            Destroy(shooters1);
+            canMove = false;
+            yield return new WaitForSeconds(dStayTime);
+            StartCoroutine(MoveTo(moveLocations[0].position, false));
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("Hold on I'm still preparing it");
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("Okay there we go");
+
+            hpBar.gameObject.SetActive(false);
+            GetComponent<Collider2D>().enabled = false;
+            yield return new WaitForSeconds(dStayTime);
+            flash.SetTrigger("Flash");
+            ss2.OnShoot();
+
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("Let's see you dodge this one!");
+            for (int i = 0; i < 50; i++)
+            {
+                ss2.OnShoot();
+                yield return new WaitForSeconds(0.1f);
+                if (i == 25)
+                {
+                    StartSpecial(bucketheadSprite);
+                    GameObject bh2 = Instantiate(bucketHead, moveLocations[4].position, Quaternion.identity);
+                    Destroy(bh2, 45);
+                }
+                yield return null;
+            }
+            ss3.OnShoot();
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("Hehe... Do you remember these guys, perhaps?");
+            Instantiate(otherUlt, transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("I'm a huge fan of that attack personally.");
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("Dang it... This arena's too big for that attack... I didn't think of that.");
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("Ugh... Gotta make it harder for you then.");
+            bozoTime = false;
+            StartCoroutine(SpawnSpellslingers());
+            yield return new WaitForSeconds(dStayTime * 1.5f);
+            ss3.canShoot = false;
+            StartDialogue("I think you can take a bit more pressure.");
+            ss4.OnShoot();
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("Hehehe...");
+            yield return new WaitForSeconds(dStayTime * 2);
+            StartDialogue("Now this is fun!");
+            yield return new WaitForSeconds(dStayTime * 2);
+            StartDialogue("Hehe...");
+            yield return new WaitForSeconds(dStayTime * 2);
+
+            ss4.canShoot = false;
+            bozoTime = true;
+            StartDialogue("Well...");
+            yield return new WaitForSeconds(dStayTime * 2);
+            StartDialogue("We've had a lovely time together, haven't we?");
+            yield return new WaitForSeconds(dStayTime);
+
+            StartDialogue("But all things must come to an end, I suppose.");
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("I'm kinda out of time. Got somewhere to be.");
+            yield return new WaitForSeconds(dStayTime);
+            StartDialogue("So...");
+            yield return new WaitForSeconds(dStayTime);
         }
-        StartDialogue("I haven't even used my <color=red>ultimate attack</color> yet...");
-        yield return new WaitForSeconds(dStayTime);
-        StartDialogue("Are you ready...?");
-        Destroy(shooters1);
-        canMove = false;
-        yield return new WaitForSeconds(dStayTime);
-        StartCoroutine(MoveTo(moveLocations[0].position,false));
-        yield return new WaitForSeconds(dStayTime);
-        StartDialogue("Hold on I'm still preparing it");
-        yield return new WaitForSeconds(dStayTime);
-        StartDialogue("Okay there we go");
-        
-        hpBar.gameObject.SetActive(false);
-        GetComponent<Collider2D>().enabled = false;
+        StartDialogue("I say it's time for me to FINISH YOU OFF!!");
         yield return new WaitForSeconds(dStayTime);
         flash.SetTrigger("Flash");
-        ss2.OnShoot();
-        
-        yield return new WaitForSeconds(dStayTime);
-        StartDialogue("Let's see you dodge this one!");
-        for (int i = 0; i < 50; i++)
+        foreach (GameObject go in visuals)
         {
-            ss2.OnShoot();
-            yield return new WaitForSeconds(0.1f);
-            if (i == 25)
-            {
-                StartSpecial(bucketheadSprite);
-                GameObject bh = Instantiate(bucketHead, moveLocations[4].position, Quaternion.identity);
-                Destroy(bh, 45);
-            }
+            go.SetActive(false);
+        }
+        invincible = true;
+        finalPhase = true;
+        finalPhaseGO.SetActive(true);
+        Camera.main.GetComponent<CamScript>().player = finalPhaseGO.transform;
+        hpBar.gameObject.SetActive(true);
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("This will be fun!");
+        Camera.main.GetComponent<CamScript>().player = p.transform;
+        f.SpawnHandsVoid();
+        yield return new WaitForSeconds(dStayTime);
+        f.SpawnDancingSwords();
+        yield return new WaitForSeconds(6);
+        bozoTime = false;
+        StartDialogue("I'm bringing back our funny friends.");
+        yield return new WaitForSeconds(dStayTime);
+        StartCoroutine(SpawnSpellslingers());
+        StartDialogue("Hehehe...");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("You know, I kinda enjoy just throwing stuff at you and watching you dash around.");
+        yield return new WaitForSeconds(dStayTime*2);
+        StartDialogue("Just imagine if I used my full power. ha ha...");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("What? Of course I'm holding back, what did you think?");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("Hehe, I'm just having fun.");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("Like a cat toying with its prey...");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("Minus the 'prey' part. Haha.");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("Well, anyways.");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("Keep doing your thing.");
+        yield return new WaitForSeconds(dStayTime);
+        while (f.curHp > 0)
+        {
+
             yield return null;
         }
-        ss3.OnShoot();
+        flash.SetTrigger("Flash");
+        Destroy(f.gameObject);
+        foreach (GameObject go in visuals)
+        {
+            go.SetActive(true);
+        }
+        p.dashBar.gameObject.SetActive(false);
+        p.dashCooldown = 99999;
+        p.invincible = true;
+        hpBarAnim.gameObject.SetActive(false);
+        bozoTime = true;
+        Camera.main.GetComponent<CamScript>().player = transform;
+        StartDialogue("Oh, wow!");
         yield return new WaitForSeconds(dStayTime);
-        StartDialogue("Hehe... Do you remember these guys, perhaps?");
-        Instantiate(otherUlt,transform.position,Quaternion.identity);
+        StartDialogue("Hehehe... Congrats.");
         yield return new WaitForSeconds(dStayTime);
-        StartDialogue("I'm a huge fan of that attack personally.");
+        StartDialogue("You beat me, fair and square.");
         yield return new WaitForSeconds(dStayTime);
-        StartDialogue("Dang it... This arena's too big for that attack... I didn't think of that.");
+        StartDialogue("You're pretty cool, <color=#00FFD7>" + userName + "</color>.");
         yield return new WaitForSeconds(dStayTime);
-        StartDialogue("Ugh... Gotta make it harder for you then.");
-        bozoTime = false;
-        StartCoroutine(SpawnSpellslingers());
-        yield return new WaitForSeconds(dStayTime*1.5f);
-        ss3.canShoot = false;
-        StartDialogue("I think you can take a bit more pressure.");
-        ss4.OnShoot();
+        StartDialogue("I hope that someday, you and I can meet again...");
         yield return new WaitForSeconds(dStayTime);
         StartDialogue("Hehehe...");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("But for now, this is goodbye.");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("Enjoy your ending. You've truly earned it.");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("Goodbye, my friend!");
         yield return new WaitForSeconds(dStayTime*2);
-        StartDialogue("Now this is fun!");
-        yield return new WaitForSeconds(dStayTime * 2);
-        StartDialogue("Hehe...");
-        yield return new WaitForSeconds(dStayTime * 2);
-        
-        ss4.canShoot = false;
-        bozoTime = true;
-        StartDialogue("Well...");
-        yield return new WaitForSeconds(dStayTime * 2);
-        StartDialogue("We've had a lovely time together, haven't we?");
-        yield return new WaitForSeconds(dStayTime);
-        
-        StartDialogue("But all things must come to an end, I suppose.");
-        yield return new WaitForSeconds(dStayTime);
-        StartDialogue("I'm kinda out of time. Got somewhere to be.");
-        yield return new WaitForSeconds(dStayTime);
-        StartDialogue("So...");
-        yield return new WaitForSeconds(dStayTime);
-        StartDialogue("I say it's time for you to finally see that ending I promised you...");
-        yield return new WaitForSeconds(dStayTime);
-        StartDialogue("My congratulations. You've managed to overcome the final trial, my friend!");
-        yield return new WaitForSeconds(dStayTime);
-        StartDialogue("Maybe someday we'll see each other again... Hehehe....");
-        yield return new WaitForSeconds(dStayTime);
-        StartDialogue("But for now... This is goodbye.");
-        yield return new WaitForSeconds(dStayTime);
-        yield return new WaitForSeconds(dStayTime);
         flash.SetTrigger("Flash");
         SceneManager.LoadScene("TrueEnding");
         yield return null;
@@ -369,6 +450,7 @@ public class LastFight : MonoBehaviour
     }
     public void Heal()
     {
+        
         if (hpBar.gameObject.activeInHierarchy)
             GameManager.Instance.SendNotification("Chaos has healed itself!");
         curHp += healAmt;
@@ -377,6 +459,8 @@ public class LastFight : MonoBehaviour
             curHp = maxHp;
         }
         hpBar.fillAmount = curHp / maxHp;
+
+        f.Heal(35);
     }
 
     public void StartDialogue(string _dialogue)

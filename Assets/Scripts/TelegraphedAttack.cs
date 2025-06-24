@@ -23,6 +23,7 @@ public class TelegraphedAttack : MonoBehaviour
     public float destroyTime;
     public Vector2 size;
     public bool isCircle;
+    public Vector2 offset = new Vector3(0,0,0);
     private void Start()
     {
         Invoke("TriggerEffect", timeUntilHit);
@@ -42,7 +43,7 @@ public class TelegraphedAttack : MonoBehaviour
         }
         else if (type == DangerType.Spawn)
         {
-            Instantiate(toSpawn,transform.position,Quaternion.identity);
+            Instantiate(toSpawn,transform.position + (Vector3)offset,Quaternion.identity);
         }
         else
         {
