@@ -66,6 +66,8 @@ public class LastFight : MonoBehaviour
     public AudioSource hit;
     public AudioSource laugh;
     public AudioSource speak;
+
+    public AudioSource p2Music;
     void Start()
     {
         aus = GetComponent<AudioSource>();
@@ -213,6 +215,7 @@ public class LastFight : MonoBehaviour
             laugh.Play();
             aus.Play();
             Camera.main.GetComponent<AudioSource>().Play();
+            p2Music.Play();
             MoveAround();
             yield return new WaitForSeconds(0.5f);
             invincible = false;
@@ -323,10 +326,10 @@ public class LastFight : MonoBehaviour
             }
             ss3.OnShoot();
             yield return new WaitForSeconds(dStayTime);
-            StartDialogue("Hehe... Do you remember these guys, perhaps?");
+            StartDialogue("Hehe... Do you remember this attack, perhaps?");
             Instantiate(otherUlt, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(dStayTime);
-            StartDialogue("I'm a huge fan of that attack personally.");
+            StartDialogue("I'm quite a big fan of it... wait, hold on...");
             yield return new WaitForSeconds(dStayTime);
             StartDialogue("Dang it... This arena's too big for that attack... I didn't think of that.");
             yield return new WaitForSeconds(dStayTime);
@@ -359,11 +362,18 @@ public class LastFight : MonoBehaviour
             StartDialogue("So...");
             yield return new WaitForSeconds(dStayTime);
         }
+        else
+        {
+            Camera.main.GetComponent<AudioSource>().Play();
+            p2Music.Play();
+        }
         StartDialogue("I say it's time for me to end this fight with something... exciting.");
         yield return new WaitForSeconds(dStayTime);
         flash.SetTrigger("Flash");
         laugh.Play();
         aus.Play();
+        Camera.main.GetComponent<AudioSource>().mute = true;
+        p2Music.mute = false;
         foreach (GameObject go in visuals)
         {
             go.SetActive(false);
@@ -409,6 +419,8 @@ public class LastFight : MonoBehaviour
         flash.SetTrigger("Flash");
         aus.Play();
         Camera.main.GetComponent<AudioSource>().Stop();
+        p2Music.mute = true;
+        p2Music.Stop();
         Destroy(f.gameObject);
         foreach (GameObject go in visuals)
         {
@@ -422,10 +434,13 @@ public class LastFight : MonoBehaviour
         Camera.main.GetComponent<CamScript>().player = transform;
         StartDialogue("Oh, wow!");
         yield return new WaitForSeconds(dStayTime);
+        p.invincible = true;
         StartDialogue("Hehehe... Congrats.");
         yield return new WaitForSeconds(dStayTime);
+        p.invincible = true;
         StartDialogue("You beat me, fair and square.");
         yield return new WaitForSeconds(dStayTime);
+        p.invincible = true;
         StartDialogue("You're pretty cool, <color=#00FFD7>" + userName + "</color>.");
         yield return new WaitForSeconds(dStayTime);
         StartDialogue("I hope that someday, you and I can meet again...");
