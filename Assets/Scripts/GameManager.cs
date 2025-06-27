@@ -150,6 +150,10 @@ public class GameManager : MonoBehaviour
             {
                 player.Corruption += 25;
             }
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                SceneManager.LoadScene("Outside");
+            }
         }
 
         if (Input.GetButtonDown("Pause"))
