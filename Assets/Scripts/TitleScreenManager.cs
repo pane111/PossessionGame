@@ -39,6 +39,10 @@ public class TitleScreenManager : MonoBehaviour
             {
                 tutorials.isOn = false;
             }
+            else
+            {
+                tutorials.isOn = true;
+            }
         }
     }
     void Start()
