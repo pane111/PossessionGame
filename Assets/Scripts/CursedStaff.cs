@@ -17,6 +17,14 @@ public class CursedStaff : CursedWeapon
     public float fireDelay;
     public float moveRange;
     public float moveSpeed;
+
+    float eMdur;
+    float eMspeed;
+    private void Awake()
+    {
+        eMdur = beamDuration * 1.3f;
+        eMspeed = followSpeed * 1.25f;
+    }
     void Update()
     {
         FindPlayer();
@@ -65,12 +73,13 @@ public class CursedStaff : CursedWeapon
     }
     public override void OnDM()
     {
-        base.OnDM();
         if (GameManager.Instance.expertMode)
         {
-            beamDuration = beamDuration * 1.05f;
-            followSpeed = followSpeed * 1.05f;
+            beamDuration = eMdur;
+            followSpeed = eMspeed;
+
         }
+        base.OnDM();
         beamCooldown = maxBeamCd;
     }
 

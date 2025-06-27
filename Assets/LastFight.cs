@@ -62,9 +62,16 @@ public class LastFight : MonoBehaviour
     bool finalPhase;
     public GameObject finalPhaseGO;
     public FinalChaosPhase f;
+    AudioSource aus;
+    public AudioSource hit;
+    public AudioSource laugh;
+    public AudioSource speak;
     void Start()
     {
-        
+        aus = GetComponent<AudioSource>();
+        f.hit = hit;
+        flash.SetTrigger("Flash");
+        aus.Play();
         finalPhaseGO.SetActive(false);
         p = FindObjectOfType<Player>();
         p.onDeath += Heal;
@@ -120,13 +127,11 @@ public class LastFight : MonoBehaviour
 
             StartDialogue("How about I introduce myself properly?");
             yield return new WaitForSeconds(dStayTime + 2);
-            StartDialogue("I am <color=purple>CHAOS</color>... The flame of creation...");
+            StartDialogue("I am <color=purple>CHAOS</color>... The flame of ambition...");
             yield return new WaitForSeconds(dStayTime + 2);
-            StartDialogue("Only few have witnessed my brilliant light...");
-            yield return new WaitForSeconds(dStayTime);
             StartDialogue("<color=#00FFD7>" + userName + "</color>, was it? Hehe...");
             yield return new WaitForSeconds(dStayTime);
-            StartDialogue("You're a lucky one indeed.");
+            StartDialogue("You're a truly peculiar one.");
             yield return new WaitForSeconds(dStayTime);
             StartDialogue("But can you overcome the trial before you...?");
             yield return new WaitForSeconds(dStayTime);
@@ -189,6 +194,7 @@ public class LastFight : MonoBehaviour
         if (initChance < 30)
         {
             StartCoroutine(MoveTo(moveLocations[0].position,true));
+            laugh.Play();
         }
         else
         {
@@ -203,6 +209,10 @@ public class LastFight : MonoBehaviour
         {
             StartDialogue("Now... Let's do this!");
             yield return new WaitForSeconds(dStayTime);
+            flash.SetTrigger("Flash");
+            laugh.Play();
+            aus.Play();
+            Camera.main.GetComponent<AudioSource>().Play();
             MoveAround();
             yield return new WaitForSeconds(0.5f);
             invincible = false;
@@ -216,7 +226,7 @@ public class LastFight : MonoBehaviour
             StartDialogue("Hehe... It seems an old friend of mine wants to see you. 6 of them, to be precise.");
             yield return new WaitForSeconds(dStayTime);
             StartCoroutine(SpawnSpellslingers());
-            StartDialogue("A real master of the arcane, that one.");
+            StartDialogue("They're real good at slinging spells.");
             yield return new WaitForSeconds(dStayTime);
             StartDialogue("Oh, and it appears that...");
             yield return new WaitForSeconds(dStayTime);
@@ -225,7 +235,7 @@ public class LastFight : MonoBehaviour
             Destroy(bh, 45);
             StartDialogue("From beyond time and space... a hero has been summoned to my side!");
             yield return new WaitForSeconds(dStayTime);
-            StartDialogue("Hahahaaa! ...I've always wanted to say that line.");
+            StartDialogue("Hahahaaa!");
             yield return new WaitForSeconds(dStayTime);
             StartDialogue("I'm having a lot of fun, personally. What about you?");
             yield return new WaitForSeconds(dStayTime);
@@ -294,8 +304,9 @@ public class LastFight : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             yield return new WaitForSeconds(dStayTime);
             flash.SetTrigger("Flash");
+            aus.Play();
             ss2.OnShoot();
-
+            laugh.Play();
             yield return new WaitForSeconds(dStayTime);
             StartDialogue("Let's see you dodge this one!");
             for (int i = 0; i < 50; i++)
@@ -348,9 +359,11 @@ public class LastFight : MonoBehaviour
             StartDialogue("So...");
             yield return new WaitForSeconds(dStayTime);
         }
-        StartDialogue("I say it's time for me to FINISH YOU OFF!!");
+        StartDialogue("I say it's time for me to end this fight with something... exciting.");
         yield return new WaitForSeconds(dStayTime);
         flash.SetTrigger("Flash");
+        laugh.Play();
+        aus.Play();
         foreach (GameObject go in visuals)
         {
             go.SetActive(false);
@@ -373,7 +386,6 @@ public class LastFight : MonoBehaviour
         StartCoroutine(SpawnSpellslingers());
         StartDialogue("Hehehe...");
         yield return new WaitForSeconds(dStayTime);
-        StartDialogue("You know, I kinda enjoy just throwing stuff at you and watching you dash around.");
         yield return new WaitForSeconds(dStayTime*2);
         StartDialogue("Just imagine if I used my full power. ha ha...");
         yield return new WaitForSeconds(dStayTime);
@@ -383,7 +395,7 @@ public class LastFight : MonoBehaviour
         yield return new WaitForSeconds(dStayTime);
         StartDialogue("Like a cat toying with its prey...");
         yield return new WaitForSeconds(dStayTime);
-        StartDialogue("Minus the 'prey' part. Haha.");
+        StartDialogue("...");
         yield return new WaitForSeconds(dStayTime);
         StartDialogue("Well, anyways.");
         yield return new WaitForSeconds(dStayTime);
@@ -395,6 +407,8 @@ public class LastFight : MonoBehaviour
             yield return null;
         }
         flash.SetTrigger("Flash");
+        aus.Play();
+        Camera.main.GetComponent<AudioSource>().Stop();
         Destroy(f.gameObject);
         foreach (GameObject go in visuals)
         {
@@ -425,6 +439,7 @@ public class LastFight : MonoBehaviour
         StartDialogue("Goodbye, my friend!");
         yield return new WaitForSeconds(dStayTime*2);
         flash.SetTrigger("Flash");
+        aus.Play();
         SceneManager.LoadScene("TrueEnding");
         yield return null;
     }
@@ -439,6 +454,8 @@ public class LastFight : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
+        hit.pitch = Random.Range(0.85f,1);
+        hit.Play();
         curHp -= amount;
         if (curHp < 0)
         {
@@ -450,7 +467,7 @@ public class LastFight : MonoBehaviour
     }
     public void Heal()
     {
-        
+        laugh.Play();
         if (hpBar.gameObject.activeInHierarchy)
             GameManager.Instance.SendNotification("Chaos has healed itself!");
         curHp += healAmt;
@@ -490,7 +507,12 @@ public class LastFight : MonoBehaviour
         dialogue.maxVisibleCharacters = 0;
         while (dialogue.maxVisibleCharacters < dialogue.text.Length) {
             dialogue.maxVisibleCharacters++;
+            
+            speak.pitch = Random.Range(0.8f, 1.1f);
+            speak.Play();
+
             yield return new WaitForSeconds(dTime);
+            speak.Stop();
             yield return null;
         }
         dialogue.maxVisibleCharacters = dialogue.text.Length;

@@ -23,8 +23,10 @@ public class VerySecretBoss : MonoBehaviour
     public SecretPlayer p;
     public GameObject stars;
     IEnumerator battle2;
+    AudioSource a;
     void Start()
     {
+        a = GetComponent<AudioSource>();
         StartCoroutine(ConductBattle());
         p.enabled = false;
     }
@@ -231,7 +233,10 @@ public class VerySecretBoss : MonoBehaviour
         while (dText.maxVisibleCharacters < text.Length) { 
             
             dText.maxVisibleCharacters++;
+            a.pitch = Random.Range(0.8f, 1.1f);
+            a.Play();
             yield return new WaitForSeconds(charDelay);
+            a.Stop();
             yield return null;
         
         }

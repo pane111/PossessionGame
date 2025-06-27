@@ -16,6 +16,7 @@ public class FinalChaosPhase : MonoBehaviour
     public Transform player;
 
     public GameObject dancingSwords;
+    public AudioSource hit;
 
     void Start()
     {
@@ -42,6 +43,8 @@ public class FinalChaosPhase : MonoBehaviour
     }
     void TakeDamage(float amount)
     {
+        hit.pitch = Random.Range(0.65f, 0.75f);
+        hit.Play();
         curHp -= amount;
         hpBarAnim.SetTrigger("Hit");
         hpBar.fillAmount = curHp / maxHp;

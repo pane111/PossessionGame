@@ -17,8 +17,10 @@ public class MysteryManScript : MonoBehaviour
     bool canProceed = false;
     bool dialogueOpen = false;
     public GameObject portal;
+    AudioSource a;
     void Start()
     {
+        a = GetComponent<AudioSource>();
         player = GameObject.Find("Player").transform;
     }
 
@@ -62,9 +64,11 @@ public class MysteryManScript : MonoBehaviour
             while (dialogueText.maxVisibleCharacters < lines[curLine].Length)
             {
 
-                
+                a.pitch = Random.Range(0.8f, 1.1f);
+                a.Play();
                 dialogueText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(0.01f);
+                a.Stop();
                 yield return null;
             }
             canProceed = true;
