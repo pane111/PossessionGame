@@ -20,6 +20,8 @@ public class BossPhaseTransition : MonoBehaviour
     public bool transformPlayer;
     public GameObject additionalCutscene;
     public Animator addAnim;
+
+    public Transform altFocus;
     private void Start()
     {
         if (centerCameraOnThis)
@@ -46,6 +48,10 @@ public class BossPhaseTransition : MonoBehaviour
     {
         addAnim.SetTrigger("Trigger");
     }
+    public void FocusAlt()
+    {
+        Camera.main.GetComponent<CamScript>().player = altFocus;
+    }
 
     public void EnableThings()
     {
@@ -70,7 +76,7 @@ public class BossPhaseTransition : MonoBehaviour
     {
         if (centerCameraOnThis)
         {
-            Camera.main.GetComponent<CamScript>().player = GameObject.Find("Player").transform;
+            Camera.main.GetComponent<CamScript>().player = FindObjectOfType<Player>().camTarget.transform.GetChild(0);
         }
         if (transformPlayer)
         {

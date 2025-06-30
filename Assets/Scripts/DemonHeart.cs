@@ -1,3 +1,4 @@
+using AK.Wwise;
 using System.Collections;
 using UnityEngine;
 
@@ -21,7 +22,6 @@ public class DemonHeart : MonoBehaviour
     Color c = Color.black;
     int crystalHitAmt = 0;
     public bool dead=false;
-
     private void Start()
     {
         bloodstain.GetComponent<SpriteRenderer>().color = Color.black;
@@ -35,13 +35,15 @@ public class DemonHeart : MonoBehaviour
     public void ExposeHeart()
     {
         if (!exploded)
+        {
             shatter.Play();
+            AudioManager.Instance.CrystalBroken.Post(gameObject);
+        }
 
         exploded = true;
         d.deflectionActive = false;
         heartExposed = true;
         crystal.SetActive(false);
-        AudioManager.Instance.CrystalBroken.Post(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

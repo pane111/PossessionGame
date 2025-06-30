@@ -1517,13 +1517,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="CrystalBroken" ID="{3105FD9F-F9CE-49AF-B480-787D59801A2C}" ShortID="718940169">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-11</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{DB5E23EC-AB74-437E-9C52-32712184DB98}"/>
@@ -1540,9 +1533,16 @@
 														<MediaID ID="446503542"/>
 													</MediaIDList>
 												</AudioFileSource>
+												<AudioFileSource Name="CrystalExplosion" ID="{F8E8153E-65CB-4812-84BA-44F220D6018C}">
+													<Language>SFX</Language>
+													<AudioFile>CrystalExplosion.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1009397111"/>
+													</MediaIDList>
+												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="BB_CrystalBroken" ID="{55C08144-310F-40A7-97D5-3CF133F099D4}" Platform="Linked"/>
+												<ActiveSource Name="CrystalExplosion" ID="{F8E8153E-65CB-4812-84BA-44F220D6018C}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>

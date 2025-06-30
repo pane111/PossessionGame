@@ -146,6 +146,7 @@ public class LastFight : MonoBehaviour
             p.speed *= 2.5f;
             p.maxDashCooldown = 0.25f;
             p.dashForce *= 1.4f;
+        p.anim.SetTrigger("TriggerDM");
             StartDialogue("I believe this will make things a little more fair, eh?");
             yield return new WaitForSeconds(dStayTime);
             if (GameManager.Instance.expertMode)
@@ -385,7 +386,7 @@ public class LastFight : MonoBehaviour
         hpBar.gameObject.SetActive(true);
         yield return new WaitForSeconds(dStayTime);
         StartDialogue("This will be fun!");
-        Camera.main.GetComponent<CamScript>().player = p.transform;
+        Camera.main.GetComponent<CamScript>().player = p.camTarget.transform.GetChild(0).transform;
         f.SpawnHandsVoid();
         yield return new WaitForSeconds(dStayTime);
         f.SpawnDancingSwords();

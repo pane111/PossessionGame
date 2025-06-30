@@ -19,24 +19,20 @@ public class EvilPlayer : BossParentScript
     public float stepDelay;
     Rigidbody2D rb;
     float turning=0;
+    public Animator anim;
     void Start()
     {
         if (GameManager.Instance.expertMode)
         {
             maxHealth = 45;
         }
+        anim=GetComponent<Animator>();
         CurHealth = maxHealth;
         player = GameObject.Find("Player").transform;
         //player.GetComponent<Player>().sword.GetComponent<SwordScript>().curTarget = transform;
         DecideDirection();
         Invoke("StartDash", Random.Range(minDashCd, maxDashCd));
         rb = GetComponent<Rigidbody2D>();
-        Step();
-    }
-    void Step()
-    {
-        sr.flipX = !sr.flipX;
-        Invoke("Step", stepDelay);
     }
 
     // Update is called once per frame
@@ -45,6 +41,7 @@ public class EvilPlayer : BossParentScript
         if(moving)
         {
             rb.velocity = curDir.normalized * moveSpeed;
+            anim.SetFloat("X",curDir.x); anim.SetFloat("Y",curDir.y);
             curDir = Vector3.Lerp(curDir, Quaternion.AngleAxis(turning, Vector3.forward) * curDir, Time.deltaTime * 3);
         }
     }

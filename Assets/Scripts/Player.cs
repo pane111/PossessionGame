@@ -102,9 +102,9 @@ public class Player : MonoBehaviour
     public float totalCorr = 0;
 
     public System.Action onDeath;
+    public Animator camTarget;
     void Start()
     {
-
         if (PlayerPrefs.HasKey("Corruption"))
         {
             Corruption = PlayerPrefs.GetFloat("Corruption");
@@ -177,14 +177,19 @@ public class Player : MonoBehaviour
         }
         if (moveDirection.magnitude > 0 )
         {
-            stepTimer -= Time.deltaTime;
-            if (stepTimer <= 0 )
-            {
-                if(stepCounter > 0) { stepCounter--; }
-                else if (stepCounter==0) { AudioManager.Instance.Player_Footstep.Post(gameObject); stepCounter = stepSoundCount; }
-                sr.flipX = !sr.flipX;
-                stepTimer = maxStepTimer;
-            }
+
+            anim.SetFloat("X", horizontal);
+            anim.SetFloat("Y", vertical);
+            anim.SetFloat("Speed", 0.2f*juicedUp * speed * (1 + (GameManager.Instance.MSUpgrades * GameManager.Instance.MSIncrease)));
+
+            //stepTimer -= Time.deltaTime;
+            //if (stepTimer <= 0 )
+            //{
+                //if(stepCounter > 0) { stepCounter--; }
+                //else if (stepCounter==0) { AudioManager.Instance.Player_Footstep.Post(gameObject); stepCounter = stepSoundCount; }
+                //sr.flipX = !sr.flipX;
+                //stepTimer = maxStepTimer;
+            //}
             if (Input.GetButtonDown("Jump") && canMove && dashCooldown <= 0)
             {
                 AudioManager.Instance.Dash.Post(gameObject);
@@ -199,6 +204,10 @@ public class Player : MonoBehaviour
 
             }
 
+        }
+        else
+        {
+            anim.SetFloat("Speed", 0);
         }
 
         if (Input.GetButtonDown("Fire2") && canMove && canRepell && Vector2.Distance(transform.position, sword.position) < swordScript.repellRange)
@@ -272,6 +281,7 @@ public class Player : MonoBehaviour
     {
         if (!invincible)
         {
+            camTarget.SetTrigger("Shake");
             AudioManager.Instance.PlayerDmgTaken.Post(gameObject);
             if (!blood.isPlaying)
                 blood.Play();
@@ -300,6 +310,7 @@ public class Player : MonoBehaviour
     }
     public void TakeForcedDamage(float amount)
     {
+        camTarget.SetTrigger("Shake");
         AudioManager.Instance.PlayerDmgTaken.Post(gameObject);
         if (!blood.isPlaying)
             blood.Play();
@@ -329,6 +340,7 @@ public class Player : MonoBehaviour
     {
         if (!invincible)
         {
+            camTarget.SetTrigger("Shake");
             AudioManager.Instance.PlayerDmgTaken.Post(gameObject);
             if (!blood.isPlaying)
                 blood.Play();
@@ -399,12 +411,12 @@ public class Player : MonoBehaviour
     }
     public void FBDemonMode()
     {
-        anim.SetTrigger("TriggerDM");
+        //anim.SetTrigger("TriggerDM");
     }
 
     IEnumerator DemonMode()
     {
-        
+        anim.SetTrigger("TriggerDM");
         demonModeActive = true;
         speed = demonSpeed;
         Sprite s = sr.sprite;
@@ -412,6 +424,7 @@ public class Player : MonoBehaviour
         GameManager.Instance.OnDemonModeEnter();
         yield return new WaitForSeconds(demonModeDuration);
         GameManager.Instance.OnDemonModeExit();
+        anim.SetTrigger("TriggerDM");
         speed = initSpeed;
         demonModeActive = false;
         sr.sprite = s;
