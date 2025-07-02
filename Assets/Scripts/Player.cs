@@ -106,8 +106,8 @@ public class Player : MonoBehaviour
 
     bool charging = false;
     float chargeTime = 0;
-    public float maxChargeTime;
-    public float chargeMult;
+    public float maxChargeTime=2;
+    public float chargeMult = 0.75f;
     void Start()
     {
         if (PlayerPrefs.HasKey("Corruption"))
