@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Paul - Lead programmer, artist
+  m_text: Paul - Lead programmer, artist, composer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bdb71fc00c783e47b5e9113cacd1198, type: 2}
   m_sharedMaterial: {fileID: 7891173315836274523, guid: 2bdb71fc00c783e47b5e9113cacd1198, type: 2}

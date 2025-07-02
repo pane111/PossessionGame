@@ -452,6 +452,12 @@ public class LastFight : MonoBehaviour
         yield return new WaitForSeconds(dStayTime);
         StartDialogue("Enjoy your ending. You've truly earned it.");
         yield return new WaitForSeconds(dStayTime);
+        StartDialogue("I'm sure it will satisfy your bloodlust! Bwahahaaah!!");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("...Anyways.");
+        yield return new WaitForSeconds(dStayTime);
+        StartDialogue("Perhaps someday, we can meet again, if fate wills it so...");
+        yield return new WaitForSeconds(dStayTime);
         StartDialogue("Goodbye, my friend!");
         yield return new WaitForSeconds(dStayTime*2);
         flash.SetTrigger("Flash");

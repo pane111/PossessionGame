@@ -59,6 +59,9 @@ public class SwordScript : MonoBehaviour
     List<Collider2D> enemyColls = new List<Collider2D>();
     public GameObject exclamation;
     bool exclFollowing = false;
+
+    public bool controlled = false;
+    Coroutine slash;
     
     void Start()
     {
@@ -79,53 +82,75 @@ public class SwordScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Idling) 
+        if (!controlled)
         {
-            targetTimer -= Time.deltaTime;
-            if (targetTimer < 0)
+            if (Idling)
             {
-                //FindEnemy();
-                targetTimer = maxTargetTimer;
+                targetTimer -= Time.deltaTime;
+                if (targetTimer < 0)
+                {
+                    //FindEnemy();
+                    targetTimer = maxTargetTimer;
+                }
+                curTarget = playerChar.gameObject.GetComponent<Player>().orbiter;
             }
-            curTarget = playerChar.gameObject.GetComponent<Player>().orbiter;
-        }
-        else
-        {
-            if (attacksCount == attacksUntilUntarget) { Untarget(); attacksCount = 0; }
             else
             {
-                curSAT -= Time.deltaTime;
-                if (curSAT < 0)
+                if (attacksCount == attacksUntilUntarget) { Untarget(); attacksCount = 0; }
+                else
                 {
-                    StartCoroutine(SlashAttack());
-                    curSAT = 9999;
+                    curSAT -= Time.deltaTime;
+                    if (curSAT < 0)
+                    {
+                        if (slash != null)
+                            slash = null;
+                        slash = StartCoroutine(SlashAttack());
+                        curSAT = 9999;
+                    }
                 }
             }
-        }
 
-        if (curTarget==null)
-        {
-            curTarget = playerChar.gameObject.GetComponent<Player>().orbiter;
-            Idling = true;
-        }
-
-        Vector2 dir = curTarget.position - transform.position;
-
-        if (moveFreely)
-        {
-            rb.AddForce(dir * Mathf.Pow(dir.magnitude, 2) * speedMod);
-            transform.Rotate(0, 0, dir.magnitude);
-            if (rb.velocity.magnitude > maxVel)
+            if (curTarget == null)
             {
-                rb.velocity = Vector2.Lerp(rb.velocity, Vector3.zero, Time.deltaTime * 5);
+                curTarget = playerChar.gameObject.GetComponent<Player>().orbiter;
+                Idling = true;
             }
+
+            Vector2 dir = curTarget.position - transform.position;
+
+            if (moveFreely)
+            {
+                rb.AddForce(dir * Mathf.Pow(dir.magnitude, 2) * speedMod);
+                transform.Rotate(0, 0, dir.magnitude);
+                if (rb.velocity.magnitude > maxVel)
+                {
+                    rb.velocity = Vector2.Lerp(rb.velocity, Vector3.zero, Time.deltaTime * 5);
+                }
+            }
+            if (rb.velocity.magnitude > maxVelocity)
+                rb.velocity = rb.velocity.normalized * maxVelocity;
+
+            if (!moveFreely && Vector2.Distance(pullPos, transform.position) < 0.5f) { moveFreely = true; playerChar.gameObject.GetComponent<Player>().leash.enabled = false; }
         }
-        if (rb.velocity.magnitude > maxVelocity)
-            rb.velocity = rb.velocity.normalized * maxVelocity;
-
-        if (!moveFreely && Vector2.Distance(pullPos, transform.position) < 0.5f) { moveFreely = true; playerChar.gameObject.GetComponent<Player>().leash.enabled = false; }
+        
     }
-
+    IEnumerator SlashDir(Vector2 dir)
+    {
+        AudioManager.Instance.SwordBigSlash.Post(gameObject);
+        moveFreely = false;
+        rb.AddForce(dir.normalized * 250, ForceMode2D.Impulse);
+        isSlashing = true;
+        slashes.Play();
+        yield return new WaitForSeconds(0.5f);
+        rb.velocity = Vector2.zero;
+        isSlashing = false;
+        slashes.Stop();
+        yield return new WaitForSeconds(0.2f);
+        rb.AddTorque(-80, ForceMode2D.Impulse);
+        moveFreely = true;
+        curSAT = slashAttackTimer;
+        yield return null;
+    }
     IEnumerator SlashAttack()
     {
         AudioManager.Instance.SwordBigSlash.Post(gameObject);
@@ -215,6 +240,10 @@ public class SwordScript : MonoBehaviour
         rb.AddForce((playerChar.position - transform.position) * pullSpeed, ForceMode2D.Force);
         playerChar.GetComponent<Player>().rb.AddForce((transform.position - playerChar.position) * pullSpeed, ForceMode2D.Force);
         pullPos = playerChar.position;
+    }
+    public void SlashInDirection(Vector2 dir)
+    {
+        StartCoroutine(SlashDir(dir));
     }
 
     public void RepellFunction()

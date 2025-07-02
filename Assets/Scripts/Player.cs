@@ -103,6 +103,11 @@ public class Player : MonoBehaviour
 
     public System.Action onDeath;
     public Animator camTarget;
+
+    bool charging = false;
+    float chargeTime = 0;
+    public float maxChargeTime;
+    public float chargeMult;
     void Start()
     {
         if (PlayerPrefs.HasKey("Corruption"))
@@ -190,18 +195,33 @@ public class Player : MonoBehaviour
                 //sr.flipX = !sr.flipX;
                 //stepTimer = maxStepTimer;
             //}
-            if (Input.GetButtonDown("Jump") && canMove && dashCooldown <= 0)
+            if (Input.GetButton("Jump") && canMove && dashCooldown <= 0 && !charging)
             {
+                charging = true;
+
+                
+                
+            }
+            if (Input.GetButtonUp("Jump") && charging)
+            {
+                charging = false;
+                if (chargeTime >= 1.5f)
+                {
+                    StartCoroutine(ChargeAtk(moveDirection.normalized));
+                }
+                
                 AudioManager.Instance.Dash.Post(gameObject);
                 dashImg.color = new Color(dashImg.color.r, dashImg.color.g, dashImg.color.b, 0.2f);
                 isDashing = true;
-                rb.AddForce(moveDirection.normalized * dashForce, ForceMode2D.Impulse);
+                if (chargeTime * chargeMult < 1)
+                { chargeTime = 1/chargeMult; }
+                rb.AddForce(moveDirection.normalized * dashForce * (chargeMult * chargeTime), ForceMode2D.Impulse);
+                chargeTime = 0;
                 invincible = true;
                 StartCoroutine(SetInvincible(maxDashTimer));
                 afterimage.Play();
                 dashTimer = maxDashTimer;
                 dashCooldown = maxDashCooldown;
-
             }
 
         }
@@ -229,21 +249,45 @@ public class Player : MonoBehaviour
 
         if (!isDashing && canMove)
         {
-            if (!demonModeActive)
+            if (!charging)
             {
-                rb.velocity = moveDirection.normalized * juicedUp * speed * (1 + (GameManager.Instance.MSUpgrades*GameManager.Instance.MSIncrease));
+                if (!demonModeActive)
+                {
+
+                    rb.velocity = moveDirection.normalized * juicedUp * speed * (1 + (GameManager.Instance.MSUpgrades * GameManager.Instance.MSIncrease));
+                }
+                else
+                {
+                    rb.velocity = moveDirection.normalized * speed * juicedUp * 1.3f * (1 + (GameManager.Instance.MSUpgrades * GameManager.Instance.MSIncrease * 1.2f));
+                }
             }
             else
             {
-                rb.velocity = moveDirection.normalized * speed * juicedUp * 1.3f * (1 + (GameManager.Instance.MSUpgrades * GameManager.Instance.MSIncrease*1.2f));
+                chargeTime += Time.deltaTime;
+                float barTime = chargeTime;
+                if (barTime > 1.5f)
+                    barTime = 1.5f;
+                if (chargeTime > maxChargeTime)
+                {
+                    chargeTime = maxChargeTime;
+                }
+
+                dashBar.localScale = new Vector3 (barTime / 1.5f, 0.2f, 1);
+                rb.velocity = moveDirection.normalized * speed * 0.1f;
+                anim.SetFloat("Speed", 0.2f * speed * 0.35f);
             }
+            
 
             dashCooldown -= Time.deltaTime;
             if (dashCooldown < 0)
             { 
                 dashCooldown = 0;
                 dashImg.color = new Color(dashImg.color.r, dashImg.color.g, dashImg.color.b, 1f);
-                dashBar.localScale = new Vector3(0, 0.2f, 1);
+                if (!charging)
+                {
+                    dashBar.localScale = new Vector3(0, 0.2f, 1);
+                }
+                
             }
             else
             {
@@ -273,6 +317,35 @@ public class Player : MonoBehaviour
             overlay.color = new Color(1, 1, 1, Corruption / 100);
 
     }
+    IEnumerator ChargeAtk(Vector2 dir)
+    {
+        canRepell = false;
+        sword.GetComponent<SwordScript>().controlled = true;
+        leash.enabled = true;
+        
+        Vector3 v = sword.position - transform.position;
+        Vector3 sPos = sword.position;
+        float elapsedTime = 0;
+        while (v.magnitude > 0.1f)
+        {
+            sword.position = Vector3.Lerp(sPos, transform.position, elapsedTime*8);
+            v = sword.position - transform.position;
+            elapsedTime+= Time.deltaTime;
+            yield return null;
+        }
+        sword.position = transform.position;
+        sword.parent = transform;
+        yield return new WaitForSeconds(maxDashTimer - elapsedTime);
+        sword.parent = null;
+        leash.enabled = false;
+        sword.GetComponent<SwordScript>().SlashInDirection(dir);
+        sword.GetComponent<SwordScript>().controlled = false;
+
+
+
+        yield return null;
+    }
+
     public void OnPurify()
     {
         Corruption -= corruptionLossOnPurify * emDmgMult;

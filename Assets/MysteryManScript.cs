@@ -35,6 +35,7 @@ public class MysteryManScript : MonoBehaviour
                 dialogueOpen = true;
                 StartCoroutine(typeDialogue());
                 dWindow.SetActive(true);
+                player.GetComponent<PlayerSimple>().anim.SetFloat("Speed", 0); ;
                 player.GetComponent<PlayerSimple>().enabled = false;
                 player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             }
