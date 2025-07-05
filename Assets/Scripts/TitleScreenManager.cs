@@ -14,7 +14,17 @@ public class TitleScreenManager : MonoBehaviour
     public List<string> tutorialNames = new List<string>();
     [TextArea(6, 10)]
     public List<string> descriptions = new List<string>();
+
+
+
+    [TextArea(6, 10)]
+    public List<string> logs = new List<string>();
+
     public int curTutorial = 0;
+    public int curLog = 0;
+
+    public TextMeshProUGUI logText;
+    public GameObject lWindow;
 
     public GameObject tWindow;
     public Image tutorialPic;
@@ -85,11 +95,25 @@ public class TitleScreenManager : MonoBehaviour
         tutorialDesc.text = descriptions[curTutorial].ToString();
     }
 
+    void LoadLog()
+    {
+        logText.text = "Research Log " + curLog + "\n"+logs[curLog];
+    }
+
     public void toggleTWindow()
     {
         curTutorial = 0;
         tWindow.SetActive(!tWindow.activeSelf);
         if (!tWindow.activeInHierarchy)
+        {
+            EventSystem.current.SetSelectedGameObject(firstSelected);
+        }
+    }
+    public void toggleLWindow()
+    {
+        curLog = 0;
+        lWindow.SetActive(!lWindow.activeSelf);
+        if (!lWindow.activeInHierarchy)
         {
             EventSystem.current.SetSelectedGameObject(firstSelected);
         }
@@ -106,6 +130,18 @@ public class TitleScreenManager : MonoBehaviour
             toggleTWindow();
         }
         LoadTutorial() ;
+    }
+    public void NextLog()
+    {
+        if (curLog < logs.Count - 1)
+        {
+            curLog++;
+        }
+        else
+        {
+            toggleLWindow();
+        }
+        LoadLog();
     }
     public void TutToggle(bool toggle)
     {
@@ -129,6 +165,18 @@ public class TitleScreenManager : MonoBehaviour
             toggleTWindow();
         }
         LoadTutorial();
+    }
+    public void PrevLog()
+    {
+        if (curLog > 0)
+        {
+            curLog--;
+        }
+        else
+        {
+            toggleLWindow();
+        }
+        LoadLog();
     }
     public void SelectDefaultButton()
     {
